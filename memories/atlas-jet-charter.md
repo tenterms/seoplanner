@@ -1,7 +1,13 @@
 # Project memory: Atlas Jet Charter (atlasjetcharter.com)
 
 **Client:** Atlas Jet Charter / Atlas Jet Limited (Co. 12985151), 6 S Molton St, London W1K 5QF. Private jet charter broker — founders Toby Hayton (ops) & Connor Millar (relationships). £8–9m rev, target £10m+. ~100% referral business (concierge agreements 5–25%), zero inbound; LTV thousands→hundreds of thousands, jet cards = LTV sweet spot. NOT the cheapest — positions on trust/transparency/safety/expertise.
-**Deliverable:** `Atlas-Jet-Charter-Positioning.md` (this repo, 2026-07-23) — positioning doc per the client's MegaBrief template, built from onboarding questionnaire + 12-page site crawl.
+**Deliverables:** `Atlas-Jet-Charter-Positioning.md`/`.docx` (2026-07) — positioning doc per the client's MegaBrief template, built from onboarding questionnaire + 12-page site crawl. `Atlas-Jet-Charter-Tone-of-Voice.md`/`.docx` (2026-07) — ToV guide from site + social analysis.
+
+## Social channels (checked 2026-07-24)
+- Instagram @atlasjetcharter (~330 followers, single-digit likes). Bio: "On-demand global private jet charter. Trusted by leading travel concierges and private members' clubs". Best captions = statement+detail quiet-luxury pattern ("Gulfstream G600… finished with a Prada…", "GO NOW charters…", "Atlas Archives" heritage series).
+- LinkedIn /company/atlas-jet-charter (~233 followers). Tagline "Elevating your flight experience" (generic — recommended retiring). About is CONCIERGE-PARTNER-facing (commission share, white-label quotes) not client-facing. Founder posts: GQ/Idris Elba shoot, AERO Friedrichshafen, team hires; "2025 = strongest year to date, fifth year in operation".
+- Facebook page exists (profile.php?id=100065050862047), inactive-looking.
+- ToV verdicts: 4 pillars (quietly confident / expert-specific / founder-led personal / radically clear on money+safety). Older destination blog posts ("watery activities") are off-voice — rewrite or retire. Naming to canonicalise: Go Now vs GO NOW, jet card names, Atlas Connect.
 
 ## Site facts (crawled 2026-07-23)
 - WordPress + Yoast; sitemap_index → post (6 blog posts), page (~45), category (5). 46 pages indexed per client.
