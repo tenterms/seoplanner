@@ -65,3 +65,15 @@ Simulated against live data: **9/13 brands match exactly** with the wrench-colle
 **Open client question from the sheet**: "Fairway/Fairway Wood/Fairway Metal?" — we defaulted to "fairway wood weights" (dominant search phrasing); tag matching uses substring `fairway` so it works regardless.
 
 Sub-carousel matching is **AND** semantics (type AND tag when both set), e.g. driver = `Weights for Woods` + tag `driver` (keeps driver-tagged shaft adapters out). New block settings: `source_collection` (alternate product pool) and `vendor_match` (brand-first + Universal fill).
+
+## UX revision (after first full-page preview, Aug 2026)
+
+Joe's feedback on v1 render: too long/repetitive, "view all" CTAs competed with the H2s, and filter links "did nothing" (they filtered the grid at the BOTTOM of the page, invisible below the carousels). v2 changes, all in the section:
+
+- **Filters-active guard**: when any storefront filter is active (`collection.filters` active_values), the enhanced section renders nothing → filter "view all" links land on the standard filtered grid (with header title back). This is what makes the CTAs visibly work.
+- **Chip anchor nav** under the intro (pill links → `#ec-<block.id>`, smooth scroll, scroll-margin for sticky header) so the long page is scannable.
+- **Cross-carousel de-dup**: `shown_global` handle list; each carousel renders unseen products first (dpass 1), repeats only to fill (dpass 2). Featured block seeds the list. Fixes driver/fairway/hybrid rows showing near-identical multi-fit products.
+- **Pre-count pass** computes per-block match totals (drives chips, auto-hide, and "(n)" counts in links).
+- **Hierarchy**: "View all X (n) →" is now small/muted (1.2rem, 0.65 opacity), and only shows when block_total > products_shown.
+- Featured block cut to 1 row of 5 (template `featured_count: 5`).
+- Split blocks with no image render full-width text (`--noimg`) instead of an empty half.

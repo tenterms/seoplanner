@@ -2,12 +2,20 @@
   Enhanced brand collection layout.
   Rollout is controlled by the "Enabled collection handles" setting (comma-separated).
   All headings/descriptions support a [brand] token, replaced with the collection title.
-  Sub-carousels auto-hide when the collection has no matching products.
+  Sub-carousels auto-hide when the collection has no matching products, and each
+  carousel prefers products not already shown higher up the page.
+  When a storefront filter is active the section renders nothing, so "view all"
+  filter links land on the standard filtered grid.
 {%- endcomment -%}
 
 {%- assign allowed_handles = section.settings.enabled_handles | default: '' | downcase | replace: ' ', '' | split: ',' -%}
 
-{%- if allowed_handles contains collection.handle -%}
+{%- assign active_filter_count = 0 -%}
+{%- for f in collection.filters -%}
+  {%- assign active_filter_count = active_filter_count | plus: f.active_values.size -%}
+{%- endfor -%}
+
+{%- if allowed_handles contains collection.handle and active_filter_count == 0 -%}
 
 {%- assign brand = collection.title -%}
 {%- comment -%}
@@ -26,10 +34,63 @@
 {%- assign brand_dc = brand | downcase -%}
 
 {%- comment -%}
+  Pre-count matches per sub-carousel block (drives chips, auto-hide and the
+  "(n)" in view-all links). Same criteria as the render pass below.
+{%- endcomment -%}
+{%- assign block_counts = '' -%}
+{%- for block in section.blocks -%}
+  {%- liquid
+    assign block_total = 0
+    if block.type == 'sub_carousel'
+      assign ftype = block.settings.filter_type | strip
+      assign ftag = block.settings.filter_tag | strip | downcase
+      assign pool = collection.products
+      if block.settings.source_collection != blank
+        assign source_col = collections[block.settings.source_collection]
+        if source_col.products.size > 0
+          assign pool = source_col.products
+        endif
+      endif
+      for product in pool
+        assign is_match = true
+        if ftype == blank and ftag == blank and block.settings.vendor_match == false
+          assign is_match = false
+        endif
+        if ftype != blank and product.type != ftype
+          assign is_match = false
+        endif
+        if is_match and ftag != blank
+          assign tag_string = product.tags | join: '|' | downcase
+          unless tag_string contains ftag
+            assign is_match = false
+          endunless
+        endif
+        if is_match and block.settings.vendor_match
+          assign vendor_dc = product.vendor | downcase
+          if vendor_dc != brand_dc
+            unless vendor_dc contains 'universal'
+              assign is_match = false
+            endunless
+          endif
+        endif
+        if is_match
+          assign block_total = block_total | plus: 1
+        endif
+      endfor
+    endif
+    assign block_counts = block_counts | append: block_total | append: ','
+  -%}
+{%- endfor -%}
+{%- assign block_counts_arr = block_counts | split: ',' -%}
+
+{%- comment -%}
   The shared collection header keeps its title/description for non-enhanced
   collections. Suppress and remove them here so enhanced pages have one H1.
 {%- endcomment -%}
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   .collection-header__title,
   .collection-header__description {
     display: none !important;
@@ -56,22 +117,39 @@
       {%- elsif collection.description != blank -%}
         <div class="enhanced-collection__intro rte">{{ collection.description }}</div>
       {%- endif -%}
+
+      {%- capture chips -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'sub_carousel' -%}
+            {%- assign chip_count = block_counts_arr[forloop.index0] | plus: 0 -%}
+            {%- if chip_count > 0 -%}
+              {%- assign chip_label = block.settings.heading | replace: '[brand]', '' | strip | capitalize -%}
+              <a class="enhanced-collection__chip" href="#ec-{{ block.id }}">{{ chip_label }}</a>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- if chips != blank -%}
+        <nav class="enhanced-collection__chips" aria-label="Browse categories">{{ chips }}</nav>
+      {%- endif -%}
     </div>
 
-    {%- assign featured_limit = section.settings.featured_count | default: 10 -%}
+    {%- assign featured_limit = section.settings.featured_count | default: 5 -%}
+    {%- assign shown_global = ',' -%}
 
     <div class="enhanced-collection__section">
       <div class="enhanced-collection__section-header">
         <h2 class="enhanced-collection__section-title">{%- if section.settings.featured_heading != blank -%}{{ section.settings.featured_heading | replace: '[brand]', brand }}{%- else -%}All {{ brand }} products{%- endif -%}</h2>
-        <a href="{{ collection.url }}" class="enhanced-collection__view-all link text-link-animated">
-          {{ section.settings.featured_cta | default: 'View all products' }} &rarr;
+        <a href="{{ collection.url }}" class="enhanced-collection__view-all">
+          {{ section.settings.featured_cta | default: 'View all products' }} ({{ collection.products_count }}) &rarr;
         </a>
       </div>
       {%- if section.settings.featured_desc != blank -%}
         <div class="enhanced-collection__section-desc rte">{{ section.settings.featured_desc | replace: '[brand]', brand }}</div>
       {%- endif -%}
-      <div class="enhanced-collection__carousel enhanced-collection__carousel--2row enhanced-collection__carousel--{{ section.settings.featured_per_row }}col">
+      <div class="enhanced-collection__carousel enhanced-collection__carousel--{{ section.settings.featured_per_row }}col">
         {%- for product in collection.products limit: featured_limit -%}
+          {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
           <div class="enhanced-collection__card-wrap">
             {%- render 'grid-view-item',
               product: product,
@@ -88,82 +166,89 @@
 
     {%- for block in section.blocks -%}
       {%- if block.type == 'sub_carousel' -%}
-
-        {%- liquid
-          assign ftype = block.settings.filter_type | strip
-          assign ftag = block.settings.filter_tag | strip | downcase
-          assign sub_limit = block.settings.products_shown | default: 4
-          assign match_count = 0
-
-          comment
-            Product pool: this collection, or an alternate collection
-            (e.g. golf-club-wrench so universal wrenches appear on every brand page).
-          endcomment
-          assign pool = collection.products
-          if block.settings.source_collection != blank
-            assign source_col = collections[block.settings.source_collection]
-            if source_col.products.size > 0
-              assign pool = source_col.products
-            endif
-          endif
-
-          assign pass_total = 1
-          if block.settings.vendor_match
-            assign pass_total = 2
-          endif
-        -%}
-
-        {%- capture card_markup -%}
-          {%- for pass in (1..pass_total) -%}
-            {%- for product in pool -%}
-              {%- if match_count >= sub_limit -%}{%- break -%}{%- endif -%}
-
-              {%- comment -%} Every criterion that is set must hold {%- endcomment -%}
-              {%- assign is_match = true -%}
-              {%- if ftype == blank and ftag == blank and pass_total == 1 -%}
-                {%- assign is_match = false -%}
-              {%- endif -%}
-              {%- if ftype != blank and product.type != ftype -%}
-                {%- assign is_match = false -%}
-              {%- endif -%}
-              {%- if is_match and ftag != blank -%}
-                {%- assign tag_string = product.tags | join: '|' | downcase -%}
-                {%- unless tag_string contains ftag -%}
-                  {%- assign is_match = false -%}
-                {%- endunless -%}
-              {%- endif -%}
-
-              {%- comment -%} Vendor passes: the brand's own products first, then Universal {%- endcomment -%}
-              {%- if is_match and pass_total == 2 -%}
-                {%- assign vendor_dc = product.vendor | downcase -%}
-                {%- if pass == 1 -%}
-                  {%- unless vendor_dc == brand_dc -%}{%- assign is_match = false -%}{%- endunless -%}
-                {%- elsif vendor_dc == brand_dc -%}
-                  {%- assign is_match = false -%}
-                {%- else -%}
-                  {%- unless vendor_dc contains 'universal' -%}{%- assign is_match = false -%}{%- endunless -%}
-                {%- endif -%}
-              {%- endif -%}
-
-              {%- if is_match -%}
-                {%- assign match_count = match_count | plus: 1 -%}
-                <div class="enhanced-collection__card-wrap">
-                  {%- render 'grid-view-item',
-                    product: product,
-                    collection: collection,
-                    enable_badges: settings.show_badges,
-                    grid_count_desktop: sub_limit,
-                    grid_count_mobile: 2,
-                    loading: 'lazy'
-                  -%}
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          {%- endfor -%}
-        {%- endcapture -%}
+        {%- assign block_total = block_counts_arr[forloop.index0] | plus: 0 -%}
 
         {%- comment -%} Auto-hide: brands with no matching products skip this carousel {%- endcomment -%}
-        {%- if match_count > 0 -%}
+        {%- if block_total > 0 -%}
+
+          {%- liquid
+            assign ftype = block.settings.filter_type | strip
+            assign ftag = block.settings.filter_tag | strip | downcase
+            assign sub_limit = block.settings.products_shown | default: 4
+            assign match_count = 0
+            assign local_shown = ','
+
+            assign pool = collection.products
+            if block.settings.source_collection != blank
+              assign source_col = collections[block.settings.source_collection]
+              if source_col.products.size > 0
+                assign pool = source_col.products
+              endif
+            endif
+
+            assign vendor_passes = 1
+            if block.settings.vendor_match
+              assign vendor_passes = 2
+            endif
+          -%}
+
+          {%- capture card_markup -%}
+            {%- comment -%}
+              dpass 1 = products not yet shown on the page, dpass 2 = fill with repeats.
+              vpass 1 = the brand's own products, vpass 2 = 'Universal' vendor fill.
+            {%- endcomment -%}
+            {%- for dpass in (1..2) -%}
+              {%- for vpass in (1..vendor_passes) -%}
+                {%- for product in pool -%}
+                  {%- if match_count >= sub_limit -%}{%- break -%}{%- endif -%}
+                  {%- assign pkey = ',' | append: product.handle | append: ',' -%}
+                  {%- if local_shown contains pkey -%}{%- continue -%}{%- endif -%}
+                  {%- if dpass == 1 and shown_global contains pkey -%}{%- continue -%}{%- endif -%}
+
+                  {%- comment -%} Every criterion that is set must hold {%- endcomment -%}
+                  {%- assign is_match = true -%}
+                  {%- if ftype == blank and ftag == blank and vendor_passes == 1 -%}
+                    {%- assign is_match = false -%}
+                  {%- endif -%}
+                  {%- if ftype != blank and product.type != ftype -%}
+                    {%- assign is_match = false -%}
+                  {%- endif -%}
+                  {%- if is_match and ftag != blank -%}
+                    {%- assign tag_string = product.tags | join: '|' | downcase -%}
+                    {%- unless tag_string contains ftag -%}
+                      {%- assign is_match = false -%}
+                    {%- endunless -%}
+                  {%- endif -%}
+                  {%- if is_match and vendor_passes == 2 -%}
+                    {%- assign vendor_dc = product.vendor | downcase -%}
+                    {%- if vpass == 1 -%}
+                      {%- unless vendor_dc == brand_dc -%}{%- assign is_match = false -%}{%- endunless -%}
+                    {%- elsif vendor_dc == brand_dc -%}
+                      {%- assign is_match = false -%}
+                    {%- else -%}
+                      {%- unless vendor_dc contains 'universal' -%}{%- assign is_match = false -%}{%- endunless -%}
+                    {%- endif -%}
+                  {%- endif -%}
+
+                  {%- if is_match -%}
+                    {%- assign match_count = match_count | plus: 1 -%}
+                    {%- assign local_shown = local_shown | append: product.handle | append: ',' -%}
+                    {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
+                    <div class="enhanced-collection__card-wrap">
+                      {%- render 'grid-view-item',
+                        product: product,
+                        collection: collection,
+                        enable_badges: settings.show_badges,
+                        grid_count_desktop: sub_limit,
+                        grid_count_mobile: 2,
+                        loading: 'lazy'
+                      -%}
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          {%- endcapture -%}
 
           {%- assign view_all_url = blank -%}
           {%- if block.settings.link_override != blank -%}
@@ -172,19 +257,19 @@
             {%- assign view_all_url = collection.url | append: '?' | append: block.settings.filter_param -%}
           {%- endif -%}
 
-          <div class="enhanced-collection__section" {{ block.shopify_attributes }}>
+          <div class="enhanced-collection__section" id="ec-{{ block.id }}" {{ block.shopify_attributes }}>
             <div class="enhanced-collection__section-header">
               <h2 class="enhanced-collection__section-title">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
-              {%- if view_all_url != blank -%}
-                <a href="{{ view_all_url }}" class="enhanced-collection__view-all link text-link-animated">
-                  {{ block.settings.cta | default: 'View all' }} &rarr;
+              {%- if view_all_url != blank and block_total > sub_limit -%}
+                <a href="{{ view_all_url }}" class="enhanced-collection__view-all">
+                  {{ block.settings.cta | default: 'View all' }} ({{ block_total }}) &rarr;
                 </a>
               {%- endif -%}
             </div>
             {%- if block.settings.description != blank -%}
               <div class="enhanced-collection__section-desc rte">{{ block.settings.description | replace: '[brand]', brand }}</div>
             {%- endif -%}
-            <div class="enhanced-collection__carousel enhanced-collection__carousel--1row enhanced-collection__carousel--{{ sub_limit }}col">
+            <div class="enhanced-collection__carousel enhanced-collection__carousel--{{ sub_limit }}col">
               {{ card_markup }}
             </div>
           </div>
@@ -196,14 +281,16 @@
 
     {%- for block in section.blocks -%}
       {%- if block.type == 'split_block' -%}
-        <div class="enhanced-collection__split enhanced-collection__split--{{ block.settings.image_position }}" {{ block.shopify_attributes }}>
-          <div class="enhanced-collection__split-img">
-            {%- if block.settings.image != blank -%}
+        {%- assign split_classes = 'enhanced-collection__split enhanced-collection__split--' | append: block.settings.image_position -%}
+        {%- if block.settings.image == blank -%}
+          {%- assign split_classes = split_classes | append: ' enhanced-collection__split--noimg' -%}
+        {%- endif -%}
+        <div class="{{ split_classes }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="enhanced-collection__split-img">
               {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
-            {%- else -%}
-              <div class="enhanced-collection__split-img-placeholder"></div>
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
           <div class="enhanced-collection__split-text">
             {%- if block.settings.eyebrow != blank -%}
               <p class="enhanced-collection__eyebrow label-font">{{ block.settings.eyebrow | replace: '[brand]', brand }}</p>
@@ -231,7 +318,7 @@
     padding-bottom: 2rem;
   }
   .enhanced-collection__hero {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
   .enhanced-collection__eyebrow {
     margin-bottom: 0.6rem;
@@ -248,8 +335,29 @@
     max-width: 68ch;
     opacity: 0.8;
   }
+  .enhanced-collection__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+  }
+  .enhanced-collection__chip {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.15));
+    border-radius: 999px;
+    font-size: 1.3rem;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .enhanced-collection__chip:hover {
+    border-color: currentColor;
+  }
   .enhanced-collection__section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+    scroll-margin-top: 120px;
   }
   .enhanced-collection__section-header {
     display: flex;
@@ -257,19 +365,26 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
   }
   .enhanced-collection__section-title {
     font-size: clamp(1.8rem, 2.5vw, 2.4rem);
     margin: 0;
   }
   .enhanced-collection__view-all {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    opacity: 0.65;
+    text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
+    transition: opacity 0.15s ease;
+  }
+  .enhanced-collection__view-all:hover {
+    opacity: 1;
+    text-decoration: underline;
   }
   .enhanced-collection__section-desc {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
     opacity: 0.75;
     max-width: 72ch;
     font-size: 1.4rem;
@@ -279,13 +394,16 @@
     display: grid;
     gap: 1.2rem;
   }
-  .enhanced-collection__carousel--2row {
+  .enhanced-collection__carousel--6col {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .enhanced-collection__carousel--5col {
     grid-template-columns: repeat(5, 1fr);
   }
-  .enhanced-collection__carousel--1row.enhanced-collection__carousel--4col {
+  .enhanced-collection__carousel--4col {
     grid-template-columns: repeat(4, 1fr);
   }
-  .enhanced-collection__carousel--1row.enhanced-collection__carousel--3col {
+  .enhanced-collection__carousel--3col {
     grid-template-columns: repeat(3, 1fr);
   }
   .enhanced-collection__card-wrap {
@@ -302,7 +420,10 @@
     border-radius: var(--border-radius, 8px);
     overflow: hidden;
     margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.12));
+  }
+  .enhanced-collection__split--noimg {
+    grid-template-columns: 1fr;
   }
   .enhanced-collection__split--right {
     direction: rtl;
@@ -319,14 +440,8 @@
     height: 100%;
     object-fit: cover;
   }
-  .enhanced-collection__split-img-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 320px;
-    background: var(--color-secondary-background, #f5f5f5);
-  }
   .enhanced-collection__split-text {
-    padding: 4rem 4.8rem;
+    padding: 3.2rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -340,19 +455,29 @@
     opacity: 0.8;
     font-size: 1.4rem;
     line-height: 1.75;
+    max-width: 72ch;
   }
   .enhanced-collection__split-cta {
     align-self: flex-start;
   }
   @media screen and (max-width: 1024px) {
-    .enhanced-collection__carousel--2row {
+    .enhanced-collection__carousel--6col,
+    .enhanced-collection__carousel--5col {
       grid-template-columns: repeat(4, 1fr);
     }
   }
   @media screen and (max-width: 767px) {
-    .enhanced-collection__carousel--2row,
-    .enhanced-collection__carousel--1row {
+    .enhanced-collection__carousel--6col,
+    .enhanced-collection__carousel--5col,
+    .enhanced-collection__carousel--4col,
+    .enhanced-collection__carousel--3col {
       grid-template-columns: repeat(2, 1fr);
+    }
+    .enhanced-collection__chips {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.4rem;
     }
     .enhanced-collection__split {
       grid-template-columns: 1fr;
@@ -438,7 +563,7 @@
       "min": 4,
       "max": 20,
       "step": 1,
-      "default": 10
+      "default": 5
     },
     {
       "type": "range",
