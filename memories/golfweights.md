@@ -16,10 +16,10 @@ Work happens in a **draft theme called "new cat"** (theme id 196541677952). Two 
 - `sections/enhanced-collection.liquid` — the whole layout in one section, **brand-agnostic**:
   - `[brand]` token in any heading/description/link is replaced with `collection.title` at render time (URL-encoded in link overrides).
   - **Rollout control**: section setting `enabled_handles` (comma-separated collection handles, edited in the customiser — default `taylormade`). Replaced the earlier hardcoded handle check; the metafield + `collection.enhanced.json` route failed because Shopify only lists templates from the *published* theme in the collection's Theme-template dropdown.
-  - **Auto show/hide**: each sub-carousel counts matching products (by product *type* equality OR *tag* contains, case-insensitive) and renders nothing when the brand has none. This is the per-brand show/hide mechanism — no per-brand config.
+  - **Auto show/hide**: each sub-carousel counts matching products (AND semantics — see the client-matrix section below) and renders nothing when the brand has none. This is the per-brand show/hide mechanism — no per-brand config.
   - The shared collection header keeps `show_title`/`show_description` **true** in the template (non-enhanced collections need their H1); the enhanced section suppresses+removes the header title/description via scoped CSS+JS so enhanced pages keep a single H1.
   - Split-block images use core `image_url | image_tag` (not the theme's responsive-image snippet).
-- `templates/collection.json` — default collection template with the enhanced section between header and grid, **all 6 blocks pre-configured in JSON** (4 sub-carousels + 2 splits) so no customiser block-clicking.
+- `templates/collection.json` — default collection template with the enhanced section between header and grid, **all 9 blocks pre-configured in JSON** (7 sub-carousels + 2 splits) so no customiser block-clicking.
 
 ## Validated facts (don't re-derive)
 
