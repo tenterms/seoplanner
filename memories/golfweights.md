@@ -77,3 +77,12 @@ Joe's feedback on v1 render: too long/repetitive, "view all" CTAs competed with 
 - **Hierarchy**: "View all X (n) →" is now small/muted (1.2rem, 0.65 opacity), and only shows when block_total > products_shown.
 - Featured block cut to 1 row of 5 (template `featured_count: 5`).
 - Split blocks with no image render full-width text (`--noimg`) instead of an empty half.
+
+## v3 revision (responsive + graphic pass)
+
+Joe's v2 feedback: filtered pages had useless H1s (bare brand name), chips/carousels not responsive, sections cramped/samey. v3:
+
+- **Filtered views** now render a compact hero instead of nothing: descriptive H1 = brand + mapped filter label (section setting `filter_labels`, value:Label pairs — e.g. `Weights for Woods:Driver & Fairway Wood Weights`), "← All [brand] products" back link, result count. Header title still suppressed there.
+- **Carousels are horizontal scroll-snap flex rows** with fluid card widths (`clamp(16rem, 21vw, 24rem)`; smaller on mobile) — responsive at every viewport, no grid breakpoints. Chips row horizontal-scrolls (scrollbar hidden).
+- **Graphic rhythm**: accent rule (setting `accent_color`, default site green #02964f) above every H2; alternating sub-carousel sections get a soft tinted rounded panel (color-mix with plain fallback; full-bleed on mobile); section spacing 4.5rem.
+- featured_per_row schema setting now unused by CSS (kept for compat); grid_count_desktop passed as 4 for card image sizing.
