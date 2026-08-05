@@ -5,8 +5,8 @@
       "type": "collection-header",
       "settings": {
         "show_breadcrumbs": false,
-        "show_title": false,
-        "show_description": false,
+        "show_title": true,
+        "show_description": true,
         "show_image_desktop": true,
         "image_desktop": "shopify://shop_images/golf_course_2_7cb793a8-3b7f-4355-b67e-8caf8b28a36b.jpg",
         "min_height_desktop": "450",
@@ -33,36 +33,52 @@
         "putter-weights": {
           "type": "sub_carousel",
           "settings": {
-            "heading": "TaylorMade putter weights",
-            "description": "<p>Fine-tune the feel and balance of your TaylorMade putter with precision aftermarket weights for Spider, TP Collection and more.</p>",
+            "heading": "[brand] putter weights",
+            "description": "<p>Fine-tune the feel and balance of your [brand] putter with precision aftermarket weights.</p>",
             "cta": "View all putter weights",
             "filter_type": "Weights for Putters",
-            "filter_tag": "putter weight",
+            "filter_tag": "",
             "filter_param": "filter.p.product_type=Weights+for+Putters",
+            "link_override": "",
             "products_shown": 4
           }
         },
         "driver-weights": {
           "type": "sub_carousel",
           "settings": {
-            "heading": "TaylorMade driver weights",
-            "description": "<p>Dial in launch, spin and shot shape with head weights covering the full TaylorMade lineup — Qi, Stealth, SIM and beyond.</p>",
+            "heading": "[brand] driver weights",
+            "description": "<p>Dial in launch, spin and shot shape with aftermarket head weights for [brand] drivers, fairway woods and hybrids.</p>",
             "cta": "View all driver weights",
             "filter_type": "Weights for Woods",
-            "filter_tag": "driver",
+            "filter_tag": "",
             "filter_param": "filter.p.product_type=Weights+for+Woods",
+            "link_override": "",
+            "products_shown": 4
+          }
+        },
+        "weight-kits": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "[brand] golf weight kits",
+            "description": "<p>A full range of head weights in one box — the easiest way to experiment until your [brand] setup feels exactly right.</p>",
+            "cta": "View all weight kits",
+            "filter_type": "",
+            "filter_tag": "weight kit",
+            "filter_param": "",
+            "link_override": "/collections/golf-club-weight-kits-1?filter.p.vendor=[brand]",
             "products_shown": 4
           }
         },
         "wrenches": {
           "type": "sub_carousel",
           "settings": {
-            "heading": "TaylorMade golf club wrenches",
-            "description": "<p>You'll need a compatible wrench to swap the weights on your TaylorMade clubs — pick one up with your order.</p>",
+            "heading": "[brand] club wrenches",
+            "description": "<p>You'll need a compatible wrench to swap the weights on your [brand] clubs — pick one up with your order.</p>",
             "cta": "View all wrenches",
             "filter_type": "Wrench",
-            "filter_tag": "wrench",
+            "filter_tag": "",
             "filter_param": "filter.p.product_type=Wrench",
+            "link_override": "",
             "products_shown": 3
           }
         },
@@ -83,7 +99,7 @@
             "image_position": "right",
             "eyebrow": "Why Golfweights",
             "heading": "Golf experts you can trust",
-            "text": "<p>UK stock, fast dispatch and weights engineered to match OEM specs. Thousands of golfers trust us to keep their TaylorMade clubs dialled in.</p>",
+            "text": "<p>UK stock, fast dispatch and weights engineered to match OEM specs. Thousands of golfers trust us to keep their [brand] clubs dialled in.</p>",
             "cta_label": "Read our FAQs",
             "cta_url": "/pages/faqs"
           }
@@ -92,14 +108,16 @@
       "block_order": [
         "putter-weights",
         "driver-weights",
+        "weight-kits",
         "wrenches",
         "split-swing-weight",
         "split-why-us"
       ],
       "settings": {
+        "enabled_handles": "taylormade",
         "eyebrow": "Shop by brand",
-        "heading": "TaylorMade Golf Club Weights",
-        "featured_heading": "All TaylorMade products",
+        "heading": "[brand] Golf Club Weights",
+        "featured_heading": "All [brand] products",
         "featured_cta": "View all products",
         "featured_count": 10,
         "featured_per_row": 5
