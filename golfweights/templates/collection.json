@@ -172,6 +172,8 @@
       "settings": {
         "enabled_handles": "taylormade",
         "brand_overrides": "lab:LAB",
+        "filter_labels": "Weights for Woods:Driver & Fairway Wood Weights, Weights for Putters:Putter Weights, Weights for Irons:Iron Weights, Wrench:Club Wrenches, Shaft Adapter:Shaft Adapters",
+        "accent_color": "#02964f",
         "eyebrow": "Shop by brand",
         "heading": "[brand] Golf Club Weights",
         "featured_heading": "All [brand] products",
