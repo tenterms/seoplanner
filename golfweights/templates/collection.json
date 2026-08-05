@@ -30,6 +30,66 @@
     "enhanced-collection": {
       "type": "enhanced-collection",
       "blocks": {
+        "driver-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "[brand] driver weights",
+            "description": "<p>Dial in launch, spin and shot shape with aftermarket head weights for [brand] drivers.</p>",
+            "cta": "View all driver weights",
+            "filter_type": "Weights for Woods",
+            "filter_tag": "driver",
+            "source_collection": "",
+            "vendor_match": false,
+            "filter_param": "filter.p.product_type=Weights+for+Woods",
+            "link_override": "",
+            "products_shown": 4
+          }
+        },
+        "fairway-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "[brand] fairway wood weights",
+            "description": "<p>Tune the balance and feel of your [brand] fairway woods with precision aftermarket head weights.</p>",
+            "cta": "View all fairway wood weights",
+            "filter_type": "Weights for Woods",
+            "filter_tag": "fairway",
+            "source_collection": "",
+            "vendor_match": false,
+            "filter_param": "filter.p.product_type=Weights+for+Woods",
+            "link_override": "",
+            "products_shown": 4
+          }
+        },
+        "hybrid-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "[brand] hybrid weights",
+            "description": "<p>Aftermarket head weights to fine-tune the swing weight of your [brand] hybrids and rescue clubs.</p>",
+            "cta": "View all hybrid weights",
+            "filter_type": "Weights for Woods",
+            "filter_tag": "hybrid",
+            "source_collection": "",
+            "vendor_match": false,
+            "filter_param": "filter.p.product_type=Weights+for+Woods",
+            "link_override": "",
+            "products_shown": 4
+          }
+        },
+        "iron-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "[brand] iron weights",
+            "description": "<p>Adjust the head weight of your [brand] irons for consistent feel and swing weight through the set.</p>",
+            "cta": "View all iron weights",
+            "filter_type": "Weights for Irons",
+            "filter_tag": "",
+            "source_collection": "",
+            "vendor_match": false,
+            "filter_param": "filter.p.product_type=Weights+for+Irons",
+            "link_override": "",
+            "products_shown": 4
+          }
+        },
         "putter-weights": {
           "type": "sub_carousel",
           "settings": {
@@ -38,20 +98,9 @@
             "cta": "View all putter weights",
             "filter_type": "Weights for Putters",
             "filter_tag": "",
+            "source_collection": "",
+            "vendor_match": false,
             "filter_param": "filter.p.product_type=Weights+for+Putters",
-            "link_override": "",
-            "products_shown": 4
-          }
-        },
-        "driver-weights": {
-          "type": "sub_carousel",
-          "settings": {
-            "heading": "[brand] driver weights",
-            "description": "<p>Dial in launch, spin and shot shape with aftermarket head weights for [brand] drivers, fairway woods and hybrids.</p>",
-            "cta": "View all driver weights",
-            "filter_type": "Weights for Woods",
-            "filter_tag": "",
-            "filter_param": "filter.p.product_type=Weights+for+Woods",
             "link_override": "",
             "products_shown": 4
           }
@@ -64,6 +113,8 @@
             "cta": "View all weight kits",
             "filter_type": "",
             "filter_tag": "weight kit",
+            "source_collection": "",
+            "vendor_match": false,
             "filter_param": "",
             "link_override": "/collections/golf-club-weight-kits-1?filter.p.vendor=[brand]",
             "products_shown": 4
@@ -77,8 +128,10 @@
             "cta": "View all wrenches",
             "filter_type": "Wrench",
             "filter_tag": "",
-            "filter_param": "filter.p.product_type=Wrench",
-            "link_override": "",
+            "source_collection": "golf-club-wrench",
+            "vendor_match": true,
+            "filter_param": "",
+            "link_override": "/collections/golf-club-wrench",
             "products_shown": 3
           }
         },
@@ -106,8 +159,11 @@
         }
       },
       "block_order": [
-        "putter-weights",
         "driver-weights",
+        "fairway-weights",
+        "hybrid-weights",
+        "iron-weights",
+        "putter-weights",
         "weight-kits",
         "wrenches",
         "split-swing-weight",
@@ -115,6 +171,7 @@
       ],
       "settings": {
         "enabled_handles": "taylormade",
+        "brand_overrides": "lab:LAB",
         "eyebrow": "Shop by brand",
         "heading": "[brand] Golf Club Weights",
         "featured_heading": "All [brand] products",

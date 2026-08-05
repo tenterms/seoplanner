@@ -10,7 +10,20 @@
 {%- if allowed_handles contains collection.handle -%}
 
 {%- assign brand = collection.title -%}
+{%- comment -%}
+  Brand-name overrides for collections whose title isn't a clean brand name
+  (e.g. "Head Weights for Lab Putters" -> "LAB"). Format: handle:Name, handle:Name
+{%- endcomment -%}
+{%- assign override_pairs = section.settings.brand_overrides | default: '' | split: ',' -%}
+{%- for pair in override_pairs -%}
+  {%- assign pair_parts = pair | split: ':' -%}
+  {%- assign pair_handle = pair_parts[0] | strip | downcase -%}
+  {%- if pair_handle == collection.handle and pair_parts[1] != blank -%}
+    {%- assign brand = pair_parts[1] | strip -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- assign brand_url = brand | url_encode -%}
+{%- assign brand_dc = brand | downcase -%}
 
 {%- comment -%}
   The shared collection header keeps its title/description for non-enhanced
@@ -81,34 +94,71 @@
           assign ftag = block.settings.filter_tag | strip | downcase
           assign sub_limit = block.settings.products_shown | default: 4
           assign match_count = 0
+
+          comment
+            Product pool: this collection, or an alternate collection
+            (e.g. golf-club-wrench so universal wrenches appear on every brand page).
+          endcomment
+          assign pool = collection.products
+          if block.settings.source_collection != blank
+            assign source_col = collections[block.settings.source_collection]
+            if source_col.products.size > 0
+              assign pool = source_col.products
+            endif
+          endif
+
+          assign pass_total = 1
+          if block.settings.vendor_match
+            assign pass_total = 2
+          endif
         -%}
 
         {%- capture card_markup -%}
-          {%- for product in collection.products -%}
-            {%- if match_count >= sub_limit -%}{%- break -%}{%- endif -%}
-            {%- assign is_match = false -%}
-            {%- if ftype != blank and product.type == ftype -%}
+          {%- for pass in (1..pass_total) -%}
+            {%- for product in pool -%}
+              {%- if match_count >= sub_limit -%}{%- break -%}{%- endif -%}
+
+              {%- comment -%} Every criterion that is set must hold {%- endcomment -%}
               {%- assign is_match = true -%}
-            {%- endif -%}
-            {%- if is_match == false and ftag != blank -%}
-              {%- assign tag_string = product.tags | join: '|' | downcase -%}
-              {%- if tag_string contains ftag -%}
-                {%- assign is_match = true -%}
+              {%- if ftype == blank and ftag == blank and pass_total == 1 -%}
+                {%- assign is_match = false -%}
               {%- endif -%}
-            {%- endif -%}
-            {%- if is_match -%}
-              {%- assign match_count = match_count | plus: 1 -%}
-              <div class="enhanced-collection__card-wrap">
-                {%- render 'grid-view-item',
-                  product: product,
-                  collection: collection,
-                  enable_badges: settings.show_badges,
-                  grid_count_desktop: sub_limit,
-                  grid_count_mobile: 2,
-                  loading: 'lazy'
-                -%}
-              </div>
-            {%- endif -%}
+              {%- if ftype != blank and product.type != ftype -%}
+                {%- assign is_match = false -%}
+              {%- endif -%}
+              {%- if is_match and ftag != blank -%}
+                {%- assign tag_string = product.tags | join: '|' | downcase -%}
+                {%- unless tag_string contains ftag -%}
+                  {%- assign is_match = false -%}
+                {%- endunless -%}
+              {%- endif -%}
+
+              {%- comment -%} Vendor passes: the brand's own products first, then Universal {%- endcomment -%}
+              {%- if is_match and pass_total == 2 -%}
+                {%- assign vendor_dc = product.vendor | downcase -%}
+                {%- if pass == 1 -%}
+                  {%- unless vendor_dc == brand_dc -%}{%- assign is_match = false -%}{%- endunless -%}
+                {%- elsif vendor_dc == brand_dc -%}
+                  {%- assign is_match = false -%}
+                {%- else -%}
+                  {%- unless vendor_dc contains 'universal' -%}{%- assign is_match = false -%}{%- endunless -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if is_match -%}
+                {%- assign match_count = match_count | plus: 1 -%}
+                <div class="enhanced-collection__card-wrap">
+                  {%- render 'grid-view-item',
+                    product: product,
+                    collection: collection,
+                    enable_badges: settings.show_badges,
+                    grid_count_desktop: sub_limit,
+                    grid_count_mobile: 2,
+                    loading: 'lazy'
+                  -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
           {%- endfor -%}
         {%- endcapture -%}
 
@@ -331,6 +381,13 @@
       "default": "taylormade"
     },
     {
+      "type": "text",
+      "id": "brand_overrides",
+      "label": "Brand name overrides",
+      "info": "handle:Name pairs, comma-separated, for collections whose title isn't a clean brand name. e.g. lab:LAB",
+      "default": "lab:LAB"
+    },
+    {
       "type": "header",
       "content": "Hero"
     },
@@ -430,7 +487,20 @@
           "type": "text",
           "id": "filter_tag",
           "label": "Match tag",
-          "info": "Also matches products with this tag (case-insensitive)"
+          "info": "Products must also have this tag (case-insensitive)"
+        },
+        {
+          "type": "text",
+          "id": "source_collection",
+          "label": "Source collection handle",
+          "info": "Pull products from this collection instead of the current one, e.g. golf-club-wrench"
+        },
+        {
+          "type": "checkbox",
+          "id": "vendor_match",
+          "label": "Brand + universal only",
+          "info": "Show this brand's own products first, then fill with 'Universal' vendor products",
+          "default": false
         },
         {
           "type": "text",

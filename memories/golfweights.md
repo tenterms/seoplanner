@@ -40,3 +40,28 @@ Work happens in a **draft theme called "new cat"** (theme id 196541677952). Two 
 - Wrench carousels often render 1 card in a 3-col row — expected.
 
 Related: [[southern-ropes]] (separate client, same playbook).
+
+## Client brand data sheet (Aug 2026 PDF) — target matrix
+
+Client's per-brand category ticks (uniform layout = 7 auto-hiding carousels: driver, fairway, hybrid, irons, putters, kits, wrenches — wrenches/kits ticked for ALL brands):
+
+| Brand | drv | fwy | hyb | irn | put | wr | kit |
+|---|---|---|---|---|---|---|---|
+| TaylorMade, Ping, PXG | Ping/PXG only have irons ✓; all three full woods+putters ✓ |
+| Callaway, Titleist, Srixon, Mizuno, Honma | woods ✓, no putters/irons |
+| Scotty Cameron, Odyssey, LAB, Toulon Design | putters only |
+| Cobra | woods + putters, no irons |
+
+Simulated against live data: **9/13 brands match exactly** with the wrench-collection fill. Wrench carousel pulls from `collections['golf-club-wrench']` (12 products: 5 Universal Wrench vendor + brand wrenches for TaylorMade/Scotty/Odyssey/Ping), brand's own vendor first then Universal fill — this is what makes "wrenches on every brand page" true.
+
+**Client tagging gaps (carousels auto-appear when fixed in admin):**
+- PXG: no woods product tagged `hybrid`
+- Srixon: no `fairway` or `hybrid` tags
+- Mizuno, Honma: no `hybrid` tags
+- LAB, Mizuno, Honma: no kit products/`weight kit` tags (client ticked kits)
+
+**LAB collection title is "Head Weights for Lab Putters"** — handled by the `brand_overrides` section setting (`lab:LAB`), which fixes the H1/headings without renaming the live collection.
+
+**Open client question from the sheet**: "Fairway/Fairway Wood/Fairway Metal?" — we defaulted to "fairway wood weights" (dominant search phrasing); tag matching uses substring `fairway` so it works regardless.
+
+Sub-carousel matching is **AND** semantics (type AND tag when both set), e.g. driver = `Weights for Woods` + tag `driver` (keeps driver-tagged shaft adapters out). New block settings: `source_collection` (alternate product pool) and `vendor_match` (brand-first + Universal fill).
