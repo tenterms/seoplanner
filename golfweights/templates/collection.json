@@ -1,0 +1,148 @@
+{
+  "wrapper": "div.collection-wrapper.wrapper",
+  "sections": {
+    "collection-header-spotlight": {
+      "type": "collection-header",
+      "settings": {
+        "show_breadcrumbs": false,
+        "show_title": false,
+        "show_description": false,
+        "show_image_desktop": true,
+        "image_desktop": "shopify://shop_images/golf_course_2_7cb793a8-3b7f-4355-b67e-8caf8b28a36b.jpg",
+        "min_height_desktop": "450",
+        "content_position": "center",
+        "caption_width_desktop": 100,
+        "show_image_mobile": true,
+        "image_mobile": "shopify://shop_images/golf_course_2_3dd62890-c812-4ff2-abcb-8784de89083d.jpg",
+        "min_height_mobile": "250",
+        "content_position_mobile": "center",
+        "enable_parallax": true,
+        "enable_fade": true,
+        "section_width": "full",
+        "section_margin_top": 0,
+        "section_margin_bottom": 0,
+        "colors": "dark",
+        "caption_bg_color": "rgba(0,0,0,0)",
+        "image_overlay_color": "#242424",
+        "image_overlay_opacity": 69
+      }
+    },
+    "enhanced-collection": {
+      "type": "enhanced-collection",
+      "blocks": {
+        "putter-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "TaylorMade putter weights",
+            "description": "<p>Fine-tune the feel and balance of your TaylorMade putter with precision aftermarket weights for Spider, TP Collection and more.</p>",
+            "cta": "View all putter weights",
+            "filter_type": "Weights for Putters",
+            "filter_tag": "putter weight",
+            "filter_param": "filter.p.product_type=Weights+for+Putters",
+            "products_shown": 4
+          }
+        },
+        "driver-weights": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "TaylorMade driver weights",
+            "description": "<p>Dial in launch, spin and shot shape with head weights covering the full TaylorMade lineup — Qi, Stealth, SIM and beyond.</p>",
+            "cta": "View all driver weights",
+            "filter_type": "Weights for Woods",
+            "filter_tag": "driver",
+            "filter_param": "filter.p.product_type=Weights+for+Woods",
+            "products_shown": 4
+          }
+        },
+        "wrenches": {
+          "type": "sub_carousel",
+          "settings": {
+            "heading": "TaylorMade golf club wrenches",
+            "description": "<p>You'll need a compatible wrench to swap the weights on your TaylorMade clubs — pick one up with your order.</p>",
+            "cta": "View all wrenches",
+            "filter_type": "Wrench",
+            "filter_tag": "wrench",
+            "filter_param": "filter.p.product_type=Wrench",
+            "products_shown": 3
+          }
+        },
+        "split-swing-weight": {
+          "type": "split_block",
+          "settings": {
+            "image_position": "left",
+            "eyebrow": "Swing weight guide",
+            "heading": "Dial in your perfect swing weight",
+            "text": "<p>Changing head weight alters swing weight, feel and ball flight. Our guide explains how much to add or remove, what the numbers mean, and how to test your setup like a club fitter.</p>",
+            "cta_label": "Read the swing weight guide",
+            "cta_url": "/pages/swing-weight-guide"
+          }
+        },
+        "split-why-us": {
+          "type": "split_block",
+          "settings": {
+            "image_position": "right",
+            "eyebrow": "Why Golfweights",
+            "heading": "Golf experts you can trust",
+            "text": "<p>UK stock, fast dispatch and weights engineered to match OEM specs. Thousands of golfers trust us to keep their TaylorMade clubs dialled in.</p>",
+            "cta_label": "Read our FAQs",
+            "cta_url": "/pages/faqs"
+          }
+        }
+      },
+      "block_order": [
+        "putter-weights",
+        "driver-weights",
+        "wrenches",
+        "split-swing-weight",
+        "split-why-us"
+      ],
+      "settings": {
+        "eyebrow": "Shop by brand",
+        "heading": "TaylorMade Golf Club Weights",
+        "featured_heading": "All TaylorMade products",
+        "featured_cta": "View all products",
+        "featured_count": 10,
+        "featured_per_row": 5
+      }
+    },
+    "product-grid": {
+      "type": "template--collection",
+      "settings": {
+        "products-per-page": 10,
+        "desktop-products-per-row": 3,
+        "mobile-products-per-row": "1",
+        "pagination_options": "pagination_load_more",
+        "desktop_position": "sidebar",
+        "enable_collection_title": false,
+        "enable_collection_description": false,
+        "enable_filtering": true,
+        "show_swatch_filter_labels": true,
+        "enable_sorting": true
+      }
+    },
+    "navigation_banner_hM7878": {
+      "type": "navigation-banner",
+      "settings": {
+        "title": "",
+        "description": "",
+        "banner_linklist": "main-menu",
+        "collection_list": [],
+        "buttons_style": "filled",
+        "override_button_colors": true,
+        "nav_background_color": "#02964f",
+        "nav_text_color": "#ffffff",
+        "section_padding_top": 20,
+        "section_padding_bottom": 20,
+        "layout_style": "grid",
+        "navigation_position": "center",
+        "colors": "white"
+      }
+    }
+  },
+  "order": [
+    "collection-header-spotlight",
+    "enhanced-collection",
+    "product-grid",
+    "navigation_banner_hM7878"
+  ]
+}
