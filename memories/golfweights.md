@@ -128,3 +128,35 @@ Joe's editor kept flagging: UndefinedObject on render-passed vars (advisory ONLY
 - theme-check-disable comments must use CANONICAL syntax `{% # theme-check-disable UndefinedObject %}` — the whitespace-trimmed form `{%- # ... -%}` is NOT recognised by the checker.
 - Two more snippets: `ec-sub-carousels.liquid` (the whole sub-carousel block loop — cross-carousel dedup state lives inside the snippet, passed `sec: section` + `shown_seed`) and `ec-faqs.liquid` (accordion + FAQPage JSON-LD). Section now 63 decisions / nesting 7. **Theme paste is now EIGHT files** (6 snippets + section + template).
 - "Fit finder absent" was NOT a bug: it renders only when `custom.models` metafield exists on the collection. Joe had not yet created metafields at this point.
+
+## Verified TaylorMade custom.models metafield value (finder chips confirmed against live tags)
+
+Model chips/rail need EXACT tag matches. Original list had non-existent tags (spider, hydroblast, taylormade sim, burner-for-BRNR-fine, r7-vs-r7 quad). Verified value:
+
+```
+Qi 35 | qi 35 | driver,fairway,hybrid
+Qi 10 | qi 10 | driver,fairway,hybrid
+Qi4D | qi4d | driver,fairway,hybrid
+Stealth 2 | stealth 2 | driver,hybrid
+Stealth | stealth | driver,fairway
+SIM2 | sim 2 | driver
+SIM Max | sim max | driver
+Spider Tour | spider tour | putter
+Spider X | spider x | putter
+Spider EX | spider ex | putter
+Spider GTX Max | spider gtx max | putter
+Spider Mini & FCG | spider fcg | putter
+TP Collection | tp collection | putter
+Hydroblast & Truss | truss | putter
+BRNR Mini | brnr | driver
+M6 | m6 | driver
+M5 | m5 | driver
+M4 | m4 | driver,fairway
+M3 | m3 | driver,fairway
+M2 | m2 | driver
+M1 | taylormade m1 | driver
+R1-R11 Series | r9 | driver,fairway
+R7 Quad | r7 quad | driver
+```
+
+Client tagging gap found in the process: "TaylorMade Sim Driver" and "Sim Max-D Driver" products have NO club tags (no driver/fairway/hybrid) → excluded from the finder/driver carousel until the client adds a `driver` tag. Original-SIM chip omitted for that reason.
