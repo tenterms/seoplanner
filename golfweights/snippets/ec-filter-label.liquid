@@ -1,4 +1,4 @@
-{%- # theme-check-disable UndefinedObject -%}
+{% # theme-check-disable UndefinedObject %}
 {%- comment -%}
   Outputs a readable label for the active storefront filters, e.g.
   "Driver & Fairway Wood Weights". Raw filter values are mapped through
@@ -20,4 +20,4 @@
     {%- unless first_label %} & {% endunless -%}{{ lbl }}{%- assign first_label = false -%}
   {%- endfor -%}
 {%- endfor -%}
-{%- # theme-check-enable UndefinedObject -%}
+{% # theme-check-enable UndefinedObject %}

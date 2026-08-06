@@ -121,3 +121,10 @@ Shopify theme-check flagged v4: LiquidNestingDepth >10, LiquidComplexity 177>120
 - Card render pass flattened to `continue`-guards (single-level ifs/unless-with-or); block loop uses `continue` guards instead of nested ifs. Max nesting 8.
 - Finder club buttons now built by JS from the product data (removed the has_driver/... liquid block); `has_kits` kept for the subnav band link.
 - All img tags carry width/height.
+
+## v4.3 — lint escalation round
+
+Joe's editor kept flagging: UndefinedObject on render-passed vars (advisory ONLY — theme-check lints snippets in isolation and cannot see render arguments; it never breaks runtime), and LiquidComplexity 156 on the section. Fixes:
+- theme-check-disable comments must use CANONICAL syntax `{% # theme-check-disable UndefinedObject %}` — the whitespace-trimmed form `{%- # ... -%}` is NOT recognised by the checker.
+- Two more snippets: `ec-sub-carousels.liquid` (the whole sub-carousel block loop — cross-carousel dedup state lives inside the snippet, passed `sec: section` + `shown_seed`) and `ec-faqs.liquid` (accordion + FAQPage JSON-LD). Section now 63 decisions / nesting 7. **Theme paste is now EIGHT files** (6 snippets + section + template).
+- "Fit finder absent" was NOT a bug: it renders only when `custom.models` metafield exists on the collection. Joe had not yet created metafields at this point.

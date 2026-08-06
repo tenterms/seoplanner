@@ -1,0 +1,36 @@
+{% # theme-check-disable UndefinedObject %}
+{%- comment -%}
+  Renders the default FAQ blocks as an accordion, plus FAQPage JSON-LD.
+  (When the collection metafield custom.faqs is set, the section renders that
+  instead and this snippet is not called.)
+  Inputs: sec (the section), brand
+{%- endcomment -%}
+<div class="ec__faqs">
+  {%- for block in sec.blocks -%}
+    {%- if block.type != 'faq' or block.settings.question == blank -%}{%- continue -%}{%- endif -%}
+    <details class="ec__faq" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
+      <summary><h3>{{ block.settings.question | replace: '[brand]', brand }}</h3><span class="ec__faq-x" aria-hidden="true">+</span></summary>
+      <div class="ec__faq-a rte">{{ block.settings.answer | replace: '[brand]', brand }}</div>
+    </details>
+  {%- endfor -%}
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- assign faq_first = true -%}
+    {%- for block in sec.blocks -%}
+      {%- if block.type != 'faq' or block.settings.question == blank -%}{%- continue -%}{%- endif -%}
+      {%- unless faq_first -%},{%- endunless -%}
+      {%- assign faq_first = false -%}
+      {
+        "@type": "Question",
+        "name": {{ block.settings.question | replace: '[brand]', brand | json }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | replace: '[brand]', brand | strip_html | json }} }
+      }
+    {%- endfor -%}
+  ]
+}
+</script>
+{% # theme-check-enable UndefinedObject %}

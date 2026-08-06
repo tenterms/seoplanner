@@ -233,97 +233,9 @@
       </section>
       {%- endif -%}
 
-      {%- comment -%} ================= SUB-CAROUSELS ================= {%- endcomment -%}
-      {%- assign band_index = 0 -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type != 'sub_carousel' -%}{%- continue -%}{%- endif -%}
-        {%- assign block_total = block_counts_arr[forloop.index0] | plus: 0 -%}
-        {%- comment -%} Auto-hide: brands with no matching products skip this carousel {%- endcomment -%}
-        {%- if block_total == 0 -%}{%- continue -%}{%- endif -%}
-        {%- assign band_index = band_index | plus: 1 -%}
+      {%- comment -%} ================= SUB-CAROUSELS (see snippet ec-sub-carousels) ================= {%- endcomment -%}
+      {%- render 'ec-sub-carousels', sec: section, collection: collection, brand: brand, brand_dc: brand_dc, brand_url: brand_url, block_counts: block_counts, shown_seed: shown_global -%}
 
-        {%- liquid
-              assign ftype = block.settings.filter_type | strip
-              assign ftag = block.settings.filter_tag | strip | downcase
-              assign sub_limit = block.settings.products_shown | default: 4
-              assign match_count = 0
-              assign local_shown = ','
-              assign pool = collection.products
-              if block.settings.source_collection != blank
-                assign source_col = collections[block.settings.source_collection]
-                if source_col.products.size > 0
-                  assign pool = source_col.products
-                endif
-              endif
-              assign vendor_passes = 1
-              if block.settings.vendor_match
-                assign vendor_passes = 2
-              endif
-            -%}
-
-            {%- capture card_markup -%}
-              {%- comment -%}
-                dpass 1 = products not yet shown on the page, dpass 2 = fill with repeats.
-                vpass 1 = the brand's own products, vpass 2 = 'Universal' vendor fill.
-              {%- endcomment -%}
-              {%- for dpass in (1..2) -%}
-                {%- for vpass in (1..vendor_passes) -%}
-                  {%- for product in pool -%}
-                    {%- if match_count >= sub_limit -%}{%- break -%}{%- endif -%}
-                    {%- assign pkey = ',' | append: product.handle | append: ',' -%}
-                    {%- if local_shown contains pkey -%}{%- continue -%}{%- endif -%}
-                    {%- if dpass == 1 and shown_global contains pkey -%}{%- continue -%}{%- endif -%}
-                    {%- if ftype != blank and product.type != ftype -%}{%- continue -%}{%- endif -%}
-                    {%- assign tag_string = product.tags | join: '|' | downcase -%}
-                    {%- unless ftag == blank or tag_string contains ftag -%}{%- continue -%}{%- endunless -%}
-                    {%- assign vendor_dc = product.vendor | downcase -%}
-                    {%- if vendor_passes == 2 and vpass == 1 and vendor_dc != brand_dc -%}{%- continue -%}{%- endif -%}
-                    {%- if vendor_passes == 2 and vpass == 2 and vendor_dc == brand_dc -%}{%- continue -%}{%- endif -%}
-                    {%- unless vendor_passes == 1 or vpass == 1 or vendor_dc contains 'universal' -%}{%- continue -%}{%- endunless -%}
-                    {%- assign match_count = match_count | plus: 1 -%}
-                    {%- assign local_shown = local_shown | append: product.handle | append: ',' -%}
-                    {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
-                    <div class="ec__card-wrap">
-                      {%- render 'grid-view-item', product: product, collection: collection, enable_badges: settings.show_badges, grid_count_desktop: 4, grid_count_mobile: 2, loading: 'lazy' -%}
-                    </div>
-                  {%- endfor -%}
-                {%- endfor -%}
-              {%- endfor -%}
-            {%- endcapture -%}
-
-            {%- assign view_all_url = blank -%}
-            {%- if block.settings.link_override != blank -%}
-              {%- assign view_all_url = block.settings.link_override | replace: '[brand]', brand_url -%}
-            {%- elsif block.settings.filter_param != blank -%}
-              {%- assign view_all_url = collection.url | append: '?' | append: block.settings.filter_param -%}
-            {%- endif -%}
-
-            {%- assign band_class = '' -%}
-            {%- assign band_check = band_index | modulo: 2 -%}
-            {%- if band_check == 0 -%}{%- assign band_class = ' ec__sec--tint' -%}{%- endif -%}
-
-            <section class="ec__sec{{ band_class }}" id="ec-{{ block.id }}" {{ block.shopify_attributes }}>
-              <span class="ec__rule" aria-hidden="true"></span>
-              <div class="ec__sec-head">
-                <h2 class="ec__h2">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
-                {%- if view_all_url != blank and block_total > sub_limit -%}
-                  <a href="{{ view_all_url }}" class="ec__view-all">{{ block.settings.cta | default: 'View all' }} ({{ block_total }}) &rarr;</a>
-                {%- endif -%}
-              </div>
-              {%- assign desc_out = blank -%}
-              {%- if block.settings.metafield_key != blank -%}
-                {%- assign mf_obj = collection.metafields.custom[block.settings.metafield_key] -%}
-                {%- capture desc_out -%}{{ mf_obj | metafield_tag }}{%- endcapture -%}
-              {%- endif -%}
-              {%- if desc_out != blank -%}
-                <div class="ec__sec-desc rte">{{ desc_out }}</div>
-              {%- elsif block.settings.description != blank -%}
-                <div class="ec__sec-desc rte">{{ block.settings.description | replace: '[brand]', brand }}</div>
-              {%- endif -%}
-              <div class="ec__carousel">{{ card_markup }}</div>
-            </section>
-
-      {%- endfor -%}
 
     </div>
 
@@ -432,36 +344,7 @@
           {%- comment -%} Per-collection FAQ content replaces the default blocks {%- endcomment -%}
           <div class="ec__faq-rte rte">{{ mf_faqs }}</div>
         {%- else -%}
-          <div class="ec__faqs">
-            {%- for block in section.blocks -%}
-              {%- if block.type == 'faq' and block.settings.question != blank -%}
-                <details class="ec__faq" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
-                  <summary><h3>{{ block.settings.question | replace: '[brand]', brand }}</h3><span class="ec__faq-x" aria-hidden="true">+</span></summary>
-                  <div class="ec__faq-a rte">{{ block.settings.answer | replace: '[brand]', brand }}</div>
-                </details>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-          <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {%- assign faq_first = true -%}
-              {%- for block in section.blocks -%}
-                {%- if block.type == 'faq' and block.settings.question != blank -%}
-                  {%- unless faq_first -%},{%- endunless -%}
-                  {%- assign faq_first = false -%}
-                  {
-                    "@type": "Question",
-                    "name": {{ block.settings.question | replace: '[brand]', brand | json }},
-                    "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | replace: '[brand]', brand | strip_html | json }} }
-                  }
-                {%- endif -%}
-              {%- endfor -%}
-            ]
-          }
-          </script>
+          {%- render 'ec-faqs', sec: section, brand: brand -%}
         {%- endif -%}
       </section>
       {%- endif -%}
