@@ -20,7 +20,16 @@ Dealbreaker criteria: matrix depth and competition weakness (cap rule in workboo
 - **Stove glass: SERVED** (5 formalised specialists). Coffee machine parts: served (mrbean2cup, Shades of Coffee). Watch straps: capped (WatchGecko). Appliance spares: eSpares owns. Fishing reel spares: demand lives on eBay, not Google.
 - golf trolley spares: electricgolftrolleyspares.com (pos 7) is a ropey outrank/acquire target; battery logistics cap it.
 
-## Next steps offered
-Pick 2–3 Tier A → full playbook validation (matching-terms expansion, cannibalisation pass, supplier scouting, v1 architecture; ~15–30k units each). White-label-consumable route needs supplier scouting, not keyword research.
+## v2 rework (same day — Joe's feedback: more blue ocean, higher ticket, supplier-unaware archetype B, deeper long-tail)
+- **Blue-ocean bar reset**: "ropey competitors on page 1" still = occupied. Grade from LIVE Google UK (SERPAPI), counting dedicated page-1 specialists. golf club weights ≈ zero specialists = the bar. Headphone pads and blind spares downgraded to capped-B on this (Joe live-checked: 3 'blind spares/parts'-named sites on p1).
+- **Key meta-finding**: empty SERPs are near-extinct — every bold trade angle live-checked was colonised: vee belts (6+ distributors: Bearing Boys, Simply Bearings, Acorn — the Calda-Morley category is already online), horse arena mirrors (SIX specialists for 150/mo), changing room benches (catalogue giants), cricket covers (5+ ground-equipment firms), MTM netting (Huck, Henry Cowls, Net World), padel canopies (8 installers). **The reliable signal is SERP MIS-SERVICE**: Google substituting the wrong product because no correct page exists.
+- **v2 winner — printed/branded sports matting** (Joe's tip, validated): 'gym mats with logo' returns entrance DOORMAT printers + generic flooring shops; no printed-sports-mat specialist exists. Adjacent funnel: commercial gym flooring 500/mo KD0 @$1.40, custom/branded yoga mats ~460/mo, boxing ring canvas 150, weightlifting platform 250. Direct terms show 0 volume (nobody searches what nobody sells). £2k–15k tickets, quote-led. Supply = UK mat importer + dye-sub/large-format printer.
+- **Tier A v2**: 1) hot tub filters (highest certainty, re-live-check before committing), 2) branded sports matting (highest ceiling), 3) caravan locker hardware (still unvalidated — first validation target).
+- **Killed in v2**: gym equipment spares ('gym cable' demand = machine purchases, not spares).
+- **Synthetic-noise warning**: matching-terms pulls contained AI fan-out families — 'cricket pitch protection covers {city}' ×10 (~850/mo fake), 'custom brass gym flooring' etc. Strip before trusting aggregates.
+- Deliverable updated in place (v2 tabs: Scorecard v2, Long-tail Evidence w/ noise flags, Live SERP Checks). ~15.5k units total.
 
-Related: [[southern-ropes]] (rope vertical adjacency: lifebuoys supplier is a rope importer).
+## Next steps offered
+1) Supplier scouting for branded matting (mat importers + printers); 2) validate caravan locker hardware; 3) re-live-check hot tub filters; 4) repeatable "mis-served SERP" scan method (list quote-led B2B products sold via generic retailers → live-check for substitution).
+
+Related: [[southern-ropes]] (rope vertical adjacency: lifebuoys supplier is a rope importer; cricket boundary rope overlap).
