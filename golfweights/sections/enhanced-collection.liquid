@@ -36,12 +36,14 @@
 {%- if active_filter_count > 0 -%}
 
   {%- comment -%} ============ FILTERED VIEW: compact hero, standard grid below ============ {%- endcomment -%}
+  {%- comment -%} Hide the theme's full-height header so filtered results sit high on the page {%- endcomment -%}
   <style>
-    .collection-header__title, .collection-header__description { display: none !important; }
+    [data-wetheme-section-type="collection-header"],
+    [id$="__collection-header-spotlight"] { display: none !important; }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.collection-header__title, .collection-header__description').forEach(function (el) { el.remove(); });
+      document.querySelectorAll('[data-wetheme-section-type="collection-header"], [id$="__collection-header-spotlight"]').forEach(function (el) { el.remove(); });
     });
   </script>
 
@@ -60,14 +62,16 @@
 
   {%- comment -%} ============ ENHANCED VIEW ============ {%- endcomment -%}
 
-  {%- comment -%} Suppress the theme's collection header and product grid on this page only {%- endcomment -%}
+  {%- comment -%} Suppress the theme's collection header and product grid (incl. filter sidebar) on this page only {%- endcomment -%}
   <style>
     [data-wetheme-section-type="collection-header"],
-    [data-wetheme-section-type="template--collection"] { display: none !important; }
+    [data-wetheme-section-type="template--collection"],
+    [id$="__collection-header-spotlight"],
+    [id$="__product-grid"] { display: none !important; }
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('[data-wetheme-section-type="collection-header"], [data-wetheme-section-type="template--collection"]').forEach(function (el) { el.remove(); });
+      document.querySelectorAll('[data-wetheme-section-type="collection-header"], [data-wetheme-section-type="template--collection"], [id$="__collection-header-spotlight"], [id$="__product-grid"]').forEach(function (el) { el.remove(); });
     });
   </script>
 
@@ -302,10 +306,12 @@
         <span class="ec__rule" aria-hidden="true"></span>
         <h2 class="ec__h2">{{ section.settings.how_heading | default: 'Dialled in, in three steps' | replace: '[brand]', brand }}</h2>
         <div class="ec__how">
+          {%- assign step_i = 0 -%}
           {%- for block in section.blocks -%}
             {%- if block.type == 'how_step' -%}
+              {%- assign step_i = step_i | plus: 1 -%}
               <div class="ec__step" {{ block.shopify_attributes }}>
-                <b>{{ forloop.index }} &middot; {{ block.settings.heading | replace: '[brand]', brand }}</b>
+                <b>{{ step_i }} &middot; {{ block.settings.heading | replace: '[brand]', brand }}</b>
                 <div class="rte">{{ block.settings.text | replace: '[brand]', brand }}</div>
               </div>
             {%- endif -%}
@@ -499,6 +505,8 @@
   .ec__hero-inner { position: relative; z-index: 2; padding: 6rem 0 9.5rem; max-width: 640px; }
   .ec__lede { max-width: 52ch; color: rgba(255,255,255,.85); font-size: 1.5rem; }
   .ec__lede p { margin: 0 0 .8em; }
+  /* collection descriptions carry inline font-size spans — normalise them */
+  .ec__lede em, .ec__lede span, .ec__lede strong { font-size: inherit !important; }
   .ec__stats { display: flex; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.25); margin-top: 2.4rem; }
   .ec__stat { padding: 1.3rem 2.6rem 0 0; margin-right: 2.6rem; }
   .ec__stat b { display: block; font-size: 1.9rem; line-height: 1.2; }

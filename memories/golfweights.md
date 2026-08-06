@@ -160,3 +160,14 @@ R7 Quad | r7 quad | driver
 ```
 
 Client tagging gap found in the process: "TaylorMade Sim Driver" and "Sim Max-D Driver" products have NO club tags (no driver/fairway/hybrid) → excluded from the finder/driver carousel until the client adds a `driver` tag. Original-SIM chip omitted for that reason.
+
+## v4.4 — root cause of the "broken code" finally found (via preview link)
+
+Preview URL (needs Joe's session or share param): golfweights.co.uk/?preview_theme_id=196541677952. Fetched the rendered DOM directly:
+- Joe's saved `sections/enhanced-collection.liquid` had EXTRA CONTENT pasted above the real code: the tail of ec-carousel-count + ec-filter-label + ec-model-rail + ec-finder-data code INLINE plus the artifact's filename headings as literal text. Symptoms decoded: stray "42"/"27" = inline carousel-count echoing collection.products_count (no block passed → no criteria → counts everything); filenames = artifact headings; duplicate #ecProductData with "models":[] at top of DOM — getElementById returns the FIRST, so the real (populated) data island at the bottom was ignored → no model chips despite a perfect metafield. Fix = select-all replace of the section file only.
+- Real bugs fixed in canon v4.4: how-step numbering used forloop.index across ALL blocks (showed 8·9·10) → manual counter; hero lede inherits collection description's inline font-size spans → CSS `em/span/strong {font-size: inherit !important}`; filtered views now hide the whole collection-header section (huge image pushed results down); grid/header hiding hardened with `[id$="__product-grid"]` / `[id$="__collection-header-spotlight"]` selectors (the filter SIDEBAR lived outside the wetheme wrapper attr).
+- Shopify missing-snippet render output prints just the path text (no "Liquid error" prefix) — recognise it.
+
+## Surfer copy brief
+
+`golfweights/surfer-copy-brief.md` — standalone brief for a Claude Code + Surfer MCP session to write all 13 brand pages' copy: per-brand metafield slots (intro/featured_intro/models_intro/category intros/faqs with word limits), global [brand]-token slots (kit band, 2 split boxes, how-steps, default FAQs), fixed heading structure, per-brand section matrix, Surfer setup (primary kw "[brand] golf club weights", GB desktop), deliverable = one md per brand + global-copy.md.
