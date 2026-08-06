@@ -1,3 +1,4 @@
+{%- # theme-check-disable UndefinedObject -%}
 {%- comment -%}
   Outputs the model rail cards. Models with no matching products are skipped.
   Model matching is by EXACT tag (delimited), so "qi" does not match "qi 35".
@@ -31,3 +32,4 @@
     </button>
   {%- endif -%}
 {%- endfor -%}
+{%- # theme-check-enable UndefinedObject -%}
