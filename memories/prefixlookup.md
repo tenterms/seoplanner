@@ -15,5 +15,12 @@
 - **No structured data at all** — BreadcrumbList / WebSite+SearchAction / FAQPage are cheap wins.
 - **SERP is winnable**: top-10 for "bcbs prefix lookup" is stale 2020-era blog lists (mypayerdirectory, rcmguide, healthquestbilling), raw .xlsx/PDF files, plus official bcbs.com/azblue/bcbstx. A structured lookup tool beats these on merit; missing ingredient is genuine authority (RCM/billing communities, resource pages).
 
+## Root cause (owner context, Aug 2026 — supersedes parts of the above)
+
+- Spam links were NOT bought (only 1 deliberate link: successknocks). Automated link-seller spam.
+- Google indexed ~22k pages at launch, then algorithmically deindexed to ~7 URLs (verified via site: — homepage + 6 /prefix/ stragglers). No manual action. Bing fine (~5.6k visits, Teams shares from billing companies).
+- **Actual root cause: every 3-letter combo (all 17,576) serves confident fabricated YMYL data** — ZZZ→"Anthem CA + phone", JJJ→Anthem OH, XQZ→Wellmark, QQQ→BCBS MN + payer ID. No source can verify all combos. Days-old domain + 22k near-identical programmatic YMYL pages + no provenance/entity = scaled-content/auto-generated classification, site-level suppression. Improving page uniqueness doesn't clear it while fabricated coverage remains live.
+- **Do NOT recommend expanding the sitemap to all prefix pages** (original report action 2 retracted; addendum in report). Correct plan: publish only verified-sourced prefixes with provenance, honest noindexed "no verified assignment" page or 404 for the rest, prune to defensible core, entity/methodology pages, convert Teams users into links, expect months + core-update cycle. Sitemap still contained 181 /prefix/ URLs on 2026-08-06 (owner thought they'd been removed).
+
 ## Follow-up plan
 Re-check 6–8 weeks after fixes: GSC index coverage of /prefix/, head-term positions, genuine refdomain growth. Ahrefs spend for this check: ~600 units.

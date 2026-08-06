@@ -119,7 +119,7 @@ No JSON-LD on the homepage, plan pages, or prefix pages. Cheap wins for a data s
 | # | Action | Effort | Impact |
 |---|---|---|---|
 | 1 | Fix robots.txt sitemap line to `https://prefixlookup.com/sitemap.xml`; submit in GSC | 5 min | High |
-| 2 | Expand sitemap to all real prefix pages (sitemap index + chunks) | Small | High |
+| 2 | ~~Expand sitemap to all real prefix pages~~ **Superseded — see Addendum.** Sitemap should contain only *verified-data* pages | Small | High |
 | 3 | Stop buying links; check GSC Manual Actions; optionally disavow the spam networks | Small | Risk removal |
 | 4 | Start earning genuine links (RCM/billing communities, resource pages, tool roundups) | Ongoing | **The** ranking lever |
 | 5 | Strip the embedded dataset from the homepage HTML (API-backed search) | Medium | Medium-High |
@@ -128,6 +128,31 @@ No JSON-LD on the homepage, plan pages, or prefix pages. Cheap wins for a data s
 | 8 | Keep URLs exactly as they are — no slug changes, no restructures | — | Protective |
 
 **Measurement:** re-check in 6–8 weeks — GSC index coverage of `/prefix/` pages, position for "bcbs alpha prefix lookup" / "bcbs prefix lookup", and referring-domain growth (genuine domains only).
+
+---
+
+## Addendum — root-cause diagnosis (added after owner context)
+
+Owner context received after the initial audit: the spam links were **not** purchased (only one deliberate link, from successknocks — the rest is automated spam); Google indexed ~22,000 pages at launch and has since **algorithmically deindexed the site to roughly the homepage** (no manual actions); the site performs well on Bing (~5.6k visits via Bing/Teams shares); launch-era programmatic pages were near-identical and have since been improved.
+
+Additional verification (2026-08-06):
+
+- `site:prefixlookup.com` (100 results requested) returns **7 URLs** — the homepage plus 6 `/prefix/` stragglers. The mass-deindexing is confirmed.
+- **Every three-letter combination returns a confident, fully-detailed assignment**: `/prefix/zzz` → "Anthem Blue Cross (California), phone (855) 871-4899"; `/prefix/jjj` → Anthem Ohio; `/prefix/xqz` → Wellmark SD/Iowa; `/prefix/qqq` → BCBS Minnesota, payer ID CBMN1. (`/prefix/xxx` is special-cased to a generic page — still HTTP 200.) No public source has verified assignments for all 17,576 combinations; the generator is assigning a plan to everything.
+- The current live sitemap still contains **181 `/prefix/` URLs** — the intended removal of programmatic pages from the sitemap has not (fully) shipped.
+
+**Diagnosis:** this is a site-level algorithmic quality suppression, not a mystery penalty. The launch pattern — a days-old, zero-authority domain publishing ~22k near-identical programmatic pages of **YMYL data** (payer phone numbers, payer IDs, claims mailing addresses that billers act on), with no cited sources, no verifiable entity behind the site, and confident answers for combinations that cannot all be verified — matches Google's scaled-content-abuse / auto-generated-content classification exactly. That classification is enforced algorithmically (no manual action appears), applies **site-wide** (which is why even the homepage barely ranks and why a new blog will inherit the suppression), and post-dating improvements to page uniqueness doesn't clear it — the fabricated-coverage footprint is still live. Bing runs no equivalent site-level suppression, and much of the Bing/Teams traffic is genuinely earned distribution — evidence the tool is useful; Google's objection is trust/provenance, not usefulness.
+
+The automated link spam (link-seller networks scraping and blasting new domains to advertise their services) is almost certainly incidental noise, not the cause — but with zero genuine links, the profile is 100% spam, so there is no counterweight.
+
+**Revised recovery plan (supersedes actions 2 and 6 above):**
+
+1. **Split the inventory into "verified" and "unverifiable" and stop publishing the latter as fact.** Keep prefix pages only where the assignment is genuinely sourced; give them per-row provenance ("source / last verified" dates). For everything else, serve an honest "no verified assignment for XYZ — here's how to identify the plan from the member ID card / BlueCard routing" page (noindexed) or a 404. This is the single change that matters; nothing else works while ~17k confident-but-unverifiable YMYL pages remain live.
+2. **Prune to a defensible core**: verified prefixes + the 65 plan pages + guides + blog. A smaller site Google can trust beats a complete-looking one it can't.
+3. **Add entity and provenance signals**: named who-runs-this, methodology/data-sources page, last-verified dates, real contact details.
+4. **Confirm the diagnosis in GSC**: the Page indexing report buckets tell the story — "Crawled – currently not indexed" at scale = quality assessment; "Duplicate, Google chose different canonical" = template collapse; "Soft 404" = the everything-resolves-200 pattern. URL-inspect a handful of improved pages and check the Google-selected canonical.
+5. **Convert the real users into links**: the billing companies sharing the tool on Teams are the genuine-link source most sites never have. Ask.
+6. **Expect months, not weeks**: site-level reassessment after cleanup typically needs sustained crawling of the cleaned state and often a core-update cycle. Keep URLs frozen throughout; Bing traffic continues meanwhile.
 
 ---
 
