@@ -1,11 +1,14 @@
 {%- comment -%}
-  Enhanced brand collection layout.
-  Rollout is controlled by the "Enabled collection handles" setting (comma-separated).
-  All headings/descriptions support a [brand] token, replaced with the collection title.
-  Sub-carousels auto-hide when the collection has no matching products, and each
-  carousel prefers products not already shown higher up the page.
-  On filtered views the full layout steps aside and a compact hero renders instead,
-  with an H1 describing the active filter (see "Filter H1 labels" setting).
+  Enhanced brand collection layout (fit-finder direction).
+  - Rollout via "Enabled collection handles" (comma-separated).
+  - [brand] token in any text is replaced with the collection title (see brand overrides).
+  - Per-brand SEO copy comes from COLLECTION METAFIELDS (namespace: custom) and falls
+    back to section/block settings: intro, models, gram_range, hero_image, faqs, and
+    any key referenced by a sub-carousel's "Metafield key" setting.
+  - Sub-carousels auto-hide when the collection has no matching products.
+  - On filtered views a compact hero renders instead and the standard grid shows.
+  - On enhanced (unfiltered) views the theme's collection header and product grid
+    sections are suppressed — the enhanced layout is the whole page.
 {%- endcomment -%}
 
 {%- assign allowed_handles = section.settings.enabled_handles | default: '' | downcase | replace: ' ', '' | split: ',' -%}
@@ -18,10 +21,6 @@
 {%- if allowed_handles contains collection.handle -%}
 
 {%- assign brand = collection.title -%}
-{%- comment -%}
-  Brand-name overrides for collections whose title isn't a clean brand name
-  (e.g. "Head Weights for Lab Putters" -> "LAB"). Format: handle:Name, handle:Name
-{%- endcomment -%}
 {%- assign override_pairs = section.settings.brand_overrides | default: '' | split: ',' -%}
 {%- for pair in override_pairs -%}
   {%- assign pair_parts = pair | split: ':' -%}
@@ -33,32 +32,19 @@
 {%- assign brand_url = brand | url_encode -%}
 {%- assign brand_dc = brand | downcase -%}
 {%- assign accent = section.settings.accent_color | default: '#02964f' -%}
-
-{%- comment -%}
-  The shared collection header keeps its title/description for non-enhanced
-  collections. Suppress and remove them here (on filtered views too) so
-  enhanced pages always have exactly one H1.
-{%- endcomment -%}
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-  .collection-header__title,
-  .collection-header__description {
-    display: none !important;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.collection-header__title, .collection-header__description').forEach(function (el) {
-      el.remove();
-    });
-  });
-</script>
+{%- assign herobg = section.settings.hero_bg | default: '#062d1c' -%}
 
 {%- if active_filter_count > 0 -%}
 
-  {%- comment -%} ============ FILTERED VIEW: compact hero with a descriptive H1 ============ {%- endcomment -%}
+  {%- comment -%} ============ FILTERED VIEW: compact hero, standard grid below ============ {%- endcomment -%}
+  <style>
+    .collection-header__title, .collection-header__description { display: none !important; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.collection-header__title, .collection-header__description').forEach(function (el) { el.remove(); });
+    });
+  </script>
 
   {%- assign label_map = section.settings.filter_labels | default: '' | split: ',' -%}
   {%- capture active_labels -%}
@@ -69,35 +55,49 @@
         {%- for m in label_map -%}
           {%- assign mp = m | split: ':' -%}
           {%- assign mkey = mp[0] | strip -%}
-          {%- if mkey == v.label and mp[1] != blank -%}
-            {%- assign lbl = mp[1] | strip -%}
-          {%- endif -%}
+          {%- if mkey == v.label and mp[1] != blank -%}{%- assign lbl = mp[1] | strip -%}{%- endif -%}
         {%- endfor -%}
         {%- unless first_label %} & {% endunless -%}{{ lbl }}{%- assign first_label = false -%}
       {%- endfor -%}
     {%- endfor -%}
   {%- endcapture -%}
 
-  <div class="enhanced-collection enhanced-collection--filtered wrapper-spacing--h" data-section-id="{{ section.id }}">
+  <div class="ec ec--filtered wrapper-spacing--h" data-section-id="{{ section.id }}">
     <div class="width--content">
-      <div class="enhanced-collection__hero enhanced-collection__hero--filtered">
-        <p class="enhanced-collection__eyebrow label-font">
-          <a class="enhanced-collection__back" href="{{ collection.url }}">&larr; All {{ brand }} products</a>
-        </p>
-        <h1 class="enhanced-collection__title">{{ brand }} {{ active_labels | strip }}</h1>
-        <p class="enhanced-collection__result-count">{{ collection.products_count }} product{% if collection.products_count != 1 %}s{% endif %}</p>
+      <div class="ec__fhero">
+        <p class="ec__eyebrow"><a class="ec__back" href="{{ collection.url }}">&larr; All {{ brand }} products</a></p>
+        <h1 class="ec__h1">{{ brand }} {{ active_labels | strip }}</h1>
+        <p class="ec__count">{{ collection.products_count }} product{% if collection.products_count != 1 %}s{% endif %}</p>
       </div>
     </div>
   </div>
 
 {%- else -%}
 
-  {%- comment -%} ============ FULL ENHANCED LAYOUT ============ {%- endcomment -%}
+  {%- comment -%} ============ ENHANCED VIEW ============ {%- endcomment -%}
 
-  {%- comment -%}
-    Pre-count matches per sub-carousel block (drives chips, auto-hide and the
-    "(n)" in view-all links). Same criteria as the render pass below.
-  {%- endcomment -%}
+  {%- comment -%} Suppress the theme's collection header and product grid on this page only {%- endcomment -%}
+  <style>
+    [data-wetheme-section-type="collection-header"],
+    [data-wetheme-section-type="template--collection"] { display: none !important; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-wetheme-section-type="collection-header"], [data-wetheme-section-type="template--collection"]').forEach(function (el) { el.remove(); });
+    });
+  </script>
+
+  {%- comment -%} ---- per-collection metafields ---- {%- endcomment -%}
+  {%- capture mf_intro -%}{{ collection.metafields.custom.intro | metafield_tag }}{%- endcapture -%}
+  {%- capture mf_faqs -%}{{ collection.metafields.custom.faqs | metafield_tag }}{%- endcapture -%}
+  {%- assign mf_gram_range = collection.metafields.custom.gram_range.value -%}
+  {%- assign hero_img = collection.metafields.custom.hero_image.value | default: section.settings.hero_image -%}
+
+  {%- comment -%} ---- models config: one per line "Label | exact tag | clubs" ---- {%- endcomment -%}
+  {%- assign models_raw = collection.metafields.custom.models.value | default: '' -%}
+  {%- assign model_lines = models_raw | strip | newline_to_br | split: '<br />' -%}
+
+  {%- comment -%} ---- pre-count sub-carousel blocks (chips, auto-hide, counts) ---- {%- endcomment -%}
   {%- assign block_counts = '' -%}
   {%- for block in section.blocks -%}
     {%- liquid
@@ -144,73 +144,201 @@
   {%- endfor -%}
   {%- assign block_counts_arr = block_counts | split: ',' -%}
 
-  <div class="enhanced-collection wrapper-spacing--h" data-section-id="{{ section.id }}">
-    <div class="width--content">
+  {%- comment -%} ---- which clubs exist here (drives finder buttons + product JSON) ---- {%- endcomment -%}
+  {%- liquid
+    assign has_driver = false
+    assign has_fairway = false
+    assign has_hybrid = false
+    assign has_iron = false
+    assign has_putter = false
+    assign has_kits = false
+    for product in collection.products
+      assign ptags = product.tags | join: '|' | downcase
+      if product.type == 'Weights for Woods'
+        if ptags contains 'driver'
+          assign has_driver = true
+        endif
+        if ptags contains 'fairway'
+          assign has_fairway = true
+        endif
+        if ptags contains 'hybrid'
+          assign has_hybrid = true
+        endif
+      endif
+      if product.type == 'Weights for Irons'
+        assign has_iron = true
+      endif
+      if product.type == 'Weights for Putters'
+        assign has_putter = true
+      endif
+      if ptags contains 'weight kit'
+        assign has_kits = true
+      endif
+    endfor
+  -%}
 
-      <div class="enhanced-collection__hero">
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="enhanced-collection__eyebrow label-font">{{ section.settings.eyebrow | replace: '[brand]', brand }}</p>
-        {%- endif -%}
-        <h1 class="enhanced-collection__title">{%- if section.settings.heading != blank -%}{{ section.settings.heading | replace: '[brand]', brand }}{%- else -%}{{ brand }} Golf Club Weights{%- endif -%}</h1>
-        {%- if section.settings.intro != blank -%}
-          <div class="enhanced-collection__intro rte">{{ section.settings.intro | replace: '[brand]', brand }}</div>
-        {%- elsif collection.description != blank -%}
-          <div class="enhanced-collection__intro rte">{{ collection.description }}</div>
-        {%- endif -%}
+  <div class="ec" data-section-id="{{ section.id }}">
 
-        {%- capture chips -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'sub_carousel' -%}
-              {%- assign chip_count = block_counts_arr[forloop.index0] | plus: 0 -%}
-              {%- if chip_count > 0 -%}
-                {%- assign chip_label = block.settings.heading | replace: '[brand]', '' | strip | capitalize -%}
-                <a class="enhanced-collection__chip" href="#ec-{{ block.id }}">{{ chip_label }}</a>
-              {%- endif -%}
+    {%- comment -%} ================= HERO ================= {%- endcomment -%}
+    <header class="ec__hero"{% if hero_img %} style="background-image: url('{{ hero_img | image_url: width: 2400 }}');"{% endif %}>
+      <div class="ec__hero-scrim" aria-hidden="true"></div>
+      <div class="ec__wrap">
+        <div class="ec__hero-inner">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="ec__eyebrow ec__eyebrow--hero">{{ section.settings.eyebrow | replace: '[brand]', brand }}</p>
+          {%- endif -%}
+          <h1 class="ec__h1 ec__h1--hero">{%- if section.settings.heading != blank -%}{{ section.settings.heading | replace: '[brand]', brand }}{%- else -%}{{ brand }} Golf Club Weights{%- endif -%}</h1>
+          <div class="ec__lede">
+            {%- if mf_intro != blank -%}
+              {{ mf_intro }}
+            {%- elsif section.settings.intro != blank -%}
+              {{ section.settings.intro | replace: '[brand]', brand }}
+            {%- elsif collection.description != blank -%}
+              {{ collection.description }}
             {%- endif -%}
-          {%- endfor -%}
-        {%- endcapture -%}
-        {%- if chips != blank -%}
-          <nav class="enhanced-collection__chips" aria-label="Browse categories">{{ chips }}</nav>
-        {%- endif -%}
+          </div>
+          <div class="ec__stats">
+            <div class="ec__stat"><b>{{ collection.products_count }}</b><span>products</span></div>
+            {%- if model_lines.size > 1 -%}
+              {%- assign first_model = model_lines.first | split: '|' -%}
+              {%- assign last_model = model_lines.last | split: '|' -%}
+              <div class="ec__stat"><b>{{ first_model[0] | strip }} &rarr; {{ last_model[0] | strip }}</b><span>models covered</span></div>
+            {%- endif -%}
+            {%- if mf_gram_range != blank -%}
+              <div class="ec__stat"><b>{{ mf_gram_range }}</b><span>weight range</span></div>
+            {%- endif -%}
+            {%- if section.settings.stat_extra_value != blank -%}
+              <div class="ec__stat"><b>{{ section.settings.stat_extra_value }}</b><span>{{ section.settings.stat_extra_label }}</span></div>
+            {%- endif -%}
+          </div>
+        </div>
       </div>
+    </header>
 
+    {%- comment -%} ================= FIT FINDER ================= {%- endcomment -%}
+    {%- if section.settings.show_finder and model_lines.size > 0 and models_raw != blank -%}
+    <div class="ec__wrap ec__finder-shell">
+      <div class="ec__finder">
+        <div class="ec__finder-head">
+          <h2 class="ec__finder-title">{{ section.settings.finder_heading | default: 'Find weights for your [brand]' | replace: '[brand]', brand }}</h2>
+          <span class="ec__finder-sub">{{ section.settings.finder_sub | default: 'Two taps — see exactly what fits.' }}</span>
+        </div>
+        <p class="ec__step-label">1 &middot; Your club</p>
+        <div class="ec__seg" id="ecClubSeg" role="group" aria-label="Club type">
+          {%- if has_driver -%}<button type="button" data-club="driver" aria-pressed="false">Driver</button>{%- endif -%}
+          {%- if has_fairway -%}<button type="button" data-club="fairway" aria-pressed="false">Fairway</button>{%- endif -%}
+          {%- if has_hybrid -%}<button type="button" data-club="hybrid" aria-pressed="false">Hybrid</button>{%- endif -%}
+          {%- if has_iron -%}<button type="button" data-club="iron" aria-pressed="false">Irons</button>{%- endif -%}
+          {%- if has_putter -%}<button type="button" data-club="putter" aria-pressed="false">Putter</button>{%- endif -%}
+        </div>
+        <p class="ec__step-label">2 &middot; Your model</p>
+        <div class="ec__models" id="ecModelChips"><span class="ec__hint">Pick a club type first&hellip;</span></div>
+        <div class="ec__finder-results" id="ecFinderResults" hidden>
+          <div class="ec__fr-head">
+            <h3 id="ecFrTitle">Weights that fit</h3>
+            <button type="button" id="ecFrClear">Clear</button>
+          </div>
+          <div class="ec__fr-row" id="ecFrRow"></div>
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+
+    {%- comment -%} ================= STICKY SUBNAV ================= {%- endcomment -%}
+    {%- capture subnav_links -%}
+      <a href="#ec-featured" class="on">All products</a>
+      {%- if models_raw != blank -%}<a href="#ec-models">Shop by model</a>{%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'sub_carousel' -%}
+          {%- assign nav_count = block_counts_arr[forloop.index0] | plus: 0 -%}
+          {%- if nav_count > 0 -%}
+            {%- assign nav_label = block.settings.heading | replace: '[brand]', '' | strip | capitalize -%}
+            <a href="#ec-{{ block.id }}">{{ nav_label }}</a>
+          {%- endif -%}
+        {%- endif -%}
+        {%- if block.type == 'feature_band' and has_kits -%}
+          <a href="#ec-band-{{ block.id }}">{{ block.settings.nav_label | default: 'Weight kits' }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign has_faq_blocks = false -%}
+      {%- for block in section.blocks -%}{%- if block.type == 'faq' -%}{%- assign has_faq_blocks = true -%}{%- endif -%}{%- endfor -%}
+      {%- if mf_faqs != blank or has_faq_blocks -%}<a href="#ec-faqs">FAQs</a>{%- endif -%}
+    {%- endcapture -%}
+    <div class="ec__subnav" id="ecSubnav"><div class="ec__subnav-inner">{{ subnav_links }}</div></div>
+
+    <div class="ec__wrap">
+
+      {%- comment -%} ================= FEATURED / ALL PRODUCTS ================= {%- endcomment -%}
       {%- assign featured_limit = section.settings.featured_count | default: 5 -%}
       {%- assign shown_global = ',' -%}
-
-      <div class="enhanced-collection__section">
-        <span class="enhanced-collection__rule" aria-hidden="true"></span>
-        <div class="enhanced-collection__section-header">
-          <h2 class="enhanced-collection__section-title">{%- if section.settings.featured_heading != blank -%}{{ section.settings.featured_heading | replace: '[brand]', brand }}{%- else -%}All {{ brand }} products{%- endif -%}</h2>
-          <a href="{{ collection.url }}" class="enhanced-collection__view-all">
-            {{ section.settings.featured_cta | default: 'View all products' }} ({{ collection.products_count }}) &rarr;
-          </a>
+      <section class="ec__sec" id="ec-featured">
+        <span class="ec__rule" aria-hidden="true"></span>
+        <div class="ec__sec-head">
+          <h2 class="ec__h2">{%- if section.settings.featured_heading != blank -%}{{ section.settings.featured_heading | replace: '[brand]', brand }}{%- else -%}All {{ brand }} products{%- endif -%}</h2>
         </div>
-        {%- if section.settings.featured_desc != blank -%}
-          <div class="enhanced-collection__section-desc rte">{{ section.settings.featured_desc | replace: '[brand]', brand }}</div>
+        {%- capture mf_featured -%}{{ collection.metafields.custom.featured_intro | metafield_tag }}{%- endcapture -%}
+        {%- if mf_featured != blank -%}
+          <div class="ec__sec-desc rte">{{ mf_featured }}</div>
+        {%- elsif section.settings.featured_desc != blank -%}
+          <div class="ec__sec-desc rte">{{ section.settings.featured_desc | replace: '[brand]', brand }}</div>
         {%- endif -%}
-        <div class="enhanced-collection__carousel">
+        <div class="ec__carousel">
           {%- for product in collection.products limit: featured_limit -%}
             {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
-            <div class="enhanced-collection__card-wrap">
-              {%- render 'grid-view-item',
-                product: product,
-                collection: collection,
-                enable_badges: settings.show_badges,
-                grid_count_desktop: 4,
-                grid_count_mobile: 2,
-                loading: 'lazy'
-              -%}
+            <div class="ec__card-wrap">
+              {%- render 'grid-view-item', product: product, collection: collection, enable_badges: settings.show_badges, grid_count_desktop: 4, grid_count_mobile: 2, loading: 'lazy' -%}
             </div>
           {%- endfor -%}
         </div>
-      </div>
+      </section>
 
+      {%- comment -%} ================= MODEL RAIL ================= {%- endcomment -%}
+      {%- if models_raw != blank -%}
+      <section class="ec__sec" id="ec-models">
+        <span class="ec__rule" aria-hidden="true"></span>
+        <div class="ec__sec-head">
+          <h2 class="ec__h2">{{ section.settings.models_heading | default: 'Shop by model' | replace: '[brand]', brand }}</h2>
+        </div>
+        {%- capture mf_models_intro -%}{{ collection.metafields.custom.models_intro | metafield_tag }}{%- endcapture -%}
+        {%- if mf_models_intro != blank -%}
+          <div class="ec__sec-desc rte">{{ mf_models_intro }}</div>
+        {%- elsif section.settings.models_desc != blank -%}
+          <div class="ec__sec-desc rte">{{ section.settings.models_desc | replace: '[brand]', brand }}</div>
+        {%- endif -%}
+        <div class="ec__carousel ec__carousel--models">
+          {%- for line in model_lines -%}
+            {%- assign mparts = line | split: '|' -%}
+            {%- assign mlabel = mparts[0] | strip -%}
+            {%- assign mtag = mparts[1] | strip | downcase -%}
+            {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
+            {%- assign mtag_key = '|' | append: mtag | append: '|' -%}
+            {%- assign mcount = 0 -%}
+            {%- assign mimg = blank -%}
+            {%- for product in collection.products -%}
+              {%- assign ptj = product.tags | join: '|' | downcase -%}
+              {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
+              {%- if ptagstr contains mtag_key -%}
+                {%- assign mcount = mcount | plus: 1 -%}
+                {%- if mimg == blank -%}{%- assign mimg = product.featured_image -%}{%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if mcount > 0 -%}
+              <button type="button" class="ec__model-card" data-model-tag="{{ mtag | escape }}" data-model-label="{{ mlabel | escape }}">
+                {%- if mimg != blank -%}<img src="{{ mimg | image_url: width: 300 }}" alt="{{ mlabel | escape }}" loading="lazy" width="150" height="92">{%- endif -%}
+                <b>{{ mlabel }}</b>
+                <span>{{ mcount }} product{% if mcount != 1 %}s{% endif %}</span>
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </section>
+      {%- endif -%}
+
+      {%- comment -%} ================= SUB-CAROUSELS ================= {%- endcomment -%}
       {%- assign band_index = 0 -%}
       {%- for block in section.blocks -%}
         {%- if block.type == 'sub_carousel' -%}
           {%- assign block_total = block_counts_arr[forloop.index0] | plus: 0 -%}
-
-          {%- comment -%} Auto-hide: brands with no matching products skip this carousel {%- endcomment -%}
           {%- if block_total > 0 -%}
             {%- assign band_index = band_index | plus: 1 -%}
 
@@ -220,7 +348,6 @@
               assign sub_limit = block.settings.products_shown | default: 4
               assign match_count = 0
               assign local_shown = ','
-
               assign pool = collection.products
               if block.settings.source_collection != blank
                 assign source_col = collections[block.settings.source_collection]
@@ -228,7 +355,6 @@
                   assign pool = source_col.products
                 endif
               endif
-
               assign vendor_passes = 1
               if block.settings.vendor_match
                 assign vendor_passes = 2
@@ -236,10 +362,6 @@
             -%}
 
             {%- capture card_markup -%}
-              {%- comment -%}
-                dpass 1 = products not yet shown on the page, dpass 2 = fill with repeats.
-                vpass 1 = the brand's own products, vpass 2 = 'Universal' vendor fill.
-              {%- endcomment -%}
               {%- for dpass in (1..2) -%}
                 {%- for vpass in (1..vendor_passes) -%}
                   {%- for product in pool -%}
@@ -247,20 +369,12 @@
                     {%- assign pkey = ',' | append: product.handle | append: ',' -%}
                     {%- if local_shown contains pkey -%}{%- continue -%}{%- endif -%}
                     {%- if dpass == 1 and shown_global contains pkey -%}{%- continue -%}{%- endif -%}
-
-                    {%- comment -%} Every criterion that is set must hold {%- endcomment -%}
                     {%- assign is_match = true -%}
-                    {%- if ftype == blank and ftag == blank and vendor_passes == 1 -%}
-                      {%- assign is_match = false -%}
-                    {%- endif -%}
-                    {%- if ftype != blank and product.type != ftype -%}
-                      {%- assign is_match = false -%}
-                    {%- endif -%}
+                    {%- if ftype == blank and ftag == blank and vendor_passes == 1 -%}{%- assign is_match = false -%}{%- endif -%}
+                    {%- if ftype != blank and product.type != ftype -%}{%- assign is_match = false -%}{%- endif -%}
                     {%- if is_match and ftag != blank -%}
                       {%- assign tag_string = product.tags | join: '|' | downcase -%}
-                      {%- unless tag_string contains ftag -%}
-                        {%- assign is_match = false -%}
-                      {%- endunless -%}
+                      {%- unless tag_string contains ftag -%}{%- assign is_match = false -%}{%- endunless -%}
                     {%- endif -%}
                     {%- if is_match and vendor_passes == 2 -%}
                       {%- assign vendor_dc = product.vendor | downcase -%}
@@ -272,20 +386,12 @@
                         {%- unless vendor_dc contains 'universal' -%}{%- assign is_match = false -%}{%- endunless -%}
                       {%- endif -%}
                     {%- endif -%}
-
                     {%- if is_match -%}
                       {%- assign match_count = match_count | plus: 1 -%}
                       {%- assign local_shown = local_shown | append: product.handle | append: ',' -%}
                       {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
-                      <div class="enhanced-collection__card-wrap">
-                        {%- render 'grid-view-item',
-                          product: product,
-                          collection: collection,
-                          enable_badges: settings.show_badges,
-                          grid_count_desktop: 4,
-                          grid_count_mobile: 2,
-                          loading: 'lazy'
-                        -%}
+                      <div class="ec__card-wrap">
+                        {%- render 'grid-view-item', product: product, collection: collection, enable_badges: settings.show_badges, grid_count_desktop: 4, grid_count_mobile: 2, loading: 'lazy' -%}
                       </div>
                     {%- endif -%}
                   {%- endfor -%}
@@ -302,300 +408,509 @@
 
             {%- assign band_class = '' -%}
             {%- assign band_check = band_index | modulo: 2 -%}
-            {%- if band_check == 0 -%}
-              {%- assign band_class = ' enhanced-collection__section--tint' -%}
-            {%- endif -%}
+            {%- if band_check == 0 -%}{%- assign band_class = ' ec__sec--tint' -%}{%- endif -%}
 
-            <div class="enhanced-collection__section{{ band_class }}" id="ec-{{ block.id }}" {{ block.shopify_attributes }}>
-              <span class="enhanced-collection__rule" aria-hidden="true"></span>
-              <div class="enhanced-collection__section-header">
-                <h2 class="enhanced-collection__section-title">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
+            <section class="ec__sec{{ band_class }}" id="ec-{{ block.id }}" {{ block.shopify_attributes }}>
+              <span class="ec__rule" aria-hidden="true"></span>
+              <div class="ec__sec-head">
+                <h2 class="ec__h2">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
                 {%- if view_all_url != blank and block_total > sub_limit -%}
-                  <a href="{{ view_all_url }}" class="enhanced-collection__view-all">
-                    {{ block.settings.cta | default: 'View all' }} ({{ block_total }}) &rarr;
-                  </a>
+                  <a href="{{ view_all_url }}" class="ec__view-all">{{ block.settings.cta | default: 'View all' }} ({{ block_total }}) &rarr;</a>
                 {%- endif -%}
               </div>
-              {%- if block.settings.description != blank -%}
-                <div class="enhanced-collection__section-desc rte">{{ block.settings.description | replace: '[brand]', brand }}</div>
+              {%- assign desc_out = blank -%}
+              {%- if block.settings.metafield_key != blank -%}
+                {%- assign mf_obj = collection.metafields.custom[block.settings.metafield_key] -%}
+                {%- capture desc_out -%}{{ mf_obj | metafield_tag }}{%- endcapture -%}
               {%- endif -%}
-              <div class="enhanced-collection__carousel">
-                {{ card_markup }}
-              </div>
-            </div>
+              {%- if desc_out != blank -%}
+                <div class="ec__sec-desc rte">{{ desc_out }}</div>
+              {%- elsif block.settings.description != blank -%}
+                <div class="ec__sec-desc rte">{{ block.settings.description | replace: '[brand]', brand }}</div>
+              {%- endif -%}
+              <div class="ec__carousel">{{ card_markup }}</div>
+            </section>
 
           {%- endif -%}
-
         {%- endif -%}
       {%- endfor -%}
 
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'split_block' -%}
-          {%- assign split_classes = 'enhanced-collection__split enhanced-collection__split--' | append: block.settings.image_position -%}
-          {%- if block.settings.image == blank -%}
-            {%- assign split_classes = split_classes | append: ' enhanced-collection__split--noimg' -%}
+    </div>
+
+    {%- comment -%} ================= FEATURE BAND (kits) ================= {%- endcomment -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'feature_band' -%}
+        {%- assign band_show = true -%}
+        {%- if block.settings.require_tag != blank -%}
+          {%- assign band_show = false -%}
+          {%- assign req = block.settings.require_tag | downcase -%}
+          {%- for product in collection.products -%}
+            {%- assign ptags = product.tags | join: '|' | downcase -%}
+            {%- if ptags contains req -%}{%- assign band_show = true -%}{%- break -%}{%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if band_show -%}
+          {%- assign band_img = block.settings.image -%}
+          {%- if band_img == blank and block.settings.require_tag != blank -%}
+            {%- for product in collection.products -%}
+              {%- assign ptags = product.tags | join: '|' | downcase -%}
+              {%- if ptags contains req -%}{%- assign band_img = product.featured_image -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
           {%- endif -%}
-          <div class="{{ split_classes }}" {{ block.shopify_attributes }}>
-            {%- if block.settings.image != blank -%}
-              <div class="enhanced-collection__split-img">
-                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+          <section class="ec__band" id="ec-band-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div class="ec__wrap ec__band-inner">
+              <div class="ec__band-copy">
+                {%- if block.settings.eyebrow != blank -%}<p class="ec__eyebrow ec__eyebrow--hero">{{ block.settings.eyebrow | replace: '[brand]', brand }}</p>{%- endif -%}
+                <h2 class="ec__h2 ec__h2--band">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
+                {%- if block.settings.text != blank -%}<div class="ec__band-text rte">{{ block.settings.text | replace: '[brand]', brand }}</div>{%- endif -%}
+                {%- if block.settings.chips != blank -%}
+                  <div class="ec__grams">
+                    {%- assign chip_list = block.settings.chips | split: ',' -%}
+                    {%- for c in chip_list -%}<span>{{ c | strip }}</span>{%- endfor -%}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.cta_label != blank and block.settings.cta_url != blank -%}
+                  <a class="ec__btn" href="{{ block.settings.cta_url | replace: '[brand]', brand_url }}">{{ block.settings.cta_label }}</a>
+                {%- endif -%}
+              </div>
+              {%- if band_img != blank -%}
+                <div class="ec__band-visual"><img src="{{ band_img | image_url: width: 800 }}" alt="" loading="lazy"></div>
+              {%- endif -%}
+            </div>
+          </section>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="ec__wrap">
+
+      {%- comment -%} ================= HOW IT WORKS ================= {%- endcomment -%}
+      {%- assign has_steps = false -%}
+      {%- for block in section.blocks -%}{%- if block.type == 'how_step' -%}{%- assign has_steps = true -%}{%- endif -%}{%- endfor -%}
+      {%- if has_steps -%}
+      <section class="ec__sec" id="ec-how">
+        <span class="ec__rule" aria-hidden="true"></span>
+        <h2 class="ec__h2">{{ section.settings.how_heading | default: 'Dialled in, in three steps' | replace: '[brand]', brand }}</h2>
+        <div class="ec__how">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'how_step' -%}
+              <div class="ec__step" {{ block.shopify_attributes }}>
+                <b>{{ forloop.index }} &middot; {{ block.settings.heading | replace: '[brand]', brand }}</b>
+                <div class="rte">{{ block.settings.text | replace: '[brand]', brand }}</div>
               </div>
             {%- endif -%}
-            <div class="enhanced-collection__split-text">
-              {%- if block.settings.eyebrow != blank -%}
-                <p class="enhanced-collection__eyebrow label-font">{{ block.settings.eyebrow | replace: '[brand]', brand }}</p>
-              {%- endif -%}
-              <h2 class="enhanced-collection__split-heading">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
-              {%- if block.settings.text != blank -%}
-                <div class="enhanced-collection__split-body rte">{{ block.settings.text | replace: '[brand]', brand }}</div>
-              {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </section>
+      {%- endif -%}
+
+      {%- comment -%} ================= SPLIT BLOCKS ================= {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'split_block' -%}
+          {%- assign split_classes = 'ec__split ec__split--' | append: block.settings.image_position -%}
+          {%- if block.settings.image == blank -%}{%- assign split_classes = split_classes | append: ' ec__split--noimg' -%}{%- endif -%}
+          <div class="{{ split_classes }}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="ec__split-img">{{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}</div>
+            {%- endif -%}
+            <div class="ec__split-text">
+              {%- if block.settings.eyebrow != blank -%}<p class="ec__eyebrow">{{ block.settings.eyebrow | replace: '[brand]', brand }}</p>{%- endif -%}
+              <h2 class="ec__h2 ec__h2--split">{{ block.settings.heading | replace: '[brand]', brand }}</h2>
+              {%- if block.settings.text != blank -%}<div class="ec__split-body rte">{{ block.settings.text | replace: '[brand]', brand }}</div>{%- endif -%}
               {%- if block.settings.cta_label != blank and block.settings.cta_url != blank -%}
-                <a href="{{ block.settings.cta_url }}" class="btn enhanced-collection__split-cta">
-                  {{ block.settings.cta_label }}
-                </a>
+                <a href="{{ block.settings.cta_url }}" class="ec__btn ec__btn--ghost">{{ block.settings.cta_label }}</a>
               {%- endif -%}
             </div>
           </div>
         {%- endif -%}
       {%- endfor -%}
 
+      {%- comment -%} ================= FAQS ================= {%- endcomment -%}
+      {%- assign has_faq_blocks = false -%}
+      {%- for block in section.blocks -%}{%- if block.type == 'faq' -%}{%- assign has_faq_blocks = true -%}{%- endif -%}{%- endfor -%}
+      {%- if mf_faqs != blank or has_faq_blocks -%}
+      <section class="ec__sec" id="ec-faqs">
+        <span class="ec__rule" aria-hidden="true"></span>
+        <h2 class="ec__h2">{{ section.settings.faq_heading | default: '[brand] golf club weights — FAQs' | replace: '[brand]', brand }}</h2>
+        {%- if mf_faqs != blank -%}
+          {%- comment -%} Per-collection FAQ content replaces the default blocks {%- endcomment -%}
+          <div class="ec__faq-rte rte">{{ mf_faqs }}</div>
+        {%- else -%}
+          <div class="ec__faqs">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'faq' and block.settings.question != blank -%}
+                <details class="ec__faq" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
+                  <summary><h3>{{ block.settings.question | replace: '[brand]', brand }}</h3><span class="ec__faq-x" aria-hidden="true">+</span></summary>
+                  <div class="ec__faq-a rte">{{ block.settings.answer | replace: '[brand]', brand }}</div>
+                </details>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {%- assign faq_first = true -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'faq' and block.settings.question != blank -%}
+                  {%- unless faq_first -%},{%- endunless -%}
+                  {%- assign faq_first = false -%}
+                  {
+                    "@type": "Question",
+                    "name": {{ block.settings.question | replace: '[brand]', brand | json }},
+                    "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | replace: '[brand]', brand | strip_html | json }} }
+                  }
+                {%- endif -%}
+              {%- endfor -%}
+            ]
+          }
+          </script>
+        {%- endif -%}
+      </section>
+      {%- endif -%}
+
     </div>
   </div>
+
+  {%- comment -%} ---- product data for the fit finder ---- {%- endcomment -%}
+  {%- if section.settings.show_finder and models_raw != blank -%}
+  <script type="application/json" id="ecProductData">
+  {
+    "models": [
+      {%- assign mj_first = true -%}
+      {%- for line in model_lines -%}
+        {%- assign mparts = line | split: '|' -%}
+        {%- assign mlabel = mparts[0] | strip -%}
+        {%- assign mtag = mparts[1] | strip | downcase -%}
+        {%- assign mclubs = mparts[2] | strip | downcase | replace: ' ', '' -%}
+        {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
+        {%- unless mj_first -%},{%- endunless -%}{%- assign mj_first = false -%}
+        { "label": {{ mlabel | json }}, "tag": {{ mtag | json }}, "clubs": {{ mclubs | json }} }
+      {%- endfor -%}
+    ],
+    "products": [
+      {%- assign pj_first = true -%}
+      {%- for product in collection.products -%}
+        {%- assign clubs = '' -%}
+        {%- assign ptags = product.tags | join: '|' | downcase -%}
+        {%- if product.type == 'Weights for Woods' -%}
+          {%- if ptags contains 'driver' -%}{%- assign clubs = clubs | append: 'driver,' -%}{%- endif -%}
+          {%- if ptags contains 'fairway' -%}{%- assign clubs = clubs | append: 'fairway,' -%}{%- endif -%}
+          {%- if ptags contains 'hybrid' -%}{%- assign clubs = clubs | append: 'hybrid,' -%}{%- endif -%}
+        {%- elsif product.type == 'Weights for Irons' -%}
+          {%- assign clubs = 'iron,' -%}
+        {%- elsif product.type == 'Weights for Putters' -%}
+          {%- assign clubs = 'putter,' -%}
+        {%- endif -%}
+        {%- if clubs == '' -%}{%- continue -%}{%- endif -%}
+        {%- unless pj_first -%},{%- endunless -%}{%- assign pj_first = false -%}
+        {%- assign ptj = product.tags | join: '|' | downcase -%}
+        {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
+        {
+          "title": {{ product.title | json }},
+          "url": {{ product.url | json }},
+          "price": {{ product.price_min | money | strip_html | json }},
+          "img": {{ product.featured_image | image_url: width: 300 | json }},
+          "tags": {{ ptagstr | json }},
+          "clubs": {{ clubs | json }}
+        }
+      {%- endfor -%}
+    ]
+  }
+  </script>
+  {%- endif -%}
+
+  <script>
+    (function () {
+      /* ---------- fit finder ---------- */
+      var dataEl = document.getElementById('ecProductData');
+      if (dataEl) {
+        var DATA = JSON.parse(dataEl.textContent);
+        var club = null, modelTag = null, modelLabel = null;
+        var seg = document.getElementById('ecClubSeg');
+        var chips = document.getElementById('ecModelChips');
+        var results = document.getElementById('ecFinderResults');
+        var frRow = document.getElementById('ecFrRow');
+        var frTitle = document.getElementById('ecFrTitle');
+        var clearBtn = document.getElementById('ecFrClear');
+
+        function productMatches(p) {
+          if (p.clubs.indexOf(club + ',') === -1) return false;
+          if (modelTag && p.tags.indexOf('|' + modelTag + '|') === -1) return false;
+          return true;
+        }
+        function render() {
+          if (!club) { results.hidden = true; return; }
+          var hits = DATA.products.filter(productMatches);
+          frTitle.textContent = hits.length + (hits.length === 1 ? ' weight fits' : ' weights fit') + ' your ' + (modelLabel ? modelLabel + ' ' : '') + club;
+          frRow.innerHTML = hits.map(function (p) {
+            return '<a class="ec__jcard" href="' + p.url + '">' +
+              (p.img ? '<span class="ec__jcard-ph"><img src="' + p.img + '" alt="" loading="lazy"></span>' : '') +
+              '<span class="ec__jcard-t">' + p.title + '</span>' +
+              '<span class="ec__jcard-p">from ' + p.price + '</span></a>';
+          }).join('');
+          results.hidden = false;
+        }
+        function selectClub(c, btn) {
+          club = c; modelTag = null; modelLabel = null;
+          seg.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === btn ? 'true' : 'false'); });
+          chips.innerHTML = '';
+          DATA.models.forEach(function (m) {
+            if (m.clubs.split(',').indexOf(club) === -1) return;
+            var hasProducts = DATA.products.some(function (p) {
+              return p.clubs.indexOf(club + ',') > -1 && p.tags.indexOf('|' + m.tag + '|') > -1;
+            });
+            if (!hasProducts) return;
+            var b = document.createElement('button');
+            b.type = 'button'; b.textContent = m.label; b.setAttribute('aria-pressed', 'false');
+            b.addEventListener('click', function () {
+              modelTag = m.tag; modelLabel = m.label;
+              chips.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+              render();
+            });
+            chips.appendChild(b);
+          });
+          render();
+        }
+        if (seg) {
+          seg.addEventListener('click', function (e) {
+            var b = e.target.closest('button'); if (!b) return;
+            selectClub(b.dataset.club, b);
+          });
+        }
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            club = null; modelTag = null; modelLabel = null;
+            seg.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+            chips.innerHTML = '<span class="ec__hint">Pick a club type first…</span>';
+            results.hidden = true;
+          });
+        }
+        /* model rail cards drive the finder too */
+        document.querySelectorAll('.ec__model-card').forEach(function (card) {
+          card.addEventListener('click', function () {
+            var tag = card.dataset.modelTag, label = card.dataset.modelLabel;
+            var m = null;
+            for (var i = 0; i < DATA.models.length; i++) { if (DATA.models[i].tag === tag) { m = DATA.models[i]; break; } }
+            var firstClub = m ? m.clubs.split(',')[0] : 'driver';
+            var btn = seg ? seg.querySelector('[data-club="' + firstClub + '"]') : null;
+            if (btn) {
+              selectClub(firstClub, btn);
+              modelTag = tag; modelLabel = label;
+              chips.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x.textContent === label ? 'true' : 'false'); });
+              render();
+              var finder = document.querySelector('.ec__finder');
+              if (finder) finder.scrollIntoView({ block: 'start' });
+            }
+          });
+        });
+      }
+
+      /* ---------- scrollspy ---------- */
+      var nav = document.getElementById('ecSubnav');
+      if (nav && 'IntersectionObserver' in window) {
+        var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('href') === '#' + en.target.id); });
+            }
+          });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        links.forEach(function (l) {
+          var el = document.querySelector(l.getAttribute('href'));
+          if (el) obs.observe(el);
+        });
+      }
+    })();
+  </script>
 
 {%- endif -%}
 
 <style>
-  .enhanced-collection {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-  }
-  .enhanced-collection--filtered {
-    padding-bottom: 0;
-  }
-  .enhanced-collection__hero {
-    margin-bottom: 4rem;
-  }
-  .enhanced-collection__hero--filtered {
-    margin-bottom: 1rem;
-  }
-  .enhanced-collection__eyebrow {
-    margin-bottom: 0.6rem;
-    opacity: 0.7;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .enhanced-collection__back {
-    text-decoration: none;
-  }
-  .enhanced-collection__back:hover {
-    text-decoration: underline;
-  }
-  .enhanced-collection__title {
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
-    margin-bottom: 1.2rem;
-  }
-  .enhanced-collection__intro {
-    max-width: 68ch;
-    opacity: 0.8;
-  }
-  .enhanced-collection__result-count {
-    opacity: 0.65;
-    font-size: 1.3rem;
-  }
+  .ec__wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .ec__eyebrow { margin: 0 0 12px; opacity: .7; font-size: 1.2rem; letter-spacing: .18em; text-transform: uppercase; }
+  .ec__eyebrow--hero { color: #8fdcb4; opacity: 1; }
+  .ec__h1 { font-size: clamp(2.6rem, 4.2vw, 4.4rem); line-height: 1.08; margin: 0 0 1.4rem; }
+  .ec__h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin: 0 0 .6rem; }
+  .ec__back { text-decoration: none; }
+  .ec__back:hover { text-decoration: underline; }
+  .ec__fhero { padding: 3rem 0 1rem; }
+  .ec__count { opacity: .65; font-size: 1.3rem; }
 
-  /* Chip anchor nav */
-  .enhanced-collection__chips {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 2rem;
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 0.4rem;
+  /* hero */
+  .ec__hero {
+    position: relative; color: #fff; background-color: {{ herobg }};
+    background-size: cover; background-position: center right; overflow: hidden;
   }
-  .enhanced-collection__chips::-webkit-scrollbar {
-    display: none;
+  .ec__hero-scrim {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(90rem 40rem at 88% 15%, {{ accent | color_modify: 'alpha', 0.25 }}, transparent 55%),
+      linear-gradient(90deg, {{ herobg | color_modify: 'alpha', 0.96 }} 0%, {{ herobg | color_modify: 'alpha', 0.75 }} 45%, {{ herobg | color_modify: 'alpha', 0.15 }} 80%, transparent 100%);
   }
-  .enhanced-collection__chip {
-    display: inline-block;
-    flex-shrink: 0;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    border-radius: 999px;
-    font-size: 1.3rem;
-    line-height: 1;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .enhanced-collection__chip:hover {
-    border-color: {{ accent }};
-    color: {{ accent }};
-    text-decoration: none;
-  }
+  .ec__hero-inner { position: relative; z-index: 2; padding: 6rem 0 9.5rem; max-width: 640px; }
+  .ec__lede { max-width: 52ch; color: rgba(255,255,255,.85); font-size: 1.5rem; }
+  .ec__lede p { margin: 0 0 .8em; }
+  .ec__stats { display: flex; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.25); margin-top: 2.4rem; }
+  .ec__stat { padding: 1.3rem 2.6rem 0 0; margin-right: 2.6rem; }
+  .ec__stat b { display: block; font-size: 1.9rem; line-height: 1.2; }
+  .ec__stat span { font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); }
 
-  /* Sections */
-  .enhanced-collection__section {
-    margin-bottom: 4.5rem;
-    scroll-margin-top: 120px;
+  /* finder */
+  .ec__finder-shell { position: relative; z-index: 3; margin-top: -6rem; }
+  .ec__finder {
+    background: #fff; border: 1px solid rgba(0,0,0,.12); border-radius: 14px;
+    box-shadow: 0 24px 48px -24px rgba(0,0,0,.35); padding: 2.6rem 2.8rem 2.4rem;
   }
-  .enhanced-collection__section--tint {
-    background: #f6f7f6;
-    background: color-mix(in srgb, {{ accent }} 4%, #f7f8f7);
-    border-radius: 12px;
-    padding: 2.8rem 2.8rem 2rem;
+  .ec__finder-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.8rem; }
+  .ec__finder-title { font-size: 1.7rem; margin: 0; }
+  .ec__finder-sub { font-size: 1.3rem; opacity: .7; }
+  .ec__step-label { font-size: 1rem; letter-spacing: .16em; text-transform: uppercase; opacity: .6; margin: 0 0 1rem; }
+  .ec__seg { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+  .ec__seg button {
+    font-size: 1.3rem; font-weight: 600; padding: 1.2rem 1.8rem; border-radius: 10px;
+    border: 1.5px solid rgba(0,0,0,.15); background: #fff; cursor: pointer; color: inherit;
+    transition: border-color .15s, background .15s;
   }
-  .enhanced-collection__rule {
-    display: block;
-    width: 4.8rem;
-    height: 3px;
-    background: {{ accent }};
-    border-radius: 2px;
-    margin-bottom: 1.4rem;
+  .ec__seg button:hover { border-color: {{ accent }}; }
+  .ec__seg button[aria-pressed="true"] { border-color: {{ accent }}; background: {{ accent | color_modify: 'alpha', 0.1 }}; }
+  .ec__models { display: flex; flex-wrap: wrap; gap: .8rem; min-height: 3.4rem; }
+  .ec__models button {
+    font-size: 1.2rem; padding: .9rem 1.4rem; border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.15); background: #fff; cursor: pointer; color: inherit;
+    transition: border-color .15s, background .15s, color .15s;
   }
-  .enhanced-collection__section-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 0.4rem;
+  .ec__models button:hover { border-color: {{ accent }}; }
+  .ec__models button[aria-pressed="true"] { background: {{ accent }}; border-color: {{ accent }}; color: #fff; }
+  .ec__hint { font-size: 1.2rem; line-height: 3rem; opacity: .6; }
+  .ec__fr-head { display: flex; align-items: center; justify-content: space-between; margin: 1.8rem 0 1.2rem; }
+  .ec__fr-head h3 { font-size: 1.4rem; margin: 0; }
+  .ec__fr-head button { font-size: 1.1rem; background: none; border: none; cursor: pointer; text-decoration: underline; opacity: .7; color: inherit; }
+  .ec__fr-row { display: flex; gap: 1.2rem; overflow-x: auto; padding-bottom: .6rem; }
+  .ec__jcard {
+    flex: 0 0 18rem; text-decoration: none; border: 1px solid rgba(0,0,0,.12); border-radius: 12px;
+    padding: 1.2rem; display: flex; flex-direction: column; gap: .6rem; background: #fff;
+    transition: border-color .15s;
   }
-  .enhanced-collection__section-title {
-    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-    margin: 0;
-  }
-  .enhanced-collection__view-all {
-    font-size: 1.2rem;
-    opacity: 0.65;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: opacity 0.15s ease;
-  }
-  .enhanced-collection__view-all:hover {
-    opacity: 1;
-    text-decoration: underline;
-  }
-  .enhanced-collection__section-desc {
-    margin-bottom: 1.8rem;
-    opacity: 0.75;
-    max-width: 72ch;
-    font-size: 1.4rem;
-    line-height: 1.6;
-  }
+  .ec__jcard:hover { border-color: {{ accent }}; }
+  .ec__jcard-ph img { height: 10rem; width: 100%; object-fit: contain; }
+  .ec__jcard-t { font-size: 1.2rem; line-height: 1.4; }
+  .ec__jcard-p { font-weight: 700; font-size: 1.3rem; }
 
-  /* Horizontal scroll-snap carousels — fluid at every viewport */
-  .enhanced-collection__carousel {
-    display: flex;
-    gap: 1.2rem;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.8rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+  /* subnav */
+  .ec__subnav {
+    position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.93);
+    backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,.1); margin-top: 3rem;
   }
-  .enhanced-collection__carousel::-webkit-scrollbar {
-    height: 6px;
+  .ec__subnav-inner { display: flex; gap: .4rem; overflow-x: auto; scrollbar-width: none; padding: 0 24px; max-width: 1200px; margin: 0 auto; }
+  .ec__subnav-inner::-webkit-scrollbar { display: none; }
+  .ec__subnav a {
+    font-size: 1.1rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+    padding: 1.5rem 1.2rem 1.3rem; border-bottom: 2px solid transparent; white-space: nowrap; opacity: .75;
   }
-  .enhanced-collection__carousel::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .enhanced-collection__carousel::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.18);
-    border-radius: 3px;
-  }
-  .enhanced-collection__card-wrap {
-    flex: 0 0 clamp(16rem, 21vw, 24rem);
-    scroll-snap-align: start;
-    width: auto !important;
-    padding: 0 !important;
-    float: none !important;
-  }
-  .enhanced-collection__card-wrap > * {
-    width: 100% !important;
-  }
+  .ec__subnav a.on { color: {{ accent }}; border-bottom-color: {{ accent }}; opacity: 1; }
 
-  /* Split blocks */
-  .enhanced-collection__split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  /* sections */
+  .ec__sec { padding: 4.6rem 0 .6rem; scroll-margin-top: 6.4rem; }
+  .ec__sec--tint {
+    background: {{ accent | color_modify: 'alpha', 0.05 }};
+    border-radius: 12px; padding: 2.8rem 2.8rem 2rem; margin-top: 2rem;
   }
-  .enhanced-collection__split--noimg {
-    grid-template-columns: 1fr;
-    background: #f6f7f6;
-    background: color-mix(in srgb, {{ accent }} 4%, #f7f8f7);
-    border: none;
-  }
-  .enhanced-collection__split--right {
-    direction: rtl;
-  }
-  .enhanced-collection__split--right > * {
-    direction: ltr;
-  }
-  .enhanced-collection__split-img {
-    min-height: 320px;
-    overflow: hidden;
-  }
-  .enhanced-collection__split-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .enhanced-collection__split-text {
-    padding: 3.2rem 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .enhanced-collection__split-heading {
-    font-size: clamp(2rem, 2.5vw, 2.8rem);
-    margin-bottom: 1.2rem;
-  }
-  .enhanced-collection__split-body {
-    margin-bottom: 2rem;
-    opacity: 0.8;
-    font-size: 1.4rem;
-    line-height: 1.75;
-    max-width: 72ch;
-  }
-  .enhanced-collection__split-cta {
-    align-self: flex-start;
-  }
+  .ec__rule { display: block; width: 4.4rem; height: 3px; background: {{ accent }}; border-radius: 2px; margin-bottom: 1.4rem; }
+  .ec__sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
+  .ec__view-all { font-size: 1.2rem; opacity: .65; text-decoration: none; white-space: nowrap; }
+  .ec__view-all:hover { opacity: 1; text-decoration: underline; }
+  .ec__sec-desc { opacity: .8; max-width: 68ch; margin: .2rem 0 2rem; font-size: 1.4rem; line-height: 1.6; }
 
+  /* carousels */
+  .ec__carousel {
+    display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch; padding: .4rem .2rem 1.2rem;
+    scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.18) transparent;
+  }
+  .ec__carousel::-webkit-scrollbar { height: 6px; }
+  .ec__carousel::-webkit-scrollbar-thumb { background: rgba(0,0,0,.18); border-radius: 3px; }
+  .ec__card-wrap { flex: 0 0 clamp(16rem, 21vw, 24rem); scroll-snap-align: start; width: auto !important; padding: 0 !important; float: none !important; }
+  .ec__card-wrap > * { width: 100% !important; }
+  .ec__model-card {
+    flex: 0 0 16rem; scroll-snap-align: start; text-align: left; cursor: pointer;
+    border: 1px solid rgba(0,0,0,.12); border-radius: 12px; background: #fff;
+    padding: 1.4rem; font: inherit; color: inherit; transition: border-color .15s, transform .15s;
+  }
+  .ec__model-card:hover { border-color: {{ accent }}; transform: translateY(-2px); }
+  .ec__model-card img { height: 9rem; width: 100%; object-fit: contain; margin-bottom: 1rem; }
+  .ec__model-card b { display: block; font-size: 1.3rem; }
+  .ec__model-card span { font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; opacity: .65; }
+
+  /* feature band */
+  .ec__band { background: {{ herobg }}; color: #fff; margin: 5rem 0 0; position: relative; overflow: hidden; }
+  .ec__band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 85% 30%, {{ accent | color_modify: 'alpha', 0.22 }}, transparent 60%); }
+  .ec__band-inner { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 4.8rem; align-items: center; padding-top: 5.6rem; padding-bottom: 5.6rem; }
+  .ec__h2--band { font-size: clamp(2.4rem, 3.4vw, 3.6rem); margin-bottom: 1.2rem; }
+  .ec__band-text { color: rgba(255,255,255,.85); max-width: 50ch; margin-bottom: 2rem; }
+  .ec__grams { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2.4rem; }
+  .ec__grams span { font-size: 1.2rem; padding: .8rem 1.2rem; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; color: rgba(255,255,255,.9); }
+  .ec__band-visual img { width: min(400px, 100%); margin: 0 auto; border-radius: 14px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+  .ec__btn {
+    display: inline-block; background: {{ accent }}; color: #fff; text-decoration: none;
+    font-size: 1.2rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    padding: 1.5rem 2.4rem; border-radius: 8px; transition: filter .15s;
+  }
+  .ec__btn:hover { filter: brightness(.92); }
+  .ec__btn--ghost { background: transparent; border: 1.5px solid {{ accent }}; color: {{ accent }}; }
+  .ec__btn--ghost:hover { background: {{ accent | color_modify: 'alpha', 0.08 }}; filter: none; }
+
+  /* how it works */
+  .ec__how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 2rem; }
+  .ec__step { border: 1px solid rgba(0,0,0,.12); border-radius: 12px; background: #fff; padding: 2.2rem; }
+  .ec__step b { display: block; font-size: 1.3rem; text-transform: uppercase; margin-bottom: .6rem; }
+  .ec__step .rte { font-size: 1.35rem; opacity: .8; }
+
+  /* splits */
+  .ec__split { display: grid; grid-template-columns: 1fr 1fr; border-radius: 14px; overflow: hidden; border: 1px solid rgba(0,0,0,.1); margin: 2.6rem 0; background: #fff; }
+  .ec__split--noimg { grid-template-columns: 1fr; background: {{ accent | color_modify: 'alpha', 0.05 }}; border: none; }
+  .ec__split--right { direction: rtl; }
+  .ec__split--right > * { direction: ltr; }
+  .ec__split-img { min-height: 300px; overflow: hidden; }
+  .ec__split-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ec__split-text { padding: 3.2rem 4rem; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .ec__h2--split { font-size: clamp(2rem, 2.5vw, 2.6rem); }
+  .ec__split-body { opacity: .8; margin: .8rem 0 2.2rem; max-width: 50ch; }
+
+  /* faqs */
+  .ec__faqs { max-width: 820px; margin-top: 1rem; }
+  .ec__faq { border-bottom: 1px solid rgba(0,0,0,.12); }
+  .ec__faq summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.6rem;
+    cursor: pointer; list-style: none; padding: 1.7rem 0;
+  }
+  .ec__faq summary::-webkit-details-marker { display: none; }
+  .ec__faq summary h3 { font-size: 1.5rem; margin: 0; }
+  .ec__faq-x { font-size: 2rem; line-height: 1; color: {{ accent }}; flex-shrink: 0; transition: transform .15s; }
+  .ec__faq[open] .ec__faq-x { transform: rotate(45deg); }
+  .ec__faq-a { padding: 0 0 1.8rem; opacity: .85; max-width: 68ch; }
+  .ec__faq-rte { max-width: 820px; }
+  .ec__faq-rte h3 { margin-top: 2.2rem; }
+
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+  @media screen and (max-width: 1024px) {
+    .ec__hero-inner { padding: 4.8rem 0 8.6rem; }
+  }
   @media screen and (max-width: 767px) {
-    .enhanced-collection__hero {
-      margin-bottom: 3rem;
-    }
-    .enhanced-collection__section {
-      margin-bottom: 3.2rem;
-    }
-    .enhanced-collection__section--tint {
-      padding: 2rem 1.6rem 1.4rem;
-      margin-left: -1.6rem;
-      margin-right: -1.6rem;
-      border-radius: 0;
-    }
-    .enhanced-collection__card-wrap {
-      flex-basis: clamp(14rem, 42vw, 18rem);
-    }
-    .enhanced-collection__split {
-      grid-template-columns: 1fr;
-      direction: ltr !important;
-    }
-    .enhanced-collection__split-text {
-      padding: 2.4rem 2rem;
-    }
-    .enhanced-collection__split-img {
-      min-height: 220px;
-    }
+    .ec__hero-inner { padding: 4rem 0 8rem; }
+    .ec__stat b { font-size: 1.6rem; }
+    .ec__finder { padding: 2rem 1.8rem 1.8rem; }
+    .ec__sec { padding-top: 3.4rem; }
+    .ec__sec--tint { padding: 2rem 1.6rem 1.4rem; margin-left: -1.6rem; margin-right: -1.6rem; border-radius: 0; }
+    .ec__card-wrap { flex-basis: clamp(14rem, 42vw, 18rem); }
+    .ec__band-inner { grid-template-columns: 1fr; gap: 2.8rem; padding-top: 4rem; padding-bottom: 4rem; }
+    .ec__how { grid-template-columns: 1fr; }
+    .ec__split { grid-template-columns: 1fr; direction: ltr !important; }
+    .ec__split-text { padding: 2.4rem 2rem; }
+    .ec__split-img { min-height: 220px; }
   }
 </style>
 
@@ -609,14 +924,14 @@
       "type": "text",
       "id": "enabled_handles",
       "label": "Enabled collection handles",
-      "info": "Comma-separated. Only these collections get the enhanced layout, e.g. taylormade, ping, callaway",
+      "info": "Comma-separated. Only these collections get the enhanced layout, e.g. taylormade, ping",
       "default": "taylormade"
     },
     {
       "type": "text",
       "id": "brand_overrides",
       "label": "Brand name overrides",
-      "info": "handle:Name pairs, comma-separated, for collections whose title isn't a clean brand name. e.g. lab:LAB",
+      "info": "handle:Name pairs, e.g. lab:LAB",
       "default": "lab:LAB"
     },
     {
@@ -632,66 +947,131 @@
       "default": "#02964f"
     },
     {
+      "type": "color",
+      "id": "hero_bg",
+      "label": "Hero / band background",
+      "default": "#062d1c"
+    },
+    {
       "type": "header",
       "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (fallback)",
+      "info": "Per-brand override: collection metafield custom.hero_image. 2400x1200px, subject right of centre."
     },
     {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow text",
-      "placeholder": "e.g. Shop by brand"
+      "default": "Shop by brand"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "H1 heading",
-      "info": "Use [brand] for the collection title. Blank = '[brand] Golf Club Weights'"
+      "info": "Supports [brand]. Blank = '[brand] Golf Club Weights'"
     },
     {
       "type": "richtext",
       "id": "intro",
       "label": "Intro text",
-      "info": "Supports [brand]. Blank = collection description"
+      "info": "Overridden by metafield custom.intro, falls back to collection description"
+    },
+    {
+      "type": "text",
+      "id": "stat_extra_value",
+      "label": "Extra stat value",
+      "default": "1pm"
+    },
+    {
+      "type": "text",
+      "id": "stat_extra_label",
+      "label": "Extra stat label",
+      "default": "same-day dispatch"
     },
     {
       "type": "header",
-      "content": "Featured carousel"
+      "content": "Fit finder"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_finder",
+      "label": "Show fit finder",
+      "info": "Needs the collection metafield custom.models (one per line: Label | tag | clubs)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "finder_heading",
+      "label": "Finder heading",
+      "default": "Find weights for your [brand]"
+    },
+    {
+      "type": "text",
+      "id": "finder_sub",
+      "label": "Finder subline",
+      "default": "Two taps — see exactly what fits."
+    },
+    {
+      "type": "header",
+      "content": "All products carousel"
     },
     {
       "type": "text",
       "id": "featured_heading",
-      "label": "Section heading",
+      "label": "Heading",
       "info": "Supports [brand]. Blank = 'All [brand] products'"
-    },
-    {
-      "type": "text",
-      "id": "featured_cta",
-      "label": "View all label",
-      "default": "View all products"
     },
     {
       "type": "richtext",
       "id": "featured_desc",
-      "label": "Description",
-      "info": "Supports [brand]"
+      "label": "Intro",
+      "info": "Overridden by metafield custom.featured_intro"
     },
     {
       "type": "range",
       "id": "featured_count",
-      "label": "Number of products",
+      "label": "Products shown",
       "min": 4,
       "max": 20,
       "step": 1,
       "default": 5
     },
     {
-      "type": "range",
-      "id": "featured_per_row",
-      "label": "Columns",
-      "min": 3,
-      "max": 6,
-      "step": 1,
-      "default": 5
+      "type": "header",
+      "content": "Shop by model"
+    },
+    {
+      "type": "text",
+      "id": "models_heading",
+      "label": "Heading",
+      "default": "Shop by model"
+    },
+    {
+      "type": "richtext",
+      "id": "models_desc",
+      "label": "Intro",
+      "info": "Overridden by metafield custom.models_intro"
+    },
+    {
+      "type": "header",
+      "content": "How it works / FAQs"
+    },
+    {
+      "type": "text",
+      "id": "how_heading",
+      "label": "How-it-works heading",
+      "default": "Dialled in, in three steps"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "FAQ heading",
+      "info": "Supports [brand]",
+      "default": "[brand] golf club weights — FAQs"
     }
   ],
   "blocks": [
@@ -712,8 +1092,14 @@
         {
           "type": "richtext",
           "id": "description",
-          "label": "Description",
+          "label": "Description (fallback)",
           "info": "Supports [brand]"
+        },
+        {
+          "type": "text",
+          "id": "metafield_key",
+          "label": "Metafield key for description",
+          "info": "e.g. driver_intro — reads collection metafield custom.driver_intro when set"
         },
         {
           "type": "text",
@@ -724,39 +1110,36 @@
         {
           "type": "text",
           "id": "filter_type",
-          "label": "Match product type",
-          "info": "Must match the Product type field exactly in Shopify admin"
+          "label": "Match product type"
         },
         {
           "type": "text",
           "id": "filter_tag",
-          "label": "Match tag",
-          "info": "Products must also have this tag (case-insensitive)"
+          "label": "Match tag"
         },
         {
           "type": "text",
           "id": "source_collection",
           "label": "Source collection handle",
-          "info": "Pull products from this collection instead of the current one, e.g. golf-club-wrench"
+          "info": "e.g. golf-club-wrench"
         },
         {
           "type": "checkbox",
           "id": "vendor_match",
           "label": "Brand + universal only",
-          "info": "Show this brand's own products first, then fill with 'Universal' vendor products",
           "default": false
         },
         {
           "type": "text",
           "id": "filter_param",
           "label": "View all filter parameter",
-          "info": "Appended to this collection's URL, e.g. filter.p.product_type=Weights+for+Putters"
+          "info": "e.g. filter.p.product_type=Weights+for+Putters"
         },
         {
           "type": "text",
           "id": "link_override",
           "label": "View all link override",
-          "info": "Full URL, replaces the filter parameter. Supports [brand] (URL-encoded)"
+          "info": "Full URL. Supports [brand] (URL-encoded)"
         },
         {
           "type": "range",
@@ -766,6 +1149,83 @@
           "max": 6,
           "step": 1,
           "default": 4
+        }
+      ]
+    },
+    {
+      "type": "feature_band",
+      "name": "Feature band",
+      "settings": [
+        {
+          "type": "text",
+          "id": "nav_label",
+          "label": "Nav label",
+          "default": "Weight kits"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "info": "Supports [brand]"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Supports [brand]"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "info": "Supports [brand]"
+        },
+        {
+          "type": "text",
+          "id": "chips",
+          "label": "Chips (comma-separated)",
+          "info": "e.g. 5g, 8g, 11g, 15g, + wrench"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button label"
+        },
+        {
+          "type": "text",
+          "id": "cta_url",
+          "label": "Button URL",
+          "info": "Supports [brand] (URL-encoded)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Blank = first product matching the tag below"
+        },
+        {
+          "type": "text",
+          "id": "require_tag",
+          "label": "Only show when collection has this tag",
+          "info": "e.g. weight kit — band hides on brands without kits"
+        }
+      ]
+    },
+    {
+      "type": "how_step",
+      "name": "How-it-works step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Step heading",
+          "info": "Supports [brand]"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Step text",
+          "info": "Supports [brand]"
         }
       ]
     },
@@ -791,7 +1251,8 @@
         {
           "type": "text",
           "id": "eyebrow",
-          "label": "Eyebrow text"
+          "label": "Eyebrow",
+          "info": "Supports [brand]"
         },
         {
           "type": "text",
@@ -814,6 +1275,28 @@
           "type": "url",
           "id": "cta_url",
           "label": "Button URL"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Defaults shown on every enhanced brand page. Per-brand override: collection metafield custom.faqs replaces all FAQ blocks."
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "info": "Supports [brand]"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "info": "Supports [brand]"
         }
       ]
     }

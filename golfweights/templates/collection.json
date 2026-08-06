@@ -35,6 +35,7 @@
           "settings": {
             "heading": "[brand] driver weights",
             "description": "<p>Dial in launch, spin and shot shape with aftermarket head weights for [brand] drivers.</p>",
+            "metafield_key": "driver_intro",
             "cta": "View all driver weights",
             "filter_type": "Weights for Woods",
             "filter_tag": "driver",
@@ -50,6 +51,7 @@
           "settings": {
             "heading": "[brand] fairway wood weights",
             "description": "<p>Tune the balance and feel of your [brand] fairway woods with precision aftermarket head weights.</p>",
+            "metafield_key": "fairway_intro",
             "cta": "View all fairway wood weights",
             "filter_type": "Weights for Woods",
             "filter_tag": "fairway",
@@ -65,6 +67,7 @@
           "settings": {
             "heading": "[brand] hybrid weights",
             "description": "<p>Aftermarket head weights to fine-tune the swing weight of your [brand] hybrids and rescue clubs.</p>",
+            "metafield_key": "hybrid_intro",
             "cta": "View all hybrid weights",
             "filter_type": "Weights for Woods",
             "filter_tag": "hybrid",
@@ -80,6 +83,7 @@
           "settings": {
             "heading": "[brand] iron weights",
             "description": "<p>Adjust the head weight of your [brand] irons for consistent feel and swing weight through the set.</p>",
+            "metafield_key": "irons_intro",
             "cta": "View all iron weights",
             "filter_type": "Weights for Irons",
             "filter_tag": "",
@@ -95,6 +99,7 @@
           "settings": {
             "heading": "[brand] putter weights",
             "description": "<p>Fine-tune the feel and balance of your [brand] putter with precision aftermarket weights.</p>",
+            "metafield_key": "putter_intro",
             "cta": "View all putter weights",
             "filter_type": "Weights for Putters",
             "filter_tag": "",
@@ -105,26 +110,12 @@
             "products_shown": 4
           }
         },
-        "weight-kits": {
-          "type": "sub_carousel",
-          "settings": {
-            "heading": "[brand] golf weight kits",
-            "description": "<p>A full range of head weights in one box — the easiest way to experiment until your [brand] setup feels exactly right.</p>",
-            "cta": "View all weight kits",
-            "filter_type": "",
-            "filter_tag": "weight kit",
-            "source_collection": "",
-            "vendor_match": false,
-            "filter_param": "",
-            "link_override": "/collections/golf-club-weight-kits-1?filter.p.vendor=[brand]",
-            "products_shown": 4
-          }
-        },
         "wrenches": {
           "type": "sub_carousel",
           "settings": {
             "heading": "[brand] club wrenches",
-            "description": "<p>You'll need a compatible wrench to swap the weights on your [brand] clubs — pick one up with your order.</p>",
+            "description": "<p>You'll need a compatible torque wrench to swap the weights on your [brand] clubs — pick one up with your order.</p>",
+            "metafield_key": "wrench_intro",
             "cta": "View all wrenches",
             "filter_type": "Wrench",
             "filter_tag": "",
@@ -133,6 +124,40 @@
             "filter_param": "",
             "link_override": "/collections/golf-club-wrench",
             "products_shown": 3
+          }
+        },
+        "kit-band": {
+          "type": "feature_band",
+          "settings": {
+            "nav_label": "Weight kits",
+            "eyebrow": "One box. Every weight.",
+            "heading": "[brand] golf weight kits",
+            "text": "<p>Stop guessing your ideal swing weight. Each kit packs the full gram range for your club in a zipped case, so you can test, feel and settle on your setup in one range session.</p>",
+            "chips": "Full gram range, + wrench, + case",
+            "cta_label": "View all weight kits",
+            "cta_url": "/collections/golf-club-weight-kits-1?filter.p.vendor=[brand]",
+            "require_tag": "weight kit"
+          }
+        },
+        "step-model": {
+          "type": "how_step",
+          "settings": {
+            "heading": "Pick your model",
+            "text": "<p>Use the fit finder at the top of the page — every weight lists the exact [brand] heads it fits.</p>"
+          }
+        },
+        "step-grams": {
+          "type": "how_step",
+          "settings": {
+            "heading": "Choose your grams",
+            "text": "<p>Heavier calms the hands; lighter frees up speed. The <a href=\"/pages/swing-weight-guide\">swing weight guide</a> shows you how far to go.</p>"
+          }
+        },
+        "step-wrench": {
+          "type": "how_step",
+          "settings": {
+            "heading": "One turn of the wrench",
+            "text": "<p>Swapping takes seconds with the right torque wrench — grab one from the wrench section if you need it.</p>"
           }
         },
         "split-swing-weight": {
@@ -154,7 +179,42 @@
             "heading": "Golf experts you can trust",
             "text": "<p>UK stock, fast dispatch and weights engineered to match OEM specs. Thousands of golfers trust us to keep their [brand] clubs dialled in.</p>",
             "cta_label": "Read our FAQs",
-            "cta_url": "/pages/faqs"
+            "cta_url": "#ec-faqs"
+          }
+        },
+        "faq-fit": {
+          "type": "faq",
+          "settings": {
+            "question": "Which weights fit my [brand] driver?",
+            "answer": "<p>Use the fit finder at the top of this page — pick your club and model and we'll show you every compatible [brand] weight. Each product page also lists the exact club heads it fits.</p>"
+          }
+        },
+        "faq-grams": {
+          "type": "faq",
+          "settings": {
+            "question": "How many grams should I add to my [brand] clubs?",
+            "answer": "<p>As a rule of thumb, around 2g of head weight moves swing weight by one point on a driver-length club. Most golfers experiment within the 2g–20g range. Our <a href=\"/pages/swing-weight-guide\">swing weight guide</a> explains how to find your number.</p>"
+          }
+        },
+        "faq-wrench": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I need a special wrench to change [brand] weights?",
+            "answer": "<p>Yes — [brand] weights are fitted with a torque wrench. If you don't already have one, add a [brand] or universal wrench from the wrench section above to your order.</p>"
+          }
+        },
+        "faq-genuine": {
+          "type": "faq",
+          "settings": {
+            "question": "Are these genuine [brand] parts?",
+            "answer": "<p>These are high-quality aftermarket golf club weights engineered to match the thread and fit of [brand] heads exactly — a cost-effective alternative to manufacturer parts.</p>"
+          }
+        },
+        "faq-delivery": {
+          "type": "faq",
+          "settings": {
+            "question": "How quickly will my order arrive?",
+            "answer": "<p>Orders placed before 1pm are dispatched the same day, and UK delivery is free on orders over £40. See our <a href=\"/pages/delivery-returns\">delivery page</a> for full details.</p>"
           }
         }
       },
@@ -164,22 +224,40 @@
         "hybrid-weights",
         "iron-weights",
         "putter-weights",
-        "weight-kits",
         "wrenches",
+        "kit-band",
+        "step-model",
+        "step-grams",
+        "step-wrench",
         "split-swing-weight",
-        "split-why-us"
+        "split-why-us",
+        "faq-fit",
+        "faq-grams",
+        "faq-wrench",
+        "faq-genuine",
+        "faq-delivery"
       ],
       "settings": {
         "enabled_handles": "taylormade",
         "brand_overrides": "lab:LAB",
         "filter_labels": "Weights for Woods:Driver & Fairway Wood Weights, Weights for Putters:Putter Weights, Weights for Irons:Iron Weights, Wrench:Club Wrenches, Shaft Adapter:Shaft Adapters",
         "accent_color": "#02964f",
+        "hero_bg": "#062d1c",
         "eyebrow": "Shop by brand",
         "heading": "[brand] Golf Club Weights",
+        "intro": "",
+        "stat_extra_value": "1pm",
+        "stat_extra_label": "same-day dispatch",
+        "show_finder": true,
+        "finder_heading": "Find weights for your [brand]",
+        "finder_sub": "Two taps — see exactly what fits.",
         "featured_heading": "All [brand] products",
-        "featured_cta": "View all products",
+        "featured_desc": "",
         "featured_count": 5,
-        "featured_per_row": 5
+        "models_heading": "Shop by model",
+        "models_desc": "<p>Jump straight to the weights made for your club.</p>",
+        "how_heading": "Dialled in, in three steps",
+        "faq_heading": "[brand] golf club weights — FAQs"
       }
     },
     "product-grid": {

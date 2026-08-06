@@ -86,3 +86,30 @@ Joe's v2 feedback: filtered pages had useless H1s (bare brand name), chips/carou
 - **Carousels are horizontal scroll-snap flex rows** with fluid card widths (`clamp(16rem, 21vw, 24rem)`; smaller on mobile) — responsive at every viewport, no grid breakpoints. Chips row horizontal-scrolls (scrollbar hidden).
 - **Graphic rhythm**: accent rule (setting `accent_color`, default site green #02964f) above every H2; alternating sub-carousel sections get a soft tinted rounded panel (color-mix with plain fallback; full-bleed on mobile); section spacing 4.5rem.
 - featured_per_row schema setting now unused by CSS (kept for compat); grid_count_desktop passed as 4 for card image sizing.
+
+## v4 — PRODUCTION BUILD (fit-finder direction, chosen over bento)
+
+Joe rejected bento ("too confusing for this kind of product"), chose the fit-finder mock. v4 is a full rebuild of the section (CSS prefix `.ec__`), replacing v3. Key architecture:
+
+- **Per-brand Surfer copy lives in COLLECTION METAFIELDS (namespace custom)**, falling back to section/block settings with [brand] tokens. This is the answer to "template settings are shared across brands". Keys: `intro`, `featured_intro`, `models_intro`, `driver_intro`, `fairway_intro`, `hybrid_intro`, `irons_intro`, `putter_intro`, `wrench_intro` (rich text; sub-carousel blocks reference them via a `metafield_key` setting and dynamic lookup `collection.metafields.custom[key]`), `faqs` (rich text — REPLACES the default FAQ blocks when set), `gram_range` (single line), `hero_image` (file), `models` (multi-line: `Label | exact tag | clubs` per line — drives fit-finder, model rail, hero "models covered" stat).
+- **Fit finder**: club buttons (only clubs the brand stocks, derived from types+tags) → model chips (from models metafield) → JS-rendered result cards. Product data emitted as JSON script tag (weights only; adapters/wrenches excluded). Model matching is EXACT tag (`|tag|` delimited) to stop 'qi' matching 'qi 35'. Model rail cards also drive the finder (click → scrolls + preselects).
+- **Page order**: dark hero (metafield/setting image + scrim, H1, intro, stats) → finder card (overlap) → sticky scrollspy subnav → All-products carousel → model rail → auto-hiding category carousels (dedup as v3) → kits feature_band (dark, auto-hides via require_tag) → how_step blocks → splits → **FAQ accordion blocks with FAQPage JSON-LD** (metafield override replaces blocks; no JSON-LD then).
+- **Theme header AND product grid sections are CSS+JS suppressed on enhanced unfiltered pages** (selectors `[data-wetheme-section-type="collection-header"]` / `="template--collection"]`) — Joe wanted the grid gone. Both still render for non-enhanced collections and filtered views (filtered view keeps v3 compact hero + visible grid).
+- New block types: `feature_band`, `how_step`, `faq` (plus sub_carousel/split_block). Kits sub-carousel REPLACED by the feature band (band H2 = "[brand] golf weight kits" keyword).
+- Gotcha fixed: `'|' | append: product.tags | join: '|'` pipelines corrupt (append coerces array first) — always join to a var first.
+- TaylorMade models metafield starter value is in the handover message / below:
+
+```
+Qi 35 | qi 35 | driver,fairway,hybrid
+Qi 10 | qi | driver,fairway,hybrid
+Stealth 2 | stealth 2 | driver,fairway,hybrid
+Stealth | stealth | driver,fairway,hybrid
+SIM & SIM2 | taylormade sim | driver,fairway,hybrid
+BRNR Mini | burner | driver
+R7 Quad | r7 | driver
+Spider Tour | spider | putter
+TP Collection | tp collection | putter
+Hydroblast | hydroblast | putter
+```
+
+Without the models metafield the finder+rail auto-hide and the rest of the page still works.
