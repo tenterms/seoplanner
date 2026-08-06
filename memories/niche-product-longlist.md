@@ -1,0 +1,26 @@
+# Project memory: Niche product long-list (Joe's own venture research)
+
+**Client:** Joe himself — hunting for a golfweights.co.uk-style ecommerce venture to launch.
+**Deliverable:** `Niche-Product-Longlist.xlsx` (this repo, 2026-08-06). 28 ideas scored /30, top tier Ahrefs-validated (GB+US, ~3.5k units).
+
+## The criteria (agreed with Joe — don't re-derive)
+Two archetypes, both in scope:
+- **A — China import:** AliExpress commodity, letter-post, brand×model compatibility matrix → hundreds of specific winnable keywords. Simple electronics OK; no heavy regulatory categories.
+- **B — UK supplier front-end:** wholesaler/importer/manufacturer with stock + fulfilment but a ropey/absent consumer web presence; Joe builds owned brand + ecommerce + SEO, they ship (lifebuoysdirect.co.uk pattern; also white-label consumables — coffee/raw dog food examples).
+Dealbreaker criteria: matrix depth and competition weakness (cap rule in workbook). Enthusiast buyer with disposable income; evergreen; consumable = bonus.
+
+## Calibration (key insight)
+- lifebuoysdirect.co.uk: ~99 GB keywords, 52 top-3, ~1,786 visits/mo, ~$1,960/mo traffic value → reportedly tens of £k/mo revenue.
+- golfweights.co.uk: 104 keywords, ~399 visits/mo. **The bar is domination of a tiny high-intent SERP set, not traffic scale.**
+- calda-morley.co.uk = archetype-B raw material (Wakefield bearings/PT distributor, brochure site) — but bearings already done (Simply Bearings, Bearing Boys).
+
+## Validated verdicts (don't re-litigate)
+- **Tier A:** headphone ear pads/cables by model (closest golf-weights clone; wickedcushions.com US proves it, no UK specialist); blind spare parts (~700/mo GB, 5+ ropey .asp-era competitors); hot tub filters (1,100/mo KD0, consumable, no specialist — dealers' afterthought pages only); caravan locker keys/catches (inferred — validate next).
+- **Derailleur hangers: TAKEN.** GB 1,500/KD19, US 2,900/KD3 — biggest matrix demand found, but rearmechhanger.com holds #1+#2. Proof of model, late entry.
+- **Stove glass: SERVED** (5 formalised specialists). Coffee machine parts: served (mrbean2cup, Shades of Coffee). Watch straps: capped (WatchGecko). Appliance spares: eSpares owns. Fishing reel spares: demand lives on eBay, not Google.
+- golf trolley spares: electricgolftrolleyspares.com (pos 7) is a ropey outrank/acquire target; battery logistics cap it.
+
+## Next steps offered
+Pick 2–3 Tier A → full playbook validation (matching-terms expansion, cannibalisation pass, supplier scouting, v1 architecture; ~15–30k units each). White-label-consumable route needs supplier scouting, not keyword research.
+
+Related: [[southern-ropes]] (rope vertical adjacency: lifebuoys supplier is a rope importer).
