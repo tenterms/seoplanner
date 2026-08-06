@@ -33,3 +33,8 @@ Dealbreaker criteria: matrix depth and competition weakness (cap rule in workboo
 1) Supplier scouting for branded matting (mat importers + printers); 2) validate caravan locker hardware; 3) re-live-check hot tub filters; 4) repeatable "mis-served SERP" scan method (list quote-led B2B products sold via generic retailers → live-check for substitution).
 
 Related: [[southern-ropes]] (rope vertical adjacency: lifebuoys supplier is a rope importer; cricket boundary rope overlap).
+
+## Round 3 (same day — fresh angles, all live-checked)
+- New angles tested: greenhouse spares (~3k/mo but greenhousespares.co.uk #1 + OEMs = occupied), garage door spares (~7k/mo but TEN spares-branded specialists = occupied), static caravan spares (demand too thin, killed), uPVC hardware (Screwfix-land), pizza oven accessories (brand-direct+Amazon), toilet seat hinges (occupied), sofa legs (2 specialists), garden cushions MTM (foam converters sell direct), hot tub covers MTM (occupied).
+- Final tally across 3 rounds: ~45 angles, 25+ live SERP checks, 2 genuinely open/mis-served fields. Scarcity is the finding.
+- **Deliverable: `Niche-Product-Research-Executive-Report.pdf`** (11pp): TL;DR (matting #1 ceiling / hot tub filters #2 certainty / caravan hardware #3 validate-first), calibration, 45-angle scoreboard, 4 deep dives w/ market sizing (assumption-banded), graveyard w/ evidence, mis-served-SERP scan method. ~22k Ahrefs units total project.
