@@ -1,0 +1,21 @@
+{%- comment -%}
+  Outputs a readable label for the active storefront filters, e.g.
+  "Driver & Fairway Wood Weights". Raw filter values are mapped through
+  label_config ("value:Label" pairs, comma-separated).
+  Inputs: collection, label_config
+{%- endcomment -%}
+{%- assign label_map = label_config | default: '' | split: ',' -%}
+{%- assign first_label = true -%}
+{%- for f in collection.filters -%}
+  {%- for v in f.active_values -%}
+    {%- assign lbl = v.label -%}
+    {%- for m in label_map -%}
+      {%- assign mp = m | split: ':' -%}
+      {%- assign mkey = mp[0] | strip -%}
+      {%- if mkey == v.label and mp[1] != blank -%}
+        {%- assign lbl = mp[1] | strip -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- unless first_label %} & {% endunless -%}{{ lbl }}{%- assign first_label = false -%}
+  {%- endfor -%}
+{%- endfor -%}

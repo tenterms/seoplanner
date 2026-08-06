@@ -1,0 +1,43 @@
+{%- comment -%}
+  Outputs the number of products matching a sub_carousel block's criteria.
+  Inputs: block, collection, brand_dc
+{%- endcomment -%}
+{%- liquid
+  assign ftype = block.settings.filter_type | strip
+  assign ftag = block.settings.filter_tag | strip | downcase
+  assign pool = collection.products
+  if block.settings.source_collection != blank
+    assign source_col = collections[block.settings.source_collection]
+    if source_col.products.size > 0
+      assign pool = source_col.products
+    endif
+  endif
+  assign total = 0
+  assign no_criteria = false
+  if ftype == blank and ftag == blank and block.settings.vendor_match == false
+    assign no_criteria = true
+  endif
+  unless no_criteria
+    for product in pool
+      if ftype != blank and product.type != ftype
+        continue
+      endif
+      if ftag != blank
+        assign tag_string = product.tags | join: '|' | downcase
+        unless tag_string contains ftag
+          continue
+        endunless
+      endif
+      if block.settings.vendor_match
+        assign vendor_dc = product.vendor | downcase
+        if vendor_dc != brand_dc
+          unless vendor_dc contains 'universal'
+            continue
+          endunless
+        endif
+      endif
+      assign total = total | plus: 1
+    endfor
+  endunless
+  echo total
+-%}

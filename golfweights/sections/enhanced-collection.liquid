@@ -7,8 +7,7 @@
     any key referenced by a sub-carousel's "Metafield key" setting.
   - Sub-carousels auto-hide when the collection has no matching products.
   - On filtered views a compact hero renders instead and the standard grid shows.
-  - On enhanced (unfiltered) views the theme's collection header and product grid
-    sections are suppressed — the enhanced layout is the whole page.
+  - Companion snippets: ec-carousel-count, ec-filter-label, ec-model-rail, ec-finder-data.
 {%- endcomment -%}
 
 {%- assign allowed_handles = section.settings.enabled_handles | default: '' | downcase | replace: ' ', '' | split: ',' -%}
@@ -46,26 +45,11 @@
     });
   </script>
 
-  {%- assign label_map = section.settings.filter_labels | default: '' | split: ',' -%}
-  {%- capture active_labels -%}
-    {%- assign first_label = true -%}
-    {%- for f in collection.filters -%}
-      {%- for v in f.active_values -%}
-        {%- assign lbl = v.label -%}
-        {%- for m in label_map -%}
-          {%- assign mp = m | split: ':' -%}
-          {%- assign mkey = mp[0] | strip -%}
-          {%- if mkey == v.label and mp[1] != blank -%}{%- assign lbl = mp[1] | strip -%}{%- endif -%}
-        {%- endfor -%}
-        {%- unless first_label %} & {% endunless -%}{{ lbl }}{%- assign first_label = false -%}
-      {%- endfor -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-
   <div class="ec ec--filtered wrapper-spacing--h" data-section-id="{{ section.id }}">
     <div class="width--content">
       <div class="ec__fhero">
         <p class="ec__eyebrow"><a class="ec__back" href="{{ collection.url }}">&larr; All {{ brand }} products</a></p>
+        {%- capture active_labels -%}{%- render 'ec-filter-label', collection: collection, label_config: section.settings.filter_labels -%}{%- endcapture -%}
         <h1 class="ec__h1">{{ brand }} {{ active_labels | strip }}</h1>
         <p class="ec__count">{{ collection.products_count }} product{% if collection.products_count != 1 %}s{% endif %}</p>
       </div>
@@ -92,90 +76,29 @@
   {%- capture mf_faqs -%}{{ collection.metafields.custom.faqs | metafield_tag }}{%- endcapture -%}
   {%- assign mf_gram_range = collection.metafields.custom.gram_range.value -%}
   {%- assign hero_img = collection.metafields.custom.hero_image.value | default: section.settings.hero_image -%}
-
-  {%- comment -%} ---- models config: one per line "Label | exact tag | clubs" ---- {%- endcomment -%}
   {%- assign models_raw = collection.metafields.custom.models.value | default: '' -%}
   {%- assign model_lines = models_raw | strip | newline_to_br | split: '<br />' -%}
 
-  {%- comment -%} ---- pre-count sub-carousel blocks (chips, auto-hide, counts) ---- {%- endcomment -%}
+  {%- comment -%} ---- pre-count sub-carousel blocks (subnav, auto-hide, counts) ---- {%- endcomment -%}
   {%- assign block_counts = '' -%}
   {%- for block in section.blocks -%}
-    {%- liquid
-      assign block_total = 0
-      if block.type == 'sub_carousel'
-        assign ftype = block.settings.filter_type | strip
-        assign ftag = block.settings.filter_tag | strip | downcase
-        assign pool = collection.products
-        if block.settings.source_collection != blank
-          assign source_col = collections[block.settings.source_collection]
-          if source_col.products.size > 0
-            assign pool = source_col.products
-          endif
-        endif
-        for product in pool
-          assign is_match = true
-          if ftype == blank and ftag == blank and block.settings.vendor_match == false
-            assign is_match = false
-          endif
-          if ftype != blank and product.type != ftype
-            assign is_match = false
-          endif
-          if is_match and ftag != blank
-            assign tag_string = product.tags | join: '|' | downcase
-            unless tag_string contains ftag
-              assign is_match = false
-            endunless
-          endif
-          if is_match and block.settings.vendor_match
-            assign vendor_dc = product.vendor | downcase
-            if vendor_dc != brand_dc
-              unless vendor_dc contains 'universal'
-                assign is_match = false
-              endunless
-            endif
-          endif
-          if is_match
-            assign block_total = block_total | plus: 1
-          endif
-        endfor
-      endif
-      assign block_counts = block_counts | append: block_total | append: ','
-    -%}
+    {%- assign block_total = 0 -%}
+    {%- if block.type == 'sub_carousel' -%}
+      {%- capture block_total -%}{%- render 'ec-carousel-count', block: block, collection: collection, brand_dc: brand_dc -%}{%- endcapture -%}
+    {%- endif -%}
+    {%- assign block_counts = block_counts | append: block_total | append: ',' -%}
   {%- endfor -%}
   {%- assign block_counts_arr = block_counts | split: ',' -%}
 
-  {%- comment -%} ---- which clubs exist here (drives finder buttons + product JSON) ---- {%- endcomment -%}
-  {%- liquid
-    assign has_driver = false
-    assign has_fairway = false
-    assign has_hybrid = false
-    assign has_iron = false
-    assign has_putter = false
-    assign has_kits = false
-    for product in collection.products
-      assign ptags = product.tags | join: '|' | downcase
-      if product.type == 'Weights for Woods'
-        if ptags contains 'driver'
-          assign has_driver = true
-        endif
-        if ptags contains 'fairway'
-          assign has_fairway = true
-        endif
-        if ptags contains 'hybrid'
-          assign has_hybrid = true
-        endif
-      endif
-      if product.type == 'Weights for Irons'
-        assign has_iron = true
-      endif
-      if product.type == 'Weights for Putters'
-        assign has_putter = true
-      endif
-      if ptags contains 'weight kit'
-        assign has_kits = true
-      endif
-    endfor
-  -%}
+  {%- comment -%} ---- kits present? (drives the feature-band subnav link) ---- {%- endcomment -%}
+  {%- assign has_kits = false -%}
+  {%- for product in collection.products -%}
+    {%- assign ptj = product.tags | join: '|' | downcase -%}
+    {%- if ptj contains 'weight kit' -%}
+      {%- assign has_kits = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
 
   <div class="ec" data-section-id="{{ section.id }}">
 
@@ -215,8 +138,8 @@
       </div>
     </header>
 
-    {%- comment -%} ================= FIT FINDER ================= {%- endcomment -%}
-    {%- if section.settings.show_finder and model_lines.size > 0 and models_raw != blank -%}
+    {%- comment -%} ================= FIT FINDER (club buttons are built by JS) ================= {%- endcomment -%}
+    {%- if section.settings.show_finder and models_raw != blank -%}
     <div class="ec__wrap ec__finder-shell">
       <div class="ec__finder">
         <div class="ec__finder-head">
@@ -224,13 +147,7 @@
           <span class="ec__finder-sub">{{ section.settings.finder_sub | default: 'Two taps — see exactly what fits.' }}</span>
         </div>
         <p class="ec__step-label">1 &middot; Your club</p>
-        <div class="ec__seg" id="ecClubSeg" role="group" aria-label="Club type">
-          {%- if has_driver -%}<button type="button" data-club="driver" aria-pressed="false">Driver</button>{%- endif -%}
-          {%- if has_fairway -%}<button type="button" data-club="fairway" aria-pressed="false">Fairway</button>{%- endif -%}
-          {%- if has_hybrid -%}<button type="button" data-club="hybrid" aria-pressed="false">Hybrid</button>{%- endif -%}
-          {%- if has_iron -%}<button type="button" data-club="iron" aria-pressed="false">Irons</button>{%- endif -%}
-          {%- if has_putter -%}<button type="button" data-club="putter" aria-pressed="false">Putter</button>{%- endif -%}
-        </div>
+        <div class="ec__seg" id="ecClubSeg" role="group" aria-label="Club type"></div>
         <p class="ec__step-label">2 &middot; Your model</p>
         <div class="ec__models" id="ecModelChips"><span class="ec__hint">Pick a club type first&hellip;</span></div>
         <div class="ec__finder-results" id="ecFinderResults" hidden>
@@ -245,6 +162,13 @@
     {%- endif -%}
 
     {%- comment -%} ================= STICKY SUBNAV ================= {%- endcomment -%}
+    {%- assign has_faq_blocks = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'faq' -%}
+        {%- assign has_faq_blocks = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
     {%- capture subnav_links -%}
       <a href="#ec-featured" class="on">All products</a>
       {%- if models_raw != blank -%}<a href="#ec-models">Shop by model</a>{%- endif -%}
@@ -260,8 +184,6 @@
           <a href="#ec-band-{{ block.id }}">{{ block.settings.nav_label | default: 'Weight kits' }}</a>
         {%- endif -%}
       {%- endfor -%}
-      {%- assign has_faq_blocks = false -%}
-      {%- for block in section.blocks -%}{%- if block.type == 'faq' -%}{%- assign has_faq_blocks = true -%}{%- endif -%}{%- endfor -%}
       {%- if mf_faqs != blank or has_faq_blocks -%}<a href="#ec-faqs">FAQs</a>{%- endif -%}
     {%- endcapture -%}
     <div class="ec__subnav" id="ecSubnav"><div class="ec__subnav-inner">{{ subnav_links }}</div></div>
@@ -306,30 +228,7 @@
           <div class="ec__sec-desc rte">{{ section.settings.models_desc | replace: '[brand]', brand }}</div>
         {%- endif -%}
         <div class="ec__carousel ec__carousel--models">
-          {%- for line in model_lines -%}
-            {%- assign mparts = line | split: '|' -%}
-            {%- assign mlabel = mparts[0] | strip -%}
-            {%- assign mtag = mparts[1] | strip | downcase -%}
-            {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
-            {%- assign mtag_key = '|' | append: mtag | append: '|' -%}
-            {%- assign mcount = 0 -%}
-            {%- assign mimg = blank -%}
-            {%- for product in collection.products -%}
-              {%- assign ptj = product.tags | join: '|' | downcase -%}
-              {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
-              {%- if ptagstr contains mtag_key -%}
-                {%- assign mcount = mcount | plus: 1 -%}
-                {%- if mimg == blank -%}{%- assign mimg = product.featured_image -%}{%- endif -%}
-              {%- endif -%}
-            {%- endfor -%}
-            {%- if mcount > 0 -%}
-              <button type="button" class="ec__model-card" data-model-tag="{{ mtag | escape }}" data-model-label="{{ mlabel | escape }}">
-                {%- if mimg != blank -%}<img src="{{ mimg | image_url: width: 300 }}" alt="{{ mlabel | escape }}" loading="lazy" width="150" height="92">{%- endif -%}
-                <b>{{ mlabel }}</b>
-                <span>{{ mcount }} product{% if mcount != 1 %}s{% endif %}</span>
-              </button>
-            {%- endif -%}
-          {%- endfor -%}
+          {%- render 'ec-model-rail', collection: collection, models_raw: models_raw -%}
         </div>
       </section>
       {%- endif -%}
@@ -337,12 +236,13 @@
       {%- comment -%} ================= SUB-CAROUSELS ================= {%- endcomment -%}
       {%- assign band_index = 0 -%}
       {%- for block in section.blocks -%}
-        {%- if block.type == 'sub_carousel' -%}
-          {%- assign block_total = block_counts_arr[forloop.index0] | plus: 0 -%}
-          {%- if block_total > 0 -%}
-            {%- assign band_index = band_index | plus: 1 -%}
+        {%- if block.type != 'sub_carousel' -%}{%- continue -%}{%- endif -%}
+        {%- assign block_total = block_counts_arr[forloop.index0] | plus: 0 -%}
+        {%- comment -%} Auto-hide: brands with no matching products skip this carousel {%- endcomment -%}
+        {%- if block_total == 0 -%}{%- continue -%}{%- endif -%}
+        {%- assign band_index = band_index | plus: 1 -%}
 
-            {%- liquid
+        {%- liquid
               assign ftype = block.settings.filter_type | strip
               assign ftag = block.settings.filter_tag | strip | downcase
               assign sub_limit = block.settings.products_shown | default: 4
@@ -362,6 +262,10 @@
             -%}
 
             {%- capture card_markup -%}
+              {%- comment -%}
+                dpass 1 = products not yet shown on the page, dpass 2 = fill with repeats.
+                vpass 1 = the brand's own products, vpass 2 = 'Universal' vendor fill.
+              {%- endcomment -%}
               {%- for dpass in (1..2) -%}
                 {%- for vpass in (1..vendor_passes) -%}
                   {%- for product in pool -%}
@@ -369,31 +273,19 @@
                     {%- assign pkey = ',' | append: product.handle | append: ',' -%}
                     {%- if local_shown contains pkey -%}{%- continue -%}{%- endif -%}
                     {%- if dpass == 1 and shown_global contains pkey -%}{%- continue -%}{%- endif -%}
-                    {%- assign is_match = true -%}
-                    {%- if ftype == blank and ftag == blank and vendor_passes == 1 -%}{%- assign is_match = false -%}{%- endif -%}
-                    {%- if ftype != blank and product.type != ftype -%}{%- assign is_match = false -%}{%- endif -%}
-                    {%- if is_match and ftag != blank -%}
-                      {%- assign tag_string = product.tags | join: '|' | downcase -%}
-                      {%- unless tag_string contains ftag -%}{%- assign is_match = false -%}{%- endunless -%}
-                    {%- endif -%}
-                    {%- if is_match and vendor_passes == 2 -%}
-                      {%- assign vendor_dc = product.vendor | downcase -%}
-                      {%- if vpass == 1 -%}
-                        {%- unless vendor_dc == brand_dc -%}{%- assign is_match = false -%}{%- endunless -%}
-                      {%- elsif vendor_dc == brand_dc -%}
-                        {%- assign is_match = false -%}
-                      {%- else -%}
-                        {%- unless vendor_dc contains 'universal' -%}{%- assign is_match = false -%}{%- endunless -%}
-                      {%- endif -%}
-                    {%- endif -%}
-                    {%- if is_match -%}
-                      {%- assign match_count = match_count | plus: 1 -%}
-                      {%- assign local_shown = local_shown | append: product.handle | append: ',' -%}
-                      {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
-                      <div class="ec__card-wrap">
-                        {%- render 'grid-view-item', product: product, collection: collection, enable_badges: settings.show_badges, grid_count_desktop: 4, grid_count_mobile: 2, loading: 'lazy' -%}
-                      </div>
-                    {%- endif -%}
+                    {%- if ftype != blank and product.type != ftype -%}{%- continue -%}{%- endif -%}
+                    {%- assign tag_string = product.tags | join: '|' | downcase -%}
+                    {%- unless ftag == blank or tag_string contains ftag -%}{%- continue -%}{%- endunless -%}
+                    {%- assign vendor_dc = product.vendor | downcase -%}
+                    {%- if vendor_passes == 2 and vpass == 1 and vendor_dc != brand_dc -%}{%- continue -%}{%- endif -%}
+                    {%- if vendor_passes == 2 and vpass == 2 and vendor_dc == brand_dc -%}{%- continue -%}{%- endif -%}
+                    {%- unless vendor_passes == 1 or vpass == 1 or vendor_dc contains 'universal' -%}{%- continue -%}{%- endunless -%}
+                    {%- assign match_count = match_count | plus: 1 -%}
+                    {%- assign local_shown = local_shown | append: product.handle | append: ',' -%}
+                    {%- assign shown_global = shown_global | append: product.handle | append: ',' -%}
+                    <div class="ec__card-wrap">
+                      {%- render 'grid-view-item', product: product, collection: collection, enable_badges: settings.show_badges, grid_count_desktop: 4, grid_count_mobile: 2, loading: 'lazy' -%}
+                    </div>
                   {%- endfor -%}
                 {%- endfor -%}
               {%- endfor -%}
@@ -431,8 +323,6 @@
               <div class="ec__carousel">{{ card_markup }}</div>
             </section>
 
-          {%- endif -%}
-        {%- endif -%}
       {%- endfor -%}
 
     </div>
@@ -440,23 +330,26 @@
     {%- comment -%} ================= FEATURE BAND (kits) ================= {%- endcomment -%}
     {%- for block in section.blocks -%}
       {%- if block.type == 'feature_band' -%}
-        {%- assign band_show = true -%}
-        {%- if block.settings.require_tag != blank -%}
-          {%- assign band_show = false -%}
-          {%- assign req = block.settings.require_tag | downcase -%}
-          {%- for product in collection.products -%}
-            {%- assign ptags = product.tags | join: '|' | downcase -%}
-            {%- if ptags contains req -%}{%- assign band_show = true -%}{%- break -%}{%- endif -%}
-          {%- endfor -%}
-        {%- endif -%}
+        {%- liquid
+          assign band_show = true
+          assign band_img = block.settings.image
+          assign req = block.settings.require_tag | downcase
+          if req != blank
+            assign band_show = false
+            for product in collection.products
+              assign ptj = product.tags | join: '|' | downcase
+              unless ptj contains req
+                continue
+              endunless
+              assign band_show = true
+              if band_img == blank
+                assign band_img = product.featured_image
+              endif
+              break
+            endfor
+          endif
+        -%}
         {%- if band_show -%}
-          {%- assign band_img = block.settings.image -%}
-          {%- if band_img == blank and block.settings.require_tag != blank -%}
-            {%- for product in collection.products -%}
-              {%- assign ptags = product.tags | join: '|' | downcase -%}
-              {%- if ptags contains req -%}{%- assign band_img = product.featured_image -%}{%- break -%}{%- endif -%}
-            {%- endfor -%}
-          {%- endif -%}
           <section class="ec__band" id="ec-band-{{ block.id }}" {{ block.shopify_attributes }}>
             <div class="ec__wrap ec__band-inner">
               <div class="ec__band-copy">
@@ -474,7 +367,7 @@
                 {%- endif -%}
               </div>
               {%- if band_img != blank -%}
-                <div class="ec__band-visual"><img src="{{ band_img | image_url: width: 800 }}" alt="" loading="lazy"></div>
+                <div class="ec__band-visual"><img src="{{ band_img | image_url: width: 800 }}" alt="" loading="lazy" width="{{ band_img.width | default: 800 }}" height="{{ band_img.height | default: 800 }}"></div>
               {%- endif -%}
             </div>
           </section>
@@ -486,7 +379,12 @@
 
       {%- comment -%} ================= HOW IT WORKS ================= {%- endcomment -%}
       {%- assign has_steps = false -%}
-      {%- for block in section.blocks -%}{%- if block.type == 'how_step' -%}{%- assign has_steps = true -%}{%- endif -%}{%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'how_step' -%}
+          {%- assign has_steps = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
       {%- if has_steps -%}
       <section class="ec__sec" id="ec-how">
         <span class="ec__rule" aria-hidden="true"></span>
@@ -526,8 +424,6 @@
       {%- endfor -%}
 
       {%- comment -%} ================= FAQS ================= {%- endcomment -%}
-      {%- assign has_faq_blocks = false -%}
-      {%- for block in section.blocks -%}{%- if block.type == 'faq' -%}{%- assign has_faq_blocks = true -%}{%- endif -%}{%- endfor -%}
       {%- if mf_faqs != blank or has_faq_blocks -%}
       <section class="ec__sec" id="ec-faqs">
         <span class="ec__rule" aria-hidden="true"></span>
@@ -573,67 +469,36 @@
     </div>
   </div>
 
-  {%- comment -%} ---- product data for the fit finder ---- {%- endcomment -%}
+  {%- comment -%} ---- product + model data for the fit finder ---- {%- endcomment -%}
   {%- if section.settings.show_finder and models_raw != blank -%}
-  <script type="application/json" id="ecProductData">
-  {
-    "models": [
-      {%- assign mj_first = true -%}
-      {%- for line in model_lines -%}
-        {%- assign mparts = line | split: '|' -%}
-        {%- assign mlabel = mparts[0] | strip -%}
-        {%- assign mtag = mparts[1] | strip | downcase -%}
-        {%- assign mclubs = mparts[2] | strip | downcase | replace: ' ', '' -%}
-        {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
-        {%- unless mj_first -%},{%- endunless -%}{%- assign mj_first = false -%}
-        { "label": {{ mlabel | json }}, "tag": {{ mtag | json }}, "clubs": {{ mclubs | json }} }
-      {%- endfor -%}
-    ],
-    "products": [
-      {%- assign pj_first = true -%}
-      {%- for product in collection.products -%}
-        {%- assign clubs = '' -%}
-        {%- assign ptags = product.tags | join: '|' | downcase -%}
-        {%- if product.type == 'Weights for Woods' -%}
-          {%- if ptags contains 'driver' -%}{%- assign clubs = clubs | append: 'driver,' -%}{%- endif -%}
-          {%- if ptags contains 'fairway' -%}{%- assign clubs = clubs | append: 'fairway,' -%}{%- endif -%}
-          {%- if ptags contains 'hybrid' -%}{%- assign clubs = clubs | append: 'hybrid,' -%}{%- endif -%}
-        {%- elsif product.type == 'Weights for Irons' -%}
-          {%- assign clubs = 'iron,' -%}
-        {%- elsif product.type == 'Weights for Putters' -%}
-          {%- assign clubs = 'putter,' -%}
-        {%- endif -%}
-        {%- if clubs == '' -%}{%- continue -%}{%- endif -%}
-        {%- unless pj_first -%},{%- endunless -%}{%- assign pj_first = false -%}
-        {%- assign ptj = product.tags | join: '|' | downcase -%}
-        {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
-        {
-          "title": {{ product.title | json }},
-          "url": {{ product.url | json }},
-          "price": {{ product.price_min | money | strip_html | json }},
-          "img": {{ product.featured_image | image_url: width: 300 | json }},
-          "tags": {{ ptagstr | json }},
-          "clubs": {{ clubs | json }}
-        }
-      {%- endfor -%}
-    ]
-  }
-  </script>
+    {%- render 'ec-finder-data', collection: collection, models_raw: models_raw -%}
   {%- endif -%}
 
   <script>
     (function () {
       /* ---------- fit finder ---------- */
       var dataEl = document.getElementById('ecProductData');
-      if (dataEl) {
+      var seg = document.getElementById('ecClubSeg');
+      if (dataEl && seg) {
         var DATA = JSON.parse(dataEl.textContent);
+        var CLUB_ORDER = ['driver', 'fairway', 'hybrid', 'iron', 'putter'];
+        var CLUB_LABELS = { driver: 'Driver', fairway: 'Fairway', hybrid: 'Hybrid', iron: 'Irons', putter: 'Putter' };
         var club = null, modelTag = null, modelLabel = null;
-        var seg = document.getElementById('ecClubSeg');
         var chips = document.getElementById('ecModelChips');
         var results = document.getElementById('ecFinderResults');
         var frRow = document.getElementById('ecFrRow');
         var frTitle = document.getElementById('ecFrTitle');
         var clearBtn = document.getElementById('ecFrClear');
+
+        /* club buttons: only clubs this brand actually stocks */
+        CLUB_ORDER.forEach(function (c) {
+          var present = DATA.products.some(function (p) { return p.clubs.indexOf(c + ',') > -1; });
+          if (!present) return;
+          var b = document.createElement('button');
+          b.type = 'button'; b.dataset.club = c; b.textContent = CLUB_LABELS[c];
+          b.setAttribute('aria-pressed', 'false');
+          seg.appendChild(b);
+        });
 
         function productMatches(p) {
           if (p.clubs.indexOf(club + ',') === -1) return false;
@@ -646,7 +511,7 @@
           frTitle.textContent = hits.length + (hits.length === 1 ? ' weight fits' : ' weights fit') + ' your ' + (modelLabel ? modelLabel + ' ' : '') + club;
           frRow.innerHTML = hits.map(function (p) {
             return '<a class="ec__jcard" href="' + p.url + '">' +
-              (p.img ? '<span class="ec__jcard-ph"><img src="' + p.img + '" alt="" loading="lazy"></span>' : '') +
+              (p.img ? '<span class="ec__jcard-ph"><img src="' + p.img + '" alt="" loading="lazy" width="180" height="100"></span>' : '') +
               '<span class="ec__jcard-t">' + p.title + '</span>' +
               '<span class="ec__jcard-p">from ' + p.price + '</span></a>';
           }).join('');
@@ -673,12 +538,10 @@
           });
           render();
         }
-        if (seg) {
-          seg.addEventListener('click', function (e) {
-            var b = e.target.closest('button'); if (!b) return;
-            selectClub(b.dataset.club, b);
-          });
-        }
+        seg.addEventListener('click', function (e) {
+          var b = e.target.closest('button'); if (!b) return;
+          selectClub(b.dataset.club, b);
+        });
         if (clearBtn) {
           clearBtn.addEventListener('click', function () {
             club = null; modelTag = null; modelLabel = null;
@@ -694,7 +557,7 @@
             var m = null;
             for (var i = 0; i < DATA.models.length; i++) { if (DATA.models[i].tag === tag) { m = DATA.models[i]; break; } }
             var firstClub = m ? m.clubs.split(',')[0] : 'driver';
-            var btn = seg ? seg.querySelector('[data-club="' + firstClub + '"]') : null;
+            var btn = seg.querySelector('[data-club="' + firstClub + '"]');
             if (btn) {
               selectClub(firstClub, btn);
               modelTag = tag; modelLabel = label;
@@ -852,7 +715,7 @@
   .ec__band-text { color: rgba(255,255,255,.85); max-width: 50ch; margin-bottom: 2rem; }
   .ec__grams { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2.4rem; }
   .ec__grams span { font-size: 1.2rem; padding: .8rem 1.2rem; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; color: rgba(255,255,255,.9); }
-  .ec__band-visual img { width: min(400px, 100%); margin: 0 auto; border-radius: 14px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+  .ec__band-visual img { width: min(400px, 100%); height: auto; margin: 0 auto; display: block; border-radius: 14px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
   .ec__btn {
     display: inline-block; background: {{ accent }}; color: #fff; text-decoration: none;
     font-size: 1.2rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;

@@ -1,0 +1,49 @@
+{%- comment -%}
+  Outputs the JSON data island for the fit finder: model config plus every
+  weight product's clubs/tags/price. Wrenches and shaft adapters are excluded.
+  Inputs: collection, models_raw (lines of "Label | tag | clubs")
+{%- endcomment -%}
+{%- assign model_lines = models_raw | strip | newline_to_br | split: '<br />' -%}
+<script type="application/json" id="ecProductData">
+{
+  "models": [
+    {%- assign mj_first = true -%}
+    {%- for line in model_lines -%}
+      {%- assign mparts = line | split: '|' -%}
+      {%- assign mlabel = mparts[0] | strip -%}
+      {%- assign mtag = mparts[1] | strip | downcase -%}
+      {%- assign mclubs = mparts[2] | strip | downcase | replace: ' ', '' -%}
+      {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
+      {%- unless mj_first -%},{%- endunless -%}{%- assign mj_first = false -%}
+      { "label": {{ mlabel | json }}, "tag": {{ mtag | json }}, "clubs": {{ mclubs | json }} }
+    {%- endfor -%}
+  ],
+  "products": [
+    {%- assign pj_first = true -%}
+    {%- for product in collection.products -%}
+      {%- assign clubs = '' -%}
+      {%- assign ptj = product.tags | join: '|' | downcase -%}
+      {%- if product.type == 'Weights for Woods' -%}
+        {%- if ptj contains 'driver' -%}{%- assign clubs = clubs | append: 'driver,' -%}{%- endif -%}
+        {%- if ptj contains 'fairway' -%}{%- assign clubs = clubs | append: 'fairway,' -%}{%- endif -%}
+        {%- if ptj contains 'hybrid' -%}{%- assign clubs = clubs | append: 'hybrid,' -%}{%- endif -%}
+      {%- elsif product.type == 'Weights for Irons' -%}
+        {%- assign clubs = 'iron,' -%}
+      {%- elsif product.type == 'Weights for Putters' -%}
+        {%- assign clubs = 'putter,' -%}
+      {%- endif -%}
+      {%- if clubs == '' -%}{%- continue -%}{%- endif -%}
+      {%- unless pj_first -%},{%- endunless -%}{%- assign pj_first = false -%}
+      {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
+      {
+        "title": {{ product.title | json }},
+        "url": {{ product.url | json }},
+        "price": {{ product.price_min | money | strip_html | json }},
+        "img": {{ product.featured_image | image_url: width: 300 | json }},
+        "tags": {{ ptagstr | json }},
+        "clubs": {{ clubs | json }}
+      }
+    {%- endfor -%}
+  ]
+}
+</script>

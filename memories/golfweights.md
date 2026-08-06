@@ -113,3 +113,11 @@ Hydroblast | hydroblast | putter
 ```
 
 Without the models metafield the finder+rail auto-hide and the rest of the page still works.
+
+## v4.1 — theme-check compliance refactor
+
+Shopify theme-check flagged v4: LiquidNestingDepth >10, LiquidComplexity 177>120, ImgWidthAndHeight. Fixes (behaviour unchanged):
+- **Four companion snippets** now required alongside the section: `snippets/ec-carousel-count.liquid` (per-block match count, echoed and captured), `ec-filter-label.liquid` (filtered-view H1 label mapping), `ec-model-rail.liquid` (model rail buttons), `ec-finder-data.liquid` (finder JSON data island). Theme paste is now SIX files: 4 snippets + section + template.
+- Card render pass flattened to `continue`-guards (single-level ifs/unless-with-or); block loop uses `continue` guards instead of nested ifs. Max nesting 8.
+- Finder club buttons now built by JS from the product data (removed the has_driver/... liquid block); `has_kits` kept for the subnav band link.
+- All img tags carry width/height.

@@ -1,0 +1,33 @@
+{%- comment -%}
+  Outputs the model rail cards. Models with no matching products are skipped.
+  Model matching is by EXACT tag (delimited), so "qi" does not match "qi 35".
+  Inputs: collection, models_raw (lines of "Label | tag | clubs")
+{%- endcomment -%}
+{%- assign model_lines = models_raw | strip | newline_to_br | split: '<br />' -%}
+{%- for line in model_lines -%}
+  {%- assign mparts = line | split: '|' -%}
+  {%- assign mlabel = mparts[0] | strip -%}
+  {%- assign mtag = mparts[1] | strip | downcase -%}
+  {%- if mlabel == blank or mtag == blank -%}{%- continue -%}{%- endif -%}
+  {%- assign mtag_key = '|' | append: mtag | append: '|' -%}
+  {%- assign mcount = 0 -%}
+  {%- assign mimg = blank -%}
+  {%- for product in collection.products -%}
+    {%- assign ptj = product.tags | join: '|' | downcase -%}
+    {%- assign ptagstr = '|' | append: ptj | append: '|' -%}
+    {%- unless ptagstr contains mtag_key -%}{%- continue -%}{%- endunless -%}
+    {%- assign mcount = mcount | plus: 1 -%}
+    {%- if mimg == blank -%}
+      {%- assign mimg = product.featured_image -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if mcount > 0 -%}
+    <button type="button" class="ec__model-card" data-model-tag="{{ mtag | escape }}" data-model-label="{{ mlabel | escape }}">
+      {%- if mimg != blank -%}
+        <img src="{{ mimg | image_url: width: 300 }}" alt="{{ mlabel | escape }}" loading="lazy" width="150" height="92">
+      {%- endif -%}
+      <b>{{ mlabel }}</b>
+      <span>{{ mcount }} product{% if mcount != 1 %}s{% endif %}</span>
+    </button>
+  {%- endif -%}
+{%- endfor -%}
