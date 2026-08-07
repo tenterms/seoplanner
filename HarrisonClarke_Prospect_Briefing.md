@@ -14,7 +14,7 @@
 | Headcount | 10 average employees (FY2025 accounts); up from 7 (FY2024) and 5 (FY2023) |
 | Turnover | Not disclosed (filleted accounts). Estimated £800k–£1.3m, based on 10 staff at £80k–£130k revenue per head for a surveying practice |
 | Key people | Tim Clarke, Managing Director and 75%+ owner (decision maker); Faye Williams, Director since Nov 2024 |
-| Source of lead | Not established — treat as cold research until confirmed |
+| Source of lead | Existing conversation — meeting booked (few weeks out) with Tim, Faye and their marketing person. A £450 quick-wins report was previously offered and ignored |
 
 ## 2. Prospect scoring
 
@@ -24,11 +24,11 @@
 | Search Opportunity | 7/10 | ███████░░░ |
 | Ability to Pay | 6/10 | ██████░░░░ |
 | Lead Value | 6/10 | ██████░░░░ |
-| Client-Side Capacity | 6/10 | ██████░░░░ |
+| Decision Reachability | 8/10 | ████████░░ |
+| Client-Side Capacity | 7/10 | ███████░░░ |
 | Strategic Value | 6/10 | ██████░░░░ |
-| Decision Reachability | 5/10 | █████░░░░░ |
 
-A solid mid-strength prospect. The business is genuinely search-driven, growing fast (headcount doubled in two years), and already understands SEO enough to have built a ranking blog and a number-one local pack position in Southampton — so the pitch is not "you're invisible", it is "your London office is invisible, your commercial service lines under-earn, and your traffic has fallen 40% since April". The caution flags are a thin cash position, a mixed residential/commercial revenue base where the residential half is low-value, and no established route to Tim Clarke yet.
+A solid prospect with the decision makers already in the room: a meeting is booked with Tim, Faye and their marketing person. The business is genuinely search-driven, growing fast (headcount doubled in two years), and runs an in-house content engine (They Ask, You Answer methodology, executed by a general marketing assistant using the Hike SEO tool) — so the pitch is not "you're invisible", it is "your content engine is aimed at the wrong targets, your London office is invisible, and your traffic has fallen 40% since April". The caution flags: a £450 quick-wins report was already offered and ignored ("we have SEO handled" internally), so the sale is need-creation with kid gloves, positioned as a complement to their marketing person, never a replacement. Secondary flags: thin cash position and a residential half of the business that is low-ticket.
 
 ## 3. What they do and who they sell to
 
@@ -50,7 +50,7 @@ Reputation is a real asset: 5.0 on Google (38 reviews, Southampton office), 109 
 - Lauren Harrison Clarke (co-founder, presumably family) resigned as director and ceased as PSC in August 2017 — old history, no current bearing.
 - Director cross-check: no other current appointments found for either director in a Companies House officer search. This is their sole business.
 - **Intermediary risk: low structurally** — an owner-managed firm where the 75% shareholder is the MD. The open question is purely access: no existing conversation with Tim is on record. If contact starts elsewhere (office manager, Faye), get Tim into the second conversation.
-- Delivery contact: no marketing hire is visible. Someone in-house writes and publishes blog content regularly (the blog was updated this week), which suggests real content capacity — likely the directors themselves. Confirm at discovery.
+- Delivery contact: a general marketing assistant (not an SEO specialist) runs marketing in-house, produces the blog content (They Ask, You Answer methodology) and operates the Hike SEO tool. Real content capacity exists — the constraint is targeting, not production. This person will be in the meeting; the engagement must be framed as giving them better inputs (targets, briefs) they execute and get credit for.
 
 ## 5. Financial picture
 
@@ -133,7 +133,16 @@ Combined realistic framing: £80k–£150k of incremental annual revenue within 
 
 Fit: good, with eyes open. This is a growing, well-reviewed professional services SME whose website performs *unevenly* rather than badly — which makes them a more sophisticated buyer than most. They will not be impressed by "we'll get you ranking in Southampton" (they already are). They will listen to: why is traffic down 40% since April, why does the London office earn nothing from search, and why do the highest-ticket service lines have the thinnest pages.
 
-**Suggested entry point: a paid visibility review**, framed around three questions — the 2026 traffic decline (including AI Overview exposure and residual migration loose ends), the London opportunity, and commercial service-line coverage. Then a £1,500–£2,500/month retainer weighted to commercial and London content, internal linking from the blog, and local signals. A £4k+ tier is not the opening move given the cash position; earn it with the review.
+**Suggested entry point: a defined 90-day commercial sprint at standard retainer rates (£1,500–£2,500/month).** The £450 quick-wins report was offered and ignored — do not resurrect it; they rejected the premise ("we have SEO handled"), not the price. The sprint is scoped as: commercial keyword map and per-page targets, rewritten briefs for the top 5–8 commercial/London pages (executed by their marketing person in Hike), an internal-link plan pointing the blog's authority at the money pages, and a day-90 review. The fixed horizon answers the "waste of money" objection — a project with an off-ramp that runs at retainer economics, with renewal decided from evidence.
+
+### Meeting strategy (Tim, Faye + marketing person in the room)
+
+1. **Open with the no-fault decline.** Organic traffic is down ~40% since April 2026 and it is genuinely nobody's fault: their traffic is informational blog content, which AI Overviews now answer without a click. This validates the assistant's work, proves the research is real, and establishes that the informational click is a melting asset — so the commercial pages must start earning.
+2. **Extend their methodology rather than critique it.** They Ask, You Answer's Big 5 (cost, problems, comparisons, reviews, best-of) has been executed well for the residential survey buyer — it has never been applied to the commercial buyer. Frame the commercial gap as the unfinished second half of a strategy they already believe in.
+3. **Blame Hike's inputs, never its operator.** "Hike is doing exactly what it's been told — nobody has ever set commercial targets for it, and that's a specialist judgement call, not something it's fair to expect of a generalist running all of marketing." Evidence: the dilapidations page ranks 8 nationally by accident; Southampton commercial rankings are incidental, from unoptimised pages.
+4. **Position the engagement as a promotion for the marketing person**: they become the production engine and marketing owner; TenTerms becomes the targeting layer feeding them briefs and page-by-page keyword assignments. Better inputs, visible wins they own.
+5. **Give away two or three specifics free instead of selling a report**: the Trustpilot profile still registered to the old harrisonclarke.co domain (two-minute fix); the live "party wall surveyor london" search on Tim's phone — ten firms, no Harrison Clarke, despite Faye's MFPWS credential (this is Faye's moment; the London gap is her prize and she is the likeliest champion); one concrete Hike mis-target example.
+6. **End on the London number**: 2–3 commercial instructions a month is £100k+/year at their ticket sizes — the figure that makes £2k/month look small. Keep the "what's wrong" exhibits to two or three; spend the meeting's energy on the prize.
 
 ## 10. Discovery questions
 
@@ -151,8 +160,8 @@ Fit: good, with eyes open. This is a growing, well-reviewed professional service
 - **Turnover is estimated, not known** — filleted accounts. The £800k–£1.3m band rests on a revenue-per-head assumption.
 - **FY2025 retained-profit dip unexplained** — probably dividends in a restructuring year, but if it was trading losses the affordability picture weakens. Ask.
 - **Thin cash (£23k)** against large debtors; monthly retainer scrutiny will be real.
-- **No confirmed route to Tim Clarke** — no enquiry or warm intro on record in this research. Reachability scored 5/10 pending that.
-- **They may be doing SEO already** — Yoast configured, location pages built, active blog, GBP tracked with UTM parameters. If an agency is incumbent, the pitch becomes a displacement conversation; find out early.
+- **The £450 quick-wins report was ignored** — the objection is perceived need ("SEO is handled internally"), not price. The meeting must open the gap between "handled" and "aimed at the wrong targets" without wounding the marketing person whose remit it touches.
+- **Kid-gloves dynamic**: the incumbent is their own general marketing assistant plus the Hike tool, and that person is in the meeting. Any framing that reads as replacement or audit of their work kills the deal; every critique must land on the tool's inputs or the changed search landscape.
 - **Residential half of the business is low-ticket**, so a residential-only engagement would struggle to clear 3x; the case depends on commercial/London.
 - **Naming confusion**: "Harrison Clarke" is also an unrelated recruitment firm (Harrison Clarke Group Ltd, Canary Wharf) and similar law-firm names exist (Harrison Clark Rickerbys) — worth noting for brand-SERP and AI-answer work.
 - Trustpilot profile still registered against the old harrisonclarke.co domain — small migration loose end that also weakens AI-answer ingredients.
