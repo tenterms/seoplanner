@@ -181,3 +181,10 @@ Preview URL (needs Joe's session or share param): golfweights.co.uk/?preview_the
 - One-hit rollout: enabled_handles all-13 string; safe because layout self-adapts and theme is unpublished. Scotty = putter-only proven pattern.
 - Consolidated missing-tags list incl. NEW finds: Callaway "Paradym Ai Smoke Max D" zero tags, 2× "Apex Utility Wood" + "Paradym X TD Hybrid" no club tags; PXG "Gen 8 Irons" zero tags.
 - Scotty insight: weights near-universal across families (26/28 products match every family chip) — chips are fit-confidence, not narrowing; family-level tags chosen over per-model.
+
+## Full 13-brand tag audit (added to handover as section 2a)
+
+Systematic audit (title-vs-club-tag, kit tagging, model-chip coverage, vendor consistency, kits-collection membership). CLEAN: kit tagging 100% (60/60 tagged + in kits collection), vendors all correct, scotty/odyssey/lab/toulon/srixon/mizuno/honma internally consistent. FIXES (all in handover doc):
+- A (add club tags, title promises them): TM Sim Driver + Sim Max-D (`driver`), TM Stealth trio (`hybrid`); Callaway Ai Smoke Max D (NO tags at all → driver/fairway wood/ai smoke), Ai Smoke D&F (`driver`), Paradym D&F Kit + Quantum D&F (`fairway wood`), Paradym X TD Hybrid (`hybrid`); Cobra Darkspeed (`fairway wood`+`hybrid`), DS Adapt (`hybrid`); PXG both woods products (`hybrid`).
+- B (model tags): PXG Gen 8 Irons → tag `gen 8`. Models lists extended with pre-armed lines that activate when tags land: TM `SIM | sim | driver`, Callaway `Epic Sub Zero | epic sub zero | driver,fairway`, PXG `Gen 8 Irons | gen 8 | iron`.
+- C (client decisions): Callaway Apex Utility Woods club classification; TM SIM UDI utility-as-hybrid; Srixon fairway/hybrid fitment; Mizuno/Honma hybrid fitment; LAB/Mizuno/Honma kits (create or accept hidden).

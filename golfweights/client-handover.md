@@ -64,6 +64,7 @@ M2 | m2 | driver
 M1 | taylormade m1 | driver
 R1-R11 Series | r9 | driver,fairway
 R7 Quad | r7 quad | driver
+SIM | sim | driver
 ```
 
 *Verified chips (product counts): driver: Qi 35(2), Qi 10(2), Qi4D(2), Stealth 2(2), Stealth(1), SIM2(1), SIM Max(1), BRNR Mini(1), M6(1), M5(1), M4(1), M3(1), M2(2), M1(1), R1-R11 Series(1), R7 Quad(2) — fairway: Qi 35(2), Qi 10(2), Qi4D(2), Stealth(1), M4(1), M3(1), R1-R11 Series(1) — hybrid: Qi 35(2), Qi 10(2), Qi4D(2), Stealth 2(2) — putter: Spider Tour(3), Spider X(1), Spider EX(1), Spider GTX Max(1), Spider Mini & FCG(2), TP Collection(4), Hydroblast & Truss(2)*
@@ -107,6 +108,7 @@ Mavrik | mavrik | driver,fairway
 Big Bertha | big bertha | driver,fairway
 Apex Hybrids | apex | hybrid
 XR16 & Great Big Bertha | great big bertha | driver,fairway
+Epic Sub Zero | epic sub zero | driver,fairway
 ```
 
 *Verified chips (product counts): driver: Elyte(2), Paradym(2), Quantum(2), Rogue(2), Rogue ST(1), Epic Speed(2), Epic Max(3), Epic Flash(2), Mavrik(2), Big Bertha(3), XR16 & Great Big Bertha(2) — fairway: Elyte(1), Ai Smoke(1), Paradym(2), Rogue(1), Rogue ST(1), Epic Speed(1), Epic Max(1), Epic Flash(1), Mavrik(2), Big Bertha(3), XR16 & Great Big Bertha(1) — hybrid: Elyte(1), Quantum(1), Apex Hybrids(1)*
@@ -164,6 +166,7 @@ Black Ops | black ops | driver,fairway
 Battle Ready | battle ready | putter
 Blackjack | blackjack | putter
 Gunboat | gunboat | putter
+Gen 8 Irons | gen 8 | iron
 ```
 
 *Verified chips (product counts): driver: Black Ops(2), 0811 Gen4-6(2), 0211(2) — fairway: Black Ops(2), 0811 Gen4-6(2), 0211(2) — iron: 0311 Irons(1) — putter: Battle Ready(2), Blackjack(2), Gunboat(2)*
@@ -296,6 +299,48 @@ The page builds itself from three product fields. Get these right and the produc
 - Callaway: "Paradym Ai Smoke Max D…" has no tags at all; the two "Apex Utility Wood" products and "Paradym X Triple Diamond Hybrid" have no club tags
 - PXG: "Gen 8 Irons" weights have no tags
 - Hybrid/fairway tags to add so those sections appear: PXG (`hybrid`), Srixon (`fairway wood`, `hybrid`), Mizuno (`hybrid`), Honma (`hybrid`)
+
+---
+
+## 2a · Tag fixes to make now (from a full 13-brand audit)
+
+The audit checked every product's club tags against its title, kit tagging, model-chip coverage and vendor consistency. **Good news first:** kit tagging is 100% consistent (every kit product is tagged `weight kit` and sits in the Weight Kits collection), vendors are correct everywhere, and Scotty Cameron, Odyssey, LAB, Toulon Design, Srixon, Mizuno and Honma products are internally clean.
+
+### A — Products whose titles promise a club their tags don't deliver (add the tag; the product then appears in that section, club button and count automatically)
+
+| Brand | Product | Add tag(s) |
+|---|---|---|
+| TaylorMade | Sim Driver Aftermarket Golf back & slider Weights | `driver` |
+| TaylorMade | Sim Max-D Driver Aftermarket Golf Weights | `driver` |
+| TaylorMade | Stealth, Stealth HD & Stealth Plus Driver, Fairway Wood & Hybrid | `hybrid` |
+| Callaway | Paradym Ai Smoke Max D Fast Triple Diamond Driver & Fairway | `driver`, `fairway wood`, `ai smoke` (currently has NO tags at all) |
+| Callaway | Paradym Ai Smoke Driver & Fairway | `driver` |
+| Callaway | Paradym Driver & Fairway Weights Kit | `fairway wood` |
+| Callaway | Quantum Driver & Fairway | `fairway wood` |
+| Callaway | Paradym X Triple Diamond Hybrid | `hybrid` |
+| Cobra | Darkspeed LS MAX X LS Driver Fairway & Hybrid | `fairway wood`, `hybrid` |
+| Cobra | DS Adapt Driver Fairway & Hybrid | `hybrid` |
+| PXG | Drivers, Fairway Woods & Hybrids (both weight products) | `hybrid` |
+
+### B — Products needing a model tag so they appear under a model chip
+
+| Brand | Product | Add tag | Then covered by chip |
+|---|---|---|---|
+| PXG | Gen 8 Irons Aftermarket Golf Weights | `gen 8` | "Gen 8 Irons" (pre-added to the models list) |
+| TaylorMade | Sim Driver / Sim Max-D | already tagged `sim` | "SIM" (pre-added; activates once the `driver` tag from list A is added) |
+| Callaway | Epic Sub Zero Fairway Wood | already tagged `epic sub zero` | "Epic Sub Zero" (pre-added) |
+
+### C — Client decisions needed (title/category ambiguity — confirm fitment, then tag)
+
+| Brand | Question |
+|---|---|
+| Callaway | The two "Apex Utility Wood" products have no club tags. Do they belong under fairway woods, hybrids, or both? Tag accordingly (`fairway wood` and/or `hybrid`). |
+| TaylorMade | "SIM Titanium Fairway Wood & SIM UDI Utility Iron" — should the utility iron count as a hybrid on-page? If yes, add `hybrid`. |
+| Srixon | Your sheet ticked fairway + hybrid, but the ZXi / ZX5-ZX7 weights are only tagged for drivers. If they fit Srixon fairways/hybrids, add `fairway wood` / `hybrid` to those products — the sections then appear. |
+| Mizuno / Honma | Your sheet ticked hybrid; the weights are tagged driver + fairway only. If they fit hybrids, add `hybrid`. |
+| LAB / Mizuno / Honma | Your sheet ticked kits, but no kit products exist for these brands. Either create/tag kits (`weight kit`) or the kits section stays hidden — both are fine. |
+
+Everything in lists A and B is a two-minute tag edit in the product admin; every fix takes effect on the pages immediately, no theme changes needed.
 
 ---
 
