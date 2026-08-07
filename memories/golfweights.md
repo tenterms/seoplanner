@@ -171,3 +171,13 @@ Preview URL (needs Joe's session or share param): golfweights.co.uk/?preview_the
 ## Surfer copy brief
 
 `golfweights/surfer-copy-brief.md` — standalone brief for a Claude Code + Surfer MCP session to write all 13 brand pages' copy: per-brand metafield slots (intro/featured_intro/models_intro/category intros/faqs with word limits), global [brand]-token slots (kit band, 2 split boxes, how-steps, default FAQs), fixed heading structure, per-brand section matrix, Surfer setup (primary kw "[brand] golf club weights", GB desktop), deliverable = one md per brand + global-copy.md.
+
+## Client handover (end of build phase)
+
+`golfweights/client-handover.md` (also published as artifact) contains, verified against live tags on 7 Aug 2026:
+- **custom.models values for ALL 13 brands** — every tag exact-verified, chips-per-club simulated (e.g. ping: G440/G430/G425(tag `g425 max`)/G410/G400/G30 + i-Series Irons + Vault putters; cobra: DS Adapt/Darkspeed/Aerojet/LTDx/Radspeed/Speedzone(tag `king sz speedzone`)/OPTM/King Vintage; odyssey: Ai One/Square 2 Square/Tri-Hot/Jailbird/2-Ball Ten(tag `2- ball ten` — note weird spacing IS the real tag)/Seven/Toulon; titleist per-model gt/tsr/tsi/ts/gts tags; full lists in the doc).
+- **custom.gram_range per brand** computed from variant titles (lookbehind regex to avoid ST190G-style artifacts, capped ≤60g).
+- New-product checklist (type exact-spelling → club tags for woods → exact model tag → `weight kit` tag → vendor = brand → add to collection; new model family = tag products + one metafield line).
+- One-hit rollout: enabled_handles all-13 string; safe because layout self-adapts and theme is unpublished. Scotty = putter-only proven pattern.
+- Consolidated missing-tags list incl. NEW finds: Callaway "Paradym Ai Smoke Max D" zero tags, 2× "Apex Utility Wood" + "Paradym X TD Hybrid" no club tags; PXG "Gen 8 Irons" zero tags.
+- Scotty insight: weights near-universal across families (26/28 products match every family chip) — chips are fit-confidence, not narrowing; family-level tags chosen over per-model.
