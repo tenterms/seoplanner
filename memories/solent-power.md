@@ -10,7 +10,8 @@
 - **Power-cut-checker hub = 55%+ of all organic traffic** (NIE Northern Ireland page is the site's #1 page). Commercial pages rank well (#1–3 on many kW/kVA terms) but earn little each.
 
 ## Validated verdicts (don't re-litigate)
-- 404s → 410 OK **except**: `/brand/teksan/`, `/electrical-services`, `/prevent-diesel-generator-failure/` (have backlinks → 301 targets in fix list); `/uninterruptible-power-supply-servi%20es/` is a typo'd-slug internal-link bug (UR 8.1!), fix the href not the status.
+- 404s → 410 OK **except**: `/brand/teksan/`, `/electrical-services`, `/prevent-diesel-generator-failure/` (have backlinks → 301 targets in fix list); `/uninterruptible-power-supply-servi%20es/` typo'd slug — broken href ALREADY FIXED (verified 13 Aug: zero live internal links to it; nav's 499 links target the correct URL), UR 8.1 is residual → just 301 it to `/uninterruptible-power-supply-services/`.
+- UPS tree migrated `/ups/*` → `/uninterruptible-power-supplies/*` ~11 Jul 2026; `/ups/configurable-output/` missed the migration (live, "Archives" title); 12 internal links still hit old `/uninterruptible-power-supply/` redirect.
 - Soft-404 pattern: old posts 301'd to homepage (`/electronic-repairs`, `/is-using-a-generator-cheaper…`).
 - BESS duplicated: `/battery-energy-storage-systems/` + `/battery-energy-storage-solutions-bess/` → keep `-systems`, 301 the other.
 - `/ups/*` tree half-consolidated; `/ups/configurable-output/` left live with "Archives" title.

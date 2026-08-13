@@ -20,7 +20,7 @@ Blanket answer: yes, dead URLs with no inbound links can be served as **410 Gone
 
 | Dead URL | Real fix |
 |---|---|
-| `/uninterruptible-power-supply-servi%20es/` | This is the UPS services slug with a **space typo** ("servi es"). It has one of the highest URL Ratings on the whole site, which means it's being linked internally at scale (likely nav/footer/a template). **Find the broken href** (search templates/menus/content for `servi es` or `servi%20es`), fix it to `/uninterruptible-power-supply-services/`, and 301 the typo URL to the correct page. |
+| `/uninterruptible-power-supply-servi%20es/` | UPS services slug with a **space typo** ("servi es"). Internal-link scan (13 Aug): **no live internal link points at it any more** — the sitewide nav link (499 dofollow) correctly targets `/uninterruptible-power-supply-services/`, so the broken href has already been fixed. Its high URL Rating is residual from when the broken link was live. Remaining action: **301 the typo URL** to `/uninterruptible-power-supply-services/` to reclaim that equity. |
 | `/generator-accessories/page/3/` and `/page/4/` | Pagination stubs — the category shrank. Don't 410; make sure nothing (sitemap, internal links) still references trimmed pagination URLs. They can stay 404. |
 | `/generators/doosan-generators/` | Decide: if Doosan is still sold, reinstate the page; if dropped, 410 is correct. Don't blanket-redirect a discontinued brand to the homepage. |
 
@@ -46,12 +46,13 @@ Redirecting a dead page to the homepage passes nothing — Google classifies it 
 
 Same intent, two URLs — this splits the ranking signal for a strategically important term. Keep **one** (the `-systems` URL has the higher authority), merge the content, 301 the other into it.
 
-## 4. Finish (or reverse) the UPS subcategory consolidation
+## 4. Finish the UPS subcategory migration
 
-The `/ups/` tree is half-migrated:
+The UPS subcategory tree moved from `/ups/*` to `/uninterruptible-power-supplies/*` around 11 July 2026 (the new URLs each receive ~277 internal links). Three loose ends:
 
-- `/ups/rack-mount/`, `/ups/tower/`, `/ups/three-phase/`, `/ups/single-phase/`, `/ups/modular/` all 301 elsewhere — but each still carries decent URL authority, so confirm they 301 to the correct live equivalents (one hop, not to the homepage).
-- `/ups/configurable-output/` is **still live** with the default archive title "Configurable Output UPS Archives | Solent Power". Either it should have been redirected with its siblings, or it needs a proper title/H1 and content.
+- Confirm `/ups/rack-mount/`, `/ups/tower/`, `/ups/three-phase/`, `/ups/single-phase/`, `/ups/modular/` each 301 to their new `/uninterruptible-power-supplies/…` equivalent in one hop.
+- `/ups/configurable-output/` missed the migration — still **live** with the default archive title "Configurable Output UPS Archives | Solent Power", competing with the new `/uninterruptible-power-supplies/configurable-output/`. 301 it to the new URL.
+- 12 internal links still point at the old `/uninterruptible-power-supply/` redirect — update those hrefs to the live destination.
 
 ## 5. Product catalogue hygiene (WooCommerce artifacts)
 
