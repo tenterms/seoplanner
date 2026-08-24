@@ -136,6 +136,8 @@ A "well-optimised site that stopped ranking" is almost never a content problem. 
 
 **Per-page checklist.** Enumerate *every* sitemap URL. For products, derive the target keyword from the slug and template the edits by kind. Flag the subset that's currently mis-targeted (ranking for bare generic terms) as the first work batch. Sort by priority.
 
+**Markdown deliverables: always publish as an artifact.** Any `.md` deliverable (briefings, prospect research, discussion notes, plans, reports) must also be published as an Artifact so it is readable in chat, not left as a file the client has to open. Write the `.md` to the working dir as the source of record, then author an HTML page from its content and publish that with the `Artifact` tool — the artifact format is always HTML, never a raw `.md` publish. Hand back the URL in the reply. Keep the file path stable so republishing updates the same artifact rather than creating a new one.
+
 **Always verify the file before claiming done.** Reload the workbook and print tab/row counts. For docx, if LibreOffice/pandoc aren't installed (they often aren't on this machine), verify via `zipfile`/regex on `word/document.xml` (headings, table count, key strings) rather than a visual render.
 
 ## 8. Golden rules (hard-won)

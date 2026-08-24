@@ -42,3 +42,5 @@ NOT goals: direct online sales, private classifieds, and (currently) indexed new
 
 ## Pitch strategy verdict
 Outside the normal TenTerms ICP (corporate division of a captive lender, not a £500k-£20m SME). **Do not pitch a generic retainer.** Lead with a dated migration-audit document ("what the Honest John migration is about to cost Drive"), sell a paid migration-recovery + brand-entity sprint scoped in weeks. PR angles that stand alone: brand entity establishment, Honest John goodwill management (visible backlash on PistonHeads / motoring press), and data-led PR off Real MPG + valuation + finance data.
+
+**Artifact URLs:** briefing (presentation cut) https://claude.ai/code/artifact/61004e43-0758-4ddb-bb6e-bba83ef975dd · full text https://claude.ai/code/artifact/d5091795-24b6-457a-a0d8-bebf03879aaf
