@@ -238,12 +238,9 @@
  },
  {
   "date": "02-03",
-  "title": "La Bamba",
-  "year": 1987,
-  "why": "The Day the Music Died — Buddy Holly, Ritchie Valens and the Big Bopper killed in the Clear Lake crash, 3 February 1959.",
-  "alt": "The Buddy Holly Story (1978); Serpico (shot 3 February 1971)",
-  "kind": "about",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "La Bamba — a biopic that ends in the Clear Lake crash. Other claims: The Buddy Holly Story (1978); Serpico (shot 3 February 1971)"
  },
  {
   "date": "02-04",
@@ -277,12 +274,9 @@
  },
  {
   "date": "02-08",
-  "title": "Mary Queen of Scots",
-  "year": 2018,
-  "why": "Mary Stuart is beheaded in the great hall at Fotheringhay on the morning of 8 February 1587, after nineteen years a prisoner.",
-  "alt": "Mary, Queen of Scots (1971); Once Upon a Time in Hollywood, whose first chapter card reads 8 February 1969",
-  "kind": "about",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Mary Queen of Scots — a reign ending at Fotheringhay. Other claims: Mary, Queen of Scots (1971); Once Upon a Time in Hollywood, whose first chapter card reads 8 February 1969"
  },
  {
   "date": "02-09",
@@ -310,9 +304,12 @@
  },
  {
   "date": "02-12",
-  "open": true,
-  "candidate": "Creation (2009) — Darwin was born on 12 February 1809 (as was Lincoln); the film is his struggle to publish.",
-  "why": "No film yet found that is set on this date."
+  "title": "Before I Fall",
+  "year": 2017,
+  "kind": "dated",
+  "focus": "day",
+  "why": "Cupid Day at Thomas Jefferson High, 12 February — and Sam wakes into it again, and again. A time loop is the purest form of a film taking place on a date.",
+  "alt": "Creation — Darwin born 12 February 1809 (anniversary, rejected)"
  },
  {
   "date": "02-13",
@@ -329,7 +326,7 @@
   "year": 1993,
   "kind": "holiday",
   "why": "Annie writes to a voice on the radio and asks him to meet her on top of the Empire State Building on Valentine's Day.",
-  "alt": "The St. Valentine's Day Massacre (1967) — 14 February 1929; Raging Bull — LaMotta–Robinson, 14 February 1951",
+  "alt": "Eternal Sunshine of the Spotless Mind — Joel skips work and rides to Montauk on Valentine's morning; The St. Valentine's Day Massacre (1929); Raging Bull",
   "focus": "day"
  },
  {
@@ -433,12 +430,9 @@
  },
  {
   "date": "02-27",
-  "title": "Cool Runnings",
-  "year": 1993,
-  "why": "The Jamaican four-man bobsleigh crash at Calgary, 27 February 1988 — the run the film ends on.",
-  "alt": "Reichstag fire, 27 Feb 1933",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Cool Runnings — the Calgary crash is the last act. Other claims: Reichstag fire, 27 Feb 1933"
  },
  {
   "date": "02-28",
@@ -661,12 +655,9 @@
  },
  {
   "date": "03-26",
-  "title": "Immortal Beloved",
-  "year": 1994,
-  "why": "Opens with Beethoven's funeral — he died on 26 March 1827, and 20,000 Viennese followed the coffin.",
-  "alt": "The Camp David Accords signed, 26 March 1979",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Immortal Beloved — opens at the funeral, then tells a life. Other claims: The Camp David Accords signed, 26 March 1979"
  },
  {
   "date": "03-27",
@@ -721,12 +712,9 @@
  },
  {
   "date": "04-03",
-  "title": "The Assassination of Jesse James by the Coward Robert Ford",
-  "year": 2007,
-  "why": "Jesse James shot in the back of the head while straightening a picture in St Joseph, 3 April 1882.",
-  "alt": "The Great Train Robbery",
-  "kind": "about",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "The Assassination of Jesse James by the Coward Robert Ford — months of dread, one shot at the end. Other claims: The Great Train Robbery"
  },
  {
   "date": "04-04",
@@ -874,12 +862,9 @@
  },
  {
   "date": "04-21",
-  "title": "The Red Baron",
-  "year": 2008,
-  "why": "Manfred von Richthofen is shot down over the Somme on 21 April 1918.",
-  "alt": "Rome founded, 21 April 753 BC — Romulus and Remus films",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "The Red Baron — a career ending in the shoot-down. Other claims: Rome founded, 21 April 753 BC — Romulus and Remus films"
  },
  {
   "date": "04-22",
@@ -988,12 +973,12 @@
  },
  {
   "date": "05-05",
-  "title": "Hunger",
-  "year": 2008,
-  "why": "Bobby Sands dies on the 66th day of his hunger strike, 5 May 1981.",
-  "alt": "Hacksaw Ridge — Doss's night on the Maeda Escarpment, 5 May 1945; Cinco de Mayo",
-  "kind": "about",
-  "focus": "spine"
+  "title": "Cinco de Mayo: La Batalla",
+  "year": 2013,
+  "kind": "holiday",
+  "focus": "day",
+  "why": "The Battle of Puebla, 5 May 1862, fought and filmed inside a single day.",
+  "alt": "Hunger — Bobby Sands dies 5 May 1981, but the film is a hunger strike, not a date; Hacksaw Ridge"
  },
  {
   "date": "05-06",
@@ -1029,7 +1014,8 @@
   "why": "Ends on Victory Day, 9 May 1945, with Veronika handing out flowers to men who came back to somebody else.",
   "alt": "Come and See; Ballad of a Soldier",
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "ending": true
  },
  {
   "date": "05-10",
@@ -1044,10 +1030,11 @@
   "date": "05-11",
   "title": "Goodfellas",
   "year": 1990,
-  "why": "The caption reads Sunday, May 11th, 1980. Helicopters, ziti, and the end of Henry Hill.",
+  "why": "The caption reads Sunday, May 11th, 1980. Helicopters overhead, ziti in the oven, a gun to drop off and a sauce that cannot be left — twenty-five minutes of one day, shot like a fever.",
   "alt": "Operation Finale — Eichmann seized in Buenos Aires, 11 May 1960",
   "kind": "about",
-  "focus": "day"
+  "focus": "day",
+  "ending": true
  },
  {
   "date": "05-12",
@@ -1207,12 +1194,9 @@
  },
  {
   "date": "05-31",
-  "title": "Operation Finale",
-  "year": 2018,
-  "why": "Adolf Eichmann is hanged at Ramla just before midnight on 31 May 1962 — the end of the operation the film stages.",
-  "alt": "The Johnstown Flood, 31 May 1889",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Operation Finale — the capture is the film; the hanging is a caption. Other claims: The Johnstown Flood, 31 May 1889"
  },
  {
   "date": "06-01",
@@ -1877,7 +1861,7 @@
   "year": 1974,
   "kind": "dated",
   "why": "The opening narration gives the date flatly, like a news bulletin: 18 August 1973.",
-  "alt": "Iron Jawed Angels (historical)",
+  "alt": "Wet Hot American Summer (2001) — Camp Firewood, the last day of camp, 18 August 1981, start to finish",
   "focus": "day"
  },
  {
@@ -1980,7 +1964,8 @@
   "why": "Diana dies in the Pont de l'Alma tunnel in the early hours of 31 August 1997; the film is the week that follows.",
   "alt": "Spencer (2021); Diana (2013)",
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "ending": true
  },
  {
   "date": "09-01",
@@ -2080,12 +2065,9 @@
  },
  {
   "date": "09-12",
-  "title": "Cry Freedom",
-  "year": 1987,
-  "why": "Steve Biko dies in police custody in Pretoria on 12 September 1977; Donald Woods spends the rest of the film proving it.",
-  "alt": "Lascaux discovered, 12 September 1940",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Cry Freedom — Biko dies at the midpoint and the film carries on without him. Other claims: Lascaux discovered, 12 September 1940"
  },
  {
   "date": "09-13",
@@ -2128,9 +2110,12 @@
  },
  {
   "date": "09-18",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Jimi: All Is by My Side — a year in London, ending elsewhere. Other claims: Rush (1976 Italian GP)"
+  "title": "Happy Death Day",
+  "year": 2017,
+  "kind": "dated",
+  "focus": "day",
+  "why": "Tree wakes up in Carter's dorm room on Monday 18 September, her birthday, and keeps waking up in it.",
+  "alt": "Paranormal Activity, whose first on-screen card is 18 September 2006"
  },
  {
   "date": "09-19",
@@ -2203,12 +2188,9 @@
  },
  {
   "date": "09-28",
-  "title": "Baltic Storm",
-  "year": 2003,
-  "why": "The MS Estonia goes down in the Baltic in the early hours of 28 September 1994 with 852 dead.",
-  "alt": "The Perfect Storm",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Baltic Storm — the sinking, then an investigation. Other claims: The Perfect Storm"
  },
  {
   "date": "09-29",
@@ -2226,7 +2208,8 @@
   "why": "The title is the date — the day James Dean died, and what it does to a small-town Arkansas campus that night.",
   "alt": "Life (2015); Munich: The Edge of War — 'peace for our time', 30 September 1938",
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "ending": true
  },
  {
   "date": "10-01",
@@ -2353,12 +2336,9 @@
  },
  {
   "date": "10-15",
-  "title": "Mata Hari",
-  "year": 1931,
-  "why": "Margaretha Zelle is shot by firing squad at Vincennes at dawn on 15 October 1917.",
-  "alt": "Mata Hari (1985)",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Mata Hari — a life ending at Vincennes. Other claims: Mata Hari (1985)"
  },
  {
   "date": "10-16",
@@ -2530,7 +2510,7 @@
   "title": "V for Vendetta",
   "year": 2005,
   "why": "Remember, remember, the fifth of November. Parliament goes up to the 1812 Overture.",
-  "alt": "Back to the Future — Doc slips in the bathroom and invents the flux capacitor, 5 November 1955; Gunpowder, Treason & Plot",
+  "alt": "Attack the Block — one Bonfire Night on a South London estate, start to finish; Back to the Future (5 November 1955)",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2770,18 +2750,18 @@
  },
  {
   "date": "12-04",
-  "title": "Judas and the Black Messiah",
-  "year": 2021,
-  "why": "The pre-dawn raid on 2337 West Monroe Street, 4 December 1969, in which Fred Hampton is shot in his bed.",
-  "alt": "The Murder of Fred Hampton (1971)",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Judas and the Black Messiah — an infiltration ending in the raid. Other claims: The Murder of Fred Hampton (1971)"
  },
  {
   "date": "12-05",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Untouchables — repeal is the closing line. Other claims: Mozart dies, 5 December 1791 — Amadeus"
+  "title": "Saint",
+  "year": 2010,
+  "kind": "holiday",
+  "focus": "day",
+  "why": "Pakjesavond, 5 December — and once a generation the Sinterklaas parade falls on a full moon, which is when the bishop comes back over the Amsterdam rooftops.",
+  "alt": "The Untouchables — Prohibition repealed 5 December 1933 (a closing line, rejected)"
  },
  {
   "date": "12-06",
@@ -2932,7 +2912,7 @@
   "title": "A Christmas Story",
   "year": 1983,
   "why": "Christmas morning in Hohman, Indiana: the Red Ryder BB gun, the leg lamp, the Chinese turkey.",
-  "alt": "L.A. Confidential — Bloody Christmas, 25 December 1951; Rocky IV (the Moscow fight is on Christmas Day); White Christmas; Scrooge (1951)",
+  "alt": "Life of Brian — born the same night, one stable along; L.A. Confidential (Bloody Christmas, 1951); Rocky IV; White Christmas",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2947,12 +2927,9 @@
  },
  {
   "date": "12-27",
-  "title": "Bhutto",
-  "year": 2010,
-  "why": "Benazir Bhutto is killed leaving a rally in Rawalpindi on 27 December 2007.",
-  "alt": "The Beagle sails with Darwin aboard, 27 December 1831",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Bhutto — a documentary life ending in the assassination. Other claims: The Beagle sails with Darwin aboard, 27 December 1831"
  },
  {
   "date": "12-28",
@@ -2971,12 +2948,9 @@
  },
  {
   "date": "12-30",
-  "title": "Rasputin: The Mad Monk",
-  "year": 1966,
-  "why": "Yusupov's cellar, the poisoned cakes, the river: Rasputin is killed on the night of 29/30 December 1916.",
-  "alt": "Nicholas and Alexandra (1971); the USSR founded, 30 December 1922",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Rasputin: The Mad Monk — a life ending in Yusupov's cellar. Other claims: Nicholas and Alexandra (1971); the USSR founded, 30 December 1922"
  },
  {
   "date": "12-31",

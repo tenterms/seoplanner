@@ -172,6 +172,7 @@ BODY = r'''
     <li><b>Genre is not a filter.</b> A war film that happens on one day is exactly as valid as a comedy that does. What matters is whether the day holds the film.</li>
     <li><b>An anniversary is not a setting.</b> Sixty picks came out on this alone &mdash; Conan Doyle's birthday, Mozart's, the night Metropolis premiered. A film about a man is not set on the day he was born.</li>
     <li><b>A life is not a day.</b> Bohemian Rhapsody has twenty minutes of Live Aid inside fifteen years; Malcolm X, Milk and Selena all simply end on their date. Plucking the climax out of a biography picks a spoiler, not a setting. Twenty-six of those are now open days.</li>
+    <li><b>Ending-anchored days are marked "ends here".</b> Goodfellas caption its date and spend real screen time inside it &mdash; but the day is where the story stops, which makes the pick a spoiler as much as a setting. Four survive on that basis and say so. Thirteen more that only ended on their date, from La Bamba to Mata Hari, were removed this round.</li>
     <li><b>Spine days are marked, not hidden.</b> Oppenheimer, Apollo 13 and Zero Dark Thirty run longer than their date but are built around it &mdash; the day is the spine. Press <em>Whole film is that day</em> to see only the strictest set.</li>
     <li><b>A record of an occasion is not a movie.</b> A Queen Is Crowned and Grenfell are both out.</li>
     <li><b>Open days carry their best rejected pitch</b>, so the argument starts from something rather than nothing.</li>
@@ -232,7 +233,7 @@ const t = byDate[todayKey];
 document.getElementById("todayCard").innerHTML =
   '<div class="datebox"><div><div class="dmon">'+MONTHS[Number(todayKey.slice(0,2))-1]+
   '</div><div class="dnum">'+Number(todayKey.slice(3))+'</div></div>'+
-  '<div class="dmon">'+(t.open ? "Open date" : KIND[t.kind])+'</div></div>'+
+  '<div class="dmon">'+(t.open ? "Open date" : KIND[t.kind] + (t.ending ? " &mdash; ends here" : ""))+'</div></div>'+
   '<div class="filmbox"><div class="nowshow">'+(t.open?"Nothing qualifies today":"Now showing &mdash; today’s film")+'</div>'+
   (t.open ? '<h2>This date is open</h2><p>'+esc(t.why)+'</p><div class="altline"><span>Best pitch, rejected</span>'+esc(t.candidate||"")+'</div>'
           : '<h2>'+esc(t.title)+' <span class="yr">'+t.year+'</span></h2><p>'+esc(t.why)+'</p>'+
@@ -246,7 +247,7 @@ function open(k){
   const e = byDate[k]; if(!e) return; current = k;
   document.getElementById("dDate").textContent = longDate(k);
   const tag = document.getElementById("dTier");
-  tag.textContent = e.open ? "Open" : KIND[e.kind] + (e.focus === "spine" ? " · spine" : "");
+  tag.textContent = e.open ? "Open" : KIND[e.kind] + (e.focus === "spine" ? " · spine" : "") + (e.ending ? " · ends here" : "");
   tag.className = "tag" + (e.open || e.focus === "spine" ? "" : " t-A");
   document.getElementById("dTitle").innerHTML = e.open ? "This date is open"
       : esc(e.title)+' <span class="yr">'+e.year+'</span>';

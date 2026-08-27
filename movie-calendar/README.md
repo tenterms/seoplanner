@@ -50,38 +50,53 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 87 |
-| The date is the film's spine | 177 |
-| **Open — nothing qualifies** | **102** |
+| The film takes place on the date | 88 |
+| The date is the film's spine | 166 |
+| **Open — nothing qualifies** | **112** |
 
-Held honestly, the year does not fill. That is the finding, not a failure of searching.
+Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
+the finding, not a failure of searching.
 
-Three classes of pick were removed to get here:
+Four classes of pick have been removed:
 
 1. **Anniversaries (60 days).** Conan Doyle's birthday, Mozart's, the night *Metropolis*
    premiered. A film about a man is not set on the day he was born.
 2. **Lives with the date inside them (44 days).** *Bohemian Rhapsody* has twenty minutes of
-   Live Aid inside fifteen years. *Malcolm X*, *Milk* and *Selena* simply end on their date.
-   Plucking a biography's climax picks a spoiler, not a setting.
-3. **Records of an occasion (2 days).** *A Queen Is Crowned* and *Grenfell* — a newsreel and a
-   memorial artwork. Worthy; not movies set on a date.
+   Live Aid inside fifteen years. Plucking a biography's climax picks a spoiler, not a setting.
+3. **Films that only end on the date (13 days).** *La Bamba*, *Mata Hari*, *The Red Baron*,
+   *Cool Runnings*, *The Assassination of Jesse James* — the date is where the story stops.
+4. **Records of an occasion (2 days).** *A Queen Is Crowned* and *Grenfell*.
 
-Every open day carries the best pitch that was rejected for it, in the `candidate` field, so
-the argument starts from something rather than nothing.
+Four entries survive with an `ending: true` flag and are labelled **ends here** in the tool —
+*Goodfellas* among them. Its date is captioned and it spends twenty-five minutes inside that
+day, but the day is still where Henry Hill's story stops. Marked rather than hidden, so the
+judgement is visible.
 
 ## Where the remaining weakness is
 
-- **The 177 spine days are the soft middle.** Each is defensible, but a film that runs three
-  hours around a date is doing less work than one that runs ninety minutes *on* it. Replacing
-  spine days with day days is the main upgrade path.
-- **Copy still spoils in places.** The rewrite favours setups over climaxes, but any entry
-  whose date is a real event carries the ending in the history. Flagging spoiler-bearing
-  entries would let readers opt out.
+- **The 166 spine days are the soft middle** and the main upgrade path. A film running three
+  hours around a date is doing less work than one running ninety minutes on it.
+- **Open days are growing, not shrinking.** Every audit finds more picks that do not hold. Plan
+  for the number to rise before it falls.
 - **Floating holidays are absent by design** — Easter, Thanksgiving and Mother's Day have no
-  fixed date, so *The Last Waltz* sits on 25 November because that is the real date of the
-  concert, not because Thanksgiving lives there.
+  fixed date.
 - **Two entries share a film** — *Back to the Future*, on 26 October 1985 and 12 November 1955,
   because it stamps both on screen.
+
+## Best remaining seams
+
+Time-loop and single-day films are the richest untapped source: the form guarantees the film
+takes place on its date. *Happy Death Day* (18 September) and *Before I Fall* (12 February)
+came from that seam this round, and it is not exhausted — *Palm Springs*, *The Map of Tiny
+Perfect Things* and *Everybody Wants Some!!* all have candidate dates that were not verifiable
+here. Fixed-date folk horror is the second seam: *Saint* (5 December, Sinterklaas) and
+*The Wicker Man* (May Day) both came from it.
+
+Community sources remain unreachable from this environment: Reddit, Letterboxd list pages
+and ResetEra all return 403. Letterboxd's *Dating the Movies* monthly lists carry a curator's
+note giving the exact date for each film — roughly 350 dated picks, human-verified. Opening
+those twelve pages in a browser and pasting the notes is still the single highest-value hour
+anyone could spend on this dataset.
 
 ## Sources
 
