@@ -50,9 +50,9 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 91 |
-| The date is the film's spine | 163 |
-| **Open — nothing qualifies** | **112** |
+| The film takes place on the date | 87 |
+| The date is the film's spine | 160 |
+| **Open — nothing qualifies** | **119** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
 the finding, not a failure of searching.
@@ -82,6 +82,38 @@ judgement is visible.
   fixed date.
 - **Two entries share a film** — *Back to the Future*, on 26 October 1985 and 12 November 1955,
   because it stamps both on screen.
+
+## The destination test
+
+The question that decides every spine day: **where does the film think it's going?** If the
+answer is the date — *Oppenheimer* to Trinity, *Apollo 13* to splashdown, *Argo* to the
+airport, *Thirteen Days* through its thirteen — the film stays. If the date is just where a
+story about something else stops, it goes.
+
+That test removed, this round: *Goodfellas* (a caption and twenty-five great minutes, at the
+end of twenty-five years), *The Social Network* (a timestamped first act, then seven years of
+depositions), *Zodiac* (the most precise date captions in cinema, spread across two decades),
+*Darkest Hour* (checked against its own script it runs 9 May–4 June 1940 and was never a
+10 May film), *At Eternity's Gate*, *The Cranes Are Flying*, *Rosemary's Baby* (a nine-month
+film whose date never reaches the screen), and — the audit's best catch — *Gallipoli*, which
+everyone remembers as an Anzac Day film although the charge at the Nek was **7 August 1915**;
+it is now an alternate on the date it actually depicts, and 25 April is honestly open.
+
+Promotions from the same pass, each verified:
+
+- **14 February — Picnic at Hanging Rock.** The opening card: "On Saturday 14th February 1900
+  a party of schoolgirls from Appleyard College picnicked at Hanging Rock…"
+- **21 April — The Fog.** "One hundred years ago, on the 21st of April…" — Antonio Bay's
+  centennial day, witching hour to fog-out.
+- **30 December — Strange Days.** The penultimate day of 1999; the film is this day and the next.
+- **31 December — The Phantom Carriage.** The last sinner to die before midnight drives Death's
+  carriage; the whole film sits inside the year's final hour. *When Harry Met Sally* moves to
+  the alternates, where the ends-at-the-party films live.
+- **6 June — The Longest Day.** The title is the claim; *Saving Private Ryan* runs a week past
+  the 6th and steps down to alternate.
+- **15 March — Julius Caesar (1953).** "The ides of March are come." The date is dialogue.
+- **23 February — Twin Peaks: Fire Walk with Me.** Laura's last week, dated by series canon
+  worked backwards from the pilot — flagged as fan arithmetic, like Ferris Bueller's 5 June.
 
 ## Form as evidence
 

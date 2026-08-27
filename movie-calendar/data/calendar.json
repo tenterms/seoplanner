@@ -4,7 +4,7 @@
   "title": "Rocky",
   "year": 1976,
   "why": "Apollo Creed stages his Bicentennial title fight on New Year's Day, 1 January 1976 — the date the whole film counts down to.",
-  "alt": "The Poseidon Adventure (1972) — capsizes at midnight, the entire escape happens on 1 Jan; Platoon (1968 New Year's Day battle); Trading Places",
+  "alt": "Fruitvale Station — Oscar Grant dies at the station in the first hours of New Year's Day 2009; Bridget Jones's Diary — the diary opens 1 January; Trading Places (the January crop report); Snowpiercer (the train's New Year on the Yekaterina Bridge); The Poseidon Adventure (the escape is all 1 Jan)",
   "kind": "dated",
   "focus": "day"
  },
@@ -45,7 +45,8 @@
   "why": "The film climaxes on the Boston Globe's publication date: 6 January 2002, the morning the Spotlight team's first abuse story ran.",
   "alt": "Twelfth Night (1996) — the Feast of Epiphany; Blood Diamond (RUF assault on Freetown, 6 Jan 1999)",
   "kind": "holiday",
-  "focus": "day"
+  "focus": "day",
+  "ending": true
  },
  {
   "date": "01-07",
@@ -325,12 +326,12 @@
  },
  {
   "date": "02-14",
-  "title": "Sleepless in Seattle",
-  "year": 1993,
-  "kind": "holiday",
-  "why": "Annie writes to a voice on the radio and asks him to meet her on top of the Empire State Building on Valentine's Day.",
-  "alt": "Eternal Sunshine of the Spotless Mind — Joel skips work and rides to Montauk on Valentine's morning; The St. Valentine's Day Massacre (1929); Raging Bull",
-  "focus": "day"
+  "title": "Picnic at Hanging Rock",
+  "year": 1975,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The opening card, styled as fact: 'On Saturday 14th February 1900 a party of schoolgirls from Appleyard College picnicked at Hanging Rock… During the afternoon several members of the party disappeared without a trace.' A Valentine's Day picnic the film never comes back from.",
+  "alt": "My Bloody Valentine (1981) — the Feb 14 dance Valentine Bluffs hasn't dared hold in twenty years; Sleepless in Seattle (the Empire State meeting is the last scene); Eternal Sunshine of the Spotless Mind (Joel rides to Montauk that morning); Raging Bull (LaMotta–Robinson, 14 Feb 1951); The St. Valentine's Day Massacre (1929)"
  },
  {
   "date": "02-15",
@@ -397,12 +398,12 @@
  },
  {
   "date": "02-23",
-  "title": "Flags of Our Fathers",
-  "year": 2006,
-  "why": "The second flag-raising on Mount Suribachi, 23 February 1945, and the photograph that ate six lives.",
-  "alt": "Letters from Iwo Jima",
+  "title": "Twin Peaks: Fire Walk with Me",
+  "year": 1992,
   "kind": "about",
-  "focus": "day"
+  "focus": "spine",
+  "why": "The last seven days of Laura Palmer, ending in the train car on the night of 23 February 1989. The dates are series canon worked backwards from the pilot — nerd arithmetic rather than an on-screen card, and the arithmetic is solid.",
+  "alt": "The body is found wrapped in plastic the next morning — 24 February, kept by fans as Twin Peaks Day; Flags of Our Fathers (the flag went up 23 Feb 1945, but the film is the bond tour after)"
  },
  {
   "date": "02-24",
@@ -562,12 +563,12 @@
  },
  {
   "date": "03-15",
-  "title": "The Ides of March",
-  "year": 2011,
-  "why": "The title is the date: 15 March, the day Caesar was warned about and Clooney's campaign learns the same lesson.",
-  "alt": "Julius Caesar (1953) — the assassination itself, 44 BC",
+  "title": "Julius Caesar",
+  "year": 1953,
   "kind": "dated",
-  "focus": "day"
+  "focus": "spine",
+  "why": "'The ides of March are come.' 'Ay, Caesar, but not gone.' The date is dialogue — Shakespeare hard-wired 15 March into the play, and Mankiewicz's film keeps every warning of it, up the Capitol steps.",
+  "alt": "The Ides of March (2011) — borrows the date for its title but never sits on it"
  },
  {
   "date": "03-16",
@@ -866,9 +867,12 @@
  },
  {
   "date": "04-21",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Red Baron — a career ending in the shoot-down. Other claims: Rome founded, 21 April 753 BC — Romulus and Remus films"
+  "title": "The Fog",
+  "year": 1980,
+  "kind": "dated",
+  "focus": "day",
+  "why": "'One hundred years ago, on the 21st of April…' Mr Machen's midnight campfire story, and then Antonio Bay's centennial day itself — 21 April 1980, from the witching hour to the fog rolling back out.",
+  "alt": "The Red Baron — Richthofen shot down 21 April 1918 (a career film, rejected)"
  },
  {
   "date": "04-22",
@@ -896,12 +900,9 @@
  },
  {
   "date": "04-25",
-  "title": "Gallipoli",
-  "year": 1981,
-  "why": "The ANZAC landings at Gaba Tepe, 25 April 1915 — Anzac Day.",
-  "alt": "The Water Diviner (2014)",
-  "kind": "about",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Gallipoli (1981) — the great trap of this date. Everyone remembers it as the Anzac Day film, but the charge at the Nek that kills Archy was 7 August 1915; the film's boys aren't even at the 25 April landings. Rejected for being set on the wrong date, which almost no one notices. Miss Congeniality holds the date's other claim: 'April 25th. Because it's not too hot, not too cold.' A line about the date is still not a film set on it."
  },
  {
   "date": "04-26",
@@ -1013,38 +1014,27 @@
  },
  {
   "date": "05-09",
-  "title": "The Cranes Are Flying",
-  "year": 1957,
-  "why": "Ends on Victory Day, 9 May 1945, with Veronika handing out flowers to men who came back to somebody else.",
-  "alt": "Come and See; Ballad of a Soldier",
-  "kind": "about",
-  "focus": "spine",
-  "ending": true
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "The Cranes Are Flying (1957) — ends on the Victory Day flowers, 9 May 1945, after four years of war. Ballad of a Soldier — same war, same problem."
  },
  {
   "date": "05-10",
-  "title": "Darkest Hour",
-  "year": 2017,
-  "why": "Churchill kisses hands as Prime Minister on 10 May 1940, the morning Germany invades the Low Countries.",
-  "alt": "Everest (2015) — summit day, 10 May 1996",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Darkest Hour (2017) — rejected on a technicality that isn't technical: the film runs 9 May to 4 June 1940 (the 'fight on the beaches' speech), so it isn't a 10 May film at all; the accession is its first act. Everest (2015) — summit day 10/11 May 1996, but an expedition film. The day Churchill kissed hands still has no film that lives on it."
  },
  {
   "date": "05-11",
-  "title": "Goodfellas",
-  "year": 1990,
-  "why": "The caption reads Sunday, May 11th, 1980. Helicopters overhead, ziti in the oven, a gun to drop off and a sauce that cannot be left — twenty-five minutes of one day, shot like a fever.",
-  "alt": "Operation Finale — Eichmann seized in Buenos Aires, 11 May 1960",
-  "kind": "about",
-  "focus": "day",
-  "ending": true
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Goodfellas (1990) — the caption reads Sunday, May 11th, 1980, and Scorsese gives the day twenty-five coked-out minutes: the helicopter, the guns, the ziti. But it is the last day of a twenty-five-year story, which makes it a spoiler wearing a date. The best-captioned rejection in the calendar."
  },
  {
   "date": "05-12",
   "title": "The Terminator",
   "year": 1984,
-  "why": "The police put the Sarah Connor killings on 12 May 1984 — the night the machine arrives in Griffith Park.",
+  "why": "Two electrical storms over Los Angeles in the small hours of Friday 12 May 1984, and two naked arrivals. The date is franchise canon, pinned from the film's police paperwork and never contradicted since — the night the future starts shooting at a waitress from the Big Buns diner.",
   "alt": "Florence Nightingale born 12 May 1820",
   "kind": "dated",
   "focus": "day"
@@ -1239,19 +1229,19 @@
   "date": "06-05",
   "title": "Ferris Bueller's Day Off",
   "year": 1986,
-  "why": "The internal evidence — the Cubs game, the attendance records — pins Ferris's day off to Wednesday 5 June 1985.",
+  "why": "Fan forensics at its finest: the Cubs–Braves game on the Torrens' TV, the fixture lists and Ferris's nine absences pin the day off to Wednesday 5 June 1985. Nothing on screen says so; everything on screen agrees.",
   "alt": "The Six-Day War begins, 5 June 1967",
   "kind": "dated",
   "focus": "day"
  },
  {
   "date": "06-06",
-  "title": "Saving Private Ryan",
-  "year": 1998,
-  "why": "Dog Green sector, Omaha Beach, 06:30 on 6 June 1944.",
-  "alt": "The Longest Day (1962); Overlord (1975)",
+  "title": "The Longest Day",
+  "year": 1962,
   "kind": "about",
-  "focus": "day"
+  "focus": "day",
+  "why": "The title is the claim: 6 June 1944, and only 6 June 1944 — both sides of the Channel, dawn to dark, in the languages the day was fought in.",
+  "alt": "Saving Private Ryan — Omaha on the 6th, but the mission runs the week after; Overlord (1975); The Omen — Damien, born the sixth day of the sixth month, at six in the morning"
  },
  {
   "date": "06-07",
@@ -1406,12 +1396,9 @@
  },
  {
   "date": "06-25",
-  "title": "Rosemary's Baby",
-  "year": 1968,
-  "kind": "dated",
-  "why": "The date is fixed inside the film and read aloud from a page: 25 June 1966.",
-  "alt": "Little Big Man — Little Bighorn, 25 June 1876 (historical)",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Rosemary's Baby (1968) — Levin's novel keeps a strict calendar and the baby arrives in late June 1966 ('the year of the half-666'), but the film is a nine-month pregnancy, not a day, and the date never reaches the screen. Little Big Man — Little Bighorn, 25 June 1876, inside a 121-year tall tale."
  },
  {
   "date": "06-26",
@@ -1770,7 +1757,7 @@
   "title": "Man on Wire",
   "year": 2008,
   "why": "Philippe Petit steps out on a wire between the Twin Towers at 7:15am on 7 August 1974 and stays there for 45 minutes.",
-  "alt": "The Walk (2015)",
+  "alt": "Gallipoli (1981) — the charge at the Nek, dawn on 7 August 1915: the film everyone misremembers as an Anzac Day film actually lives here; The Walk (2015)",
   "kind": "about",
   "focus": "spine"
  },
@@ -1968,11 +1955,10 @@
   "date": "08-31",
   "title": "The Queen",
   "year": 2006,
-  "why": "Diana dies in the Pont de l'Alma tunnel in the early hours of 31 August 1997; the film is the week that follows.",
+  "why": "Opens in the small hours of 31 August 1997 with the phone ringing at Balmoral, then follows the week the date detonated. The film starts on its day rather than sneaking up on it.",
   "alt": "Spencer (2021); Diana (2013)",
   "kind": "about",
-  "focus": "spine",
-  "ending": true
+  "focus": "spine"
  },
  {
   "date": "09-01",
@@ -2152,7 +2138,7 @@
   "title": "The Lord of the Rings: The Fellowship of the Ring",
   "year": 2001,
   "why": "Bilbo's eleventy-first birthday party — 22 September — and the ring goes in the envelope.",
-  "alt": "Hobbit Day",
+  "alt": "Hobbit Day — the shared birthday of Bilbo and Frodo, kept by Tolkien fans since 1978",
   "kind": "dated",
   "focus": "day"
  },
@@ -2188,12 +2174,9 @@
  },
  {
   "date": "09-27",
-  "title": "Zodiac",
-  "year": 2007,
-  "why": "Lake Berryessa, 27 September 1969 — the hooded man, the crosshairs symbol, the phone call from a payphone.",
-  "alt": "Dirty Harry (1971), the Zodiac in fiction",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "Zodiac (2007) — Fincher captions Lake Berryessa 'September 27, 1969' with documentary precision, then the film spends two more decades and three protagonists. The captions are the most date-literate filmmaking on this list; the film still isn't set on any of them."
  },
  {
   "date": "09-28",
@@ -2214,11 +2197,10 @@
   "date": "09-30",
   "title": "September 30, 1955",
   "year": 1977,
-  "why": "The title is the date — the day James Dean died, and what it does to a small-town Arkansas campus that night.",
+  "why": "The title is the date. The afternoon the news from Cholame reaches an Arkansas college town — James Dean is dead — and one night of grief, ritual and bonfire that follows. The film never leaves 30 September 1955.",
   "alt": "Life (2015); Munich: The Edge of War — 'peace for our time', 30 September 1938",
   "kind": "about",
-  "focus": "spine",
-  "ending": true
+  "focus": "day"
  },
  {
   "date": "10-01",
@@ -2300,12 +2282,9 @@
  },
  {
   "date": "10-10",
-  "title": "1911",
-  "year": 2011,
-  "why": "Double Ten: the Wuchang Uprising of 10 October 1911 that ended two thousand years of dynastic rule. Jackie Chan's hundredth film.",
-  "alt": "The Vajont dam wave, 9/10 October 1963 — Vajont (2001)",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "1911 (2011) — Double Ten, but a sprawling revolution epic. Alien vs. Predator is reputedly satellite-stamped 10 October 2004 on screen and takes place in about a day — unverified from here, and this calendar doesn't print what it can't verify. The best-evidenced Oct 10 pick is waiting on a screenshot."
  },
  {
   "date": "10-11",
@@ -2448,12 +2427,9 @@
  },
  {
   "date": "10-28",
-  "title": "The Social Network",
-  "year": 2010,
-  "why": "On-screen: October 28, 2003. Zuckerberg blogs, drinks and builds Facemash between 8pm and 4am.",
-  "alt": "The Statue of Liberty dedicated, 28 October 1886",
-  "kind": "about",
-  "focus": "day"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "The Social Network (2010) — the Facemash night is timestamped on screen via the blog posts, 28 October 2003, and it is a perfect twenty minutes. It is also the first twenty minutes of a film that then covers seven years of depositions."
  },
  {
   "date": "10-29",
@@ -2902,19 +2878,16 @@
  },
  {
   "date": "12-23",
-  "title": "At Eternity's Gate",
-  "year": 2018,
-  "why": "Van Gogh cuts off his ear in Arles on 23 December 1888, after Gauguin walks out.",
-  "alt": "Lust for Life (1956); Festivus",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "At Eternity's Gate (2018) — the ear comes off in Arles on 23 December 1888, one night inside a film about Van Gogh's last two years. Krampus (2015) is set in the days before Christmas but never shows a date on screen; if a screenshot proves its calendar card, it takes this day."
  },
  {
   "date": "12-24",
   "title": "Die Hard",
   "year": 1988,
   "why": "The Nakatomi Corporation Christmas party, Christmas Eve, Century City. Now I have a machine gun. Ho ho ho.",
-  "alt": "It's a Wonderful Life; The Muppet Christmas Carol; Eyes Wide Shut; Cast Away (the crash)",
+  "alt": "It's a Wonderful Life — one Christmas Eve, plus the angel's homework; Tokyo Godfathers — a baby in the trash on Christmas Eve; Rent — 'December 24th, 9pm, Eastern Standard Time', dated in its opening line; The Ref (one hostage Christmas Eve); The Muppet Christmas Carol; Eyes Wide Shut (Christmas week); Cast Away (the crash)",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2959,17 +2932,20 @@
  },
  {
   "date": "12-30",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Rasputin: The Mad Monk — a life ending in Yusupov's cellar. Other claims: Nicholas and Alexandra (1971); the USSR founded, 30 December 1922"
+  "title": "Strange Days",
+  "year": 1995,
+  "kind": "dated",
+  "focus": "day",
+  "why": "Los Angeles, 30 December 1999: the penultimate day of the millennium, wired straight off the back of someone else's skull. The film is this day and the next, nothing more.",
+  "alt": "Rasputin — killed the night of 29/30 December 1916 (a life film, rejected)"
  },
  {
   "date": "12-31",
-  "title": "When Harry Met Sally...",
-  "year": 1989,
-  "why": "Harry runs across Manhattan to a New Year's Eve party to get there before midnight.",
-  "alt": "200 Cigarettes; Boogie Nights (the 1979 party); The Poseidon Adventure; The Time Machine (31 December 1899); Trading Places",
+  "title": "The Phantom Carriage",
+  "year": 1921,
   "kind": "holiday",
-  "focus": "day"
+  "focus": "day",
+  "why": "The legend the whole film runs on: the last sinner to die before midnight on New Year's Eve must drive Death's carriage for the year to come. David Holm dies at one minute to twelve. Sweden's most famous film, set entirely inside the year's last hour.",
+  "alt": "The Irony of Fate (1976) — the film Russia rewatches every 31 December; Four Rooms (one bellhop, one NYE); Fruitvale Station (Oscar Grant's 31 December, near enough in real time); Strange Days (day two); The Godfather Part II (the Havana NYE kiss — 'I know it was you, Fredo'); When Harry Met Sally and The Apartment (both end at the party); Doctor Who (1996) — the Eighth Doctor's NYE 1999; Entrapment (the heist is the Y2K rollover itself); Sunset Boulevard (Norma's NYE party for two); The Time Machine (George departs the evening of 31 Dec 1899); Ocean's Eleven (1960); The Poseidon Adventure (the wave hits at midnight); Boogie Nights; The Gold Rush; Terror Train; New Year's Evil; Assault on Precinct 13 (2005); The Hudsucker Proxy; Peter's Friends; Money Train; End of Days; 200 Cigarettes"
  }
 ]
