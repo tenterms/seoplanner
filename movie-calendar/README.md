@@ -50,8 +50,8 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 88 |
-| The date is the film's spine | 166 |
+| The film takes place on the date | 91 |
+| The date is the film's spine | 163 |
 | **Open — nothing qualifies** | **112** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
@@ -83,20 +83,41 @@ judgement is visible.
 - **Two entries share a film** — *Back to the Future*, on 26 October 1985 and 12 November 1955,
   because it stamps both on screen.
 
+## Form as evidence
+
+Some films cannot be anywhere but their own day, because the form forbids it. A time loop, a
+real-time film or a single unbroken take is self-evidencing in a way no plot summary is. Eleven
+entries carry a `form` field (`loop`, `realtime`, `onetake`) and the tool filters on it.
+
+| date | film | form |
+|---|---|---|
+| 2 February | Groundhog Day | loop |
+| 12 February | Before I Fall | loop |
+| 6 April | 1917 | one take |
+| 21 June | Cléo from 5 to 7 | real time |
+| 22 July | Utøya: July 22 | one take, real time |
+| 18 September | Happy Death Day | loop |
+| 9 November | Palm Springs | loop |
+| 15 January · 22 August · 11 September · 11 October | Sully, Dog Day Afternoon, United 93, Saturday Night | real time |
+
+**One-take does not imply datable.** *Rope*, *Victoria*, *Locke*, *Birdman*, *Timecode*,
+*The Guilty* and *Boiling Point* are all continuous or real-time and none names a date, so none
+can be placed. The same is true of most single-day films: *Clerks*, *Friday*, *Do the Right
+Thing*, *Falling Down*, *Training Day*, *Collateral*, *After Hours* and *12 Angry Men* are all
+one day and all undatable. The form narrows the field; it does not fill the calendar.
+
 ## Best remaining seams
 
-Time-loop and single-day films are the richest untapped source: the form guarantees the film
-takes place on its date. *Happy Death Day* (18 September) and *Before I Fall* (12 February)
-came from that seam this round, and it is not exhausted — *Palm Springs*, *The Map of Tiny
-Perfect Things* and *Everybody Wants Some!!* all have candidate dates that were not verifiable
-here. Fixed-date folk horror is the second seam: *Saint* (5 December, Sinterklaas) and
-*The Wicker Man* (May Day) both came from it.
+- **More loops.** *The Map of Tiny Perfect Things*, *Naked*, *ARQ*, *Boss Level* and *12:01*
+  are loops whose dates were not verifiable here. Each would be a top-grade entry if one exists.
+- **Fixed-date folk horror**, which gave up *Saint* (5 December) and *The Wicker Man* (May Day).
+- **Holiday horror** clusters heavily on dates already filled, but the long tail is unexplored.
 
-Community sources remain unreachable from this environment: Reddit, Letterboxd list pages
-and ResetEra all return 403. Letterboxd's *Dating the Movies* monthly lists carry a curator's
-note giving the exact date for each film — roughly 350 dated picks, human-verified. Opening
-those twelve pages in a browser and pasting the notes is still the single highest-value hour
-anyone could spend on this dataset.
+Community sources remain unreachable from this environment: Reddit, Letterboxd list pages and
+ResetEra all return 403. Letterboxd's *Dating the Movies* monthly lists carry a curator's note
+giving the exact date for each film — roughly 350 human-verified picks. Opening those twelve
+pages in a browser and pasting the notes is still the single highest-value hour anyone could
+spend on this dataset.
 
 ## Sources
 

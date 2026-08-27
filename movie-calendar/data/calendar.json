@@ -102,7 +102,8 @@
   "why": "US Airways 1549 ditches in the Hudson at 15:31 on 15 January 2009. The film replays that afternoon repeatedly.",
   "alt": "Selma (Martin Luther King Jr born 15 January 1929)",
   "kind": "about",
-  "focus": "day"
+  "focus": "day",
+  "form": "realtime"
  },
  {
   "date": "01-16",
@@ -234,7 +235,8 @@
   "why": "The date, over and over. Punxsutawney, 2 February.",
   "alt": "Candlemas films",
   "kind": "dated",
-  "focus": "day"
+  "focus": "day",
+  "form": "loop"
  },
  {
   "date": "02-03",
@@ -309,7 +311,8 @@
   "kind": "dated",
   "focus": "day",
   "why": "Cupid Day at Thomas Jefferson High, 12 February — and Sam wakes into it again, and again. A time loop is the purest form of a film taking place on a date.",
-  "alt": "Creation — Darwin born 12 February 1809 (anniversary, rejected)"
+  "alt": "Creation — Darwin born 12 February 1809 (anniversary, rejected)",
+  "form": "loop"
  },
  {
   "date": "02-13",
@@ -736,12 +739,13 @@
  },
  {
   "date": "04-06",
-  "title": "Hotel Rwanda",
-  "year": 2004,
-  "why": "Habyarimana's plane is shot down on the evening of 6 April 1994 and the killing starts that night.",
-  "alt": "Sometimes in April (2005), which date-stamps every day of the genocide",
-  "kind": "about",
-  "focus": "spine"
+  "title": "1917",
+  "year": 2019,
+  "kind": "dated",
+  "focus": "day",
+  "form": "onetake",
+  "why": "The first title card is April 6th, 1917. Two lance corporals are given a message at dawn and the camera does not leave them until it is delivered — one apparent unbroken take across a day and a night.",
+  "alt": "Hotel Rwanda — the killing starts the evening of 6 April 1994"
  },
  {
   "date": "04-07",
@@ -1365,12 +1369,13 @@
  },
  {
   "date": "06-21",
-  "title": "Mississippi Burning",
-  "year": 1988,
-  "why": "Chaney, Goodman and Schwerner are pulled over and murdered on the night of 21 June 1964.",
-  "alt": "Midsommar (2019) — the solstice festival",
-  "kind": "holiday",
-  "focus": "day"
+  "title": "Cleo from 5 to 7",
+  "year": 1962,
+  "kind": "dated",
+  "focus": "day",
+  "form": "realtime",
+  "why": "Ninety minutes of 21 June 1961, the longest day of the year, ticked off in chapter headings — Cleo from 5:05 to 5:08 — while a singer waits for a test result.",
+  "alt": "Midsommar (the solstice festival); Mississippi Burning (21 June 1964)"
  },
  {
   "date": "06-22",
@@ -1623,12 +1628,13 @@
  },
  {
   "date": "07-22",
-  "title": "22 July",
+  "title": "Utoya: July 22",
   "year": 2018,
-  "why": "The title is the date: Oslo and Utøya, 22 July 2011.",
-  "alt": "Public Enemies — Dillinger shot outside the Biograph, 22 July 1934",
   "kind": "about",
-  "focus": "spine"
+  "focus": "day",
+  "form": "onetake",
+  "why": "Seventy-two minutes in one unbroken take, the exact length of the attack, from inside it. The characters are invented; the clock is not.",
+  "alt": "22 July (2018), Greengrass's account of the same day and the trial after it"
  },
  {
   "date": "07-23",
@@ -1892,7 +1898,8 @@
   "why": "Sonny Wortzik's fourteen-hour bank siege in Gravesend, Brooklyn, 22 August 1972. Attica! Attica!",
   "alt": "Michael Collins — killed at Béal na Bláth, 22 August 1922; Richard III — Bosworth Field, 22 August 1485",
   "kind": "about",
-  "focus": "day"
+  "focus": "day",
+  "form": "realtime"
  },
  {
   "date": "08-23",
@@ -2061,7 +2068,8 @@
   "why": "11 September 2001, close to real time, from Newark to a field in Pennsylvania.",
   "alt": "13 Hours (Benghazi, 11 September 2012); Braveheart (Stirling Bridge, 11 September 1297); Missing (the Chilean coup, 11 September 1973)",
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "form": "realtime"
  },
  {
   "date": "09-12",
@@ -2115,7 +2123,8 @@
   "kind": "dated",
   "focus": "day",
   "why": "Tree wakes up in Carter's dorm room on Monday 18 September, her birthday, and keeps waking up in it.",
-  "alt": "Paranormal Activity, whose first on-screen card is 18 September 2006"
+  "alt": "Paranormal Activity, whose first on-screen card is 18 September 2006",
+  "form": "loop"
  },
  {
   "date": "09-19",
@@ -2305,7 +2314,8 @@
   "why": "The ninety minutes before 11:30pm on 11 October 1975, in real time, as Saturday Night Live goes on air for the first time.",
   "alt": "Zodiac — Paul Stine killed in Presidio Heights, 11 October 1969",
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "form": "realtime"
  },
  {
   "date": "10-12",
@@ -2543,12 +2553,13 @@
  },
  {
   "date": "11-09",
-  "title": "Good Bye, Lenin!",
-  "year": 2003,
-  "why": "The Wall opens on the night of 9 November 1989 while Alex's mother is in a coma — and the whole film is about hiding it from her.",
-  "alt": "Kristallnacht, 9 November 1938; The Lives of Others",
-  "kind": "about",
-  "focus": "spine"
+  "title": "Palm Springs",
+  "year": 2020,
+  "kind": "dated",
+  "focus": "day",
+  "form": "loop",
+  "why": "Nyles wakes on 9 November at a wedding in the desert, and keeps waking on 9 November, until the morning he doesn't.",
+  "alt": "Good Bye, Lenin! — the Wall opens the night of 9 November 1989"
  },
  {
   "date": "11-10",
