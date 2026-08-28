@@ -1,0 +1,52 @@
+member,member_company,target_company,target_domain,evidence_type,evidence_strength,evidence_url,evidence_note
+Mark Viccars,Visual Digital,The Kaye Co,thekayeco.com,portfolio + testimonial,A,https://visualdigital.co.uk/work/the-kaye-co/,"Portfolio item links to client site; testimonial: ""A fantastic service and kept us updated throughout the whole website build"""
+Mark Viccars,Visual Digital,Cherry Tree Shutters,cherrytreeshutters.co.uk,portfolio,A,https://visualdigital.co.uk/work/cherry-tree-shutters/,Portfolio item with outbound link to client site
+Mark Viccars,Visual Digital,UK Hot Tubs,ukhottubs.co.uk,portfolio,A,https://visualdigital.co.uk/work/uk-hot-tubs/,Portfolio item with outbound link to client site
+Mark Viccars,Visual Digital,Saddle House Medi-Spa,saddlehouse.co.uk,portfolio,A,https://visualdigital.co.uk/work/saddle-house/,Portfolio item with outbound link to client site
+Mark Viccars,Visual Digital,The Kings Theatre Portsmouth,kingsportsmouth.co.uk,portfolio,A,https://visualdigital.co.uk/work/the-kings-theatre-portsmouth/,Portfolio item with outbound link to client site
+Mark Viccars,Visual Digital,Association for Geographic Information (AGI),agi.org.uk,portfolio,A,https://visualdigital.co.uk/work/the-association-for-geographic-information/,Portfolio item with outbound link
+Mark Viccars,Visual Digital,Kelly Simm,kellysimm.com,portfolio + testimonial,A,https://visualdigital.co.uk/work/kelly-simm/,Portfolio item plus matching testimonial
+Mark Viccars,Visual Digital,Shining Star Productions,shiningstarperformingarts.co.uk,portfolio,A,https://visualdigital.co.uk/work/shining-star-productions/,Portfolio item with outbound link
+Mark Viccars,Visual Digital,The King of Chemo,thekingofchemo.com,portfolio,A,https://visualdigital.co.uk/work/the-king-of-chemo/,Portfolio item with outbound link
+Mark Viccars,Visual Digital,Technical IT Solutions,,portfolio,A,https://visualdigital.co.uk/portfolio/technical-it-solutions/,Older portfolio item
+Mark Viccars,Visual Digital,Portsmouth Marine Services,,portfolio,A,https://visualdigital.co.uk/portfolio/portsmouth-marine-services/,Older portfolio item
+Mark Viccars,Visual Digital,Lipspeaker UK,,portfolio,A,https://visualdigital.co.uk/portfolio/lipspeaker-uk/,Older portfolio item
+Mark Viccars,Visual Digital,Royle Entertainment,,portfolio,A,https://visualdigital.co.uk/portfolio/royle-entertainment/,Older portfolio item
+Ranjeet Shahi,RS Studio,Blaze Construction Ltd,blazecon.co.uk,case-study,A,https://rs-studio.co.uk/commercial,"""Blaze Construction, a ground works construction firm, recently purchased their new site in Chickenhall Lane, Eastleigh... now have technical building designs and Building Control Approval"""
+Ranjeet Shahi,RS Studio,NBC Construction,,case-study,A,https://rs-studio.co.uk/commercial,"""NBC Construction building specialists need Architectural Services to work in-house as part of their team"" (identity ambiguous: a Harrow namesake exists)"
+Donna Parsons,Donna Creative,Benfield Fire Safety,benfieldfire.co.uk,client logo wall,A,https://www.donna-creative.co.uk/,"""Our clients include:"" logo wall"
+Donna Parsons,Donna Creative,McInnes Meats,,client logo wall + testimonial,A,https://www.donna-creative.co.uk/,"Logo plus testimonial: ""absolute game changer for my business"" (Emily, McInnes Meats)"
+Donna Parsons,Donna Creative,Activity Alliance,activityalliance.org.uk,client logo wall,A,https://www.donna-creative.co.uk/,Logo wall plus outbound link found in link graph
+Donna Parsons,Donna Creative,The Wessex Flock,thewessexflock.co.uk,client logo wall,A,https://www.donna-creative.co.uk/,Logo wall plus outbound link
+Donna Parsons,Donna Creative,Benny Travel by Inspire,,client logo wall,A,https://www.donna-creative.co.uk/,Logo wall
+Donna Parsons,Donna Creative,Southampton Hospitals Charity,,testimonial,A,https://www.donna-creative.co.uk/,"Testimonial from Cath Jordan, Southampton Hospitals Charity"
+Donna Parsons,Donna Creative,Watercress Line,watercressline.co.uk,volunteer/association + link,B,https://www.donna-creative.co.uk/about,Long-standing volunteer since 2016; outbound link
+Peter Lisney,Utilitrack,Actons Solicitors,actons.co.uk,testimonial,A,https://www.utilitrack.co.uk/testimonials/,"""Linda Mclennan - ACTONS SOLICITORS - Office Manager... secure good rates for our gas and electricity supplies"""
+Peter Lisney,Utilitrack,Searle & Co (Royal Exchange),searleandco.co.uk,testimonial,A,https://www.utilitrack.co.uk/testimonials/,"""Nigel Searle - Managing Director... working with Utilitrack for many many years"""
+Peter Lisney,Utilitrack,Fitness 4 Less (Canterbury),,testimonial,A,https://www.utilitrack.co.uk/testimonials/,"Club manager testimonial; franchise club, HQ excluded"
+Peter Lisney,Utilitrack,Peartree Bridge (hotel Milton Keynes),,testimonial,A,https://www.utilitrack.co.uk/testimonials/,Director testimonial
+Declan Rose,Fayer Ltd,Chicken & Blues,,case-study via Loxone reference,A,https://fayerltd.co.uk/,Homepage project panel linking to Loxone reference write-up of the installation
+Marc Morawek,Marc M Bookkeeping,Williamson Biotech Solutions,williamsonbiotechsolutions.com,client logo wall,A,https://www.marcmbookkeeping.com/,"""Our Clients"" logo wall"
+Marc Morawek,Marc M Bookkeeping,Profitable Insights,,client logo wall,A,https://www.marcmbookkeeping.com/,Logo wall
+Nigel Williams,Afford A Print,Reatech Dental Svs Ltd,,testimonial,A,https://affordaprint.co.uk/reviews/,"""Prompt and professional service... Definitely Recommended. Stephen Rea. Reatech Dental Svs Ltd."""
+Nigel Williams,Afford A Print,Barton Peveril College,barton-peveril.ac.uk,outbound link,C,site link graph (Ahrefs),Outbound link from affordaprint.co.uk; context unverified
+Nigel Williams,Afford A Print,Eastleigh College,eastleigh.ac.uk,outbound link,C,site link graph (Ahrefs),Outbound links from affordaprint.co.uk; context unverified
+Nigel Williams,Afford A Print,Next Communications,nextcomms.co.uk,outbound link,C,site link graph (Ahrefs),Outbound link from affordaprint.co.uk; context unverified
+Matt Brown,IT Squad,Blue Spider,,testimonial,A,https://itsquad.org/,"Testimonial author ""Blue Spider, Business Owner"" (rendered client-side)"
+Jane Read,Home-Start Winchester,Architecture PLB,architectureplb.com,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter (past 12 months)
+Jane Read,Home-Start Winchester,Lane Clark & Peacock LLP,lcp.com,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter (too large for ICP)
+Jane Read,Home-Start Winchester,SGN,sgn.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter (too large for ICP)
+Jane Read,Home-Start Winchester,VIVID Homes,vividhomes.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter (too large for ICP)
+Jane Read,Home-Start Winchester,Utilita,utilita.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years (too large for ICP)
+Jane Read,Home-Start Winchester,Food Finders,food-finders.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter
+Jane Read,Home-Start Winchester,Robin Howe & Associates,,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Current supporter (chartered surveyors)
+Jane Read,Home-Start Winchester,Bill Rawles Classic Cars,rawlesclassiccars.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Jane Read,Home-Start Winchester,Hellards Estate Agency,hellards.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Jane Read,Home-Start Winchester,IVC Cars Alresford,ivcuk.com,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Jane Read,Home-Start Winchester,Prince's Mead School,princesmeadschool.org.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Jane Read,Home-Start Winchester,Thomas Miller Creative,thomasmillerltd.com,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Jane Read,Home-Start Winchester,Gay Dog Boarding Kennels,gaydog.co.uk,sponsor,B,https://home-start-winchester.org.uk/our-supporters/,Ongoing supporter 2+ years
+Kevin Stansfield,ActionCOACH Solent,Gilmour Architect,,franchise-wide testimonial,C,https://business.actioncoach.co.uk/coaches/kevin-stansfield,National carousel; not provably Kevin's own client
+Kevin Stansfield,ActionCOACH Solent,ABEC,,franchise-wide testimonial,C,https://business.actioncoach.co.uk/coaches/kevin-stansfield,National carousel; not provably Kevin's own client
+Kevin Stansfield,ActionCOACH Solent,Tru Office,,franchise-wide testimonial,C,https://business.actioncoach.co.uk/coaches/kevin-stansfield,National carousel; not provably Kevin's own client
+Karon Keymist-Folkes,Key HR Solutions,Donna Creative,donna-creative.co.uk,reverse-direction testimonial,A,https://www.donna-creative.co.uk/branding-and-design,Karon's testimonial proves Donna supplied Key HR (intra-chapter)
