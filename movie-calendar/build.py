@@ -178,6 +178,7 @@ BODY = r'''
     <li><b>Spine days pass one question: where does the film think it's going?</b> If the answer is the date &mdash; Oppenheimer to Trinity, Apollo 13 to splashdown, Argo to the airport &mdash; the film stays. If the date is just where a story about something else stops, it goes: that test removed Goodfellas (a caption and twenty-five great minutes, at the end of twenty-five years), The Social Network (a timestamped first act, then seven years of depositions), Zodiac (the most precise date captions in cinema, across two decades) and Darkest Hour (which, checked against its own script, runs 9 May to 4 June and was never a 10 May film at all). Press <em>Whole film is that day</em> to skip the question entirely.</li>
     <li><b>A record of an occasion is not a movie.</b> A Queen Is Crowned and Grenfell are both out.</li>
     <li><b>Open days carry their best rejected pitch</b>, so the argument starts from something rather than nothing.</li>
+    <li><b>Cross-checked against the book.</b> Ivan Walters' <em>A Year of Movies</em> (2016) names a film for all 365 days under a looser rule &mdash; one scene on the date is enough for him &mdash; and cites the timestamp where each date appears on screen. Fourteen of his picks passed our stricter test and were adopted with his timestamps; the rest are quoted in the open days' notes, including his own confession that Excalibur was the one film he forced.</li>
   </ul>
 </footer>
 </div>

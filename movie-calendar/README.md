@@ -50,9 +50,9 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 87 |
-| The date is the film's spine | 160 |
-| **Open — nothing qualifies** | **119** |
+| The film takes place on the date | 89 |
+| The date is the film's spine | 172 |
+| **Open — nothing qualifies** | **105** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
 the finding, not a failure of searching.
@@ -137,6 +137,31 @@ entries carry a `form` field (`loop`, `realtime`, `onetake`) and the tool filter
 can be placed. The same is true of most single-day films: *Clerks*, *Friday*, *Do the Right
 Thing*, *Falling Down*, *Training Day*, *Collateral*, *After Hours* and *12 Angry Men* are all
 one day and all undatable. The form narrows the field; it does not fill the calendar.
+
+## The Walters cross-check
+
+Ivan Walters' *A Year of Movies: 365 Films to Watch on the Date They Happened* (Rowman &
+Littlefield, 2016) was read in full and parsed into `data/walters-year-of-movies.json` —
+all 365 picks, alternates, and his killer feature: a **"Date Revealed in Film"** timestamp
+for every entry where the date appears on screen.
+
+His rule is looser than ours — one scene on the date qualifies — so most of his picks are
+what we'd grade scene-level. But the timestamps are primary-source evidence, and fourteen of
+his picks pass our destination test. All fourteen adopted, with his timestamps in the copy:
+
+The Great Raid (29 Jan) · Charlie and the Chocolate Factory (1 Feb — the tour is dated on
+screen at 31:13 and then fills two-thirds of the runtime) · Love Affair (8 Feb) · The Song of
+Bernadette (11 Feb) · **Planet of the Apes (27 Mar — Taylor's hibernation log reads "Earth
+date March 27, 2673", making this the calendar's only twenty-seventh-century entry)** ·
+A Passage to India (3 Apr) · A Matter of Life and Death (3 May) · In the Heat of the Night
+(13 Sep — the murder night is dated on screen at 14:09) · The Greatest Game Ever Played
+(19 Sep) · Air Force One (23 Sep) · Frequency (15 Oct) · Henry V '44 (24 Oct — Olivier gets
+the eve of Agincourt, Branagh keeps the day) · Battleground (22 Dec — the "NUTS!" day) ·
+Lethal Weapon (23 Dec, handing off to Die Hard on the 24th).
+
+His remaining picks are quoted in the open days' candidate notes, including his own reader's-
+note confession that *Excalibur* was the one film he "forced" into a date. His Blade Runner
+filing (8 January, against the film's own "November 2019" card) is flagged as disputed.
 
 ## Best remaining seams
 

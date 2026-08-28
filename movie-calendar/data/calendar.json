@@ -12,13 +12,13 @@
   "date": "01-02",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Beatles: Get Back — date-stamped, but it is a record of sessions across a month. Other claims: 1492: Conquest of Paradise (surrender of Granada, 2 Jan 1492)"
+  "candidate": "The Beatles: Get Back — date-stamped, but it is a record of sessions across a month. Other claims: 1492: Conquest of Paradise (surrender of Granada, 2 Jan 1492) Walters' pick: The Thin Red Line — Guadalcanal, but the film floats free of any date."
  },
  {
   "date": "01-03",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Turin Horse — Nietzsche's collapse is narrated in the prologue, then the film leaves it behind. Other claims: Jobs (Apple Computer incorporated, 3 Jan 1977)"
+  "candidate": "The Turin Horse — Nietzsche's collapse is narrated in the prologue, then the film leaves it behind. Other claims: Jobs (Apple Computer incorporated, 3 Jan 1977) Walters' pick: Shadowlands — a biopic, out by our rules."
  },
  {
   "date": "01-04",
@@ -52,13 +52,13 @@
   "date": "01-07",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Galileo — a life; the sighting of Jupiter's moons is one scene. Other claims: Charlie Hebdo documentaries (7 Jan 2015)"
+  "candidate": "Galileo — a life; the sighting of Jupiter's moons is one scene. Other claims: Charlie Hebdo documentaries (7 Jan 2015) Walters' pick: Zorba the Greek — the zip-line breakthrough lands on Orthodox Christmas, 7 January, dated on screen at 1:16:51; one scene in a film of seasons."
  },
  {
   "date": "01-08",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Buccaneer — a campaign, not the 8th of January. Other claims: Elvis (2022) — Presley born 8 January 1935"
+  "candidate": "The Buccaneer — a campaign, not the 8th of January. Other claims: Elvis (2022) — Presley born 8 January 1935 Walters files Blade Runner here; the film's own opening card says Los Angeles, November 2019. Somebody is wrong, and it might not be him — but this calendar can't verify a January hiding in the Esper machine."
  },
  {
   "date": "01-09",
@@ -82,13 +82,13 @@
   "date": "01-12",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Fatal Assistance — about the two years after the earthquake, not the day. Other claims: Agatha Christie died 12 January 1976"
+  "candidate": "Fatal Assistance — about the two years after the earthquake, not the day. Other claims: Agatha Christie died 12 January 1976 By Tolkien's appendices the Fellowship is inside Moria in mid-January — the Bridge of Khazad-dum falls on the 15th — but Jackson's film never says so. Walters files Fellowship here on the appendix arithmetic alone."
  },
  {
   "date": "01-13",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Walk the Line (2005) — a biopic framed by the Folsom concert. Other claims on the date: Costa Concordia documentaries (13 Jan 2012)"
+  "candidate": "Walk the Line (2005) — a biopic framed by the Folsom concert. Other claims on the date: Costa Concordia documentaries (13 Jan 2012) Walk the Line — Folsom, 13 Jan 1968, date on screen per Walters; still a whole-life biopic."
  },
  {
   "date": "01-14",
@@ -164,7 +164,7 @@
   "date": "01-24",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Steve Jobs (2015) — three launches across fourteen years; the first is 24 January 1984. Other claims on the date: Pirates of Silicon Valley"
+  "candidate": "Steve Jobs (2015) — three launches across fourteen years; the first is 24 January 1984. Other claims on the date: Pirates of Silicon Valley Walters' pick: Love Actually — the 'one month later' epilogue lands about 24 January; an epilogue is not a setting."
  },
  {
   "date": "01-25",
@@ -201,9 +201,12 @@
  },
  {
   "date": "01-29",
-  "open": true,
-  "candidate": "The Charge of the Light Brigade (1968) — Victoria instituted the Victoria Cross on 29 January 1856, for the war this film tears apart.",
-  "why": "No film yet found that is set on this date."
+  "title": "The Great Raid",
+  "year": 2005,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The film is the week of the Cabanatuan raid, and 29 January 1945 — the day the Manila underground is betrayed while the Rangers crawl toward the camp — is on screen at 39:00. The raid itself goes in the next night.",
+  "alt": "Walters clocks the date at 39:00; the raid is the film's whole premise"
  },
  {
   "date": "01-30",
@@ -225,9 +228,12 @@
  },
  {
   "date": "02-01",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Butler — a whole career; the sit-ins are intercut. Other claims: Columbia disaster documentaries (1 Feb 2003)"
+  "title": "Charlie and the Chocolate Factory",
+  "year": 2005,
+  "kind": "dated",
+  "focus": "day",
+  "why": "Wonka's golden ticket names the day: the factory tour is 1 February, on screen at 31:13 — and the tour then IS the film, 33:01 to 1:40:43, two-thirds of the runtime inside one date.",
+  "alt": "The Butler — the Greensboro sit-ins began 1 Feb 1960 (a decades film, rejected)"
  },
  {
   "date": "02-02",
@@ -277,9 +283,12 @@
  },
  {
   "date": "02-08",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Mary Queen of Scots — a reign ending at Fotheringhay. Other claims: Mary, Queen of Scots (1971); Once Upon a Time in Hollywood, whose first chapter card reads 8 February 1969"
+  "title": "Love Affair",
+  "year": 1994,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The ship docks on 8 February and the deal is struck on deck, date on screen at 53:57: the top of the Empire State Building, three months from today. The film exists to keep that appointment.",
+  "alt": "An Affair to Remember (1957) — the same appointment, kept on 1 July; Mary, Queen of Scots — beheaded 8 Feb 1587 (a reign film, rejected); Once Upon a Time in Hollywood's first chapter card reads 8 February 1969"
  },
  {
   "date": "02-09",
@@ -301,9 +310,12 @@
  },
  {
   "date": "02-11",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Mandela: Long Walk to Freedom — a whole life; the walk out of prison is its last reel. Other claims: Invictus (2009), which opens on the same footage"
+  "title": "The Song of Bernadette",
+  "year": 1943,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "11 February 1858, on screen at 1:42: Bernadette Soubirous at the grotto at Massabielle, and the first half-hour of the film lives inside that day. Everything after is the world deciding what to do about it.",
+  "alt": "Mandela: Long Walk to Freedom — the walk out of prison, 11 Feb 1990, ends a whole-life biopic (rejected)"
  },
  {
   "date": "02-12",
@@ -345,7 +357,7 @@
  {
   "date": "02-16",
   "open": true,
-  "candidate": "The Mummy (1932) — Howard Carter opened Tutankhamun's burial chamber on 16 February 1923, and Universal had a monster within a decade.",
+  "candidate": "The Mummy (1932) — Howard Carter opened Tutankhamun's burial chamber on 16 February 1923, and Universal had a monster within a decade. Walters' pick: Coraline, date on screen at some buried moment — but nothing in Coraline lives on a calendar.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -558,7 +570,7 @@
  {
   "date": "03-14",
   "open": true,
-  "candidate": "Pi (1998) — Pi Day, 3/14. Max Cohen's hunt for the number underneath everything.",
+  "candidate": "Pi (1998) — Pi Day, 3/14. Max Cohen's hunt for the number underneath everything. Walters' pick: Raging Bull, one dated fight inside a life. Pi Day remains a number pun, not a setting.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -665,9 +677,12 @@
  },
  {
   "date": "03-27",
-  "open": true,
-  "candidate": "Birdman (2014) — World Theatre Day, 27 March — and no film is more about what a stage does to a person.",
-  "why": "No film yet found that is set on this date."
+  "title": "Planet of the Apes",
+  "year": 1968,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Taylor's hibernation log, on screen at 2:17: 'Earth date March 27, 2673.' The last calendar date Taylor ever speaks, recorded in the film's opening monologue — everything after is two thousand years adrift. The only entry in this calendar set in the twenty-seventh century.",
+  "alt": "Birdman — one-take backstage, but undated (rejected)"
  },
  {
   "date": "03-28",
@@ -716,9 +731,12 @@
  },
  {
   "date": "04-03",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Assassination of Jesse James by the Coward Robert Ford — months of dread, one shot at the end. Other claims: The Great Train Robbery"
+  "title": "A Passage to India",
+  "year": 1984,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "3 April 1924: the garden party where Adela first meets Dr Aziz — the day the whole catastrophe starts, recited later in the courtroom, on screen at 1:57:53.",
+  "alt": "The Assassination of Jesse James — the shot came 3 April 1882, at the end of a months-long dread (rejected)"
  },
  {
   "date": "04-04",
@@ -902,7 +920,7 @@
   "date": "04-25",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Gallipoli (1981) — the great trap of this date. Everyone remembers it as the Anzac Day film, but the charge at the Nek that kills Archy was 7 August 1915; the film's boys aren't even at the 25 April landings. Rejected for being set on the wrong date, which almost no one notices. Miss Congeniality holds the date's other claim: 'April 25th. Because it's not too hot, not too cold.' A line about the date is still not a film set on it."
+  "candidate": "Gallipoli (1981) — the great trap of this date. Everyone remembers it as the Anzac Day film, but the charge at the Nek that kills Archy was 7 August 1915; the film's boys aren't even at the 25 April landings. Rejected for being set on the wrong date, which almost no one notices. Miss Congeniality holds the date's other claim: 'April 25th. Because it's not too hot, not too cold.' A line about the date is still not a film set on it. Even Walters blinked here: his own reader's note admits Excalibur was the one film he 'forced' into a date, because the sword-drawing happens at Easter and Easter can fall on 25 April."
  },
  {
   "date": "04-26",
@@ -966,14 +984,17 @@
  },
  {
   "date": "05-03",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Goya's Ghosts — Goya's painting of the date, not the day itself. Other claims: Napoleon (2023)"
+  "title": "A Matter of Life and Death",
+  "year": 1946,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Peter bails out without a parachute on the night of 2 May 1945; 3 May — dated on screen at 4:13 and played from 32:15 — is the day he wakes on an English beach, alive against the heavenly ledger, and meets Dr Reeves. The appeal for his life follows.",
+  "alt": "Goya's Ghosts — paints The Third of May 1808 rather than living in it (rejected)"
  },
  {
   "date": "05-04",
   "open": true,
-  "candidate": "Kent State (1981) — The Ohio National Guard fires on students at Kent State, 4 May 1970. Four dead in Ohio.",
+  "candidate": "Kent State (1981) — The Ohio National Guard fires on students at Kent State, 4 May 1970. Four dead in Ohio. Walters' pick: The Messenger — Joan reaches Orléans and the May 4 assault begins; a career film. May the Fourth remains a pun.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -1022,13 +1043,13 @@
   "date": "05-10",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Darkest Hour (2017) — rejected on a technicality that isn't technical: the film runs 9 May to 4 June 1940 (the 'fight on the beaches' speech), so it isn't a 10 May film at all; the accession is its first act. Everest (2015) — summit day 10/11 May 1996, but an expedition film. The day Churchill kissed hands still has no film that lives on it."
+  "candidate": "Darkest Hour (2017) — rejected on a technicality that isn't technical: the film runs 9 May to 4 June 1940 (the 'fight on the beaches' speech), so it isn't a 10 May film at all; the accession is its first act. Everest (2015) — summit day 10/11 May 1996, but an expedition film. The day Churchill kissed hands still has no film that lives on it. Walters' pick: Deep Impact, a date on screen somewhere in a year of dread. Darkest Hour still runs 9 May–4 June and Everest is still an expedition. The day Churchill kissed hands remains unfilmed."
  },
  {
   "date": "05-11",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Goodfellas (1990) — the caption reads Sunday, May 11th, 1980, and Scorsese gives the day twenty-five coked-out minutes: the helicopter, the guns, the ziti. But it is the last day of a twenty-five-year story, which makes it a spoiler wearing a date. The best-captioned rejection in the calendar."
+  "candidate": "Goodfellas (1990) — the caption reads Sunday, May 11th, 1980, and Scorsese gives the day twenty-five coked-out minutes: the helicopter, the guns, the ziti. But it is the last day of a twenty-five-year story, which makes it a spoiler wearing a date. The best-captioned rejection in the calendar. Walters' pick: (500) Days of Summer — dates on screen at 1:54 and 1:21:18, one of them this day; but the film is 500 days by design. Goodfellas' caption (Sunday, May 11th, 1980) remains the best-documented rejection in the calendar."
  },
  {
   "date": "05-12",
@@ -1205,7 +1226,7 @@
   "date": "06-02",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "A Queen Is Crowned (1953) — a filmed record of the coronation, not a film set on it."
+  "candidate": "A Queen Is Crowned (1953) — a filmed record of the coronation, not a film set on it. Walters' pick: Butch Cassidy and the Sundance Kid — the Overland Flyer robbery of 2 June 1899 is depicted, inside a years-long outlaw run."
  },
  {
   "date": "06-03",
@@ -1255,7 +1276,7 @@
  {
   "date": "06-08",
   "open": true,
-  "candidate": "Hearts and Minds (1974) — Nick Ut photographed Kim Phuc on Route 1 at Trang Bang on 8 June 1972; this is the film that put that war on trial.",
+  "candidate": "Hearts and Minds (1974) — Nick Ut photographed Kim Phuc on Route 1 at Trang Bang on 8 June 1972; this is the film that put that war on trial. Walters' pick: Percy Jackson & the Olympians, date on screen at 4:00; the film then roams the continent for weeks.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -1381,7 +1402,7 @@
   "title": "Brexit: The Uncivil War",
   "year": 2019,
   "why": "The whole film is the campaign that ends at the polls on 23 June 2016.",
-  "alt": "The Imitation Game — Alan Turing born 23 June 1912",
+  "alt": "The Imitation Game — Alan Turing born 23 June 1912; The Englishman Who Went Up a Hill... — the 1917 survey week, date on screen at 34:17 [Walters]",
   "kind": "about",
   "focus": "spine"
  },
@@ -1956,7 +1977,7 @@
   "title": "The Queen",
   "year": 2006,
   "why": "Opens in the small hours of 31 August 1997 with the phone ringing at Balmoral, then follows the week the date detonated. The film starts on its day rather than sneaking up on it.",
-  "alt": "Spencer (2021); Diana (2013)",
+  "alt": "Spencer (2021); Diana (2013); Amelie — the bottle-cap epiphany happens the very night Diana dies, 31 August 1997, dated by the narrator",
   "kind": "about",
   "focus": "spine"
  },
@@ -2001,7 +2022,7 @@
   "title": "September 5",
   "year": 2024,
   "why": "The title is the date: the Munich Olympics hostage crisis of 5 September 1972, told entirely from the ABC Sports control room.",
-  "alt": "Munich (2005); One Day in September (1999)",
+  "alt": "Munich (2005); One Day in September (1999); Moonrise Kingdom — the narrator aims the whole film at the storm of September 5th, 1965",
   "kind": "about",
   "focus": "spine"
  },
@@ -2065,9 +2086,12 @@
  },
  {
   "date": "09-13",
-  "open": true,
-  "why": "No film yet found that is set on this date.",
-  "candidate": "All Eyez on Me (2017) — a full-life biopic. Other claims on the date: Roald Dahl born 13 September 1916 — Roald Dahl Day"
+  "title": "In the Heat of the Night",
+  "year": 1967,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Just after midnight, 13 September 1966, Sparta, Mississippi — the murder night, dated on screen at 14:09, and the few sweltering days after it. 'They call me MISTER Tibbs.'",
+  "alt": "All Eyez on Me — Tupac died 13 Sept 1996, at the end of a whole-life biopic (rejected)"
  },
  {
   "date": "09-14",
@@ -2114,9 +2138,12 @@
  },
  {
   "date": "09-19",
-  "open": true,
-  "candidate": "Iceman (2017) — Two hikers found Otzi melting out of the Similaun glacier on 19 September 1991; this film imagines his last week, 5,300 years earlier, in a language nobody speaks.",
-  "why": "No film yet found that is set on this date."
+  "title": "The Greatest Game Ever Played",
+  "year": 2005,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The final round of the 1913 US Open at Brookline, 19 September — the twenty-year-old amateur Francis Ouimet plays his way into a playoff with Harry Vardon, date on screen at 1:14:00.",
+  "alt": "Iceman — Otzi found 19 Sept 1991, but the film is 5,300 years earlier and undatable (rejected)"
  },
  {
   "date": "09-20",
@@ -2144,9 +2171,12 @@
  },
  {
   "date": "09-23",
-  "open": true,
-  "candidate": "Ad Astra (2019) — Neptune was found on 23 September 1846, exactly where the mathematics said it would be. Roy McBride goes there to find his father.",
-  "why": "No film yet found that is set on this date."
+  "title": "Air Force One",
+  "year": 1997,
+  "kind": "dated",
+  "focus": "day",
+  "why": "The hijack over Kazakhstan is dated on screen at 1:57:35 — 23 September 1995 — and the film is that flight, wheels-up to the last man off the ramp. 'Get off my plane.'",
+  "alt": ""
  },
  {
   "date": "09-24",
@@ -2176,13 +2206,13 @@
   "date": "09-27",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Zodiac (2007) — Fincher captions Lake Berryessa 'September 27, 1969' with documentary precision, then the film spends two more decades and three protagonists. The captions are the most date-literate filmmaking on this list; the film still isn't set on any of them."
+  "candidate": "Zodiac (2007) — Fincher captions Lake Berryessa 'September 27, 1969' with documentary precision, then the film spends two more decades and three protagonists. The captions are the most date-literate filmmaking on this list; the film still isn't set on any of them. Zodiac (2007) — Fincher captions Lake Berryessa 'September 27, 1969' with documentary precision (Walters clocks it too), then the film spends two more decades. The most date-literate filmmaking on this list still isn't set on any date."
  },
  {
   "date": "09-28",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Baltic Storm — the sinking, then an investigation. Other claims: The Perfect Storm"
+  "candidate": "Baltic Storm — the sinking, then an investigation. Other claims: The Perfect Storm Walters' pick: Amelie, whose narrator dates everything to the second — but the film's dated moments scatter across a Paris summer and autumn. Baltic Storm stays out as a sinking-plus-inquiry."
  },
  {
   "date": "09-29",
@@ -2284,7 +2314,7 @@
   "date": "10-10",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "1911 (2011) — Double Ten, but a sprawling revolution epic. Alien vs. Predator is reputedly satellite-stamped 10 October 2004 on screen and takes place in about a day — unverified from here, and this calendar doesn't print what it can't verify. The best-evidenced Oct 10 pick is waiting on a screenshot."
+  "candidate": "1911 (2011) — Double Ten, but a sprawling revolution epic. Alien vs. Predator is reputedly satellite-stamped 10 October 2004 on screen and takes place in about a day — unverified from here, and this calendar doesn't print what it can't verify. The best-evidenced Oct 10 pick is waiting on a screenshot. Walters' pick: Moonrise Kingdom, filed here on a dated document at 1:14ish — though the film's own narrator builds everything toward the storm of September 5th, 1965. AvP's reputed on-screen 10 October remains unverified."
  },
  {
   "date": "10-11",
@@ -2325,9 +2355,12 @@
  },
  {
   "date": "10-15",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Mata Hari — a life ending at Vincennes. Other claims: Mata Hari (1985)"
+  "title": "Frequency",
+  "year": 2000,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The ham radio bridges 1969 and 1999 across a run of dated October days, and 15 October 1969 — the night Frank tries to save Sissy Clark, on screen at 1:16:47 — is where the timeline breaks. All of it against the Miracle Mets, whose World Series is the film's proof the future is real.",
+  "alt": "Mata Hari — shot at Vincennes 15 Oct 1917, at the end of a life film (rejected)"
  },
  {
   "date": "10-16",
@@ -2397,9 +2430,12 @@
  },
  {
   "date": "10-24",
-  "open": true,
-  "candidate": "The Interpreter (2005) — United Nations Day: the Charter came into force on 24 October 1945. The only feature ever allowed to film inside the General Assembly.",
-  "why": "No film yet found that is set on this date."
+  "title": "Henry V",
+  "year": 1944,
+  "kind": "about",
+  "focus": "spine",
+  "why": "Olivier's film, made as the invasion fleet gathered in 1944, and the long night of 24 October 1415: the camps, the watch-fires, the chorus's 'little touch of Harry in the night'. The day after belongs to Branagh, one square to the right.",
+  "alt": "Henry V (1989) holds 25 October — same night, same field, one calendar square apart; a curator's flourish, admitted as such"
  },
  {
   "date": "10-25",
@@ -2422,7 +2458,7 @@
  {
   "date": "10-27",
   "open": true,
-  "candidate": "The Taking of Pelham One Two Three (1974) — The New York subway opened on 27 October 1904. Seventy years later, four men in hats hijacked a car of it.",
+  "candidate": "The Taking of Pelham One Two Three (1974) — The New York subway opened on 27 October 1904. Seventy years later, four men in hats hijacked a car of it. Walters' pick: The Time Traveler's Wife — a film constitutionally incapable of staying on one date.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2633,7 +2669,7 @@
  {
   "date": "11-21",
   "open": true,
-  "candidate": "The Aeronauts (2019) — The first free manned flight — Pilatre de Rozier and d'Arlandes over Paris in a Montgolfier balloon, 21 November 1783.",
+  "candidate": "The Aeronauts (2019) — The first free manned flight — Pilatre de Rozier and d'Arlandes over Paris in a Montgolfier balloon, 21 November 1783. Walters' pick: Bridget Jones's Diary, filed here for a dated diary page; the diary famously opens on 1 January, where we note it.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2780,7 +2816,7 @@
  {
   "date": "12-09",
   "open": true,
-  "candidate": "A Charlie Brown Christmas (1965) — First broadcast on 9 December 1965, against everyone's advice, with a jazz score and a real Bible reading. Half of America watched.",
+  "candidate": "A Charlie Brown Christmas (1965) — First broadcast on 9 December 1965, against everyone's advice, with a jazz score and a real Bible reading. Half of America watched. Walters' pick: 20,000 Leagues under the Sea — the Nautilus log is dated in narration, and then the film is months at sea.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2855,32 +2891,38 @@
  {
   "date": "12-19",
   "open": true,
-  "candidate": "Scrooge (1951) — A Christmas Carol went on sale on 19 December 1843 and sold out by Christmas Eve. Alastair Sim is still the definitive Scrooge.",
+  "candidate": "Scrooge (1951) — A Christmas Carol went on sale on 19 December 1843 and sold out by Christmas Eve. Alastair Sim is still the definitive Scrooge. Walters' pick: Robinson Crusoe — a journal of years.",
   "why": "No film yet found that is set on this date."
  },
  {
   "date": "12-20",
   "open": true,
-  "candidate": "Dirty Harry (1971) — The Zodiac's first killings were on Lake Herman Road on 20 December 1968. Three years later he was Scorpio, and San Francisco had Callahan.",
+  "candidate": "Dirty Harry (1971) — The Zodiac's first killings were on Lake Herman Road on 20 December 1968. Three years later he was Scorpio, and San Francisco had Callahan. Walters' pick: Pocahontas.",
   "why": "No film yet found that is set on this date."
  },
  {
   "date": "12-21",
   "open": true,
-  "candidate": "Snow White and the Seven Dwarfs (1937) — Disney's folly premiered on 21 December 1937 and invented the animated feature. Also the winter solstice — the longest night to be lost in a wood.",
+  "candidate": "Snow White and the Seven Dwarfs (1937) — Disney's folly premiered on 21 December 1937 and invented the animated feature. Also the winter solstice — the longest night to be lost in a wood. Walters' pick: Home Alone — the McCallisters fly out around now, but the film never shows a date.",
   "why": "No film yet found that is set on this date."
  },
  {
   "date": "12-22",
-  "open": true,
-  "candidate": "Eyes Wide Shut (1999) — Christmas week in New York, lit entirely by fairy lights, in the darkest days of the year.",
-  "why": "No film yet found that is set on this date."
+  "title": "Battleground",
+  "year": 1949,
+  "kind": "about",
+  "focus": "spine",
+  "why": "The siege of Bastogne from inside one squad of the 101st, and 22 December 1944 on screen at 1:27:07 — the day the German surrender demand arrives and McAuliffe answers with one word: 'NUTS!'",
+  "alt": "Krampus is set in the days before Christmas but never shows a calendar; At Eternity's Gate (the ear, 23 Dec 1888) fell to the biopic rule"
  },
  {
   "date": "12-23",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "At Eternity's Gate (2018) — the ear comes off in Arles on 23 December 1888, one night inside a film about Van Gogh's last two years. Krampus (2015) is set in the days before Christmas but never shows a date on screen; if a screenshot proves its calendar card, it takes this day."
+  "title": "Lethal Weapon",
+  "year": 1987,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Christmas week in Los Angeles, the case file dated on screen at 59:20 — Riggs and Murtaugh's few days run right at the holiday. Shane Black's whole career of Christmas action films starts on this square; Die Hard picks up tomorrow.",
+  "alt": "At Eternity's Gate — Van Gogh's ear came off 23 Dec 1888, one night in a two-year film (rejected)"
  },
  {
   "date": "12-24",
@@ -2913,12 +2955,12 @@
   "date": "12-27",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Bhutto — a documentary life ending in the assassination. Other claims: The Beagle sails with Darwin aboard, 27 December 1831"
+  "candidate": "Bhutto — a documentary life ending in the assassination. Other claims: The Beagle sails with Darwin aboard, 27 December 1831 Walters' pick: Finding Neverland — Peter Pan opened 27 December 1904 and the premiere is the film's destination, but the film runs past it into grief; a near-miss worth arguing about. Bhutto stays out as a life."
  },
  {
   "date": "12-28",
   "open": true,
-  "candidate": "Lumiere! (2016) — Cinema's own birthday: the Lumières' first paying public screening at the Salon Indien, 28 December 1895.",
+  "candidate": "Lumiere! (2016) — Cinema's own birthday: the Lumières' first paying public screening at the Salon Indien, 28 December 1895. Walters' pick: Silver Linings Playbook, filed here for the dance competition; the film is a season.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2937,7 +2979,7 @@
   "kind": "dated",
   "focus": "day",
   "why": "Los Angeles, 30 December 1999: the penultimate day of the millennium, wired straight off the back of someone else's skull. The film is this day and the next, nothing more.",
-  "alt": "Rasputin — killed the night of 29/30 December 1916 (a life film, rejected)"
+  "alt": "Rasputin — killed the night of 29/30 December 1916 (a life film, rejected); Zero Dark Thirty — the Camp Chapman bombing of 30 Dec 2009 is on screen, dated [Walters]"
  },
  {
   "date": "12-31",
