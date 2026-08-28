@@ -40,13 +40,12 @@
  },
  {
   "date": "01-06",
-  "title": "Spotlight",
-  "year": 2015,
-  "why": "The film climaxes on the Boston Globe's publication date: 6 January 2002, the morning the Spotlight team's first abuse story ran.",
-  "alt": "Twelfth Night (1996) — the Feast of Epiphany; Blood Diamond (RUF assault on Freetown, 6 Jan 1999)",
+  "title": "The Dead",
+  "year": 1987,
   "kind": "holiday",
   "focus": "day",
-  "ending": true
+  "why": "The Misses Morkan's annual dance on the Feast of the Epiphany — 6 January 1904, Dublin, one evening, and then the snow falling faintly through the universe. Huston shot Joyce's single night as his own last film.",
+  "alt": "Spotlight — the Globe's first abuse story ran 6 January 2002, the destination of the whole film, though it lands on the final morning"
  },
  {
   "date": "01-07",
@@ -101,7 +100,7 @@
   "title": "Sully",
   "year": 2016,
   "why": "US Airways 1549 ditches in the Hudson at 15:31 on 15 January 2009. The film replays that afternoon repeatedly.",
-  "alt": "Selma (Martin Luther King Jr born 15 January 1929)",
+  "alt": "Selma (Martin Luther King Jr born 15 January 1929); Au revoir les enfants — the Gestapo came for Bonnet and Pere Jean on the morning of 15 January 1944; Malle rebuilt his own memory of it",
   "kind": "about",
   "focus": "day",
   "form": "realtime"
@@ -247,9 +246,12 @@
  },
  {
   "date": "02-03",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "La Bamba — a biopic that ends in the Clear Lake crash. Other claims: The Buddy Holly Story (1978); Serpico (shot 3 February 1971)"
+  "title": "Serpico",
+  "year": 1973,
+  "kind": "about",
+  "focus": "spine",
+  "why": "Opens inside the ambulance: Frank Serpico, shot in the face, 3 February 1971. The rest of the film is the ten-year flashback that explains how an honest cop ended up bleeding in a squad car with no backup coming.",
+  "alt": "La Bamba and The Buddy Holly Story — the Clear Lake crash of 3 Feb 1959 ends both, which is why neither qualifies"
  },
  {
   "date": "02-04",
@@ -263,7 +265,7 @@
  {
   "date": "02-05",
   "open": true,
-  "candidate": "Chaplin (1992) — Chaplin, Pickford, Fairbanks and Griffith founded United Artists on 5 February 1919 — the inmates taking over the asylum.",
+  "candidate": "Chaplin (1992) — Chaplin, Pickford, Fairbanks and Griffith founded United Artists on 5 February 1919 — the inmates taking over the asylum. Whisky Galore! — the real SS Politician and her 28,000 cases went aground off Eriskay on 5 February 1941; the film moves the date and keeps the whisky (rejected, wistfully).",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -343,7 +345,7 @@
   "kind": "dated",
   "focus": "spine",
   "why": "The opening card, styled as fact: 'On Saturday 14th February 1900 a party of schoolgirls from Appleyard College picnicked at Hanging Rock… During the afternoon several members of the party disappeared without a trace.' A Valentine's Day picnic the film never comes back from.",
-  "alt": "My Bloody Valentine (1981) — the Feb 14 dance Valentine Bluffs hasn't dared hold in twenty years; Sleepless in Seattle (the Empire State meeting is the last scene); Eternal Sunshine of the Spotless Mind (Joel rides to Montauk that morning); Raging Bull (LaMotta–Robinson, 14 Feb 1951); The St. Valentine's Day Massacre (1929)"
+  "alt": "My Bloody Valentine (1981) — the Feb 14 dance Valentine Bluffs hasn't dared hold in twenty years; Sleepless in Seattle (the Empire State meeting is the last scene); Eternal Sunshine of the Spotless Mind (Joel rides to Montauk that morning); Raging Bull (LaMotta–Robinson, 14 Feb 1951); The St. Valentine's Day Massacre (1929); Some Like It Hot — Joe and Jerry witness the St Valentine's Day massacre and leave Chicago in a hurry, and in heels"
  },
  {
   "date": "02-15",
@@ -455,7 +457,7 @@
   "title": "Waco: The Rules of Engagement",
   "year": 1997,
   "why": "The ATF raid on Mount Carmel that began the 51-day siege, 28 February 1993.",
-  "alt": "The assassination of Olof Palme, 28 Feb 1986",
+  "alt": "The assassination of Olof Palme, 28 Feb 1986; A City of Sadness — the 28 February 1947 uprising Taiwan still calls by its date, inside Hou's family chronicle",
   "kind": "about",
   "focus": "spine"
  },
@@ -620,12 +622,12 @@
  },
  {
   "date": "03-20",
-  "title": "A",
-  "year": 1998,
-  "why": "Mori Tatsuya films Aum Shinrikyo from the inside after the sarin attack on the Tokyo subway, 20 March 1995.",
-  "alt": "The spring equinox; Kurosawa's Ikiru",
-  "kind": "about",
-  "focus": "day"
+  "title": "The White Balloon",
+  "year": 1995,
+  "kind": "holiday",
+  "focus": "day",
+  "why": "The last ninety minutes before the Persian New Year, nearly in real time: a seven-year-old, a lost banknote, a goldfish. Nowruz falls on the spring equinox — 20 March most years — and the film runs right up to the cannon.",
+  "alt": "A (1998) — the Tokyo sarin attack of 20 March 1995, filmed from inside Aum in the aftermath"
  },
  {
   "date": "03-21",
@@ -696,7 +698,7 @@
  {
   "date": "03-29",
   "open": true,
-  "candidate": "Coming Home (1978) — The last American combat troops left Vietnam on 29 March 1973; this is what came back with them.",
+  "candidate": "Coming Home (1978) — The last American combat troops left Vietnam on 29 March 1973; this is what came back with them. The Great White Silence closes on Scott's final diary entry, dated 29 March 1912: 'It seems a pity, but I do not think I can write more.' A whole-expedition film, but the ending is the most precisely dated in silent cinema.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -743,7 +745,7 @@
   "title": "Nineteen Eighty-Four",
   "year": 1984,
   "why": "Winston Smith opens the diary and writes the first forbidden words: April 4th, 1984.",
-  "alt": "Martin Luther King Jr assassinated at the Lorraine Motel, 4 April 1968",
+  "alt": "Martin Luther King Jr assassinated at the Lorraine Motel, 4 April 1968; Le Samourai — Jef Costello's alibi night is timestamped by the film's own captions, Saturday 4 April, 6pm",
   "kind": "dated",
   "focus": "day"
  },
@@ -764,7 +766,7 @@
   "focus": "day",
   "form": "onetake",
   "why": "The first title card is April 6th, 1917. Two lance corporals are given a message at dawn and the camera does not leave them until it is delivered — one apparent unbroken take across a day and a night.",
-  "alt": "Hotel Rwanda — the killing starts the evening of 6 April 1994"
+  "alt": "Hotel Rwanda — the killing starts the evening of 6 April 1994; Underground — Belgrade bombed on the morning of 6 April 1941, the zoo in flames, the party moving below ground for fifty years"
  },
  {
   "date": "04-07",
@@ -810,7 +812,7 @@
   "title": "Gagarin: First in Space",
   "year": 2013,
   "why": "Poyekhali — Vostok 1 lifts off at 09:07 Moscow time on 12 April 1961.",
-  "alt": "Captain Phillips (rescued 12 April 2009); Fort Sumter, 12 April 1861",
+  "alt": "Captain Phillips (rescued 12 April 2009); Fort Sumter, 12 April 1861; The General — Keaton restages the Andrews Raid of 12 April 1862, the day Union men stole a locomotive and regretted it",
   "kind": "about",
   "focus": "spine"
  },
@@ -918,9 +920,12 @@
  },
  {
   "date": "04-25",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Gallipoli (1981) — the great trap of this date. Everyone remembers it as the Anzac Day film, but the charge at the Nek that kills Archy was 7 August 1915; the film's boys aren't even at the 25 April landings. Rejected for being set on the wrong date, which almost no one notices. Miss Congeniality holds the date's other claim: 'April 25th. Because it's not too hot, not too cold.' A line about the date is still not a film set on it. Even Walters blinked here: his own reader's note admits Excalibur was the one film he 'forced' into a date, because the sword-drawing happens at Easter and Easter can fall on 25 April."
+  "title": "1900 (Novecento)",
+  "year": 1976,
+  "kind": "holiday",
+  "focus": "spine",
+  "why": "Bertolucci's frame is Liberation Day itself — 25 April 1945, the partisans in the farmyard, the padrone on trial — and five hours of the century flash back from that morning. The date is Italy's national holiday because of that day.",
+  "alt": "Gallipoli — rejected here for being set on the wrong date (the Nek was 7 August); Miss Congeniality — 'April 25th. Because it's not too hot, not too cold' — a line about the date, still not a film set on it; Excalibur, which even Walters admits he forced"
  },
  {
   "date": "04-26",
@@ -970,7 +975,7 @@
   "year": 1973,
   "kind": "holiday",
   "why": "Summerisle keeps May Day, and Sergeant Howie arrives to find the island preparing for it.",
-  "alt": "Senna — Imola, 1 May 1994 (historical)",
+  "alt": "Senna — Imola, 1 May 1994 (historical); Chungking Express — Cop 223 stockpiles pineapple tins that expire on 1 May, his 25th birthday and the sell-by date of a heartbreak",
   "focus": "day"
  },
  {
@@ -1026,12 +1031,12 @@
  },
  {
   "date": "05-08",
-  "title": "A Royal Night Out",
-  "year": 2015,
-  "why": "VE Day, 8 May 1945 — the two princesses slip out of the Palace into the crowds for one night.",
-  "alt": "Hope and Glory; The Best Years of Our Lives",
+  "title": "Ashes and Diamonds",
+  "year": 1958,
   "kind": "about",
-  "focus": "spine"
+  "focus": "day",
+  "why": "The last day of the war in Europe and the first night of the peace: 8 May 1945 in a provincial Polish town, one assassination still to carry out, fireworks over the banquet, dawn on a rubbish tip. Wajda's whole film sits inside the twenty-four hours.",
+  "alt": "A Royal Night Out — the princesses loose in VE-night London, the same night played as champagne"
  },
  {
   "date": "05-09",
@@ -1043,13 +1048,13 @@
   "date": "05-10",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Darkest Hour (2017) — rejected on a technicality that isn't technical: the film runs 9 May to 4 June 1940 (the 'fight on the beaches' speech), so it isn't a 10 May film at all; the accession is its first act. Everest (2015) — summit day 10/11 May 1996, but an expedition film. The day Churchill kissed hands still has no film that lives on it. Walters' pick: Deep Impact, a date on screen somewhere in a year of dread. Darkest Hour still runs 9 May–4 June and Everest is still an expedition. The day Churchill kissed hands remains unfilmed."
+  "candidate": "Darkest Hour (2017) — rejected on a technicality that isn't technical: the film runs 9 May to 4 June 1940 (the 'fight on the beaches' speech), so it isn't a 10 May film at all; the accession is its first act. Everest (2015) — summit day 10/11 May 1996, but an expedition film. The day Churchill kissed hands still has no film that lives on it. Walters' pick: Deep Impact, a date on screen somewhere in a year of dread. Darkest Hour still runs 9 May–4 June and Everest is still an expedition. The day Churchill kissed hands remains unfilmed. Soldier of Orange wakes to the German invasion of Holland on 10 May 1940, then spans the whole war (rejected)."
  },
  {
   "date": "05-11",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Goodfellas (1990) — the caption reads Sunday, May 11th, 1980, and Scorsese gives the day twenty-five coked-out minutes: the helicopter, the guns, the ziti. But it is the last day of a twenty-five-year story, which makes it a spoiler wearing a date. The best-captioned rejection in the calendar. Walters' pick: (500) Days of Summer — dates on screen at 1:54 and 1:21:18, one of them this day; but the film is 500 days by design. Goodfellas' caption (Sunday, May 11th, 1980) remains the best-documented rejection in the calendar."
+  "candidate": "Goodfellas (1990) — the caption reads Sunday, May 11th, 1980, and Scorsese gives the day twenty-five coked-out minutes: the helicopter, the guns, the ziti. But it is the last day of a twenty-five-year story, which makes it a spoiler wearing a date. The best-captioned rejection in the calendar. Walters' pick: (500) Days of Summer — dates on screen at 1:54 and 1:21:18, one of them this day; but the film is 500 days by design. Goodfellas' caption (Sunday, May 11th, 1980) remains the best-documented rejection in the calendar. The Leopard — the rosary interrupted by word of Garibaldi's landing at Marsala, 11 May 1860; the film then drifts, gorgeously, across two years (rejected)."
  },
  {
   "date": "05-12",
@@ -1106,7 +1111,7 @@
   "date": "05-18",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Control (2007) — a biopic ending on the date. Other claims on the date: St. Helens (1981) — the mountain blows the same morning, 18 May 1980"
+  "candidate": "Control (2007) — a biopic ending on the date. Other claims on the date: St. Helens (1981) — the mountain blows the same morning, 18 May 1980 In the Realm of the Senses ends on 18 May 1936, the day of the Abe Sada incident, after months of the affair (ends-here, rejected)."
  },
  {
   "date": "05-19",
@@ -1138,7 +1143,7 @@
   "year": 2008,
   "kind": "dated",
   "why": "The camcorder tape is date-stamped. A leaving party in Manhattan on the night of 22 May, and then the tape keeps recording.",
-  "alt": "Sherlock Holmes films — Conan Doyle born 22 May 1859 (anniversary, not a setting)",
+  "alt": "Sherlock Holmes films — Conan Doyle born 22 May 1859 (anniversary, not a setting); Z — the deputy is struck down on the night of 22 May 1963, and Costa-Gavras spends the film proving it was no accident",
   "focus": "day"
  },
  {
@@ -1284,7 +1289,7 @@
   "title": "Secretariat",
   "year": 2010,
   "why": "The Belmont Stakes, 9 June 1973 — thirty-one lengths, and a track record nobody has touched since.",
-  "alt": "Donald Duck's debut, 9 June 1934",
+  "alt": "Donald Duck's debut, 9 June 1934; Citizenfour — Snowden puts his name to it on 9 June 2013, on camera, in the Mira Hotel",
   "kind": "about",
   "focus": "spine"
  },
@@ -1293,7 +1298,7 @@
   "title": "Lidice",
   "year": 2011,
   "why": "The village of Lidice is erased on 10 June 1942 in reprisal for Heydrich.",
-  "alt": "Anthropoid (2016)",
+  "alt": "Anthropoid (2016); Roma — the Corpus Christi massacre of 10 June 1971 breaks through the furniture-shop window; Blade Runner 2049 — the record K scans reads 6-10-21: a child, born 10 June 2021",
   "kind": "about",
   "focus": "spine"
  },
@@ -1308,9 +1313,12 @@
  },
  {
   "date": "06-12",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Ghosts of Mississippi — the murder opens a thirty-year legal fight. Other claims: The Diary of Anne Frank — Anne's birthday and first entry, 12 June 1942"
+  "title": "Bus 174",
+  "year": 2002,
+  "kind": "about",
+  "focus": "day",
+  "why": "The hijacking of bus 174 in Rio de Janeiro, 12 June 2000, assembled from the live news footage of that single afternoon — Brazil watched it in real time, and the film makes you watch it knowing how it ends. Dog Day Afternoon's documentary twin.",
+  "alt": "The Diary of Anne Frank — Anne's first entry, her thirteenth birthday, 12 June 1942; Ghosts of Mississippi (rejected as an ends-here)"
  },
  {
   "date": "06-13",
@@ -1331,7 +1339,7 @@
   "date": "06-15",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Ironclad — the siege of Rochester, after Runnymede. Other claims: Robin Hood (2010)"
+  "candidate": "Ironclad — the siege of Rochester, after Runnymede. Other claims: Robin Hood (2010) A Brighter Summer Day ends with the Guling Street killing of 15 June 1961 — four hours of Taipei adolescence arriving at one night (ends-here, rejected)."
  },
  {
   "date": "06-16",
@@ -1393,7 +1401,7 @@
   "title": "The Brest Fortress",
   "year": 2010,
   "why": "Operation Barbarossa opens at 04:15 on 22 June 1941 and the garrison holds out for weeks.",
-  "alt": "Come and See; the Empire Windrush docks at Tilbury, 22 June 1948",
+  "alt": "Come and See; the Empire Windrush docks at Tilbury, 22 June 1948; The Cranes Are Flying — Boris and Veronika's dawn embankment walk is the morning of 22 June 1941",
   "kind": "about",
   "focus": "spine"
  },
@@ -1432,19 +1440,19 @@
  },
  {
   "date": "06-27",
-  "title": "7 Days in Entebbe",
-  "year": 2018,
-  "why": "Air France 139 is hijacked out of Athens on 27 June 1976; the raid comes a week later.",
-  "alt": "Raid on Entebbe (1977); Victory at Entebbe",
+  "title": "The Battleship Potemkin",
+  "year": 1925,
   "kind": "about",
-  "focus": "day"
+  "focus": "spine",
+  "why": "The maggoty meat, the tarpaulin, the red flag up the mast: the Potemkin mutiny of 27 June 1905, new style. Eisenstein compressed the revolution into a few days and the cinema has been quoting the results for a century.",
+  "alt": "7 Days in Entebbe — Air France 139 was seized on 27 June 1976, the start of the week the film covers"
  },
  {
   "date": "06-28",
   "title": "The Day That Shook the World",
   "year": 1975,
   "why": "Sarajevo, 28 June 1914: Princip, the wrong turn, and two shots.",
-  "alt": "Stonewall — the riots begin in the early hours of 28 June 1969; the Treaty of Versailles signed 28 June 1919",
+  "alt": "Stonewall — the riots begin in the early hours of 28 June 1969; the Treaty of Versailles signed 28 June 1919; The White Ribbon — the news from Sarajevo, 28 June 1914, reaches the village, and the film knows the world is over",
   "kind": "about",
   "focus": "spine"
  },
@@ -1459,7 +1467,7 @@
   "title": "Only the Brave",
   "year": 2017,
   "why": "The Yarnell Hill fire turns on the Granite Mountain Hotshots on the afternoon of 30 June 2013.",
-  "alt": "The Night of the Long Knives, 30 June 1934; Tunguska, 30 June 1908",
+  "alt": "The Night of the Long Knives, 30 June 1934 (staged unforgettably in Visconti's The Damned); Tunguska, 30 June 1908",
   "kind": "about",
   "focus": "spine"
  },
@@ -1495,7 +1503,7 @@
   "title": "Independence Day",
   "year": 1996,
   "why": "Title card: July 4th. The counter-attack, the speech, the fat lady singing.",
-  "alt": "Jaws (Amity's Fourth of July); Born on the Fourth of July; The Shining (the ballroom photo is dated July 4th, 1921); Zodiac (Blue Rock Springs, 4 July 1969)",
+  "alt": "Jaws (Amity's Fourth of July); Born on the Fourth of July; The Shining (the ballroom photo is dated July 4th, 1921); Zodiac (Blue Rock Springs, 4 July 1969); The Marriage of Maria Braun — ends as Herbert Zimmermann screams West Germany's World Cup win, 4 July 1954, the day the Federal Republic decided it existed again (The Miracle of Bern plays the same match as its whole film)",
   "kind": "holiday",
   "focus": "day"
  },
@@ -1512,7 +1520,7 @@
   "date": "07-06",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Nowhere Boy (2009) — a biopic; the fête is one scene. Other claims on the date: The Story of Louis Pasteur — the rabies vaccine, 6 July 1885"
+  "candidate": "Nowhere Boy (2009) — a biopic; the fête is one scene. Other claims on the date: The Story of Louis Pasteur — the rabies vaccine, 6 July 1885 Lawrence of Arabia takes Aqaba from the land side on 6 July 1917 — undated on screen, one charge inside a two-continent epic (rejected)."
  },
  {
   "date": "07-07",
@@ -1586,7 +1594,7 @@
   "year": 1988,
   "kind": "dated",
   "why": "The title card: 16 July 1988, Tokyo. Everything after is 31 years of fallout.",
-  "alt": "Oppenheimer — Trinity, 16 July 1945 (historical)",
+  "alt": "Oppenheimer — Trinity, 16 July 1945 (historical); Double Indemnity — Neff's dictaphone confession is dated to a July night in 1938, the memo that is the movie",
   "focus": "day"
  },
  {
@@ -1661,12 +1669,12 @@
  },
  {
   "date": "07-25",
-  "title": "Joy",
-  "year": 2024,
-  "why": "Louise Brown, the first IVF baby, is born at 11:47pm on 25 July 1978 — ten years of work in one delivery room.",
-  "alt": "Concorde flight 4590, 25 July 2000",
+  "title": "The Conformist",
+  "year": 1970,
   "kind": "about",
-  "focus": "spine"
+  "focus": "spine",
+  "why": "The film's present tense is the night of 25 July 1943 — Mussolini falling, crowds dragging the busts through Rome — while Marcello rides through it remembering every compromise that got him there. The frame night is the hinge of Italian history.",
+  "alt": "Joy (2024) — Louise Brown, the first IVF baby, born 25 July 1978; Concorde 4590, 25 July 2000"
  },
  {
   "date": "07-26",
@@ -1724,7 +1732,7 @@
   "title": "Rush",
   "year": 2013,
   "why": "Niki Lauda's Ferrari catches fire at Bergwerk on the second lap of the German Grand Prix, 1 August 1976.",
-  "alt": "Warsaw 44 — the Uprising begins at 5pm, 1 August 1944",
+  "alt": "Warsaw 44 — the Uprising begins at 5pm, 1 August 1944; Olympia — the 1936 Games open in Berlin on 1 August, Riefenstahl's cameras the official record",
   "kind": "about",
   "focus": "spine"
  },
@@ -1802,12 +1810,12 @@
  },
  {
   "date": "08-10",
-  "title": "La Marseillaise",
-  "year": 1938,
-  "why": "Renoir's Marseillais federes march north and storm the Tuileries on 10 August 1792.",
-  "alt": "Danton",
-  "kind": "about",
-  "focus": "spine"
+  "title": "The Night of the Shooting Stars",
+  "year": 1982,
+  "kind": "holiday",
+  "focus": "spine",
+  "why": "The night of San Lorenzo, 10 August, when shooting stars grant wishes — a mother tells her child what happened on this night in 1944, when a Tuscan town split in two and walked out through the wheat. The Tavianis hang the whole memory on the date in the title.",
+  "alt": "La Marseillaise — Renoir's fédérés storm the Tuileries on 10 August 1792, the other great 10 August film"
  },
  {
   "date": "08-11",
@@ -1920,7 +1928,7 @@
   "title": "Pompeii",
   "year": 2014,
   "why": "Vesuvius buries Pompeii on 24 August AD 79 (the traditional date).",
-  "alt": "The Last Days of Pompeii (1935); Washington burned, 24 August 1814",
+  "alt": "The Last Days of Pompeii (1935); Washington burned, 24 August 1814; A Man Escaped — Fontaine goes over the wall at Montluc on the night of 24/25 August 1943, as Devigny did; Intolerance — the St Bartholomew's Day massacre, 24 August 1572, one of Griffith's four interwoven catastrophes",
   "kind": "about",
   "focus": "spine"
  },
@@ -1977,7 +1985,7 @@
   "title": "The Queen",
   "year": 2006,
   "why": "Opens in the small hours of 31 August 1997 with the phone ringing at Balmoral, then follows the week the date detonated. The film starts on its day rather than sneaking up on it.",
-  "alt": "Spencer (2021); Diana (2013); Amelie — the bottle-cap epiphany happens the very night Diana dies, 31 August 1997, dated by the narrator",
+  "alt": "Spencer (2021); Diana (2013); Amelie — the bottle-cap epiphany happens the very night Diana dies, 31 August 1997, dated by the narrator; Man of Iron — the Gdansk Accords signed 31 August 1980, with Walesa playing himself at his own wedding",
   "kind": "about",
   "focus": "spine"
  },
@@ -2022,7 +2030,7 @@
   "title": "September 5",
   "year": 2024,
   "why": "The title is the date: the Munich Olympics hostage crisis of 5 September 1972, told entirely from the ABC Sports control room.",
-  "alt": "Munich (2005); One Day in September (1999); Moonrise Kingdom — the narrator aims the whole film at the storm of September 5th, 1965",
+  "alt": "Munich (2005); One Day in September (1999); Moonrise Kingdom — the narrator aims the whole film at the storm of September 5th, 1965; Triumph of the Will opens with a dated title — on 5 September 1934 Hitler flew to Nuremberg: propaganda with a timestamp",
   "kind": "about",
   "focus": "spine"
  },
@@ -2073,7 +2081,7 @@
   "title": "United 93",
   "year": 2006,
   "why": "11 September 2001, close to real time, from Newark to a field in Pennsylvania.",
-  "alt": "13 Hours (Benghazi, 11 September 2012); Braveheart (Stirling Bridge, 11 September 1297); Missing (the Chilean coup, 11 September 1973)",
+  "alt": "13 Hours (Benghazi, 11 September 2012); Braveheart (Stirling Bridge, 11 September 1297); Missing (the Chilean coup, 11 September 1973); The Big Lebowski — the Dude's 69-cent Ralphs check is post-dated 11 September 1991, filmed years before the date meant anything",
   "kind": "about",
   "focus": "spine",
   "form": "realtime"
@@ -2156,9 +2164,12 @@
  },
  {
   "date": "09-21",
-  "open": true,
-  "candidate": "The Hobbit: An Unexpected Journey (2012) — The Hobbit was published on 21 September 1937. Also the International Day of Peace, which Bilbo would have approved of.",
-  "why": "No film yet found that is set on this date."
+  "title": "Grave of the Fireflies",
+  "year": 1988,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The first line of the film: 'September 21, 1945. That was the night I died.' Seita's ghost watches his own end in Sannomiya station, and the film is the memory that leads back to that night.",
+  "alt": "Walters' pick for the day was Places in the Heart; Takahata's opening line outranks it"
  },
  {
   "date": "09-22",
@@ -2237,7 +2248,7 @@
   "title": "Thrilla in Manila",
   "year": 2008,
   "why": "Ali and Frazier, fourteen rounds in 40-degree heat, 1 October 1975 — 'the closest thing to dying that I know of'.",
-  "alt": "The People's Republic proclaimed, 1 October 1949",
+  "alt": "The People's Republic proclaimed, 1 October 1949; Willy Wonka & the Chocolate Factory (1971) — the golden ticket summons the five to the gates at ten o'clock on the morning of the first of October (Burton's remake moved it to 1 February, one square back in this calendar); Withnail and I — Danny's arithmetic, 'we are 91 days from the end of this decade', pins the Camden squalor to about the first of October 1969",
   "kind": "about",
   "focus": "spine"
  },
@@ -2288,12 +2299,12 @@
  },
  {
   "date": "10-07",
-  "title": "12 Strong",
-  "year": 2018,
-  "why": "The air campaign in Afghanistan opens on 7 October 2001 and twelve men go in on horseback behind it.",
-  "alt": "Poe dies in Baltimore, 7 October 1849; Lepanto, 7 October 1571",
+  "title": "Son of Saul",
+  "year": 2015,
   "kind": "about",
-  "focus": "spine"
+  "focus": "day",
+  "why": "A day and a half inside the Sonderkommando at Birkenau, ending in the revolt of 7 October 1944 — the one day the crematoria burned from the outside. The camera never leaves Saul's shoulder.",
+  "alt": "The Battle of Algiers — its frame is captioned 7 October 1957, Ali la Pointe's last morning; 12 Strong (the 2001 air campaign, rejected as sprawl)"
  },
  {
   "date": "10-08",
@@ -2312,9 +2323,12 @@
  },
  {
   "date": "10-10",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "1911 (2011) — Double Ten, but a sprawling revolution epic. Alien vs. Predator is reputedly satellite-stamped 10 October 2004 on screen and takes place in about a day — unverified from here, and this calendar doesn't print what it can't verify. The best-evidenced Oct 10 pick is waiting on a screenshot. Walters' pick: Moonrise Kingdom, filed here on a dated document at 1:14ish — though the film's own narrator builds everything toward the storm of September 5th, 1965. AvP's reputed on-screen 10 October remains unverified."
+  "title": "Tokyo Olympiad",
+  "year": 1965,
+  "kind": "about",
+  "focus": "spine",
+  "why": "Ichikawa's record of the Tokyo Games opens with the ceremony of 10 October 1964 — the date Japan made a national holiday because of that morning. The state wanted statistics; Ichikawa filmed faces, and the result nearly got suppressed.",
+  "alt": "1911 (Double Ten, rejected as sprawl); Alien vs. Predator's reputed on-screen 10 October remains unverified"
  },
  {
   "date": "10-11",
@@ -2487,7 +2501,7 @@
   "title": "Halloween",
   "year": 1978,
   "why": "Haddonfield, Illinois, 31 October. The Shape comes home.",
-  "alt": "Trick 'r Treat; Hocus Pocus; Meet Me in St. Louis (the Halloween sequence); E.T.",
+  "alt": "Trick 'r Treat; Hocus Pocus; Meet Me in St. Louis (the Halloween sequence); E.T.; To Kill a Mockingbird — the walk home from the Halloween pageant, in the ham costume",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2496,7 +2510,7 @@
   "title": "Coco",
   "year": 2017,
   "why": "Día de Muertos, 1–2 November — the one night the marigold bridge is open.",
-  "alt": "The Book of Life (2014); the Lisbon earthquake, 1 November 1755",
+  "alt": "The Book of Life (2014); the Lisbon earthquake, 1 November 1755; The Apartment — Baxter's narration opens on 1 November 1959, counting New York's 8,042,783 souls",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2523,7 +2537,7 @@
   "title": "Persepolis",
   "year": 2007,
   "why": "Students take the American embassy in Tehran on 4 November 1979 — the revolution turning on the people who made it.",
-  "alt": "Argo; Howard Carter finds the first step to Tutankhamun's tomb, 4 November 1922",
+  "alt": "Argo; Howard Carter finds the first step to Tutankhamun's tomb, 4 November 1922; The Best of Youth — the Florence flood of 4 November 1966, mud angels and all, inside six hours of Italian life",
   "kind": "about",
   "focus": "spine"
  },
@@ -2571,7 +2585,7 @@
   "focus": "day",
   "form": "loop",
   "why": "Nyles wakes on 9 November at a wedding in the desert, and keeps waking on 9 November, until the morning he doesn't.",
-  "alt": "Good Bye, Lenin! — the Wall opens the night of 9 November 1989"
+  "alt": "Good Bye, Lenin! — the Wall opens the night of 9 November 1989; The Lives of Others and The Tin Drum both pass through 9 November — the Wall falling in 1989, Kristallnacht in 1938"
  },
  {
   "date": "11-10",
@@ -2629,12 +2643,12 @@
  },
  {
   "date": "11-16",
-  "title": "The Royal Hunt of the Sun",
-  "year": 1969,
-  "why": "Pizarro takes Atahualpa at Cajamarca on 16 November 1532 — 168 Spaniards against an empire, decided in an afternoon.",
-  "alt": "Aguirre, the Wrath of God",
-  "kind": "about",
-  "focus": "spine"
+  "title": "Children of Men",
+  "year": 2006,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The newscast that opens the film is dated 16 November 2027: Baby Diego, the youngest person on earth, is dead at eighteen, and the coffee shop explodes before the title card. The film runs its few weeks from that morning.",
+  "alt": "The Royal Hunt of the Sun — Cajamarca, 16 November 1532: 168 Spaniards against an empire, decided in an afternoon"
  },
  {
   "date": "11-17",
@@ -2686,7 +2700,7 @@
   "title": "An Adventure in Space and Time",
   "year": 2013,
   "why": "Doctor Who goes out for the first time at 17:16 on 23 November 1963 — the day after Dallas, so half the country missed it.",
-  "alt": "Doctor Who: An Unearthly Child",
+  "alt": "Doctor Who: An Unearthly Child; The Ice Storm — the storm falls on the Friday after Thanksgiving 1973, 23 November, while Nixon melts on every television",
   "kind": "about",
   "focus": "spine"
  },
@@ -2704,7 +2718,7 @@
   "title": "The Last Waltz",
   "year": 1978,
   "why": "The Band's farewell at Winterland on Thanksgiving night, 25 November 1976 — turkey dinner for 5,000, then Dylan.",
-  "alt": "Rocky II — the rematch is fought on the same date, 25 November 1976",
+  "alt": "Rocky II — the rematch is fought on the same date, 25 November 1976; Mishima: A Life in Four Chapters — the film's present tense is 25 November 1970, Mishima's last morning, returned to between chapters",
   "kind": "about",
   "focus": "spine"
  },
@@ -2784,7 +2798,7 @@
   "kind": "holiday",
   "focus": "day",
   "why": "Pakjesavond, 5 December — and once a generation the Sinterklaas parade falls on a full moon, which is when the bishop comes back over the Amsterdam rooftops.",
-  "alt": "The Untouchables — Prohibition repealed 5 December 1933 (a closing line, rejected)"
+  "alt": "The Untouchables — Prohibition repealed 5 December 1933 (a closing line, rejected); Once Upon a Time in America — the betrayal happens the night Prohibition dies, 5 December 1933"
  },
  {
   "date": "12-06",
@@ -2929,7 +2943,7 @@
   "title": "Die Hard",
   "year": 1988,
   "why": "The Nakatomi Corporation Christmas party, Christmas Eve, Century City. Now I have a machine gun. Ho ho ho.",
-  "alt": "It's a Wonderful Life — one Christmas Eve, plus the angel's homework; Tokyo Godfathers — a baby in the trash on Christmas Eve; Rent — 'December 24th, 9pm, Eastern Standard Time', dated in its opening line; The Ref (one hostage Christmas Eve); The Muppet Christmas Carol; Eyes Wide Shut (Christmas week); Cast Away (the crash)",
+  "alt": "It's a Wonderful Life — one Christmas Eve, plus the angel's homework; Tokyo Godfathers — a baby in the trash on Christmas Eve; Rent — 'December 24th, 9pm, Eastern Standard Time', dated in its opening line; The Ref (one hostage Christmas Eve); The Muppet Christmas Carol; Eyes Wide Shut (Christmas week); Cast Away (the crash); The Umbrellas of Cherbourg — the Esso station finale, Christmas Eve 1963, in the snow; Fanny and Alexander — the Ekdahl Christmas of 1907, cinema's grandest Christmas Eve; My Night at Maud's — midnight mass, then the night that gives the film its title",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2988,6 +3002,6 @@
   "kind": "holiday",
   "focus": "day",
   "why": "The legend the whole film runs on: the last sinner to die before midnight on New Year's Eve must drive Death's carriage for the year to come. David Holm dies at one minute to twelve. Sweden's most famous film, set entirely inside the year's last hour.",
-  "alt": "The Irony of Fate (1976) — the film Russia rewatches every 31 December; Four Rooms (one bellhop, one NYE); Fruitvale Station (Oscar Grant's 31 December, near enough in real time); Strange Days (day two); The Godfather Part II (the Havana NYE kiss — 'I know it was you, Fredo'); When Harry Met Sally and The Apartment (both end at the party); Doctor Who (1996) — the Eighth Doctor's NYE 1999; Entrapment (the heist is the Y2K rollover itself); Sunset Boulevard (Norma's NYE party for two); The Time Machine (George departs the evening of 31 Dec 1899); Ocean's Eleven (1960); The Poseidon Adventure (the wave hits at midnight); Boogie Nights; The Gold Rush; Terror Train; New Year's Evil; Assault on Precinct 13 (2005); The Hudsucker Proxy; Peter's Friends; Money Train; End of Days; 200 Cigarettes"
+  "alt": "The Irony of Fate (1976) — the film Russia rewatches every 31 December; Four Rooms (one bellhop, one NYE); Fruitvale Station (Oscar Grant's 31 December, near enough in real time); Strange Days (day two); The Godfather Part II (the Havana NYE kiss — 'I know it was you, Fredo'); When Harry Met Sally and The Apartment (both end at the party); Doctor Who (1996) — the Eighth Doctor's NYE 1999; Entrapment (the heist is the Y2K rollover itself); Sunset Boulevard (Norma's NYE party for two); The Time Machine (George departs the evening of 31 Dec 1899); Ocean's Eleven (1960); The Poseidon Adventure (the wave hits at midnight); Boogie Nights; The Gold Rush; Terror Train; New Year's Evil; Assault on Precinct 13 (2005); The Hudsucker Proxy; Peter's Friends; Money Train; End of Days; 200 Cigarettes; Phantom Thread — Alma retrieves Reynolds from the Chelsea Arts Ball on New Year's Eve"
  }
 ]

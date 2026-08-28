@@ -50,9 +50,9 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 89 |
-| The date is the film's spine | 172 |
-| **Open — nothing qualifies** | **105** |
+| The film takes place on the date | 91 |
+| The date is the film's spine | 175 |
+| **Open — nothing qualifies** | **100** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
 the finding, not a failure of searching.
@@ -162,6 +162,33 @@ Lethal Weapon (23 Dec, handing off to Die Hard on the 24th).
 His remaining picks are quoted in the open days' candidate notes, including his own reader's-
 note confession that *Excalibur* was the one film he "forced" into a date. His Blade Runner
 filing (8 January, against the film's own "November 2019" card) is flagged as disputed.
+
+## The world-cinema pass
+
+The calendar was anglophone-skewed, so the full 1001 Movies list was swept with the same rules.
+The headline negative finding: world cinema's masterpieces are overwhelmingly calendar-free —
+Ozu, Bresson, Tarkovsky, Kiarostami, Wong (mostly), Bergman (mostly) never date a frame.
+But thirteen date-anchored exceptions came through, and several fixed the weakest squares:
+
+- **6 Jan — The Dead** (Epiphany night, one evening; Spotlight steps down to alternate)
+- **3 Feb — Serpico** (opens inside the ambulance, 3 February 1971)
+- **20 Mar — The White Balloon** (the last ninety minutes before Nowruz, near real time)
+- **25 Apr — 1900** (the Liberation Day frame — the square Gallipoli falsely occupied)
+- **8 May — Ashes and Diamonds** (VE Day 1945 in one Polish town, one day and night)
+- **12 Jun — Bus 174** (the Rio hijacking of 12 June 2000, live footage of one afternoon)
+- **27 Jun — The Battleship Potemkin** (the mutiny, 27 June 1905 new style)
+- **25 Jul — The Conformist** (present tense: the night Mussolini falls)
+- **10 Aug — The Night of the Shooting Stars** (San Lorenzo night, in the title)
+- **21 Sep — Grave of the Fireflies** ("September 21, 1945. That was the night I died.")
+- **7 Oct — Son of Saul** (a day and a half, ending in the Sonderkommando revolt)
+- **10 Oct — Tokyo Olympiad** (the ceremony that became a national holiday)
+- **16 Nov — Children of Men** (the newscast is dated 16 November 2027 — verified)
+
+Plus some thirty world-cinema alternates: Chungking Express's 1 May pineapple tins, Z on
+22 May, Some Like It Hot fleeing the Valentine's massacre, Le Samouraï's captioned 4 April
+alibi, the Umbrellas of Cherbourg Esso-station Christmas Eve, Mishima's 25 November present
+tense, the Marriage of Maria Braun ending on the Miracle of Bern, and The Big Lebowski's
+Ralphs check post-dated 11 September 1991.
 
 ## Best remaining seams
 
