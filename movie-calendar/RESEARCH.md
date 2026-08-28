@@ -38,9 +38,14 @@ Findings from the deep-research rounds, so future passes don't rediscover them.
 
 ## Handoff requests (user offered)
 
-- **Letterboxd page sources**: save the twelve `letterboxd.com/crew/list/dating-the-movies-
-  {month}/detail/` pages (the /detail/ view carries the curator's per-film date notes) as
-  HTML and drop them in like the Walters PDF. The notes fields are what matter.
+- ~~Letterboxd page sources~~ — DONE, and it was the richest single ingest of the project:
+  all twelve of Laura E. Hall's Dating the Movies lists with per-film date notes. Fourteen
+  adoptions (Searching's timestamped interface, Knives Out's recited party night, Do the
+  Right Thing's one-block day, two more time loops, the Cloverfield double-entry), three
+  primary swaps, forty-plus notes, and — best of all — Hall herself stating this calendar's
+  core rule in her own comments while conceding The Turin Horse on exactly the grounds we
+  demoted it. Some of her notes hide behind Letterboxd spoiler warnings; those squares record
+  the film but await the note.
 - **Choekaas video**: the *description* likely lists all 366 films with dates — worth more
   than the transcript, since the video is a montage of film audio. Copy the description text
   and any pinned comment; a transcript of on-screen date cards would be the bonus.

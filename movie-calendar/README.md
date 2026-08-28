@@ -50,9 +50,9 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 
 | | days |
 |---|---|
-| The film takes place on the date | 91 |
-| The date is the film's spine | 189 |
-| **Open — nothing qualifies** | **86** |
+| The film takes place on the date | 94 |
+| The date is the film's spine | 198 |
+| **Open — nothing qualifies** | **74** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
 the finding, not a failure of searching.
