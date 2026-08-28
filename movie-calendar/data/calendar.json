@@ -12,13 +12,13 @@
   "date": "01-02",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Beatles: Get Back — date-stamped, but it is a record of sessions across a month. Other claims: 1492: Conquest of Paradise (surrender of Granada, 2 Jan 1492) Walters' pick: The Thin Red Line — Guadalcanal, but the film floats free of any date."
+  "candidate": "The Beatles: Get Back — date-stamped, but it is a record of sessions across a month. Other claims: 1492: Conquest of Paradise (surrender of Granada, 2 Jan 1492) Walters' pick: The Thin Red Line — Guadalcanal, but the film floats free of any date. From the CineCalendar archive: Trading Places' frozen-orange-juice massacre is often dated 2 January — though 2 Jan 1983 was a Sunday and the markets were shut, which is why it stays a claim rather than a pick."
  },
  {
   "date": "01-03",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Turin Horse — Nietzsche's collapse is narrated in the prologue, then the film leaves it behind. Other claims: Jobs (Apple Computer incorporated, 3 Jan 1977) Walters' pick: Shadowlands — a biopic, out by our rules."
+  "candidate": "The Turin Horse — Nietzsche's collapse is narrated in the prologue, then the film leaves it behind. Other claims: Jobs (Apple Computer incorporated, 3 Jan 1977) Walters' pick: Shadowlands — a biopic, out by our rules. CineCalendar offers The Terminal — 3 January is the date officer Thurman bets Viktor Navorski will finally walk out — and Gary King's medical bracelet in The World's End, born 3 Jan 1972."
  },
  {
   "date": "01-04",
@@ -51,7 +51,7 @@
   "date": "01-07",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Galileo — a life; the sighting of Jupiter's moons is one scene. Other claims: Charlie Hebdo documentaries (7 Jan 2015) Walters' pick: Zorba the Greek — the zip-line breakthrough lands on Orthodox Christmas, 7 January, dated on screen at 1:16:51; one scene in a film of seasons."
+  "candidate": "Galileo — a life; the sighting of Jupiter's moons is one scene. Other claims: Charlie Hebdo documentaries (7 Jan 2015) Walters' pick: Zorba the Greek — the zip-line breakthrough lands on Orthodox Christmas, 7 January, dated on screen at 1:16:51; one scene in a film of seasons. Prop-date of the day: Ellen Ripley, born 7 January 2092, per the Nostromo dossier in Aliens."
  },
  {
   "date": "01-08",
@@ -71,7 +71,7 @@
  {
   "date": "01-10",
   "open": true,
-  "candidate": "Metropolis (1927) — Cinema's most influential city premiered in Berlin on 10 January 1927 — a film set in a future that keeps arriving.",
+  "candidate": "Metropolis (1927) — Cinema's most influential city premiered in Berlin on 10 January 1927 — a film set in a future that keeps arriving. Basic Instinct dates Hazel Dobkins' motiveless murders to 10 January 1956 — backstory, not setting.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -84,7 +84,7 @@
   "date": "01-12",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Fatal Assistance — about the two years after the earthquake, not the day. Other claims: Agatha Christie died 12 January 1976 By Tolkien's appendices the Fellowship is inside Moria in mid-January — the Bridge of Khazad-dum falls on the 15th — but Jackson's film never says so. Walters files Fellowship here on the appendix arithmetic alone."
+  "candidate": "Fatal Assistance — about the two years after the earthquake, not the day. Other claims: Agatha Christie died 12 January 1976 By Tolkien's appendices the Fellowship is inside Moria in mid-January — the Bridge of Khazad-dum falls on the 15th — but Jackson's film never says so. Walters files Fellowship here on the appendix arithmetic alone. 'I became operational at the H.A.L. plant in Urbana, Illinois, on the 12th of January 1992' — 2001's most famous birthday, spoken by the birthday boy as he dies."
  },
  {
   "date": "01-13",
@@ -112,7 +112,7 @@
   "date": "01-16",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Jarhead — a deployment, not the night the air war opened. Other claims: The Roaring Twenties (Prohibition ratified 16 Jan 1919)"
+  "candidate": "Jarhead — a deployment, not the night the air war opened. Other claims: The Roaring Twenties (Prohibition ratified 16 Jan 1919) Argo's internal timeline starts the fake-movie cover on 16 January 1980 — twelve days before the square Argo actually holds."
  },
  {
   "date": "01-17",
@@ -137,15 +137,18 @@
  },
  {
   "date": "01-20",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Nixon — a presidency, not an inauguration day. Other claims: The American President; Dave"
+  "title": "The Fugitive",
+  "year": 1993,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The night of 20 January 1993: the one-armed man, the murder of Helen Kimble — the night the film cannot stop replaying. Kimble relives it in fragments for two hours while running; the trial and the wanted bulletins recite the date.",
+  "alt": "Nixon (Walters' pick — a presidency, not an inauguration day); Primary Colors (his alternate)"
  },
  {
   "date": "01-21",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Marie Antoinette (1938) — a reign; the execution is its last scene. Other claims: Lenin dies 21 January 1924 — Reds"
+  "candidate": "Marie Antoinette (1938) — a reign; the execution is its last scene. Other claims: Lenin dies 21 January 1924 — Reds Rain Man dates Raymond's institutionalisation to 21 January 1965 — the day Charlie lost a brother he didn't know he had."
  },
  {
   "date": "01-22",
@@ -271,7 +274,7 @@
  {
   "date": "02-05",
   "open": true,
-  "candidate": "Chaplin (1992) — Chaplin, Pickford, Fairbanks and Griffith founded United Artists on 5 February 1919 — the inmates taking over the asylum. Whisky Galore! — the real SS Politician and her 28,000 cases went aground off Eriskay on 5 February 1941; the film moves the date and keeps the whisky (rejected, wistfully).",
+  "candidate": "Chaplin (1992) — Chaplin, Pickford, Fairbanks and Griffith founded United Artists on 5 February 1919 — the inmates taking over the asylum. Whisky Galore! — the real SS Politician and her 28,000 cases went aground off Eriskay on 5 February 1941; the film moves the date and keeps the whisky (rejected, wistfully). Oblivion claims the last Super Bowl ever played was 5 February 2017; Click has Britney's 23rd baby the same day. The future was wrong about both.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -286,7 +289,7 @@
  {
   "date": "02-07",
   "open": true,
-  "candidate": "The Man Who Invented Christmas (2017) — Charles Dickens was born on 7 February 1812; this is the six weeks in which he wrote A Christmas Carol.",
+  "candidate": "The Man Who Invented Christmas (2017) — Charles Dickens was born on 7 February 1812; this is the six weeks in which he wrote A Christmas Carol. The Incredible Hulk's data screens log Banner trying to reach Betty Ross on 7 February 2006.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -365,14 +368,17 @@
  {
   "date": "02-16",
   "open": true,
-  "candidate": "The Mummy (1932) — Howard Carter opened Tutankhamun's burial chamber on 16 February 1923, and Universal had a monster within a decade. Walters' pick: Coraline, date on screen at some buried moment — but nothing in Coraline lives on a calendar.",
+  "candidate": "The Mummy (1932) — Howard Carter opened Tutankhamun's burial chamber on 16 February 1923, and Universal had a monster within a decade. Walters' pick: Coraline, date on screen at some buried moment — but nothing in Coraline lives on a calendar. Fire Walk with Me's prologue is dated here: Agent Chester Desmond vanishes at Deer Meadow, 16 February 1988, one week before the film's Feb 23 square. Please Stand By has Wendy delivering her Star Trek script the same day.",
   "why": "No film yet found that is set on this date."
  },
  {
   "date": "02-17",
-  "open": true,
-  "candidate": "Giordano Bruno (1973) — Bruno is burned in the Campo de' Fiori on 17 February 1600 for saying the stars were suns.",
-  "why": "No film yet found that is set on this date."
+  "title": "Days of Thunder",
+  "year": 1990,
+  "kind": "about",
+  "focus": "spine",
+  "why": "The whole film drives at the Daytona 500 — run on 17 February by its own chronology. Walters files it here and the CineCalendar archive dates Cole Trickle's race against Russ Wheeler to the 1991 running, 17 February 1991. Two independent sources, one chequered flag.",
+  "alt": "Three Came Home (Walters' pick, an internment spanning years)"
  },
  {
   "date": "02-18",
@@ -493,9 +499,12 @@
  },
  {
   "date": "03-03",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Straight Outta Compton — the beating and the verdict are two scenes in a band's decade. Other claims: The Rodney King documentaries"
+  "title": "Idiocracy",
+  "year": 2006,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The Great Garbage Avalanche of 3 March 2505, dated by the narrator, wakes Joe Bauers five hundred years late from a one-year Army hibernation experiment. The film's whole future starts on that date.",
+  "alt": "Top Gun's famous opening card is dated 3 March 1969 — 'the Navy established an elite school...' — though the film itself floats undated in the mid-80s; The Miracle Worker (Walters' pick, a biopic)"
  },
  {
   "date": "03-04",
@@ -536,7 +545,7 @@
  {
   "date": "03-08",
   "open": true,
-  "candidate": "Suffragette (2015) — International Women's Day, marked on 8 March since 1913.",
+  "candidate": "Suffragette (2015) — International Women's Day, marked on 8 March since 1913. True Grit props date Frank Ross's birth to 8 March 1835.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -570,7 +579,7 @@
   "date": "03-12",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Sound of Music — the Anschluss is a plot turn in the last act, not the setting. Other claims: The Third Man"
+  "candidate": "The Sound of Music — the Anschluss is a plot turn in the last act, not the setting. Other claims: The Third Man The Breakfast Club's props say Brian Ralph Johnson was born 12 March — the calendar's own 24 March film leaking into a second square."
  },
  {
   "date": "03-13",
@@ -581,7 +590,7 @@
  {
   "date": "03-14",
   "open": true,
-  "candidate": "Pi (1998) — Pi Day, 3/14. Max Cohen's hunt for the number underneath everything. Walters' pick: Raging Bull, one dated fight inside a life. Pi Day remains a number pun, not a setting.",
+  "candidate": "Pi (1998) — Pi Day, 3/14. Max Cohen's hunt for the number underneath everything. Walters' pick: Raging Bull, one dated fight inside a life. Pi Day remains a number pun, not a setting. Network dates the first broadcast of The Mao Tse-Tung Hour to 14 March — a 47 share.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -650,7 +659,7 @@
  {
   "date": "03-22",
   "open": true,
-  "candidate": "Yesterday (2019) — Please Please Me, the album that starts everything, was released on 22 March 1963. This is the world where it wasn't.",
+  "candidate": "Yesterday (2019) — Please Please Me, the album that starts everything, was released on 22 March 1963. This is the world where it wasn't. Jenny Gump's headstone reads 22 March 1982 — and the account that found it notes Forrest says she died on a Saturday, which 22 March 1982 wasn't. Even gravestones have continuity errors.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -699,7 +708,7 @@
   "date": "03-28",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The China Syndrome — held this square for months on a false pretence: Three Mile Island melted down on 28 March 1979, twelve days after the film OPENED. That is a release-date coincidence, not a setting, and the calendar's own rules finally caught it. The most famous nuclear-accident film has no date in it at all."
+  "candidate": "The China Syndrome — held this square for months on a false pretence: Three Mile Island melted down on 28 March 1979, twelve days after the film OPENED. That is a release-date coincidence, not a setting, and the calendar's own rules finally caught it. The most famous nuclear-accident film has no date in it at all. Back to the Future Part II's Hill Valley Telegraph reports Biff's million-dollar win on 28 March 1958."
  },
  {
   "date": "03-29",
@@ -880,7 +889,7 @@
   "date": "04-19",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "The Pianist — the Uprising is glimpsed from a window; the film covers six years. Other claims: Uprising (2001); Lexington and Concord, 19 April 1775; Waco, 19 April 1993"
+  "candidate": "The Pianist — the Uprising is glimpsed from a window; the film covers six years. Other claims: Uprising (2001); Lexington and Concord, 19 April 1775; Waco, 19 April 1993 Jason Bourne's US and Canadian passports are both issued 19 April — the same forger, presumably."
  },
  {
   "date": "04-20",
@@ -1005,7 +1014,7 @@
  {
   "date": "05-04",
   "open": true,
-  "candidate": "Kent State (1981) — The Ohio National Guard fires on students at Kent State, 4 May 1970. Four dead in Ohio. Walters' pick: The Messenger — Joan reaches Orléans and the May 4 assault begins; a career film. May the Fourth remains a pun.",
+  "candidate": "Kent State (1981) — The Ohio National Guard fires on students at Kent State, 4 May 1970. Four dead in Ohio. Walters' pick: The Messenger — Joan reaches Orléans and the May 4 assault begins; a career film. May the Fourth remains a pun. Juno's baby is due 4 May. May the Fourth remains otherwise unfilmed.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -1115,9 +1124,12 @@
  },
  {
   "date": "05-18",
-  "open": true,
-  "why": "No film yet found that is set on this date.",
-  "candidate": "Control (2007) — a biopic ending on the date. Other claims on the date: St. Helens (1981) — the mountain blows the same morning, 18 May 1980 In the Realm of the Senses ends on 18 May 1936, the day of the Abe Sada incident, after months of the affair (ends-here, rejected)."
+  "title": "Turning Red",
+  "year": 2022,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The 4*Town concert at the SkyDome, 18 May 2002 — printed on the tickets, circled on the calendar, and the destination of everything Mei and the panda do. The red-moon ritual is scheduled against the same night.",
+  "alt": "Control — Ian Curtis died 18 May 1980, at the end of a biopic (rejected); In the Realm of the Senses — ends on the day of the Abe Sada incident, 18 May 1936 (rejected); A Few Good Men (Walters' alternate)"
  },
  {
   "date": "05-19",
@@ -1170,7 +1182,7 @@
  {
   "date": "05-25",
   "open": true,
-  "candidate": "The Hitchhiker's Guide to the Galaxy (2005) — Towel Day, 25 May — and the Earth is demolished on a Thursday, which is never a good day.",
+  "candidate": "The Hitchhiker's Guide to the Galaxy (2005) — Towel Day, 25 May — and the Earth is demolished on a Thursday, which is never a good day. Bram Stoker's Dracula opens Harker's dated diary on 25 May 1897, the novel's own calendar; Captain America attends the real Dodgers–Phillies game of 25 May 1941 at Ebbets Field.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -1222,7 +1234,7 @@
   "date": "05-31",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Operation Finale — the capture is the film; the hanging is a caption. Other claims: The Johnstown Flood, 31 May 1889"
+  "candidate": "Operation Finale — the capture is the film; the hanging is a caption. Other claims: The Johnstown Flood, 31 May 1889 The account adds the mechanism: 31 May is the day the sun touches Scartaris and shows Lindenbrook the way down."
  },
  {
   "date": "06-01",
@@ -1339,13 +1351,13 @@
   "date": "06-14",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Grenfell (2023) — Steve McQueen's silent circling of the tower. A memorial artwork, not a movie set on 14 June."
+  "candidate": "Grenfell (2023) — Steve McQueen's silent circling of the tower. A memorial artwork, not a movie set on 14 June. Captain America: The First Avenger dates Steve's failed enlistment at the Stark Expo to 14 June 1943."
  },
  {
   "date": "06-15",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Ironclad — the siege of Rochester, after Runnymede. Other claims: Robin Hood (2010) A Brighter Summer Day ends with the Guling Street killing of 15 June 1961 — four hours of Taipei adolescence arriving at one night (ends-here, rejected)."
+  "candidate": "Ironclad — the siege of Rochester, after Runnymede. Other claims: Robin Hood (2010) A Brighter Summer Day ends with the Guling Street killing of 15 June 1961 — four hours of Taipei adolescence arriving at one night (ends-here, rejected). Barry Lyndon's narrator dates the wedding to the Countess of Lyndon to 15 June 1773 — Walters clocks it on screen — but one dated day inside two decades stays a note."
  },
  {
   "date": "06-16",
@@ -1464,9 +1476,12 @@
  },
  {
   "date": "06-29",
-  "open": true,
-  "candidate": "White Nights (1985) — Baryshnikov defected in Toronto on 29 June 1974; here he plays a dancer dragged back to the country he ran from.",
-  "why": "No film yet found that is set on this date."
+  "title": "Taxi Driver",
+  "year": 1976,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Travis Bickle's diary is read over the days it dates, and 29 June is the famous entry: 'I gotta get in shape now. Too much sitting has ruined my body.' The film lives inside those dated pages — the same diary logic that put Winston Smith on 4 April.",
+  "alt": "Where the Heart Is (Walters' pick, sprawl); White Nights (a defection anniversary, rejected)"
  },
  {
   "date": "06-30",
@@ -1570,14 +1585,14 @@
  {
   "date": "07-12",
   "open": true,
-  "candidate": "Crossfire Hurricane (2012) — The Rolling Stones played their first gig at the Marquee on 12 July 1962.",
+  "candidate": "Crossfire Hurricane (2012) — The Rolling Stones played their first gig at the Marquee on 12 July 1962. Twilight's home video of small Bella is dated 12 July 1998.",
   "why": "No film yet found that is set on this date."
  },
  {
   "date": "07-13",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Bohemian Rhapsody (2018) — Live Aid is twenty minutes at the end of a film that covers fifteen years. Other claims on the date: Live Aid documentaries; the Great Fire of Rome"
+  "candidate": "Bohemian Rhapsody (2018) — Live Aid is twenty minutes at the end of a film that covers fifteen years. Other claims on the date: Live Aid documentaries; the Great Fire of Rome The Disaster Artist dates Greg meeting Tommy Wiseau to 13 July 1998; O Brother Where Art Thou's newspaper dates the Soggy Bottom Boys' fame to 13 July 1937."
  },
  {
   "date": "07-14",
@@ -2062,7 +2077,7 @@
   "date": "09-08",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Captain Corelli's Mandolin — an occupation across years. Other claims: Elizabeth II dies at Balmoral, 8 September 2022"
+  "candidate": "Captain Corelli's Mandolin — an occupation across years. Other claims: Elizabeth II dies at Balmoral, 8 September 2022 Howard the Duck lands on Earth on 8 September."
  },
  {
   "date": "09-09",
@@ -2131,7 +2146,7 @@
  {
   "date": "09-16",
   "open": true,
-  "candidate": "Viva Zapata! (1952) — Mexican Independence Day — the Grito de Dolores, 16 September 1810.",
+  "candidate": "Viva Zapata! (1952) — Mexican Independence Day — the Grito de Dolores, 16 September 1810. The Day the Earth Stood Still (Walters' pick) still leads the claims here.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2201,7 +2216,7 @@
  {
   "date": "09-24",
   "open": true,
-  "candidate": "1991: The Year Punk Broke (1992) — Nevermind was released on 24 September 1991, in the middle of the tour this film is shot on.",
+  "candidate": "1991: The Year Punk Broke (1992) — Nevermind was released on 24 September 1991, in the middle of the tour this film is shot on. Resident Evil's Raccoon City Times front page — THE DEAD WALK! — is dated 24 September 2002.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2232,7 +2247,7 @@
   "date": "09-28",
   "open": true,
   "why": "No film yet found that takes place on this date.",
-  "candidate": "Baltic Storm — the sinking, then an investigation. Other claims: The Perfect Storm Walters' pick: Amelie, whose narrator dates everything to the second — but the film's dated moments scatter across a Paris summer and autumn. Baltic Storm stays out as a sinking-plus-inquiry."
+  "candidate": "Baltic Storm — the sinking, then an investigation. Other claims: The Perfect Storm Walters' pick: Amelie, whose narrator dates everything to the second — but the film's dated moments scatter across a Paris summer and autumn. Baltic Storm stays out as a sinking-plus-inquiry. And the strongest claim of all: Amelie's closing narration dates the final scene precisely — 28 September 1997, 11:02 am, Montmartre. It is the end of a months-long film, which is the only reason it isn't the pick."
  },
  {
   "date": "09-29",
@@ -2328,7 +2343,7 @@
   "date": "10-09",
   "open": true,
   "why": "No film yet found that is set on this date.",
-  "candidate": "Che: Part Two (2008) — a campaign, not a day. Other claims on the date: Vajont (2001) — the mountain slides into the reservoir at 22:39 on 9 October 1963; John Lennon born 9 October 1940"
+  "candidate": "Che: Part Two (2008) — a campaign, not a day. Other claims on the date: Vajont (2001) — the mountain slides into the reservoir at 22:39 on 9 October 1963; John Lennon born 9 October 1940 Hellboy's prologue is captioned 9 October 1944 — the night the portal opens in Scotland; Timecop's agents jump to a 9 October to catch a senator's past self."
  },
  {
   "date": "10-10",
@@ -2406,7 +2421,7 @@
  {
   "date": "10-18",
   "open": true,
-  "candidate": "The Boat That Rocked (2009) — The BBC was founded on 18 October 1922 — and this is the film about everyone who wanted to broadcast around it.",
+  "candidate": "The Boat That Rocked (2009) — The BBC was founded on 18 October 1922 — and this is the film about everyone who wanted to broadcast around it. Batman's TIME cover on the Corto Maltese revolution is dated 18 October; The Woman in Black's death record for Nathaniel Drablow reads 18 October 1889.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2484,7 +2499,7 @@
  {
   "date": "10-27",
   "open": true,
-  "candidate": "The Taking of Pelham One Two Three (1974) — The New York subway opened on 27 October 1904. Seventy years later, four men in hats hijacked a car of it. Walters' pick: The Time Traveler's Wife — a film constitutionally incapable of staying on one date.",
+  "candidate": "The Taking of Pelham One Two Three (1974) — The New York subway opened on 27 October 1904. Seventy years later, four men in hats hijacked a car of it. Walters' pick: The Time Traveler's Wife — a film constitutionally incapable of staying on one date. Back to the Future Part II's alternate-1985 nightmare plays out on 27 October 1985 by internal chronology; the American Fever Pitch has Jimmy Fallon nearly selling his Red Sox tickets on 27 October 2004, three outs before the curse broke.",
   "why": "No film yet found that is set on this date."
  },
  {
@@ -2898,7 +2913,7 @@
   "title": "Battle of the Bulge",
   "year": 1965,
   "why": "The Ardennes offensive opens in fog on 16 December 1944.",
-  "alt": "Johnny Tremain — the Boston Tea Party, 16 December 1773; Jane Austen born 16 December 1775",
+  "alt": "Johnny Tremain — the Boston Tea Party, 16 December 1773; Jane Austen born 16 December 1775; Before Sunrise — the pact: same platform in Vienna, six months on, 16 December 1994. She never came, and Before Sunset is the nine-years-late apology",
   "kind": "about",
   "focus": "spine"
  },
@@ -2915,13 +2930,16 @@
   "kind": "dated",
   "focus": "spine",
   "why": "The charge itself recites the date: that Maryk, 'on or about December 18, 1944', seized command of the Caine from Queeg in the middle of a typhoon. The mutiny is that morning; the court-martial exists to relive it, strawberries and all.",
-  "alt": "Stalag 17 (Walters files it here for a dated scene); Thirty Days of Night"
+  "alt": "Stalag 17 (Walters files it here for a dated scene); Thirty Days of Night; The Holiday — Iris and Amanda swap houses across the Atlantic on 18 December"
  },
  {
   "date": "12-19",
-  "open": true,
-  "candidate": "Scrooge (1951) — A Christmas Carol went on sale on 19 December 1843 and sold out by Christmas Eve. Alastair Sim is still the definitive Scrooge. Walters' pick: Robinson Crusoe — a journal of years.",
-  "why": "No film yet found that is set on this date."
+  "title": "The Karate Kid",
+  "year": 1984,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The All Valley Karate Championship, 19 December 1984 — the date hangs on the arena banner, and the whole film is the training montage that ends under it. Crane kick, dated.",
+  "alt": "Scrooge/A Christmas Carol went on sale 19 December 1843 (an anniversary, rejected); Robinson Crusoe (Walters' pick, a journal of years)"
  },
  {
   "date": "12-20",

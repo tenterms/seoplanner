@@ -23,10 +23,27 @@ Findings from the deep-research rounds, so future passes don't rediscover them.
 
 - **Letterboxd** *Dating the Movies* monthly lists (403) — ~350 curated dated picks.
 - **Reddit** threads (403 on every route and mirror).
-- **@DatesInMovies / CineCalendar on X** — a purpose-built date-per-day account; tweets
-  don't reach the search index reliably. An hour of scrolling it would be worth more than
-  any automated pass. Their pinned archive, if one exists, is the single best target.
+- **@DatesInMovies / CineCalendar on X** — PARTIALLY CRACKED. The raw timeline is behind
+  X's login wall, every Nitter mirror is dead, and web.archive.org is blocked by the egress
+  proxy — but Google indexes a few hundred of the account's tweet pages with full text, and
+  SerpApi reaches that index. Month-by-month OR-queries over the open days recovered ~60
+  usable tweets in one session: six became primaries (Taxi Driver's dated diary, The Karate
+  Kid's tournament banner, Turning Red's concert tickets, Idiocracy, Days of Thunder, The
+  Fugitive) and ~35 enriched notes. Yield caveat: the account mostly logs PROP dates
+  (birthdates on driving licences, newspaper inserts) — evidence-grade for "the date is in
+  the film", rarely for "the film happens on the date". And it makes errors: its Trading
+  Places date falls on a Sunday when the markets were shut. The un-indexed remainder of the
+  timeline still needs a logged-in human scroll.
 - **ResetEra** thread on the Choekaas 366-scene YouTube video (403), and the video itself.
+
+## Handoff requests (user offered)
+
+- **Letterboxd page sources**: save the twelve `letterboxd.com/crew/list/dating-the-movies-
+  {month}/detail/` pages (the /detail/ view carries the curator's per-film date notes) as
+  HTML and drop them in like the Walters PDF. The notes fields are what matter.
+- **Choekaas video**: the *description* likely lists all 366 films with dates — worth more
+  than the transcript, since the video is a montage of film audio. Copy the description text
+  and any pinned comment; a transcript of on-screen date cards would be the bonus.
 
 ## Channels not yet tried
 
