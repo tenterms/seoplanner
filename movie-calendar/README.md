@@ -1,7 +1,10 @@
 # The Massive Movie Calendar
 
 A film for every one of the 366 days of the year. The rule: the film must either be
-*about* that date, or its story must demonstrably take place on it.
+*about* that date, or its story must demonstrably take place on it. Held absolutely,
+that rule leaves the year unfillable — so every pick now carries a **purity grade**
+(P1–P5) saying how honestly it meets the rule, and the concessions are on the label
+instead of the squares being empty.
 
 **Live tool:** https://claude.ai/code/artifact/c6abda6f-7d1f-482a-9bec-579dc95115c2
 
@@ -22,13 +25,15 @@ A film for every one of the 366 days of the year. The rule: the film must either
   "date": "08-22",
   "title": "Dog Day Afternoon",
   "year": 1975,
-  "kind": "about", "focus": "day",
+  "kind": "about", "focus": "day", "grade": "P3",
   "why": "Sonny Wortzik's fourteen-hour bank siege in Gravesend, Brooklyn, 22 August 1972...",
   "alt": "Michael Collins — killed at Béal na Bláth, 22 August 1922; Richard III — Bosworth Field..."
 }
 ```
 
-Open days carry `open: true`, no title, and a `candidate` string holding the rejected pitch.
+Optional fields: `form` (`loop` / `realtime` / `onetake`), `ending: true` (the date is where
+the film stops). Entries seated from a former open day carry the old rejected-pitch note inside
+`alt` as "The claims file: …".
 
 ## The rule
 
@@ -43,19 +48,29 @@ counts exactly as much as a comedy that does.
 - **Holiday** — a fixed calendar date: Bonfire Night, Bloomsday, May Day, Christmas Eve.
 
 Each entry is also marked by **focus**: `day` (the film takes place on the date) or `spine`
-(a longer film built around it — *Oppenheimer*, *Apollo 13*, *Zero Dark Thirty*). The tool's
-*Whole film is that day* filter shows only the first kind.
+(a longer film built around it — *Oppenheimer*, *Apollo 13*, *Zero Dark Thirty*). Grade is
+computed from these two axes: `focus: day` + a dated/holiday kind ⇒ P1; a dated/holiday kind
+alone ⇒ P2; otherwise P3. P4 and P5 are assigned by hand to the seated concessions. The tool
+filters directly on grade.
 
-## What the rule costs
+## The purity scale
 
-| | days |
-|---|---|
-| The film takes place on the date | 94 |
-| The date is the film's spine | 198 |
-| **Open — nothing qualifies** | **74** |
+Ten rounds of research and audit ended at 292 days that meet the rule and 74 that no film on
+earth appears to meet. Rather than leave those squares open forever, the calendar now grades
+every pick on two questions: *does the film live on the day?* and *is the date actually in
+the film?*
 
-Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
-the finding, not a failure of searching.
+| grade | meaning | days |
+|---|---|---|
+| **P1 PURE** | The whole film happens on the date, and the film says so (Groundhog Day, Halloween, Before Sunrise) | 56 |
+| **P2 ANCHORED** | The date is on screen and the film is built around it — the destination test (Oppenheimer, Apollo 13, The Terminator) | 34 |
+| **P3 UNSPOKEN** | The film lives on the day but never names it; the date is known from outside (Dog Day Afternoon, Zulu, United 93) | 202 |
+| **P4 GLIMPSED** | The date is genuinely in the film — a caption, a prop, a line — but the film doesn't live there (Zodiac's Berryessa card, O Brother's newspaper) | 48 |
+| **P5 BORROWED** | The date comes from outside the film entirely: a curator's filing, a tradition, the source novel (Hot Fuzz on St George's Day, Mockingbird from the novel's chronology) | 26 |
+
+P1–P3 are the original rule. P4 and P5 are the concession — 74 days seated with the best
+claim each date has, graded honestly and carrying the rival claims in `alt` so any of them
+can be argued off the square. Beating a P4/P5 with something purer is the standing invitation.
 
 Four classes of pick have been removed:
 
@@ -67,17 +82,19 @@ Four classes of pick have been removed:
    *Cool Runnings*, *The Assassination of Jesse James* — the date is where the story stops.
 4. **Records of an occasion (2 days).** *A Queen Is Crowned* and *Grenfell*.
 
-Four entries survive with an `ending: true` flag and are labelled **ends here** in the tool —
-*Goodfellas* among them. Its date is captioned and it spends twenty-five minutes inside that
-day, but the day is still where Henry Hill's story stops. Marked rather than hidden, so the
-judgement is visible.
+Five entries carry an `ending: true` flag and are labelled **ends here** in the tool —
+*Amélie*, *Milk*, *A Beautiful Mind*, *The Glenn Miller Story* and *The Enigma of Kaspar
+Hauser*, all seated in the purity round. Each anchors on the film's final date, which makes
+the pick a spoiler as much as a setting — marked rather than hidden, so the judgement is
+visible. (*Goodfellas* itself failed the destination test entirely and now lives in the
+alternates.)
 
 ## Where the remaining weakness is
 
-- **The 166 spine days are the soft middle** and the main upgrade path. A film running three
-  hours around a date is doing less work than one running ninety minutes on it.
-- **Open days are growing, not shrinking.** Every audit finds more picks that do not hold. Plan
-  for the number to rise before it falls.
+- **The 74 P4/P5 days are the upgrade path.** Each was seated with the best claim its date has;
+  each can be beaten by anything grading P3 or better.
+- **Spine days are the soft middle of the purer grades.** A film running three hours around a
+  date is doing less work than one running ninety minutes on it.
 - **Floating holidays are absent by design** — Easter, Thanksgiving and Mother's Day have no
   fixed date.
 - **Two entries share a film** — *Back to the Future*, on 26 October 1985 and 12 November 1955,
@@ -210,20 +227,18 @@ coincidence with Three Mile Island, not a setting — the square is open and say
 - **Fixed-date folk horror**, which gave up *Saint* (5 December) and *The Wicker Man* (May Day).
 - **Holiday horror** clusters heavily on dates already filled, but the long tail is unexplored.
 
-Community sources remain unreachable from this environment: Reddit, Letterboxd list pages and
-ResetEra all return 403. Letterboxd's *Dating the Movies* monthly lists carry a curator's note
-giving the exact date for each film — roughly 350 human-verified picks. Opening those twelve
-pages in a browser and pasting the notes is still the single highest-value hour anyone could
-spend on this dataset.
+Community sources are unreachable from this environment (Reddit, Letterboxd and ResetEra all
+return 403), but all twelve of Letterboxd's *Dating the Movies* monthly pages were supplied
+by hand and swept in full — Hall's curator notes are cited throughout the dataset. His
+spoiler-hidden notes (Logan's Run, Madame Curie, Blade Runner 2049, The Glenn Miller Story
+among them) are the one part still unread, and could upgrade several grades.
 
 ## Sources
 
-Built from film knowledge, then corrected against the 2019 r/movies thread that started the
-project and Letterboxd's *Dating the Movies: January* list. Both supplied picks now in the
-set: *Psycho* (11 December), *The Wicker Man* (May Day), *Before Sunrise* (Bloomsday),
-*Gone Girl* (5 July), *Akira* (16 July), *The Texas Chain Saw Massacre* (18 August),
-*Friday the 13th* (13 June), *Rosemary's Baby* (25 June), *The Crow* (Devil's Night),
-*Cloverfield* (22 May), *An Affair to Remember* (1 July), *The Time Machine* (5 January).
-
-Ivan Walters' book *A Year of Movies: 365 Films to Watch on the Date They Happened* covers the
-same ground and has not been consulted — it is the obvious next cross-check.
+Built from film knowledge, then corrected against, in order: the 2019 r/movies thread that
+started the project; all twelve Letterboxd *Dating the Movies* monthly lists (Hall);
+Ivan Walters' *A Year of Movies* (2016, parsed in full to `data/walters-year-of-movies.json`);
+Choekaas' 366-film calendar with sources (`data/choekaas-movie-calendar.json`); the Google
+index of @DatesInMovies; and IMSDb screenplays grepped for primary-source dialogue.
+Every source has had at least one error caught and documented (`RESEARCH.md`), which is why
+no date is taken on any single source's word.

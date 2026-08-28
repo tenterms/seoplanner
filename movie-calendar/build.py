@@ -66,6 +66,15 @@ h1 em{font-style:normal;color:var(--amber);display:block}
 .altline span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;display:block;margin-bottom:4px}
 
+/* ---- grade badges ---- */
+.gb{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;font-weight:600;
+  padding:1px 4px;border-radius:2px;border:1px solid var(--edge);color:var(--mute);line-height:1.5}
+.gb-P1{background:var(--amber);border-color:var(--amber);color:var(--ground)}
+.gb-P2{border-color:var(--amber);color:var(--amber)}
+.gb-P3{border-color:var(--mute);color:var(--ink-2)}
+.gb-P4{border-style:dashed;border-color:var(--mute);color:var(--mute)}
+.gb-P5{border-style:dashed;border-color:var(--ticket);color:var(--ticket)}
+
 /* ---- controls ---- */
 .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
   position:sticky;top:0;z-index:20;padding:12px 0;background:var(--ground);
@@ -99,17 +108,7 @@ button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-col
   line-height:.98;text-transform:uppercase;color:var(--ink);
   overflow-wrap:break-word;hyphens:auto;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .day .y{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--mute);margin-top:3px}
-.pip{width:6px;height:6px;border-radius:50%;display:inline-block}
-.k-dated .pip{background:var(--amber)}
-.k-about .pip{background:transparent;box-shadow:inset 0 0 0 1.5px var(--amber)}
-.k-holiday .pip{background:var(--ticket)}
-.f-spine .pip{background:transparent;box-shadow:inset 0 0 0 1.5px var(--mute)}
-.is-open{border-style:dashed;background:transparent}
-.is-open .t{color:var(--mute);font-weight:500}
-.is-open .pip{display:none}
-.t-A .pip{background:var(--amber)}
-.t-B .pip{background:transparent;box-shadow:inset 0 0 0 1.5px var(--amber)}
-.t-C .pip{background:transparent;box-shadow:inset 0 0 0 1.5px var(--mute)}
+.g-P4 .t,.g-P5 .t{font-weight:500}
 .day.is-today{border-color:var(--ticket);box-shadow:inset 0 0 0 1px var(--ticket)}
 .day.is-today .n::after{content:"TODAY";color:var(--ticket);font-size:9px;letter-spacing:.14em}
 .day.dim{opacity:.22;pointer-events:none}
@@ -128,37 +127,36 @@ dialog::backdrop{background:rgba(8,10,14,.62);backdrop-filter:blur(2px)}
 .card h2 .yr{color:var(--mute);font-weight:500}
 .card .body{padding:14px 22px 22px}
 .card p{margin:0;color:var(--ink-2)}
-.tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
-  text-transform:uppercase;padding:4px 7px;border:1px solid var(--edge);border-radius:2px;
-  color:var(--mute);white-space:nowrap}
-.tag.t-A{color:var(--amber);border-color:var(--amber)}
+.gradeline{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--mute);
+  padding:6px 22px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .navrow{display:flex;gap:8px;padding:0 22px 20px}
 .closeX{border:none;background:none;font-size:20px;line-height:1;padding:2px 6px;color:var(--mute)}
 footer{border-top:2px solid var(--ink);margin-top:40px;padding-top:18px;color:var(--mute);font-size:14px}
 footer h3{font-size:18px;margin-bottom:8px;color:var(--ink)}
 footer ul{margin:0;padding-left:18px}
-footer li{margin-bottom:5px}
+footer li{margin-bottom:7px}
+footer .gb{font-size:10px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>'''
 
 BODY = r'''
 <div class="wrap">
 <header class="mast">
-  <div class="kicker"><span>A perpetual programme</span><span>&middot;</span><b id="kCount"></b><span>&middot;</span><span>Any genre. The date has to be in the film.</span></div>
+  <div class="kicker"><span>A perpetual programme</span><span>&middot;</span><b>366 days, every one seated</b><span>&middot;</span><span>Graded for purity, so the compromises are on the label</span></div>
   <h1>The Massive<br>Movie <em>Calendar</em></h1>
   <p class="standfirst">One film per day, under one rule: the film has to <em>happen</em> on the date. Said out loud, stamped on a title card, written in a diary &mdash; or simply the day the whole picture takes place. Genre is irrelevant. An anniversary is not a setting, and a life with the date somewhere inside it is not either.</p>
-  <p class="standfirst" style="margin-top:10px">Held to that, the year does not fill. <b id="sCount"></b> days have a film that takes place entirely on them; another <b id="pCount"></b> have one built around that day as its spine. <b id="oCount"></b> days are open, and each carries the best pitch I could find and reject, so you have something to argue with.</p>
+  <p class="standfirst" style="margin-top:10px">Held absolutely to that, the year never fills &mdash; some days simply have no film that lives on them. So instead of leaving squares empty, every pick now wears a <b>purity grade</b>, from <b id="c1"></b> days of <span class="gb gb-P1">P1&nbsp;PURE</span> down to <b id="c5"></b> of <span class="gb gb-P5">P5&nbsp;BORROWED</span>. The concessions are made in the open, on the tile.</p>
 </header>
 
 <section class="today" id="todayCard" aria-label="Today's film"></section>
 
 <div class="controls">
   <input type="search" id="q" placeholder="Search a film, a date, an event&hellip;" aria-label="Search the calendar">
-  <button id="fdated" aria-pressed="false" title="The date is spoken or shown on screen">On screen</button>
-  <button id="fabout" aria-pressed="false" title="The whole film is that single day">One-day film</button>
-  <button id="fholiday" aria-pressed="false" title="A fixed-date holiday">Holiday</button>
-  <button id="fopen" aria-pressed="false" title="Days with no qualifying film">Open days</button>
-  <button id="strict" aria-pressed="false" title="Only films that take place entirely on the date — hides longer films built around it">Whole film is that day</button>
+  <button id="g1" data-g="P1" aria-pressed="false" title="The whole film happens on this date, and the film says so">P1 Pure</button>
+  <button id="g2" data-g="P2" aria-pressed="false" title="The date is on screen and the film is built around it">P2 Anchored</button>
+  <button id="g3" data-g="P3" aria-pressed="false" title="The film lives on this day, but never names the date">P3 Unspoken</button>
+  <button id="g4" data-g="P4" aria-pressed="false" title="The date is in the film — a caption, a prop, a line — but the film doesn't live there">P4 Glimpsed</button>
+  <button id="g5" data-g="P5" aria-pressed="false" title="The date comes from outside the film: a curator's call, a tradition, the source novel">P5 Borrowed</button>
   <button id="fform" aria-pressed="false" title="Time loops, real-time films and single-take films — the forms that guarantee a film happens on its date">Loop / real time / one take</button>
   <button id="rand">Random day</button>
   <span class="count" id="count"></span>
@@ -167,29 +165,27 @@ BODY = r'''
 <main id="year"></main>
 
 <footer>
-  <h3>The rule, and what it costs</h3>
-  <p style="max-width:66ch;margin:0 0 14px">A film earns a date three ways. <b>On screen</b> &mdash; the date is stated: Brian's essay is headed Saturday, March 24, 1984; Psycho opens on FRIDAY, DECEMBER THE ELEVENTH; Akira's first card is 16 July 1988. <b>The film is that day</b> &mdash; the whole picture takes place on it: Dog Day Afternoon, Groundhog Day, Zulu, Peterloo. <b>Holiday</b> &mdash; a fixed date: Bonfire Night, Bloomsday, May Day, Christmas Eve.</p>
+  <h3>The purity scale</h3>
+  <p style="max-width:66ch;margin:0 0 14px">The old rule &mdash; the film must happen on the date &mdash; is still the rule; the grade says how honestly each pick meets it. Two questions decide it: <em>does the film live on the day?</em> and <em>is the date actually in the film?</em></p>
   <ul>
-    <li><b>Genre is not a filter.</b> A war film that happens on one day is exactly as valid as a comedy that does. What matters is whether the day holds the film.</li>
-    <li><b>An anniversary is not a setting.</b> Sixty picks came out on this alone &mdash; Conan Doyle's birthday, Mozart's, the night Metropolis premiered. A film about a man is not set on the day he was born.</li>
-    <li><b>A life is not a day.</b> Bohemian Rhapsody has twenty minutes of Live Aid inside fifteen years; Malcolm X, Milk and Selena all simply end on their date. Plucking the climax out of a biography picks a spoiler, not a setting. Twenty-six of those are now open days.</li>
-    <li><b>Form is the strongest evidence there is.</b> A time loop, a real-time film or a single unbroken take cannot be anywhere but its own day. <em>Cleo from 5 to 7</em> spends ninety minutes of 21 June 1961 in real time; <em>1917</em> opens on its date and never cuts away; <em>Utoya: July 22</em> runs one 72-minute take, the exact length of the attack. Eleven days are held by films like these &mdash; filter for them with <em>Loop / real time / one take</em>. One-take films are not automatically eligible: <em>Rope</em>, <em>Victoria</em>, <em>Locke</em> and <em>Birdman</em> never name a date, so they cannot be placed.</li>
-    <li><b>Ending-anchored days are marked "ends here".</b> Goodfellas caption its date and spend real screen time inside it &mdash; but the day is where the story stops, which makes the pick a spoiler as much as a setting. Four survive on that basis and say so. Thirteen more that only ended on their date, from La Bamba to Mata Hari, were removed this round.</li>
-    <li><b>Spine days pass one question: where does the film think it's going?</b> If the answer is the date &mdash; Oppenheimer to Trinity, Apollo 13 to splashdown, Argo to the airport &mdash; the film stays. If the date is just where a story about something else stops, it goes: that test removed Goodfellas (a caption and twenty-five great minutes, at the end of twenty-five years), The Social Network (a timestamped first act, then seven years of depositions), Zodiac (the most precise date captions in cinema, across two decades) and Darkest Hour (which, checked against its own script, runs 9 May to 4 June and was never a 10 May film at all). Press <em>Whole film is that day</em> to skip the question entirely.</li>
-    <li><b>A record of an occasion is not a movie.</b> A Queen Is Crowned and Grenfell are both out.</li>
-    <li><b>Open days carry their best rejected pitch</b>, so the argument starts from something rather than nothing.</li>
-    <li><b>Cross-checked against the book.</b> Ivan Walters' <em>A Year of Movies</em> (2016) names a film for all 365 days under a looser rule &mdash; one scene on the date is enough for him &mdash; and cites the timestamp where each date appears on screen. Fourteen of his picks passed our stricter test and were adopted with his timestamps; the rest are quoted in the open days' notes, including his own confession that Excalibur was the one film he forced.</li>
+    <li><span class="gb gb-P1">P1 PURE</span> &mdash; <b>yes and yes.</b> The whole film happens on the date, and the film says so. Groundhog Day is 2 February over and over; Halloween is Haddonfield on 31 October; Before Sunrise is one Bloomsday night in Vienna. The gold standard &mdash; <b id="f1"></b> days.</li>
+    <li><span class="gb gb-P2">P2 ANCHORED</span> &mdash; <b>the date is on screen, and the film is built around it.</b> Oppenheimer runs at Trinity, Apollo 13 at splashdown, The Terminator at its own dated police report. Longer than a day, but the date is the destination &mdash; <b id="f2"></b> days.</li>
+    <li><span class="gb gb-P3">P3 UNSPOKEN</span> &mdash; <b>the film lives on the day, but never names it.</b> Dog Day Afternoon is one Brooklyn afternoon, 22 August 1972 &mdash; the newspapers dated it, the film never does. True to the day, sourced from outside &mdash; <b id="f3"></b> days.</li>
+    <li><span class="gb gb-P4">P4 GLIMPSED</span> &mdash; <b>the date is in the film, but the film doesn't live there.</b> Zodiac's Lake Berryessa caption is the most precise date-card in American cinema, inside a film that spans decades. A genuine on-screen date, honestly not a setting &mdash; <b id="f4"></b> days.</li>
+    <li><span class="gb gb-P5">P5 BORROWED</span> &mdash; <b>the date comes from outside the film entirely.</b> Hot Fuzz filed on St George's Day, To Kill a Mockingbird dated from the novel's chronology, a curator's arithmetic. The pick is defensible; the date is not the film's own &mdash; <b id="f5"></b> days. These wear red on purpose.</li>
   </ul>
+  <p style="max-width:66ch;margin:14px 0 0">Everything below P3 is a concession, and says so. Every square also carries the rival claims on its date, so if you can beat a P4 or a P5 with something purer, the argument is pre-loaded. Form remains the strongest evidence there is &mdash; a time loop, a real-time film or a single unbroken take cannot be anywhere but its own day; filter for them above. Days marked <em>ends here</em> anchor on a film's final date &mdash; flagged, because an ending is a spoiler as much as a setting. Cross-checked against Ivan Walters' <em>A Year of Movies</em> (2016), Choekaas' 366-film calendar, Letterboxd's <em>Dating the Movies</em> project and @DatesInMovies.</p>
 </footer>
 </div>
 
 <dialog id="dlg"><div class="card">
   <div class="top"><span class="dt" id="dDate"></span>
-    <span style="display:flex;gap:8px;align-items:center"><span class="tag" id="dTier"></span>
+    <span style="display:flex;gap:8px;align-items:center"><span class="gb" id="dGrade"></span>
     <button class="closeX" id="dClose" aria-label="Close">&times;</button></span></div>
   <h2 id="dTitle"></h2>
+  <div class="gradeline" id="dGradeLine"></div>
   <div class="body"><p id="dWhy"></p>
-    <div class="altline" id="dAltWrap"><span>Also on this date</span><span id="dAlt"></span></div>
+    <div class="altline" id="dAltWrap"><span>Also claimed for this date</span><span id="dAlt"></span></div>
   </div>
   <div class="navrow"><button id="dPrev">&larr; Previous day</button><button id="dNext">Next day &rarr;</button></div>
 </div></dialog>
@@ -197,7 +193,13 @@ BODY = r'''
 <script>
 const CAL = __DATA__;
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const KIND = {dated:"Date on screen", about:"The film is that day", holiday:"Holiday"};
+const GRADE = {P1:"Pure", P2:"Anchored", P3:"Unspoken", P4:"Glimpsed", P5:"Borrowed"};
+const GDESC = {
+  P1:"The whole film happens on this date, and the film says so.",
+  P2:"The date is on screen, and the film is built around it.",
+  P3:"The film lives on this day, but never names the date — it's known from outside.",
+  P4:"The date is in the film — a caption, a prop, a line — but the film doesn't live there.",
+  P5:"The date comes from outside the film entirely. A concession, worn openly."};
 const FORM = {loop:"Time loop", realtime:"Real time", onetake:"One take"};
 const byDate = Object.fromEntries(CAL.map(e => [e.date, e]));
 const pad = n => String(n).padStart(2,"0");
@@ -205,13 +207,11 @@ const now = new Date();
 const todayKey = pad(now.getMonth()+1) + "-" + pad(now.getDate());
 const longDate = k => { const [m,d] = k.split("-"); return Number(d) + " " + MONTHS[Number(m)-1]; };
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const nDay = CAL.filter(e => !e.open && e.focus === "day").length;
-const nSpine = CAL.filter(e => !e.open && e.focus === "spine").length;
-const nOpen = CAL.filter(e => e.open).length;
-document.getElementById("kCount").textContent = (nDay+nSpine) + " days filled, " + nOpen + " open";
-document.getElementById("sCount").textContent = nDay;
-document.getElementById("pCount").textContent = nSpine;
-document.getElementById("oCount").textContent = nOpen;
+for (const g of ["P1","P2","P3","P4","P5"]) {
+  const n = CAL.filter(e => e.grade === g).length;
+  const c = document.getElementById("c"+g[1]); if (c) c.textContent = n;
+  const f = document.getElementById("f"+g[1]); if (f) f.textContent = n;
+}
 
 /* ---------- year grid ---------- */
 const year = document.getElementById("year");
@@ -221,12 +221,10 @@ for (let m = 1; m <= 12; m++) {
           '</h3><span class="mn" data-mn="'+m+'"></span></div><div class="days">';
   for (const e of CAL.filter(x => x.date.startsWith(pad(m)))) {
     const d = Number(e.date.slice(3));
-    const cls = e.open ? "is-open" : ("k-"+e.kind+" f-"+e.focus);
-    html += '<button class="day '+cls+(e.date===todayKey?" is-today":"")+'" data-k="'+e.date+
+    html += '<button class="day g-'+e.grade+(e.date===todayKey?" is-today":"")+'" data-k="'+e.date+
             '"><span class="n"><span>'+MONTHS[m-1].slice(0,3).toUpperCase()+" "+d+
-            '</span><span class="pip"></span></span><span class="t">'+
-            (e.open ? "Open" : esc(e.title))+'</span><span class="y">'+
-            (e.open ? "no qualifying film" : e.year)+'</span></button>';
+            '</span><span class="gb gb-'+e.grade+'">'+e.grade+'</span></span><span class="t">'+
+            esc(e.title)+'</span><span class="y">'+e.year+'</span></button>';
   }
   html += "</div></section>";
 }
@@ -237,11 +235,11 @@ const t = byDate[todayKey];
 document.getElementById("todayCard").innerHTML =
   '<div class="datebox"><div><div class="dmon">'+MONTHS[Number(todayKey.slice(0,2))-1]+
   '</div><div class="dnum">'+Number(todayKey.slice(3))+'</div></div>'+
-  '<div class="dmon">'+(t.open ? "Open date" : KIND[t.kind] + (t.form ? " &mdash; " + FORM[t.form] : "") + (t.ending ? " &mdash; ends here" : ""))+'</div></div>'+
-  '<div class="filmbox"><div class="nowshow">'+(t.open?"Nothing qualifies today":"Now showing &mdash; today’s film")+'</div>'+
-  (t.open ? '<h2>This date is open</h2><p>'+esc(t.why)+'</p><div class="altline"><span>Best pitch, rejected</span>'+esc(t.candidate||"")+'</div>'
-          : '<h2>'+esc(t.title)+' <span class="yr">'+t.year+'</span></h2><p>'+esc(t.why)+'</p>'+
-            (t.alt ? '<div class="altline"><span>Also claimed for this date</span>'+esc(t.alt)+'</div>' : ''))+
+  '<div class="dmon"><span class="gb gb-'+t.grade+'">'+t.grade+' '+GRADE[t.grade].toUpperCase()+'</span>'+
+  (t.form ? ' &mdash; ' + FORM[t.form] : '') + (t.ending ? ' &mdash; ends here' : '')+'</div></div>'+
+  '<div class="filmbox"><div class="nowshow">Now showing &mdash; today&rsquo;s film</div>'+
+  '<h2>'+esc(t.title)+' <span class="yr">'+t.year+'</span></h2><p>'+esc(t.why)+'</p>'+
+  (t.alt ? '<div class="altline"><span>Also claimed for this date</span>'+esc(t.alt)+'</div>' : '')+
   '</div>';
 
 /* ---------- modal ---------- */
@@ -250,18 +248,16 @@ let current = todayKey;
 function open(k){
   const e = byDate[k]; if(!e) return; current = k;
   document.getElementById("dDate").textContent = longDate(k);
-  const tag = document.getElementById("dTier");
-  tag.textContent = e.open ? "Open" : KIND[e.kind] + (e.focus === "spine" ? " · spine" : "") + (e.ending ? " · ends here" : "") + (e.form ? " · " + FORM[e.form] : "");
-  tag.className = "tag" + (e.open || e.focus === "spine" ? "" : " t-A");
-  document.getElementById("dTitle").innerHTML = e.open ? "This date is open"
-      : esc(e.title)+' <span class="yr">'+e.year+'</span>';
+  const gtag = document.getElementById("dGrade");
+  gtag.textContent = e.grade + " " + GRADE[e.grade].toUpperCase();
+  gtag.className = "gb gb-" + e.grade;
+  document.getElementById("dTitle").innerHTML = esc(e.title)+' <span class="yr">'+e.year+'</span>';
+  document.getElementById("dGradeLine").textContent = GDESC[e.grade] +
+    (e.form ? " · " + FORM[e.form] : "") + (e.ending ? " · ends here" : "");
   document.getElementById("dWhy").textContent = e.why;
   const wrap = document.getElementById("dAltWrap");
-  const label = e.open ? "Best pitch, rejected" : "Also claimed for this date";
-  const body = e.open ? (e.candidate||"") : (e.alt||"");
-  wrap.style.display = body ? "" : "none";
-  wrap.querySelector("span").textContent = label;
-  document.getElementById("dAlt").textContent = body;
+  wrap.style.display = e.alt ? "" : "none";
+  document.getElementById("dAlt").textContent = e.alt || "";
   if (!dlg.open) dlg.showModal();
 }
 function step(n){
@@ -281,24 +277,19 @@ document.addEventListener("keydown", ev => {
 
 /* ---------- filters ---------- */
 const q = document.getElementById("q"), countEl = document.getElementById("count");
-const kindBtns = {dated:document.getElementById("fdated"), about:document.getElementById("fabout"),
-                  holiday:document.getElementById("fholiday"), open:document.getElementById("fopen")};
-const strictBtn = document.getElementById("strict");
+const gradeBtns = [...document.querySelectorAll("[data-g]")];
 const formBtn = document.getElementById("fform");
 let formOnly = false;
 const active = new Set();
-let dayOnly = false;
 function apply(){
   const term = q.value.trim().toLowerCase();
   const perMonth = {};
   let shown = 0;
   for (const el of year.querySelectorAll(".day")) {
     const e = byDate[el.dataset.k];
-    const bucket = e.open ? "open" : e.kind;
-    const histOK = !dayOnly || e.open || e.focus === "day";
-    const kindOK = (active.size === 0 || active.has(bucket)) && (!formOnly || !!e.form);
-    const hay = ((e.title||"Open")+" "+(e.year||"")+" "+e.why+" "+(e.alt||e.candidate||"")+" "+longDate(e.date)).toLowerCase();
-    const ok = histOK && kindOK && (!term || hay.includes(term));
+    const gradeOK = (active.size === 0 || active.has(e.grade)) && (!formOnly || !!e.form);
+    const hay = (e.title+" "+e.year+" "+e.grade+" "+e.why+" "+(e.alt||"")+" "+longDate(e.date)).toLowerCase();
+    const ok = gradeOK && (!term || hay.includes(term));
     el.classList.toggle("dim", !ok);
     el.classList.toggle("hit", ok && !!term);
     if (ok) { shown++; const m = Number(e.date.slice(0,2)); perMonth[m] = (perMonth[m]||0)+1; }
@@ -307,11 +298,11 @@ function apply(){
   countEl.textContent = shown + " of 366 days";
 }
 q.addEventListener("input", apply);
-for (const [k,b] of Object.entries(kindBtns)) b.onclick = () => {
-  active.has(k) ? active.delete(k) : active.add(k);
-  b.setAttribute("aria-pressed", active.has(k)); apply();
+for (const b of gradeBtns) b.onclick = () => {
+  const g = b.dataset.g;
+  active.has(g) ? active.delete(g) : active.add(g);
+  b.setAttribute("aria-pressed", active.has(g)); apply();
 };
-strictBtn.onclick = () => { dayOnly = !dayOnly; strictBtn.setAttribute("aria-pressed", dayOnly); apply(); };
 formBtn.onclick = () => { formOnly = !formOnly; formBtn.setAttribute("aria-pressed", formOnly); apply(); };
 document.getElementById("rand").onclick = () => open(CAL[Math.floor(Math.random()*CAL.length)].date);
 apply();
