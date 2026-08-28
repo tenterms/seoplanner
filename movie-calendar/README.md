@@ -82,12 +82,11 @@ Four classes of pick have been removed:
    *Cool Runnings*, *The Assassination of Jesse James* — the date is where the story stops.
 4. **Records of an occasion (2 days).** *A Queen Is Crowned* and *Grenfell*.
 
-Five entries carry an `ending: true` flag and are labelled **ends here** in the tool —
-*Amélie*, *Milk*, *A Beautiful Mind*, *The Glenn Miller Story* and *The Enigma of Kaspar
-Hauser*, all seated in the purity round. Each anchors on the film's final date, which makes
-the pick a spoiler as much as a setting — marked rather than hidden, so the judgement is
-visible. (*Goodfellas* itself failed the destination test entirely and now lives in the
-alternates.)
+Six entries carry an `ending: true` flag and are labelled **ends here** in the tool:
+*The Elephant Man*, *Amélie*, *Milk*, *A Beautiful Mind*, *The Glenn Miller Story* and
+*The Enigma of Kaspar Hauser*. Each anchors on the film's final date, which makes the pick
+a spoiler as much as a setting, so it is marked rather than hidden. (*Goodfellas* itself
+failed the destination test entirely and now lives in the alternates.)
 
 ## Where the remaining weakness is
 

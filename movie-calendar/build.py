@@ -66,6 +66,20 @@ h1 em{font-style:normal;color:var(--amber);display:block}
 .altline span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;
   text-transform:uppercase;display:block;margin-bottom:4px}
 
+/* ---- key ---- */
+.key{background:var(--sheet);border:1px solid var(--edge);box-shadow:var(--shadow);
+  padding:20px 22px 16px;margin:0 0 28px}
+.key h2{font-size:22px;margin-bottom:12px}
+.key .krow{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:baseline;
+  padding:7px 0;border-top:1px dotted var(--edge)}
+.key .krow:first-of-type{border-top:none}
+.key .krow p{margin:0;color:var(--ink-2);font-size:15px}
+.key .krow p b{color:var(--ink)}
+.key .kex{color:var(--mute);font-size:13.5px}
+.key .knote{margin:12px 0 0;padding-top:10px;border-top:1px solid var(--edge);
+  color:var(--mute);font-size:13.5px}
+@media(max-width:560px){.key .krow{grid-template-columns:1fr;gap:2px}}
+
 /* ---- grade badges ---- */
 .gb{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;font-weight:600;
   padding:1px 4px;border-radius:2px;border:1px solid var(--edge);color:var(--mute);line-height:1.5}
@@ -142,22 +156,32 @@ footer .gb{font-size:10px}
 BODY = r'''
 <div class="wrap">
 <header class="mast">
-  <div class="kicker"><span>A perpetual programme</span><span>&middot;</span><b>366 days, every one seated</b><span>&middot;</span><span>Graded for purity, so the compromises are on the label</span></div>
+  <div class="kicker"><span>A film for every day of the year</span><span>&middot;</span><b>All 366 days</b><span>&middot;</span><span>Every pick graded for how honestly it earns its date</span></div>
   <h1>The Massive<br>Movie <em>Calendar</em></h1>
-  <p class="standfirst">One film per day, under one rule: the film has to <em>happen</em> on the date. Said out loud, stamped on a title card, written in a diary &mdash; or simply the day the whole picture takes place. Genre is irrelevant. An anniversary is not a setting, and a life with the date somewhere inside it is not either.</p>
-  <p class="standfirst" style="margin-top:10px">Held absolutely to that, the year never fills &mdash; some days simply have no film that lives on them. So instead of leaving squares empty, every pick now wears a <b>purity grade</b>, from <b id="c1"></b> days of <span class="gb gb-P1">P1&nbsp;PURE</span> down to <b id="c5"></b> of <span class="gb gb-P5">P5&nbsp;BORROWED</span>. The concessions are made in the open, on the tile.</p>
+  <p class="standfirst">A film for every day of the year, chosen by one rule: the film has to <em>happen</em> on the date. Sometimes the film says the date out loud. Sometimes it appears on a title card, a diary page, a newspaper, or a gravestone. And sometimes the whole film simply takes place on that one day.</p>
+  <p class="standfirst" style="margin-top:10px">Not every date has a film that truly lives on it, so every pick carries a grade for how honestly it earns its day. P1 is the real thing; P5 is an admitted stretch. Click any day to see the film, the evidence, and the other films with a claim on the date.</p>
 </header>
 
 <section class="today" id="todayCard" aria-label="Today's film"></section>
 
+<section class="key" aria-label="How to read the grades">
+  <h2>How to read the grades</h2>
+  <div class="krow"><span class="gb gb-P1">P1 PURE</span><p><b>The whole film takes place on this date, and the date is in the film.</b> <span class="kex">Groundhog Day is 2 February, over and over. Halloween is Haddonfield on 31 October. <span id="c1"></span> days.</span></p></div>
+  <div class="krow"><span class="gb gb-P2">P2 ANCHORED</span><p><b>The date is in the film, and the film is built around that day.</b> <span class="kex">The Karate Kid trains for the tournament whose date hangs on the arena banner. <span id="c2"></span> days.</span></p></div>
+  <div class="krow"><span class="gb gb-P3">P3 UNSPOKEN</span><p><b>The film takes place on this day, but never says the date.</b> It comes from history or from fans' research. <span class="kex">Dog Day Afternoon is one Brooklyn afternoon, 22 August 1972; the newspapers dated it, the film never does. <span id="c3"></span> days.</span></p></div>
+  <div class="krow"><span class="gb gb-P4">P4 GLIMPSED</span><p><b>The date appears in the film, but the film doesn't stay on that day.</b> A caption, a prop, a line of dialogue. <span class="kex">Zodiac captions one 1969 attack to the day, then spans two decades. <span id="c4"></span> days.</span></p></div>
+  <div class="krow"><span class="gb gb-P5">P5 BORROWED</span><p><b>The date isn't in the film at all.</b> It comes from a novel, a fan calendar, or a tradition. An honest stretch, marked in red. <span class="kex">Hot Fuzz on St George's Day. <span id="c5"></span> days.</span></p></div>
+  <p class="knote">Two smaller markers. <b>Ends here</b> means the film finishes on its date, so reading the entry is mildly spoilery. <b>Loop / real time / one take</b> marks films whose very form ties them to a single day: a time loop, a real-time story, or one unbroken take.</p>
+</section>
+
 <div class="controls">
   <input type="search" id="q" placeholder="Search a film, a date, an event&hellip;" aria-label="Search the calendar">
-  <button id="g1" data-g="P1" aria-pressed="false" title="The whole film happens on this date, and the film says so">P1 Pure</button>
-  <button id="g2" data-g="P2" aria-pressed="false" title="The date is on screen and the film is built around it">P2 Anchored</button>
-  <button id="g3" data-g="P3" aria-pressed="false" title="The film lives on this day, but never names the date">P3 Unspoken</button>
-  <button id="g4" data-g="P4" aria-pressed="false" title="The date is in the film — a caption, a prop, a line — but the film doesn't live there">P4 Glimpsed</button>
-  <button id="g5" data-g="P5" aria-pressed="false" title="The date comes from outside the film: a curator's call, a tradition, the source novel">P5 Borrowed</button>
-  <button id="fform" aria-pressed="false" title="Time loops, real-time films and single-take films — the forms that guarantee a film happens on its date">Loop / real time / one take</button>
+  <button id="g1" data-g="P1" aria-pressed="false" title="The whole film takes place on this date, and the date is in the film">P1 Pure</button>
+  <button id="g2" data-g="P2" aria-pressed="false" title="The date is in the film, and the film is built around that day">P2 Anchored</button>
+  <button id="g3" data-g="P3" aria-pressed="false" title="The film takes place on this day, but never says the date">P3 Unspoken</button>
+  <button id="g4" data-g="P4" aria-pressed="false" title="The date appears in the film, but the film doesn't stay on that day">P4 Glimpsed</button>
+  <button id="g5" data-g="P5" aria-pressed="false" title="The date isn't in the film; it comes from a novel, a fan calendar, or a tradition">P5 Borrowed</button>
+  <button id="fform" aria-pressed="false" title="Time loops, real-time films and single-take films: forms that tie a film to a single day">Loop / real time / one take</button>
   <button id="rand">Random day</button>
   <span class="count" id="count"></span>
 </div>
@@ -165,16 +189,16 @@ BODY = r'''
 <main id="year"></main>
 
 <footer>
-  <h3>The purity scale</h3>
-  <p style="max-width:66ch;margin:0 0 14px">The old rule &mdash; the film must happen on the date &mdash; is still the rule; the grade says how honestly each pick meets it. Two questions decide it: <em>does the film live on the day?</em> and <em>is the date actually in the film?</em></p>
+  <h3>House rules</h3>
+  <p style="max-width:66ch;margin:0 0 14px">The grades do the honesty; these rules did the choosing. They are the difference between this calendar and a list of release dates.</p>
   <ul>
-    <li><span class="gb gb-P1">P1 PURE</span> &mdash; <b>yes and yes.</b> The whole film happens on the date, and the film says so. Groundhog Day is 2 February over and over; Halloween is Haddonfield on 31 October; Before Sunrise is one Bloomsday night in Vienna. The gold standard &mdash; <b id="f1"></b> days.</li>
-    <li><span class="gb gb-P2">P2 ANCHORED</span> &mdash; <b>the date is on screen, and the film is built around it.</b> Oppenheimer runs at Trinity, Apollo 13 at splashdown, The Terminator at its own dated police report. Longer than a day, but the date is the destination &mdash; <b id="f2"></b> days.</li>
-    <li><span class="gb gb-P3">P3 UNSPOKEN</span> &mdash; <b>the film lives on the day, but never names it.</b> Dog Day Afternoon is one Brooklyn afternoon, 22 August 1972 &mdash; the newspapers dated it, the film never does. True to the day, sourced from outside &mdash; <b id="f3"></b> days.</li>
-    <li><span class="gb gb-P4">P4 GLIMPSED</span> &mdash; <b>the date is in the film, but the film doesn't live there.</b> Zodiac's Lake Berryessa caption is the most precise date-card in American cinema, inside a film that spans decades. A genuine on-screen date, honestly not a setting &mdash; <b id="f4"></b> days.</li>
-    <li><span class="gb gb-P5">P5 BORROWED</span> &mdash; <b>the date comes from outside the film entirely.</b> Hot Fuzz filed on St George's Day, To Kill a Mockingbird dated from the novel's chronology, a curator's arithmetic. The pick is defensible; the date is not the film's own &mdash; <b id="f5"></b> days. These wear red on purpose.</li>
+    <li><b>An anniversary is not a setting.</b> A film about Mozart is not set on the day Mozart was born. Dozens of tempting picks fell to this rule alone.</li>
+    <li><b>A life is not a day.</b> Biopics love to end on a famous date, but a film that spends two hours getting somewhere is not set there. When a biopic's date survives here, it survives at a lower grade, and the entry says why.</li>
+    <li><b>Watch the film, not the poster.</b> Every date was checked against what is actually on screen where possible. Scripts and props hold surprises: The Game's screenplay carries an October date that turns out to be the draft's registration stamp, and Forrest Gump's gravestone contradicts its own dialogue.</li>
+    <li><b>One film, one day.</b> The only exceptions are Back to the Future and Cloverfield, which each stamp two different dates on screen and so hold two days each.</li>
+    <li><b>Every day lists its rivals.</b> Open any entry and you'll find the other films with a claim on that date, including the rejected ones and the reasons. If you can beat a P4 or a P5 with something purer, the argument is ready for you.</li>
   </ul>
-  <p style="max-width:66ch;margin:14px 0 0">Everything below P3 is a concession, and says so. Every square also carries the rival claims on its date, so if you can beat a P4 or a P5 with something purer, the argument is pre-loaded. Form remains the strongest evidence there is &mdash; a time loop, a real-time film or a single unbroken take cannot be anywhere but its own day; filter for them above. Days marked <em>ends here</em> anchor on a film's final date &mdash; flagged, because an ending is a spoiler as much as a setting. Cross-checked against Ivan Walters' <em>A Year of Movies</em> (2016), Choekaas' 366-film calendar, Letterboxd's <em>Dating the Movies</em> project and @DatesInMovies.</p>
+  <p style="max-width:66ch;margin:14px 0 0">Sources, gratefully argued with: the r/movies thread that started this idea; the <em>Dating the Movies</em> lists on Letterboxd; Ivan Walters's book <em>A Year of Movies: 365 Films to Watch on the Date They Happened</em> (2016); Choekaas's 366-film video calendar; and the @DatesInMovies account. Each of them got at least one date wrong, which is why no date here rests on any single source's word.</p>
 </footer>
 </div>
 
@@ -185,7 +209,7 @@ BODY = r'''
   <h2 id="dTitle"></h2>
   <div class="gradeline" id="dGradeLine"></div>
   <div class="body"><p id="dWhy"></p>
-    <div class="altline" id="dAltWrap"><span>Also claimed for this date</span><span id="dAlt"></span></div>
+    <div class="altline" id="dAltWrap"><span>Other films with a claim on this date</span><span id="dAlt"></span></div>
   </div>
   <div class="navrow"><button id="dPrev">&larr; Previous day</button><button id="dNext">Next day &rarr;</button></div>
 </div></dialog>
@@ -195,11 +219,11 @@ const CAL = __DATA__;
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const GRADE = {P1:"Pure", P2:"Anchored", P3:"Unspoken", P4:"Glimpsed", P5:"Borrowed"};
 const GDESC = {
-  P1:"The whole film happens on this date, and the film says so.",
-  P2:"The date is on screen, and the film is built around it.",
-  P3:"The film lives on this day, but never names the date — it's known from outside.",
-  P4:"The date is in the film — a caption, a prop, a line — but the film doesn't live there.",
-  P5:"The date comes from outside the film entirely. A concession, worn openly."};
+  P1:"Pure: the whole film takes place on this date, and the date is in the film.",
+  P2:"Anchored: the date is in the film, and the film is built around that day.",
+  P3:"Unspoken: the film takes place on this day, but never says the date. It comes from history or from fans' research.",
+  P4:"Glimpsed: the date appears in the film, in a caption, a prop or a line, but the film doesn't stay on that day.",
+  P5:"Borrowed: the date isn't in the film. It comes from a novel, a fan calendar, or a tradition."};
 const FORM = {loop:"Time loop", realtime:"Real time", onetake:"One take"};
 const byDate = Object.fromEntries(CAL.map(e => [e.date, e]));
 const pad = n => String(n).padStart(2,"0");
@@ -236,10 +260,10 @@ document.getElementById("todayCard").innerHTML =
   '<div class="datebox"><div><div class="dmon">'+MONTHS[Number(todayKey.slice(0,2))-1]+
   '</div><div class="dnum">'+Number(todayKey.slice(3))+'</div></div>'+
   '<div class="dmon"><span class="gb gb-'+t.grade+'">'+t.grade+' '+GRADE[t.grade].toUpperCase()+'</span>'+
-  (t.form ? ' &mdash; ' + FORM[t.form] : '') + (t.ending ? ' &mdash; ends here' : '')+'</div></div>'+
-  '<div class="filmbox"><div class="nowshow">Now showing &mdash; today&rsquo;s film</div>'+
+  (t.form ? ' &middot; ' + FORM[t.form] : '') + (t.ending ? ' &middot; ends here' : '')+'</div></div>'+
+  '<div class="filmbox"><div class="nowshow">Today&rsquo;s film</div>'+
   '<h2>'+esc(t.title)+' <span class="yr">'+t.year+'</span></h2><p>'+esc(t.why)+'</p>'+
-  (t.alt ? '<div class="altline"><span>Also claimed for this date</span>'+esc(t.alt)+'</div>' : '')+
+  (t.alt ? '<div class="altline"><span>Other films with a claim on this date</span>'+esc(t.alt)+'</div>' : '')+
   '</div>';
 
 /* ---------- modal ---------- */
