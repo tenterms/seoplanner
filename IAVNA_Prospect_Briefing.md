@@ -1,6 +1,6 @@
 # Prospect Briefing: IAVNA / AGL Advancement Group
 
-Prepared 28 August 2026. Covers three trading websites under common ownership: iavna.net, airfieldlightingsystems.com (ALS) and alt-training.com (ALT).
+Prepared 28 August 2026, updated same day with client-provided deal values and lead-source detail. Covers three trading websites under common ownership: iavna.net, airfieldlightingsystems.com (ALS) and alt-training.com (ALT).
 
 ## 1. Snapshot
 
@@ -14,38 +14,38 @@ Prepared 28 August 2026. Covers three trading websites under common ownership: i
 | Company number | 01434149 (trading co), incorporated 2 July 1979 |
 | Headcount | 16 average employees FY2025, doubled from 8 in FY2024 (accounts). LinkedIn count not verified |
 | Turnover | Not disclosed (filleted small-company accounts). Estimated £3m to £6m, based on 16 employees at £200k to £400k per head typical for distribution/wholesale, tempered by the mid-year headcount jump |
-| Key people | Keith Spicer, sole director and PSC of the trading company (second-generation; son of founder Roy Spicer). N Villacencio is co-director of the holding company AGL Advancement Ltd |
-| Source of lead | Not stated; treat as cold/desk research |
+| Key people | Keith Spicer, sole director and PSC of the trading company (second-generation; son of founder Roy Spicer). N Villacencio is co-director of the holding company AGL Advancement Ltd. Head of Marketing and Communication (name to confirm) is our contact and one of three decision makers |
+| Source of lead | **Inbound: their Head of Marketing and Communication approached TenTerms** |
 
 ## 2. Prospect scoring
 
 | Dimension | Score | Visual |
 |---|---|---|
+| Lead Value | 10/10 | ██████████ |
 | ICP Fit | 9/10 | █████████░ |
-| Lead Value | 9/10 | █████████░ |
 | Search Opportunity | 8/10 | ████████░░ |
 | Ability to Pay | 8/10 | ████████░░ |
+| Client-Side Capacity | 8/10 | ████████░░ |
+| Decision Reachability | 8/10 | ████████░░ |
 | Strategic Value | 7/10 | ███████░░░ |
-| Client-Side Capacity | 4/10 | ████░░░░░░ |
-| Decision Reachability | N/A | (lead source unknown; sole-director business, so the path is short once contact is made) |
 
-A textbook TenTerms pattern: a substantial, asset-rich, 47-year-old niche B2B firm whose search presence has collapsed to roughly 110 visits a month across three websites, in a market where DR-2 competitors hold top-five positions. The concerns are delivery capacity (no visible marketing function, three brands to feed) and an unquantified lead source. The single most important discovery fact: what happened to airfieldlightingsystems.co.uk in mid-2025, and does Keith Spicer know a casino operator is now using it.
+An unusually strong card. A substantial, asset-rich, 47-year-old niche B2B firm whose search presence has collapsed to roughly 110 visits a month across three websites, in a market where DR-2 competitors hold top-five positions, with client-confirmed project values running £60k to £10m, and the enquiry came to us from a marketing head who is one of three decision makers. Priorities for the first call: confirm who the other two decision makers are (presumably Keith Spicer and N Villacencio) and plan to get them into the second conversation, and establish what happened to airfieldlightingsystems.co.uk in mid-2025.
 
 ## 3. What they do and who they sell to
 
-- **IAVNA** (est. 1979 by Roy Spicer) is the stockist arm: claims one of the largest airfield-lighting inventories globally, £2m+ of stock at Wickford, 200+ km of cable, lamps from Osram, ADB, Sylvania, GE, Thorn. Products meet ICAO, FAA, national CAA and NATO specs. Customers are commercial and military airports and their contractors, worldwide. MoD work includes RAF Odiham LED installations (2021).
+- **IAVNA** (est. 1979 by Roy Spicer) is the stockist arm: claims one of the largest airfield-lighting inventories globally, £2m+ of stock at Wickford, lamps from Osram, ADB, Sylvania, GE, Thorn. The client reports serious volumes to shift, for example some 5,000 km of cable in stock. Products meet ICAO, FAA, national CAA and NATO specs. Customers are commercial and military airports and their contractors, worldwide. MoD work includes RAF Odiham LED installations (2021).
 - **ALS (Airfield Lighting Systems)** is the manufacturing brand launched 2008, owned and distributed by IAVNA: LED inset/elevated lights, PAPI, CCRs, Pathfinder control systems, heliport and solar ranges, SmartBolts.
 - **ALT (Airfield Lighting Training)** is the training academy: AGL practitioner, maintenance, authorised-person, design and ATSEP courses with named instructors (Martin Allin, Keith Costall, Peter Fotherby), delivered to CBTA standards.
 - Ownership history: IAVNA acquired Parkinson Richmark in 2018 and was itself brought under AGL Advancement Group in 2018/19. One dormant subsidiary was impaired in FY2025 as it "ceased to trade" (likely the Richmark entity).
 
-Search-strategy implications: this is national/international niche B2B, not local. Demand is modest in any one country but global (they sell in 50+ countries), highly commercial (equipment model numbers, compliance specs), with a genuine informational layer (regulations, PAPI, light spacing) that AI Overviews already occupy. Three separate low-authority sites are splitting what little equity the group has.
+Search-strategy implications: this is national/international niche B2B, not local. Demand is modest in any one country but global (they sell in 50+ countries), highly commercial (equipment model numbers, compliance specs), with a genuine informational layer (regulations, PAPI, light spacing) that AI Overviews already occupy. Three separate low-authority sites are splitting what little equity the group has. The stock-clearance pressure (the cable holding especially) argues for transactional category and product pages that can move inventory, not just brochure content.
 
 ## 4. Who's who
 
-- **Decision maker: Keith Spicer.** Sole current director of the trading company since 2007, PSC with significant influence, and the only signatory on all recent accounts. Publicly described as MD of ALS. Family firm: founder Roy Spicer (director until 2007), with Richard and Robert Spicer directors until 2016. In an owner-managed business of this shape, Keith says yes or no.
-- **Second voice: N Villacencio**, co-director of holding company AGL Advancement Ltd. Role in the trading business unclear; worth identifying before the call.
-- **Delivery contact: none visible.** No marketing hire found; site news posts are authored generically ("Airfield Lighting Systems"). Content review would likely fall to Keith or the training instructors. This is the main delivery risk.
-- **Intermediary risk: low once contact is made** (sole director, no parent outside the family group), but there is currently no warm route. Getting Keith into the first conversation is the whole game.
+- **Our contact: Head of Marketing and Communication (name to confirm), one of three decision makers.** They approached TenTerms, so we have an engaged champion with real authority and a natural delivery contact in one person.
+- **Keith Spicer.** Sole current director of the trading company since 2007, PSC with significant influence, and the only signatory on all recent accounts. Publicly described as MD of ALS. Family firm: founder Roy Spicer (director until 2007), with Richard and Robert Spicer directors until 2016. Almost certainly one of the other two decision makers and the ultimate signature.
+- **N Villacencio**, co-director of holding company AGL Advancement Ltd; plausibly the third decision maker. Confirm on the call.
+- **Intermediary risk: low.** The champion is a decision maker in their own right. The remaining task is sequencing: get the other two decision makers (and whoever controls budget sign-off, likely Keith) into the second conversation with the numbers in front of them.
 
 ## 5. Financial picture
 
@@ -63,7 +63,7 @@ Trading company (01434149), filleted FRS 102 accounts, no P&L disclosed:
 
 Reading: retained earnings rose £449k in FY2025 after any dividends, so post-tax profit was at least that. Stock up £721k and headcount doubled: a business investing in growth, not coasting. They own their freehold (revalued 2023, £1.5m revaluation reserve). A 2016 NatWest charge on IAVNA was satisfied in July 2023; a NatWest charge remains at the holding-company level. Cash is modest for the size but debtor-heavy working capital is normal for trade supply. Holding companies are clean shells (Air Field Lighting: £767k net assets; AGL Advancement: investment vehicle with £1.6m owed intra-group).
 
-**Affordability:** estimated £3m to £6m turnover with a £449k retained-profit year comfortably supports £1,500 to £4,500 a month. **Headroom:** growth mode, on the evidence.
+**Affordability:** estimated £3m to £6m turnover with a £449k retained-profit year comfortably supports £1,500 to £4,500 a month. **Headroom:** growth mode, on the evidence. The rising stock position also means marketing that moves inventory has a direct working-capital payoff for them.
 
 ## 6. Search and AI visibility snapshot
 
@@ -102,64 +102,69 @@ Reading: retained earnings rose £449k in FY2025 after any dividends, so post-ta
 
 ## 7. What a new customer is worth to them
 
-No published pricing. Working from sector norms, stated as assumptions:
+Client-provided figures (via their Head of Marketing and Communication), which replace our earlier sector-norm assumptions:
 
-- **Equipment/stockist account**: industrial equipment projects typically £5k to £50k+; airfield lighting orders (fittings, CCRs, cable runs, lamps) plausibly £10k to £25k for a first order, with consumables and spares making airport accounts repeat buyers over many years.
-- **Training**: hundreds to low thousands of pounds per delegate; a booked cohort plausibly £3k to £10k. Treat as secondary value and a door-opener to equipment accounts.
+| Offer | Value of one sale |
+|---|---|
+| Runway lighting projects | £60k to £10m per project ("the sky's the limit") |
+| Lighting products | ~£400 per unit, sold in volume |
+| Control/computer systems (e.g. Pathfinder) | ~£100k each |
+| Training | £1k per person; ~£10k for a team booking |
+| Stock clearance | Large inventory to shift, e.g. ~5,000 km of cable |
 
-Take **£10k to £25k as the first-12-months value of one new equipment customer** (assumption to confirm on the call, along with typical account lifetime).
+The chain, blended across the mix and kept deliberately conservative given most inbound enquiries will be product and training rather than full projects:
 
-| Scenario | Extra enquiries/mo | Close rate | New customers/yr | First-12-months revenue impact |
-|---|---|---|---|---|
-| Conservative | 2 | 1 in 5 | ~5 | £50k to £125k |
-| Realistic | 4 | 1 in 4 | ~12 | £120k to £300k |
-| Stretch | 6 | 1 in 3 | ~22 | £220k to £550k |
+| Scenario | Extra enquiries/mo | Close rate | New customers/yr | Assumed mix | First-12-months revenue impact |
+|---|---|---|---|---|---|
+| Conservative | 2 | 1 in 5 | ~5 | Product orders and training only (~£5k to £15k avg) | £25k to £75k |
+| Realistic | 4 | 1 in 4 | ~12 | Mostly product/training plus one control system (£100k) | £150k to £300k |
+| Stretch | 6 | 1 in 3 | ~22 | As realistic plus one runway project at the £60k floor | £400k to £750k+ |
 
-(Repeat purchasing means multi-year account value runs well above first-year figures.) Against a £2,500 to £3,000/month retainer (£30k to £36k/yr), the conservative case clears roughly 3x at the midpoint. The case works, provided their average order value confirms at £10k+; below that, lead with a smaller engagement.
+Two things make this case unusually robust. First, the tail: a single runway-lighting project can be worth £60k to £10m, so one project enquiry closed from search pays for years of retainer on its own; the scenarios above deliberately price projects at the floor or exclude them. Second, repeat purchase: airport accounts buy consumables, spares and training for years, so first-12-months figures understate lifetime value. Against a £2,500 to £3,000/month retainer (£30k to £36k/yr), even the conservative, projects-excluded case is in payback territory, and the realistic case clears 4x to 8x.
 
 ## 8. Size of the prize
 
-The sampled commercial set alone carries roughly 1,800 searches/month in the UK, about 7,500/month in the US, and well over 20,000/month globally, in a market where most terms have KD under 10 and a DR-2 competitor holds top-five positions. The full universe (model numbers, compliance queries, "supplier/price/hire" modifiers, other English-speaking markets) is several times larger. Three framings:
+The sampled commercial set alone carries roughly 1,800 searches/month in the UK, about 7,500/month in the US, and well over 20,000/month globally, in a market where most terms have KD under 10 and a DR-2 competitor holds top-five positions. The full universe (model numbers, compliance queries, "supplier/price/hire" modifiers, other English-speaking markets) is several times larger. Three framings using the client's own values:
 
-- **Conservative**: recover what the .co.uk was on track for and take a modest share of UK category terms: 300 to 500 targeted visits/month, 2 to 3 qualified enquiries, £50k to £125k/yr revenue impact.
-- **Realistic**: consolidated site + category coverage + reference content ranking across UK/US/international English SERPs: 1,000+ visits/month, 4 to 6 enquiries, £120k to £300k/yr.
-- **Stretch**: become the default independent (non-OEM) answer in search and AI results for airfield lighting supply and training, the position ADB's own content occupies for OEM terms: enquiry flow rivalling exhibitions as a channel.
+- **Conservative**: recover what the .co.uk was on track for and take a modest share of UK category terms: 300 to 500 targeted visits/month, 2 to 3 qualified enquiries, £25k to £75k/yr in product and training revenue, before any project wins.
+- **Realistic**: consolidated site + category coverage + reference content ranking across UK/US/international English SERPs: 1,000+ visits/month, 4 to 6 enquiries, £150k to £300k/yr including a control-system sale, plus measurable movement on the stock they need to shift.
+- **Stretch**: become the default independent (non-OEM) answer in search and AI results for airfield lighting supply and training. At project values of £60k to £10m, one or two search-sourced project wins a year puts the channel at £500k to £1m+, rivalling exhibitions.
 
-Each assumes the £10k to £25k customer value above and B2B close rates of 1 in 5 to 1 in 3.
+A dedicated angle worth pricing into the proposal: **inventory-moving pages**. ~5,000 km of cable and £2.2m of stock argue for transactional category pages (airfield lighting cable, connectors, lamps by brand/fitting) targeting the KD-0-to-4 terms above, where ranking directly converts to warehouse turnover.
 
 ## 9. TenTerms fit and suggested entry point
 
-Strong fit: high-value niche B2B (aviation/industrial, an existing TenTerms strength), search-driven buyers, financially comfortable, and a website estate dramatically underperforming the quality of the business. This is not a retainer pitch on day one. **Lead with a paid visibility review framed around the .co.uk loss**, because there is an urgent, concrete, provable problem that no one else has shown them:
+Strong fit: high-value niche B2B (aviation/industrial, an existing TenTerms strength), search-driven buyers, financially comfortable, an engaged marketing decision maker who came to us, and a website estate dramatically underperforming the quality of the business. **Lead with a paid visibility review framed around the .co.uk loss**, because there is an urgent, concrete, provable problem that nobody else has shown them:
 
 1. The domain-loss story (DR-30 asset now a casino site; whether recovery, disavowal or formal complaint is possible; at minimum, protecting the brand from association).
 2. Three-site strategy: whether IAVNA/ALS/ALT should consolidate onto one authoritative domain or be deliberately separated, and how to stop splitting authority either way.
-3. The category-coverage plan (product-type pages for PAPI, CCRs, heliport, obstruction, cables) plus the reference content their instructors are uniquely credentialed to author.
+3. The category-coverage plan: transactional pages for the product lines and stock they need to shift (cable, lamps, PAPI, CCRs, heliport, obstruction), plus the reference content their instructors are uniquely credentialed to author.
 
-Then propose the retainer to execute. The review conversation almost writes itself: "a casino affiliate is earning from your old links" is a first line that gets a meeting.
+Because the approach is inbound from a decision maker, the review can be positioned as the fast, low-risk first step that produces the board-ready case for the retainer, with the other two decision makers in the room when it is presented. "A casino affiliate is earning from your old links" remains the line that makes the second meeting happen.
 
 ## 10. Discovery questions
 
 1. What happened with airfieldlightingsystems.co.uk last year: did the registration lapse, and are you aware of what is published on it now? (Opens the urgency case; tests whether anyone owns digital assets internally.)
-2. Where do new customers come from today: exhibitions, reps, tenders, the websites? Roughly what share arrives through the sites? (Baselines the cost of invisibility.)
-3. What is a typical first order worth, and what does a good airport account spend over three years? (Replaces our £10k to £25k assumption with their number.)
-4. Roughly what share of sales is UK versus export, and which markets matter most next? (Sets country targeting: US volumes are 4 to 10x UK.)
-5. Who internally could review and approve product and technical content, and could the ALT instructors put names to reference guides? (Tests capacity, our weakest score.)
-6. Is it you alone who would decide on an engagement like this, or does N Villacencio or anyone else weigh in? (Tests decision authority politely.)
+2. Who are the other two decision makers alongside you, and what would they need to see to approve an engagement? (Confirms our Spicer/Villacencio assumption and sets up the second meeting.)
+3. Where do new customers come from today: exhibitions, reps, tenders, the websites? Roughly what share arrives through the sites? (Baselines the cost of invisibility.)
+4. Of the mix (projects £60k to £10m, systems ~£100k, product orders, training), which do you most want the websites to win, and which stock lines are the priority to shift? (Points the keyword and page plan at revenue they actually want.)
+5. Roughly what share of sales is UK versus export, and which markets matter most next? (Sets country targeting: US volumes are 4 to 10x UK.)
+6. How is marketing resourced today: team size, agency support, and who can review and approve technical content? Could the ALT instructors put names to reference guides? (Tests delivery capacity.)
 7. Do you have Google Search Console running on all three sites, and can we see it? (Gates the full review.)
 8. Why three separate websites: history or strategy? (Reveals appetite for consolidation, the biggest structural lever.)
 
 ## 11. Risks and open items
 
-- **The .co.uk is a credibility landmine and an open question.** We infer it lapsed (traffic died May to August 2025; casino content canonicalised to storno.co.uk now sits on it). If instead they sold it, the conversation changes. Verify WHOIS from a normal browser before the call (the environment here could not).
+- **The .co.uk is a credibility landmine and an open question.** We infer it lapsed (traffic died May to August 2025; casino content canonicalised to storno.co.uk now sits on it). If instead they sold it, the conversation changes. Verify WHOIS from a normal browser before the call.
 - **Turnover is estimated, not disclosed.** £3m to £6m rests on a headcount-based assumption, and headcount doubling mid-year makes the per-head maths noisy.
-- **Search may be a secondary channel** in a relationship-and-exhibition-driven industry; question 2 exists to size this honestly. Volumes are niche; the case rests on lead value, not traffic.
-- **No visible marketing function**: delivery depends on Keith Spicer's engagement and instructor time.
+- **Search may historically have been a secondary channel** in a relationship-and-exhibition-driven industry; question 3 exists to size this honestly. Volumes are niche; the case rests on lead value, not traffic, and the client's own figures now carry it.
+- **Delivery depends on the marketing head's bandwidth and instructor time**; team size and technical-review capacity unconfirmed (question 6).
+- **Two of three decision makers are not yet in the conversation**; sequence them into the review presentation.
 - **All three sites show ~455 to 471 referring domains with DR 2 to 16**, a pattern consistent with shared low-quality/directory links; the .com sits behind a bot-verification screen (blocked our first fetches). Both need a look in the technical review.
-- **No warm route to Keith Spicer identified**; LinkedIn headcount and his activity level not verified from here.
-- Lead source unstated, so Decision Reachability is unscored.
 
 ## 12. Sources
 
+- Client-provided (via Head of Marketing and Communication): deal values by offer, stock-clearance volumes, decision-maker structure
 - iavna.net (home, history, quality pages); airfieldlightingsystems.com (home, news); alt-training.com (home, courses)
 - Companies House: 01434149 (overview, officers, PSCs, filing history, FY2024/FY2025 accounts), 02264456 (overview, FY2025 accounts), 09828547 (overview, FY2025 accounts), name searches
 - Ahrefs: batch analysis of the four domains; organic keywords for airfieldlightingsystems.com; keywords-explorer overviews (GB and US, 25-term commercial set); SERP overviews ("airfield lighting" GB, "airfield ground lighting" GB, "heliport lighting" US); metrics history for airfieldlightingsystems.co.uk (2015 to 2026)
