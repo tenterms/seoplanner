@@ -50,6 +50,12 @@ Findings from the deep-research rounds, so future passes don't rediscover them.
 - **OpenSubtitles corpus grep** — subtitle files are the film's actual spoken text; an API
   key would allow searching "January 14" across ~million subtitle files. The single most
   scalable idea if the calendar goes public.
-- **Frame-checking via the Choekaas video** (a clip for all 366 days, with visible dates).
+- ~~Frame-checking via the Choekaas video~~ — DONE: the project's own 366-film list arrived
+  as a PDF (now `data/choekaas-movie-calendar.json`), with its sources — which include the
+  original Carphone Warehouse calendar via the Wayback Machine, closing the circle on this
+  project's own origin. Three adoptions (Twelve Monkeys, Reversal of Fortune, Silver Linings
+  Playbook), ~25 note enrichments, and two caught errors: its Reversal of Fortune date
+  confuses Sunny's two comas, and its The Fog filing (9 Dec) contradicts the film's own
+  dialogue (21 April).
 - **Crowdsourcing on the tool itself** — the original Reddit thread proved people love this
   argument; 100 open days with named rejected pitches is bait, deliberately.
