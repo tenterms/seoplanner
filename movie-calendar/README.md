@@ -51,8 +51,8 @@ Each entry is also marked by **focus**: `day` (the film takes place on the date)
 | | days |
 |---|---|
 | The film takes place on the date | 91 |
-| The date is the film's spine | 175 |
-| **Open — nothing qualifies** | **100** |
+| The date is the film's spine | 180 |
+| **Open — nothing qualifies** | **95** |
 
 Held honestly, the year does not fill, and each round of scrutiny makes it fill less. That is
 the finding, not a failure of searching.
@@ -189,6 +189,19 @@ Plus some thirty world-cinema alternates: Chungking Express's 1 May pineapple ti
 alibi, the Umbrellas of Cherbourg Esso-station Christmas Eve, Mishima's 25 November present
 tense, the Marriage of Maria Braun ending on the Miracle of Bern, and The Big Lebowski's
 Ralphs check post-dated 11 September 1991.
+
+## The deep-research round
+
+`RESEARCH.md` now documents which channels work from an agent environment and which
+need a human browser. The screenplay-grep channel (IMSDb, fetchable by curl) produced
+primary-source dialogue evidence; the Walters alternates and Wikipedia holiday lists
+produced the rest. Seven adoptions: Black Sunday (shot at the real Super Bowl X, 18 Jan
+1976), The Buccaneer (restored after a wrongful deletion), Good Night and Good Luck
+(the 9 March 1954 broadcast), K-PAX ("July 27, at 5:51 a.m."), The Damned United
+(Clough's 44 days end 12 Sept 1974), Knowing (a film that is a countdown to its own
+date, 19 Oct 2009), The Caine Mutiny (the charge sheet recites 18 December 1944).
+One demotion the rules demanded: The China Syndrome's claim was a release-date
+coincidence with Three Mile Island, not a setting — the square is open and says so.
 
 ## Best remaining seams
 

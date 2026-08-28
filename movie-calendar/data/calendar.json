@@ -55,9 +55,12 @@
  },
  {
   "date": "01-08",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Buccaneer — a campaign, not the 8th of January. Other claims: Elvis (2022) — Presley born 8 January 1935 Walters files Blade Runner here; the film's own opening card says Los Angeles, November 2019. Somebody is wrong, and it might not be him — but this calendar can't verify a January hiding in the Esper machine."
+  "title": "The Buccaneer",
+  "year": 1958,
+  "kind": "about",
+  "focus": "spine",
+  "why": "Jean Lafitte's pirates and Andrew Jackson's militia at the Battle of New Orleans, 8 January 1815 — the battle is the film's whole destination. Wrongly deleted in an earlier purge as an 'anniversary pick'; restored on appeal.",
+  "alt": "Walters files Blade Runner here, against its own 'November 2019' opening card — flagged as disputed"
  },
  {
   "date": "01-09",
@@ -119,9 +122,12 @@
  },
  {
   "date": "01-18",
-  "open": true,
-  "candidate": "Goodbye Christopher Robin (2017) — A.A. Milne was born on 18 January 1882; the film is what Winnie-the-Pooh cost his son.",
-  "why": "No film yet found that is set on this date."
+  "title": "Black Sunday",
+  "year": 1977,
+  "kind": "about",
+  "focus": "spine",
+  "why": "The Goodyear blimp, a Black September plot, and Super Bowl X — Frankenheimer shot the climax at the real game, Miami, 18 January 1976, with the real crowd as extras. The whole film drives at that Sunday.",
+  "alt": ""
  },
  {
   "date": "01-19",
@@ -535,9 +541,12 @@
  },
  {
   "date": "03-09",
-  "open": true,
-  "why": "No film yet found that is set on this date.",
-  "candidate": "Notorious (2009) — a full-life biopic ending on the date. Other claims on the date: All Eyez on Me"
+  "title": "Good Night, and Good Luck",
+  "year": 2005,
+  "kind": "about",
+  "focus": "spine",
+  "why": "The See It Now broadcast of 9 March 1954 — thirty minutes of live television aimed squarely at Joseph McCarthy, and the film's entire destination. Shot in the smoke and monochrome of the control room that made it.",
+  "alt": "The Onion Field (Walters' alternate, a case that sprawls)"
  },
  {
   "date": "03-10",
@@ -688,12 +697,9 @@
  },
  {
   "date": "03-28",
-  "title": "The China Syndrome",
-  "year": 1979,
-  "why": "Three Mile Island partially melted down on 28 March 1979 — twelve days after this film opened, and almost exactly as scripted.",
-  "alt": "Silkwood",
-  "kind": "about",
-  "focus": "spine"
+  "open": true,
+  "why": "No film yet found that takes place on this date.",
+  "candidate": "The China Syndrome — held this square for months on a false pretence: Three Mile Island melted down on 28 March 1979, twelve days after the film OPENED. That is a release-date coincidence, not a setting, and the calendar's own rules finally caught it. The most famous nuclear-accident film has no date in it at all."
  },
  {
   "date": "03-29",
@@ -932,7 +938,7 @@
   "title": "Chernobyl: Abyss",
   "year": 2021,
   "why": "Reactor 4 explodes at 01:23 on 26 April 1986; the film follows the divers sent under it.",
-  "alt": "Guernica bombed 26 April 1937",
+  "alt": "Guernica bombed 26 April 1937; 127 Hours — Aron enters Blue John Canyon on 26 April 2003, and the camcorder dates the days that follow",
   "kind": "about",
   "focus": "spine"
  },
@@ -975,7 +981,7 @@
   "year": 1973,
   "kind": "holiday",
   "why": "Summerisle keeps May Day, and Sergeant Howie arrives to find the island preparing for it.",
-  "alt": "Senna — Imola, 1 May 1994 (historical); Chungking Express — Cop 223 stockpiles pineapple tins that expire on 1 May, his 25th birthday and the sell-by date of a heartbreak",
+  "alt": "Senna — Imola, 1 May 1994 (historical); Chungking Express — Cop 223 stockpiles pineapple tins that expire on 1 May, his 25th birthday and the sell-by date of a heartbreak; Salvatore Giuliano — the Portella della Ginestra massacre, May Day 1947: carabinieri fire on a workers' picnic, restaged where it happened",
   "focus": "day"
  },
  {
@@ -1238,7 +1244,7 @@
   "title": "The Gate of Heavenly Peace",
   "year": 1995,
   "why": "The army moves into Tiananmen Square on the night of 3/4 June 1989; the film covers the seven weeks up to it.",
-  "alt": "Summer Palace (2006)",
+  "alt": "Summer Palace (2006); Free Solo — the ropeless ascent of El Capitan, the morning of 3 June 2017",
   "kind": "about",
   "focus": "spine"
  },
@@ -1684,12 +1690,12 @@
  },
  {
   "date": "07-27",
-  "title": "Pork Chop Hill",
-  "year": 1959,
-  "why": "Men die for a worthless hill in the last hours before the Korean armistice of 27 July 1953.",
-  "alt": "MASH",
-  "kind": "about",
-  "focus": "spine"
+  "title": "K-PAX",
+  "year": 2001,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "Prot announces the date on arrival: he leaves Earth on July 27, at 5:51 a.m. Eastern time, five years to the minute since he came. The whole ward reorganises its hopes around that morning, and the film counts down to it.",
+  "alt": "Pork Chop Hill — men die for a worthless hill in the last hours before the 27 July 1953 armistice"
  },
  {
   "date": "07-28",
@@ -1777,7 +1783,7 @@
   "title": "Barefoot Gen",
   "year": 1983,
   "why": "8:15am, 6 August 1945, Hiroshima — animated with a child's-eye literalism no live action has matched.",
-  "alt": "Hiroshima Mon Amour; Black Rain (1989)",
+  "alt": "Hiroshima Mon Amour; Black Rain (1989); A Few Good Men — the courtroom recites it obsessively: the Code Red on Private Santiago came 'on the night of August 6th' (eight times in the screenplay)",
   "kind": "about",
   "focus": "spine"
  },
@@ -2088,9 +2094,12 @@
  },
  {
   "date": "09-12",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "Cry Freedom — Biko dies at the midpoint and the film carries on without him. Other claims: Lascaux discovered, 12 September 1940"
+  "title": "The Damned United",
+  "year": 2009,
+  "kind": "about",
+  "focus": "spine",
+  "why": "Brian Clough's forty-four days at Leeds end on 12 September 1974 — sacked in the morning, and on Yorkshire Television opposite Don Revie by the evening. The film rebuilds that interview almost word for word and aims everything at it.",
+  "alt": "Cry Freedom — Biko died in custody 12 September 1977, at the midpoint of a film that carries on without him (rejected)"
  },
  {
   "date": "09-13",
@@ -2169,7 +2178,7 @@
   "kind": "dated",
   "focus": "spine",
   "why": "The first line of the film: 'September 21, 1945. That was the night I died.' Seita's ghost watches his own end in Sannomiya station, and the film is the memory that leads back to that night.",
-  "alt": "Walters' pick for the day was Places in the Heart; Takahata's opening line outranks it"
+  "alt": "Walters' pick for the day was Places in the Heart; Takahata's opening line outranks it; The Girl with the Dragon Tattoo — 'It was September 21st, 1966. A Saturday. Harriet was 16.' The mystery is the day itself, and Fincher's script dates it in dialogue"
  },
  {
   "date": "09-22",
@@ -2248,7 +2257,7 @@
   "title": "Thrilla in Manila",
   "year": 2008,
   "why": "Ali and Frazier, fourteen rounds in 40-degree heat, 1 October 1975 — 'the closest thing to dying that I know of'.",
-  "alt": "The People's Republic proclaimed, 1 October 1949; Willy Wonka & the Chocolate Factory (1971) — the golden ticket summons the five to the gates at ten o'clock on the morning of the first of October (Burton's remake moved it to 1 February, one square back in this calendar); Withnail and I — Danny's arithmetic, 'we are 91 days from the end of this decade', pins the Camden squalor to about the first of October 1969",
+  "alt": "The People's Republic proclaimed, 1 October 1949; Willy Wonka & the Chocolate Factory (1971) — the golden ticket summons the five to the gates at ten o'clock on the morning of the first of October (Burton's remake moved it to 1 February, one square back in this calendar); Withnail and I — Danny's arithmetic, 'we are 91 days from the end of this decade', pins the Camden squalor to about the first of October 1969; 61* — Roger Maris hits number 61 on 1 October 1961, the film's last at-bat",
   "kind": "about",
   "focus": "spine"
  },
@@ -2402,9 +2411,12 @@
  },
  {
   "date": "10-19",
-  "open": true,
-  "why": "No film yet found that takes place on this date.",
-  "candidate": "The Wolf of Wall Street — Black Monday is the first ten minutes. Other claims: Yorktown surrenders, 19 October 1781"
+  "title": "Knowing",
+  "year": 2009,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The last line of numbers on the 1959 prophecy sheet decodes to a date — 19 October 2009 — and a death toll written as 'EE': everyone else. The film is a countdown to its own final date, written on a whiteboard in scene after scene.",
+  "alt": "The Game — its script's 'October 19, 1995' is only the draft date on the title page; a warning about evidence, preserved here"
  },
  {
   "date": "10-20",
@@ -2510,7 +2522,7 @@
   "title": "Coco",
   "year": 2017,
   "why": "Día de Muertos, 1–2 November — the one night the marigold bridge is open.",
-  "alt": "The Book of Life (2014); the Lisbon earthquake, 1 November 1755; The Apartment — Baxter's narration opens on 1 November 1959, counting New York's 8,042,783 souls",
+  "alt": "The Book of Life (2014); the Lisbon earthquake, 1 November 1755; The Apartment — Baxter's narration opens on 1 November 1959, counting New York's 8,042,783 souls; Seabiscuit — the match race against War Admiral at Pimlico, 1 November 1938",
   "kind": "holiday",
   "focus": "day"
  },
@@ -2898,9 +2910,12 @@
  },
  {
   "date": "12-18",
-  "open": true,
-  "candidate": "The Nutcracker (1993) — The Nutcracker premiered at the Mariinsky on 18 December 1892 and was thought a failure. It is now most ballet companies' entire December.",
-  "why": "No film yet found that is set on this date."
+  "title": "The Caine Mutiny",
+  "year": 1954,
+  "kind": "dated",
+  "focus": "spine",
+  "why": "The charge itself recites the date: that Maryk, 'on or about December 18, 1944', seized command of the Caine from Queeg in the middle of a typhoon. The mutiny is that morning; the court-martial exists to relive it, strawberries and all.",
+  "alt": "Stalag 17 (Walters files it here for a dated scene); Thirty Days of Night"
  },
  {
   "date": "12-19",
@@ -2943,7 +2958,7 @@
   "title": "Die Hard",
   "year": 1988,
   "why": "The Nakatomi Corporation Christmas party, Christmas Eve, Century City. Now I have a machine gun. Ho ho ho.",
-  "alt": "It's a Wonderful Life — one Christmas Eve, plus the angel's homework; Tokyo Godfathers — a baby in the trash on Christmas Eve; Rent — 'December 24th, 9pm, Eastern Standard Time', dated in its opening line; The Ref (one hostage Christmas Eve); The Muppet Christmas Carol; Eyes Wide Shut (Christmas week); Cast Away (the crash); The Umbrellas of Cherbourg — the Esso station finale, Christmas Eve 1963, in the snow; Fanny and Alexander — the Ekdahl Christmas of 1907, cinema's grandest Christmas Eve; My Night at Maud's — midnight mass, then the night that gives the film its title",
+  "alt": "It's a Wonderful Life — one Christmas Eve, plus the angel's homework; Tokyo Godfathers — a baby in the trash on Christmas Eve; Rent — 'December 24th, 9pm, Eastern Standard Time', dated in its opening line; The Ref (one hostage Christmas Eve); The Muppet Christmas Carol; Eyes Wide Shut (Christmas week); Cast Away (the crash); The Umbrellas of Cherbourg — the Esso station finale, Christmas Eve 1963, in the snow; Fanny and Alexander — the Ekdahl Christmas of 1907, cinema's grandest Christmas Eve; My Night at Maud's — midnight mass, then the night that gives the film its title; Joyeux Noel — the 1914 Christmas Eve truce, carols across no-man's-land; Catch Me If You Can — Frank's collect calls to Carl come every Christmas Eve, and the film runs on them",
   "kind": "holiday",
   "focus": "day"
  },
