@@ -1,0 +1,346 @@
+<title>Knightsbridge Circle Briefing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --panel:#FFFFFF; --ink:#141C28; --ink-2:#4A5568; --ink-3:#7A8595; --rule:#D8DEE6;
+  --kc:#0F766E; --kc-soft:#D9F0EC; --sc:#B4552A; --sc-soft:#F6E3D7;
+  --good:#2E7D4F; --warn:#B7791F; --bad:#B23A3A; --good-soft:#E3F1E7; --warn-soft:#FBF0D9; --bad-soft:#F7E1E1;
+  --accent:#1F2A44; --accent-soft:#E6EAF2;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1419; --panel:#171D25; --ink:#E9EDF2; --ink-2:#B5BEC9; --ink-3:#7F8A98; --rule:#2A3441;
+  --kc:#3FB8AA; --kc-soft:#123A36; --sc:#E08A5C; --sc-soft:#3E2416;
+  --good:#5CC287; --warn:#E0B053; --bad:#E27272; --good-soft:#173324; --warn-soft:#3A2E12; --bad-soft:#3B1E1E;
+  --accent:#C9D3E8; --accent-soft:#232C3D;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F1419; --panel:#171D25; --ink:#E9EDF2; --ink-2:#B5BEC9; --ink-3:#7F8A98; --rule:#2A3441;
+  --kc:#3FB8AA; --kc-soft:#123A36; --sc:#E08A5C; --sc-soft:#3E2416;
+  --good:#5CC287; --warn:#E0B053; --bad:#E27272; --good-soft:#173324; --warn-soft:#3A2E12; --bad-soft:#3B1E1E;
+  --accent:#C9D3E8; --accent-soft:#232C3D;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,4.2vw,44px);line-height:1.05;font-weight:700;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:700;margin:0 0 6px}
+h3{font-size:17px;font-weight:700;margin:0 0 6px}
+p{max-width:70ch;margin:0 0 12px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--rule);padding-bottom:24px;margin-bottom:28px}
+header .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);text-align:right;line-height:1.7}
+.lede{font-size:18px;color:var(--ink-2);max-width:66ch;margin:14px 0 0}
+section{margin:44px 0 0}
+section>.eyebrow{margin-bottom:6px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+.tile{background:var(--panel);border:1px solid var(--rule);padding:14px 16px;border-radius:6px;display:flex;flex-direction:column;gap:4px}
+.tile .lab{font-size:12px;color:var(--ink-3)}
+.tile .val{font-family:"Bricolage Grotesque",sans-serif;font-size:28px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.tile .sub{font-size:12px;color:var(--ink-2)}
+.pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.pill.kc{background:var(--kc-soft);color:var(--kc)} .pill.sc{background:var(--sc-soft);color:var(--sc)}
+.pill.good{background:var(--good-soft);color:var(--good)} .pill.warn{background:var(--warn-soft);color:var(--warn)} .pill.bad{background:var(--bad-soft);color:var(--bad)}
+.verdict{background:var(--panel);border-left:4px solid var(--accent);padding:18px 22px;border-radius:0 6px 6px 0;margin-top:14px}
+.verdict p{max-width:78ch}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
+.card h3{display:flex;align-items:center;gap:8px}
+ul{margin:6px 0 0;padding-left:18px} li{margin:4px 0;max-width:72ch}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px;background:var(--panel)}
+.tbl th{text-align:left;font-weight:600;font-size:12px;color:var(--ink-2);padding:8px 10px;border-bottom:2px solid var(--rule);background:var(--panel);letter-spacing:.02em}
+.tbl td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px}
+.scroll .tbl{margin:0}
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:16px;margin-top:14px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin-top:8px;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.legend .k::before{background:var(--kc)} .legend .s::before{background:var(--sc)}
+.bars{display:grid;grid-template-columns:200px 1fr 40px;gap:8px 12px;align-items:center;margin-top:12px;font-size:13.5px}
+.bars .bar{height:10px;background:var(--accent-soft);border-radius:5px;overflow:hidden}
+.bars .bar i{display:block;height:100%;background:var(--accent);border-radius:5px}
+.bars .n{font-family:"IBM Plex Mono",monospace;font-size:12px;text-align:right}
+.steps{counter-reset:s;display:grid;gap:10px;margin-top:12px}
+.step{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px 16px 14px 56px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:"Bricolage Grotesque",sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.step h3{margin-bottom:4px}
+.step .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:6px 14px;font-size:14px;margin-top:10px}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0}
+.note{font-size:12.5px;color:var(--ink-3);margin-top:8px;max-width:80ch}
+.srp{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;margin-top:10px;line-height:1.7}
+.srp b{color:var(--kc)} .srp em{color:var(--sc);font-style:normal}
+a{color:var(--kc)}
+@media (max-width:820px){.tiles{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}header{grid-template-columns:1fr}header .meta{text-align:left}.bars{grid-template-columns:130px 1fr 40px}}
+@media (prefers-reduced-motion:no-preference){.tile{transition:transform .15s}.tile:hover{transform:translateY(-1px)}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">TenTerms internal briefing · upsell · existing client</div>
+    <h1>Knightsbridge Circle vs Sienna Charles</h1>
+    <p class="lede">The client thinks it is being outranked. The data says it is winning the UK and catching up fast in the US, but Sienna Charles still owns the generic American head terms, gets cited twice as often by AI assistants, and has a LinkedIn audience six times the size. That gap is the pitch.</p>
+  </div>
+  <div class="meta">Prepared 2 Sep 2026<br>Ahrefs · SERPAPI · LinkedIn · Companies House<br>Workbook: Knightsbridge-Circle-vs-Sienna-Charles-Audit.xlsx</div>
+</header>
+
+<section>
+  <div class="eyebrow">01 · Snapshot</div>
+  <div class="tiles">
+    <div class="tile"><span class="lab">Organic traffic / month (Ahrefs)</span><span class="val">1,999 <span style="color:var(--ink-3);font-size:16px">vs</span> 2,092</span><span class="sub"><span class="pill kc">KC</span> up from 66 a year ago · <span class="pill sc">SC</span> down 16%</span></div>
+    <div class="tile"><span class="lab">US head terms held (page 1)</span><span class="val">1 <span style="color:var(--ink-3);font-size:16px">vs</span> 9</span><span class="sub">luxury / lifestyle / travel / vip concierge: SC ranks 1–4, KC ranks 21 or not at all</span></div>
+    <div class="tile"><span class="lab">AI citations (all platforms)</span><span class="val">60 <span style="color:var(--ink-3);font-size:16px">vs</span> 122</span><span class="sub">20 KC pages cited vs 41 SC pages</span></div>
+    <div class="tile"><span class="lab">LinkedIn followers</span><span class="val">4.7k <span style="color:var(--ink-3);font-size:16px">vs</span> 31k</span><span class="sub">KC lists 38 staff, SC lists 14</span></div>
+  </div>
+  <div class="verdict">
+    <h3>Verdict</h3>
+    <p><strong>"Outranked" is half true and the half that is true is fixable.</strong> In the UK, Sienna Charles is invisible (8 keywords, 35 visits a month) and KC holds position 5 on both London commercial terms. In the US, SC's three service pages own the generic head terms (luxury concierge service, luxury lifestyle concierge, luxury travel concierge, vip concierge) while KC's city pages have quietly taken New York, Los Angeles and Miami. KC has no page targeting any generic head term, its travel page ranks for nothing, and its About page is a 404. The real gaps are structural: entity content for AI answers, the generic service layer, citable third-party assets, and audience on LinkedIn.</p>
+    <p>Sienna Charles is also more fragile than it looks: two years of gently declining traffic, 40% of it from restaurant reviews in its magazine, a founder who is the brand, and an employee-review problem that shows on its own name search. KC's momentum, transparent pricing and press bench are the assets to build on.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">02 · Prospect scoring</div>
+  <div class="bars">
+    <div>Lead value</div><div class="bar"><i style="width:100%"></i></div><div class="n">10</div>
+    <div>ICP fit</div><div class="bar"><i style="width:80%"></i></div><div class="n">8</div>
+    <div>Ability to pay</div><div class="bar"><i style="width:80%"></i></div><div class="n">8</div>
+    <div>Search opportunity</div><div class="bar"><i style="width:80%"></i></div><div class="n">8</div>
+    <div>Decision reachability</div><div class="bar"><i style="width:80%"></i></div><div class="n">8</div>
+    <div>Strategic value</div><div class="bar"><i style="width:80%"></i></div><div class="n">8</div>
+    <div>Client-side capacity</div><div class="bar"><i style="width:60%"></i></div><div class="n">6</div>
+  </div>
+  <p class="note">One membership is worth $55,000 a year plus a $25,000 joining fee, so lead value is off the scale for our model. Stuart McNeill is sole director and PSC, so we are already talking to the decision maker. Capacity is the watch-point: an existing PR specialist and a 38-person team help, but member-outcome content will need the founder's time.</p>
+</section>
+
+<section>
+  <div class="eyebrow">03 · Traffic: what actually happened</div>
+  <div class="chart">
+    <svg id="hist" viewBox="0 0 900 300" role="img" aria-label="Monthly organic traffic, Sep 2024 to Sep 2026, Knightsbridge Circle vs Sienna Charles"></svg>
+    <div class="legend"><span class="k">Knightsbridge Circle</span><span class="s">Sienna Charles</span><span style="color:var(--ink-3)">Ahrefs estimated organic visits per month</span></div>
+  </div>
+  <div class="cols">
+    <div class="card"><h3><span class="pill kc">KC</span> 66 → 2,041 in twelve months</h3><p>Location pages launched January to July 2026 and the site went from a brand-only presence to 2,000–3,300 visits. The July peak and August dip line up with the move to <code>/locations/</code> and <code>/access/</code> URLs; the old flat URLs 301 cleanly and Ahrefs still credits some of them, which means Google is mid-consolidation. Freeze the URL graph.</p></div>
+    <div class="card"><h3><span class="pill sc">SC</span> 3,741 → 2,035, drifting down</h3><p>Two years of slow decline with a small paid layer (peaking at 737 paid visits in January 2026, near zero now). Their biggest page is a magazine review of The Nines NYC: 512 visits a month of restaurant-lookup traffic. Strip magazine and venue content and their commercial traffic is roughly 1,100 a month.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">04 · Where Sienna Charles is ahead</div>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>US keyword</th><th class="num">Volume</th><th class="num">KD</th><th>SC</th><th>KC</th><th>Read</th></tr></thead>
+    <tbody>
+      <tr><td>luxury concierge</td><td class="num">600</td><td class="num">2</td><td><span class="pill sc">#1</span> /vip-luxury-concierge</td><td><span class="pill bad">#21</span> NY city page</td><td>No KC page targets the generic term</td></tr>
+      <tr><td>luxury concierge service</td><td class="num">500</td><td class="num">6</td><td><span class="pill sc">#4</span> /vip-luxury-concierge</td><td><span class="pill bad">#21</span> /locations hub (71 words)</td><td>The hub is the right owner; it needs content</td></tr>
+      <tr><td>luxury travel concierge</td><td class="num">600</td><td class="num">5</td><td><span class="pill sc">#1</span> /luxury-travel-concierge</td><td><span class="pill bad">—</span> /luxury-travel-concierge ranks for brand only</td><td>Same page name, no rankings: rewrite</td></tr>
+      <tr><td>lifestyle concierge</td><td class="num">350</td><td class="num">5</td><td><span class="pill sc">#1</span> /luxury-lifestyle-concierge</td><td><span class="pill bad">—</span></td><td>No lifestyle page on KC</td></tr>
+      <tr><td>luxury lifestyle concierge</td><td class="num">150 (US) / 300 (Ahrefs kw list)</td><td class="num">1</td><td><span class="pill sc">#3</span></td><td><span class="pill warn">#7</span> Dallas page</td><td>Wrong page ranking for a generic term</td></tr>
+      <tr><td>private concierge</td><td class="num">400</td><td class="num">8</td><td><span class="pill sc">#1</span></td><td><span class="pill bad">—</span></td><td>Section on hub, not a page</td></tr>
+      <tr><td>vip concierge service</td><td class="num">100</td><td class="num">12</td><td><span class="pill sc">#1</span></td><td><span class="pill bad">—</span></td><td>Fits KC's new Sport &amp; Entertainment entity</td></tr>
+      <tr><td>luxury concierge services</td><td class="num">350</td><td class="num">2</td><td><span class="pill sc">#1</span> /become-a-member</td><td><span class="pill bad">—</span></td><td>Membership page needed</td></tr>
+      <tr><td>travel concierge services</td><td class="num">450</td><td class="num">2</td><td><span class="pill sc">#1</span></td><td><span class="pill bad">—</span></td><td>Rewrite of travel page covers it</td></tr>
+      <tr><td>luxury concierge nyc</td><td class="num">250</td><td class="num">0</td><td><span class="pill sc">#2</span></td><td><span class="pill kc">#1</span> NY city page</td><td>KC wins the city, loses the country</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">All KD 0–12. This is not a hard SERP. Quintessentially sits at #1 on most of them; SC is the only boutique in the top 5. Four rebuilt pages on KC (hub, travel, lifestyle, VIP) cover roughly 3,000 US searches a month that today go to SC or Quintessentially.</p>
+  <div class="cols">
+    <div class="card"><h3>AI answers</h3><ul>
+      <li>SC is cited 122 times across 41 pages; KC 60 times across 20 pages. Gemini 16 vs 4, Google AI Mode 25 vs 5, AI Overviews 13 vs 2.</li>
+      <li>SC has the ingredients: a founder page that ranks for her name, a Wikipedia entry for the founder, a press page, a membership page, 40+ magazine and destination pages to cite.</li>
+      <li>KC has the one ingredient SC lacks: a transparent pricing page with 15 FAQs. It also has a 404 where its About page should be.</li>
+      <li>"knightsbridge circle vs sienna charles" already triggers an AI Overview and PAA. Neither brand has a comparison page; a third party (stirlingaccess.com) owns "Knightsbridge Circle review".</li>
+    </ul></div>
+    <div class="card"><h3>Audience and press</h3><ul>
+      <li>LinkedIn: 30,992 followers vs 4,737. SC's founder is the media entity (Wikipedia, Substack, Forbes and Bloomberg features). KC's company posts are hotel-opening news.</li>
+      <li>Backlinks: SC has the deeper bench (Bloomberg, WSJ, Harper's Bazaar 17 dofollow, Hollywood Reporter 19, qz.com sitewide). KC's PR is landing though: Wikipedia, CN Traveler, Hollywood Reporter, Robb Report and Town &amp; Country all in the last five months.</li>
+      <li>Brand search: SC 600/month in the US vs KC 70. In the UK both sit at 150.</li>
+      <li>Paid: SC runs a small Google Ads layer and bids on "quintessential company". KC runs nothing.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">05 · Where Knightsbridge Circle is ahead</div>
+  <div class="cols">
+    <div class="card"><h3><span class="pill good">UK</span> SC does not exist here</h3><p>KC: 92 GB keywords, 730 visits. SC: 8 keywords, 35 visits. KC holds #5 on "concierge service london" and "luxury concierge london" (both with a local pack), #7 "concierge company", #9 "concierge services uk". Tatler's Feb 2026 best-of names KC and not SC. The UK conversation is about widening a lead, not closing a gap.</p></div>
+    <div class="card"><h3><span class="pill good">US cities</span> Won by accident, worth defending</h3><p>The New York page is KC's best asset: #1 luxury concierge nyc, #1 lifestyle concierge services, #2 lifestyle management services, #4 corporate concierge services. Los Angeles #1–2, Miami #2–3. SC has no city pages at all. The city layer is where KC beat SC without trying; the generic layer is where SC beat KC without trying.</p></div>
+    <div class="card"><h3><span class="pill good">Access pages</span> A link magnet already working</h3><p>Nine venue pages (5 Hertford Street, Oswald's, Maxime's, Carbone, The Polo Bar…) earn ~55% of KC's organic traffic and rank top 3 for the venues' own names. It is venue-lookup traffic, not buyer intent, but it is exactly the kind of citable content SC's magazine provides, and it could be five times the size.</p></div>
+    <div class="card"><h3><span class="pill good">Transparency</span> Pricing on the record</h3><p>KC publishes $55,000 a year plus $25,000 joining, a 4:1 manager ratio and an Exclusive 1:1 tier. SC publishes nothing; the press says $150,000. "How much does a luxury concierge cost" is the dominant AI prompt pattern, and only one of the two can answer it from its own site.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">06 · What a buyer sees today</div>
+  <div class="srp"><strong>US · "luxury concierge service"</strong><br>Local pack: three small operators (Miami VIP Concierge 46 reviews, Aspen Luxury Concierge 23). AI Overview present.<br>1 quintessentially.com/services · 2 <em>siennacharles.com/vip-luxury-concierge</em> · 3 JustLuxe best-of (names both) · 4 Houston Luxury Network · 5 Nightfall Group Miami · 6 Resident "11 best" · 7 Luxe List Atlanta · 8 Pinterest · 9 Tatler best-of (names KC).<br><b>Knightsbridge Circle: not on page 1.</b></div>
+  <div class="srp"><strong>US · "best luxury concierge service"</strong><br>1 Quintessentially · 2 JustLuxe (both) · 3 <em>siennacharles.com</em> · 4 Billionaire Concierge LA · 5 <b>knightsbridgecircle.com/locations/los-angeles-concierge-service</b> · 6 Tatler (KC) · 7 Forbes "most exclusive concierge club" (KC) · 8 Haute Black guide · 9 Maimon Group.<br>KC appears three times on the page through third parties. That is the AI-answer footprint to grow.</div>
+  <div class="srp"><strong>UK (London) · "luxury concierge service"</strong><br>Local pack: Luxury Concierge Service ltd (1 review), Book Concierge (10), The Fixer (1). AI Overview present.<br>1 Quintessentially · 2 luxuryconciergeservice.co.uk · 3 48 London · 4 Tatler (names KC) · 5 Berkeley Travel · 6 Luxury London listicle · 7 Innerplace · 8 The Fixer · 9 JustLuxe.<br><b>KC: not on page 1 for the generic; #5 on the London-qualified terms.</b> <em>SC: absent.</em> KC's Google listing shows as <span class="pill warn">unclaimed</span> in the knowledge panel, with 29 reviews at 4.2.</div>
+  <div class="srp"><strong>UK · "knightsbridge circle reviews"</strong><br>Forbes 2024 · knightsbridgecircle.com · YouTube CEO interview · Luxurious Magazine (£100k Elite tier) · <span style="color:var(--bad)">stirlingaccess.com/compare/knightsbridge-circle</span> (a competitor's comparison page) · NYT Oct 2025 ($50k, 120 members) · Elite Traveler.<br>KC has no reviews or press page of its own on this SERP.</div>
+</section>
+
+<section>
+  <div class="eyebrow">07 · How each site is built</div>
+  <div class="cols">
+    <div class="card"><h3><span class="pill sc">SC</span> 60-ish URLs, four layers</h3><ul>
+      <li><strong>Service layer (3 pages):</strong> vip-luxury-concierge, luxury-lifestyle-concierge, luxury-travel-concierge. These hold every head term.</li>
+      <li><strong>Conversion layer:</strong> membership, become-a-member, about/our-founder, press, contact.</li>
+      <li><strong>Citable layer:</strong> Voyage magazine (wine, fine dining, interiors, beauty, wellness, yachting), destination pages (luxury-hotels/miami, michelin-star-restaurants/london, private-luxury-villas/sicily, private-island-rental/bahamas).</li>
+      <li><strong>Product layer:</strong> experiences.siennacharles.com (Antarctica, Bordeaux, Paris Olympics, Play Augusta, F1 Vegas Paddock, Jiro privatised, Bhutan by helicopter).</li>
+      <li>Behind Cloudflare, so crawlers (ours included) get a 403; robots blocks /blog. No city pages.</li>
+    </ul></div>
+    <div class="card"><h3><span class="pill kc">KC</span> 33 URLs, two layers and a gap</h3><ul>
+      <li><strong>City layer (11):</strong> London, New York, LA, Miami, Dallas, Palm Beach, Boston, Dubai, Singapore, Amsterdam, Lisbon. 520–730 words each, no FAQ, no LocalBusiness or Service schema, only nav links pointing in, no cross-links between cities or to venues.</li>
+      <li><strong>Access layer (9):</strong> venue pages with a "we are not the venue" disclaimer and no link back to the city page or membership.</li>
+      <li><strong>Missing:</strong> the generic service layer (lifestyle, VIP, corporate, family office), About and founder pages (/about is a 404), press, reviews, comparison, membership explainer. One blog post (pricing).</li>
+      <li>Technical: clean 301s from the old flat URLs; London meta description is broken ("Tel: +44 (0) 203 6275 769Find us on Google"); travel page has no meta description; GTM and Crisp chat only, no CRM pixel, no LinkedIn Insight tag, no conversion event on the application form.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">08 · Global scope: where the demand actually is</div>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Market</th><th>Evidence (monthly searches)</th><th>KC today</th><th>Call</th></tr></thead>
+    <tbody>
+      <tr><td>US generic</td><td>luxury concierge 600 · luxury travel concierge 600 · luxury concierge service 500 · private concierge 400 · lifestyle concierge 350 · corporate concierge 300</td><td>Not targeted</td><td><span class="pill good">Priority 1</span></td></tr>
+      <tr><td>UK / London</td><td>luxury concierge 350 · luxury concierge service 350 · private concierge 250 · concierge service london 200 · luxury concierge london 150</td><td>#5 on London terms, absent on generic</td><td><span class="pill good">Priority 1</span></td></tr>
+      <tr><td>Dubai (AE)</td><td>luxury concierge dubai 150 in AE (+50 GB, +30 US) · concierge service dubai 70 AE · bare "luxury concierge" 100 AE</td><td>Page live Jul 2026, no rankings yet</td><td><span class="pill good">Strengthen</span></td></tr>
+      <tr><td>Singapore (SG)</td><td>concierge service singapore 100 SG</td><td>Page live Jul 2026, no rankings</td><td><span class="pill good">Strengthen</span></td></tr>
+      <tr><td>Paris / Monaco / Riviera</td><td>luxury concierge paris 60 US + 50 GB + 70 FR · private concierge paris 50 GB · monaco 50/40 · cannes 50/40 · courchevel 10</td><td>No pages</td><td><span class="pill good">New pages</span></td></tr>
+      <tr><td>Greek islands</td><td>luxury concierge mykonos 90 US + 70 GB · vip concierge mykonos 70 GB · mykonos event planning concierge 60</td><td>No page</td><td><span class="pill good">New page</span></td></tr>
+      <tr><td>Switzerland / Italy</td><td>"luxury travel concierge" 150 CH · bare "luxury concierge" 600 IT (equal to the US)</td><td>No pages</td><td><span class="pill warn">Investigate</span></td></tr>
+      <tr><td>US resorts</td><td>aspen luxury concierge 150 (a competitor brand) · las vegas 30 · hamptons, palm beach, boston, dallas ~0–20</td><td>Dallas/Boston/Palm Beach live</td><td><span class="pill warn">Aspen only</span></td></tr>
+      <tr><td>Amsterdam, Lisbon</td><td>0 measurable demand in NL/PT/GB/US</td><td>Pages live</td><td><span class="pill bad">Stop expanding here</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">City terms are small everywhere; the location programme worked because it also captured generic-plus-city phrasing ("concierge services los angeles", "lifestyle concierge services"). The next tranche should pick cities buyers search, not cities KC happens to serve.</p>
+</section>
+
+<section>
+  <div class="eyebrow">09 · Sectors nobody owns</div>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Service line</th><th>Demand</th><th>Incumbent</th><th>KC page</th></tr></thead>
+    <tbody>
+      <tr><td>Corporate / executive</td><td>corporate concierge services 300 US · corporate concierge 300 US / 200 GB · executive concierge 100</td><td>None; KC's NY page already #4</td><td>/corporate-concierge</td></tr>
+      <tr><td>Family office</td><td>family office concierge services 150 US at $9 CPC · lifestyle management company 100 US/GB</td><td>None</td><td>/family-office-concierge</td></tr>
+      <tr><td>VIP / sport &amp; entertainment</td><td>vip concierge 400 US / 100 GB · vip concierge service 100–150 · celebrity concierge 60 GB</td><td>SC #1 on vip concierge service</td><td>/vip-concierge, ties to KC Sport &amp; Entertainment Ltd (Mar 2026)</td></tr>
+      <tr><td>Yacht / jet</td><td>yacht concierge services 200 US / 100 GB · private jet concierge services 150 US</td><td>Charter brokers</td><td>Access-style pages under /access</td></tr>
+      <tr><td>Relocation</td><td>relocation concierge 150 US at $9 CPC / 70 GB · relocation concierge services 100 US / 60 GB</td><td>None</td><td>/relocation-concierge plus a section on London, Dubai, Miami</td></tr>
+      <tr><td>Informational / AI</td><td>what is concierge service 1,900 · how much does 24/7 luxury concierge service cost? 40 · how do I choose a premium concierge membership? 30 · quintessentially concierge cost 70 GB</td><td>Listicles and Quora</td><td>Guide hub: what a luxury concierge does, what it costs, how to choose, KC vs Quintessentially vs SC</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">10 · What one member is worth, and the size of the prize</div>
+  <div class="kv">
+    <dt>Published price</dt><dd>$55,000 a year + $25,000 joining fee (KC pricing page). Elite tier reported at £100,000. NYT (Oct 2025): about 120 members.</dd>
+    <dt>First-year value</dt><dd>~$80,000 ≈ £60,000 per new member, before third-party spend. Multi-year retention is the upside; the pricing page's own FAQ mentions a renewal rate, which we should get.</dd>
+    <dt>Assumed close rate</dt><dd>1 in 5 qualified applications become members (conservative; KC screens applicants, so quality matters more than volume).</dd>
+  </div>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Scenario</th><th class="num">Extra qualified applications / month</th><th>Close rate</th><th class="num">New members / year</th><th class="num">First-year revenue</th></tr></thead>
+    <tbody>
+      <tr><td>Conservative</td><td class="num">1</td><td>1 in 5</td><td class="num">2–3</td><td class="num">£120k–£180k</td></tr>
+      <tr><td>Realistic</td><td class="num">2</td><td>1 in 4</td><td class="num">6</td><td class="num">£360k</td></tr>
+      <tr><td>Stretch</td><td class="num">4</td><td>1 in 3</td><td class="num">16</td><td class="num">£960k</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Even the conservative case clears a £4,500-a-month programme several times over. Capacity caveat: the 4:1 manager ratio means growth also means hiring, which is the client's decision and a good discovery question. Replace these assumptions with KC's real application and acceptance numbers before the meeting.</p>
+</section>
+
+<section>
+  <div class="eyebrow">11 · The pitch: six service lines, one content spine</div>
+  <p>Everything below runs off the same calendar of themes (who we are, who we serve, how we charge, what access means in each city), so the marginal cost of each extra line is low. Lead with the two that fix the "outranked" story, then attach the rest.</p>
+  <div class="steps">
+    <div class="step"><h3>SEO expansion: the generic layer and the next markets</h3><p>Rebuild /locations as the global "luxury concierge service" hub; rewrite the travel page; add lifestyle, VIP, corporate, family office and relocation pages; new city pages for Paris, Monaco, Mykonos, Cannes, Aspen, Geneva/Zurich; strengthen Dubai and Singapore with local links. Fix the foundations first (meta, schema, cross-links, /about). No URL changes.</p><div class="tags"><span class="pill kc">closes the US head-term gap</span><span class="pill good">existing retainer, expanded</span></div></div>
+    <div class="step"><h3>AI visibility programme</h3><p>Entity set: about + founder (Person schema, Wikipedia, press), who we serve, how membership works, pricing (add FAQPage schema), press page, reviews page, an honest KC vs Quintessentially vs Sienna Charles comparison. Claim the Google Business Profile, fix the category, run a review drive. Monthly prompt panel across ChatGPT, Gemini, Perplexity and Google AI Mode, US and UK, reported alongside GSC.</p><div class="tags"><span class="pill kc">SC cited 2x today</span><span class="pill good">new line</span></div></div>
+    <div class="step"><h3>On-site link magnets (alongside their PR specialist)</h3><p>Grow /access from 9 to 25–30 venues across London, New York, Miami, Dubai and Paris; a yearly "most exclusive members' clubs" index; a concierge membership cost benchmark (KC vs Quintessentially vs SC vs Velocity Black). These give the PR specialist assets to place and feed the listicles AI answers draw on.</p><div class="tags"><span class="pill good">complements, does not compete with, their PR</span></div></div>
+    <div class="step"><h3>LinkedIn (strategy in-house, production outsourced)</h3><p>Company page two posts a week from the same content spine; founder-led track for Stuart McNeill once a week on what UHNW clients actually ask for. Install the LinkedIn Insight tag first. Target 4.7k → 12k followers in 12 months. Price to cover an outsourced writer/designer plus our planning and reporting.</p><div class="tags"><span class="pill warn">client is worried about this one</span></div></div>
+    <div class="step"><h3>Paid search (outsourced management)</h3><p>Exact/phrase on the ten US head terms plus London terms and brand defence; $1.30–$3.00 CPCs; roughly $1.5–2.5k media a month. Landing pages are the rebuilt hub and service pages. Only after conversion tracking exists.</p><div class="tags"><span class="pill good">SC already bids on Quintessentially</span></div></div>
+    <div class="step"><h3>CRM and pipeline</h3><p>Route the application form into HubSpot Starter or Pipedrive with UTM and landing-page capture, stages from applied to accepted, automated acknowledgement, monthly source report; connect GA4 form events. Without this nothing above can be attributed and the size of prize stays an estimate.</p><div class="tags"><span class="pill good">prerequisite for paid and LinkedIn</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">12 · What we need from KC</div>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Source</th><th>Ask</th><th>Why</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>Search Console</td><td>Queries and Pages exports, 16 months, plus the cannibalisation report</td><td>Real impressions and CTR per city page; confirms the Jan–Jul growth and the near-miss pages</td><td><span class="pill bad">Critical</span></td></tr>
+      <tr><td>GA4</td><td>Sessions and form submissions by source and landing page since Jan 2025</td><td>Turns traffic into applications; today only GTM is present</td><td><span class="pill bad">Critical</span></td></tr>
+      <tr><td>Applications</td><td>Monthly applications, source if known, acceptance rate, average first-year value, renewal rate</td><td>Replaces our size-of-prize assumptions with theirs</td><td><span class="pill bad">Critical</span></td></tr>
+      <tr><td>Google Business Profile</td><td>Who owns the London listing (Google shows it as unclaimed); manager access; any US listings</td><td>Local pack on the London terms; reviews are an AI ingredient</td><td><span class="pill warn">High</span></td></tr>
+      <tr><td>LinkedIn</td><td>Page admin analytics; whether Stuart's profile is in scope</td><td>Baseline for the LinkedIn line</td><td><span class="pill warn">High</span></td></tr>
+      <tr><td>PR specialist</td><td>Coverage list with URLs for the last 24 months and the pipeline</td><td>We build assets around their placements, not against them</td><td><span class="pill warn">High</span></td></tr>
+      <tr><td>Pipeline today</td><td>How applications are received and followed up; any CRM licence</td><td>Scopes the CRM build</td><td>Medium</td></tr>
+      <tr><td>New entities</td><td>Purpose of Knightsbridge Circle Sport &amp; Entertainment Ltd (Mar 2026) and Knightsbridge Circle Group Ltd (Jul 2026); any new site planned</td><td>Avoid a second domain splitting authority</td><td>Medium</td></tr>
+      <tr><td>Proof</td><td>Usable testimonials, press quotes, anonymised member stories</td><td>Content for about, press and reviews pages</td><td>Medium</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">13 · Discovery questions for the call</div>
+  <ul>
+    <li>Where did "we are being outranked by Sienna Charles" come from: a member, a prospect, or a Google search? Which term, which market?</li>
+    <li>How many applications arrive in a typical month, how many are accepted, and what is the renewal rate the pricing page alludes to?</li>
+    <li>With a 4:1 manager ratio and about 120 members, how many new members could you actually take on in the next 12 months?</li>
+    <li>Which markets matter commercially next year: is Dubai or Singapore a membership target or a service promise to existing members?</li>
+    <li>What is the Sport &amp; Entertainment company for, and will it need its own web presence?</li>
+    <li>Who owns the Google listing and the LinkedIn page today, and would Stuart put an hour a week into founder-led content?</li>
+    <li>What has the PR specialist secured in the last year, and would they welcome linkable assets from us?</li>
+    <li>How are applications tracked today, and who follows them up?</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow">14 · Risks and open items</div>
+  <ul>
+    <li><strong>Consolidation in progress.</strong> The July URL move is still settling; August traffic dipped 30%. Any further slug changes, redesigns or redirects reset the clock. Content, links and schema only.</li>
+    <li><strong>Sienna Charles is a US brand with a US founder-celebrity.</strong> Parity on brand search (600 vs 70) is a multi-year PR job, not an SEO one. Pitch the winnable layer (head terms, AI ingredients, city dominance), not brand-volume parity.</li>
+    <li><strong>AI Overview text could not be captured</strong> for the head terms (Google returned empty overviews to the follow-up call). Ahrefs Brand Radar is not on the plan. Run the prompt panel by hand before the meeting so the AI slide carries live examples.</li>
+    <li><strong>Sienna Charles is Cloudflare-protected</strong>, so page-level on-page findings for SC come from Ahrefs and Google rather than a crawl.</li>
+    <li><strong>Capacity.</strong> Founder time for LinkedIn and entity content is the constraint most likely to stall delivery. Scope it explicitly.</li>
+    <li><strong>Reputation landmine on their side, not ours:</strong> SC's name search surfaces Glassdoor, Indeed and Reddit employee complaints and a "lawsuit" related search. Useful context; do not use it in the pitch.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow">15 · Sources</div>
+  <ul style="font-size:13px">
+    <li>Ahrefs Site Explorer (metrics, metrics history, organic keywords GB/US, top pages, referring domains, organic competitors, AI responses count), Keywords Explorer (overview GB/US, matching terms, volume by country), 1 Sep 2026 data.</li>
+    <li>SERPAPI Google desktop results, 2 Sep 2026: US and UK head terms, brand and review queries, Google Maps listings.</li>
+    <li>Live crawl of all 33 knightsbridgecircle.com sitemap URLs and redirect sweep of the legacy flat URLs, 2 Sep 2026.</li>
+    <li>LinkedIn company pages for both brands; Jaclyn Sienna India profile; Stuart McNeill profile (blocked, HTTP 999).</li>
+    <li>Companies House: Knightsbridge Circle Ltd 08161263 (officers, filing history), plus the 2026 Group and Sport &amp; Entertainment entities.</li>
+    <li>Press: Forbes (Apr 2024), NYT DealBook (Oct 2025), Tatler (Feb 2026), JustLuxe (Jul 2026), The Chic Icon (Apr 2026), Hollywood Reporter (Oct 2021), The Times (Dec 2024).</li>
+  </ul>
+</section>
+</div>
+
+<script>
+(function(){
+  var m=["Sep 24","Oct","Nov","Dec","Jan 25","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep 25","Oct","Nov","Dec","Jan 26","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep 26"];
+  var kc=[50,64,70,90,89,79,80,100,96,87,78,76,66,124,88,113,272,351,614,1375,1985,2161,3262,2261,2041];
+  var sc=[3741,2907,2960,2916,2783,2806,2335,1949,2059,2129,2347,2577,2411,2559,2485,2735,3167,3156,2730,2656,2630,2523,2385,2190,2035];
+  var svg=document.getElementById('hist'); if(!svg) return;
+  var W=900,H=300,L=56,R=16,T=18,B=40,max=4000;
+  var x=function(i){return L+(W-L-R)*i/(m.length-1)}, y=function(v){return T+(H-T-B)*(1-v/max)};
+  var ns='http://www.w3.org/2000/svg', out='';
+  var cs=getComputedStyle(document.documentElement);
+  var ink3=cs.getPropertyValue('--ink-3').trim(), rule=cs.getPropertyValue('--rule').trim(), kcc=cs.getPropertyValue('--kc').trim(), scc=cs.getPropertyValue('--sc').trim();
+  [0,1000,2000,3000,4000].forEach(function(v){ out+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="'+rule+'" stroke-width="1"/><text x="'+(L-8)+'" y="'+(y(v)+4)+'" font-size="11" text-anchor="end" fill="'+ink3+'" font-family="IBM Plex Mono,monospace">'+v.toLocaleString()+'</text>'; });
+  m.forEach(function(lab,i){ if(i%4===0||i===m.length-1) out+='<text x="'+x(i)+'" y="'+(H-14)+'" font-size="11" text-anchor="middle" fill="'+ink3+'" font-family="IBM Plex Mono,monospace">'+lab+'</text>'; });
+  function path(a){return a.map(function(v,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)}).join(' ')}
+  out+='<path d="'+path(sc)+'" fill="none" stroke="'+scc+'" stroke-width="2.5" stroke-linejoin="round"/>';
+  out+='<path d="'+path(kc)+'" fill="none" stroke="'+kcc+'" stroke-width="2.5" stroke-linejoin="round"/>';
+  out+='<circle cx="'+x(22)+'" cy="'+y(3262)+'" r="4" fill="'+kcc+'"/><text x="'+(x(22)-8)+'" y="'+(y(3262)-10)+'" font-size="11" text-anchor="end" fill="'+kcc+'" font-family="IBM Plex Mono,monospace">3,262 Jul 26</text>';
+  out+='<circle cx="'+x(0)+'" cy="'+y(3741)+'" r="4" fill="'+scc+'"/><text x="'+(x(0)+8)+'" y="'+(y(3741)-8)+'" font-size="11" fill="'+scc+'" font-family="IBM Plex Mono,monospace">3,741</text>';
+  out+='<circle cx="'+x(24)+'" cy="'+y(2041)+'" r="4" fill="'+kcc+'"/><circle cx="'+x(24)+'" cy="'+y(2035)+'" r="4" fill="'+scc+'"/>';
+  out+='<text x="'+(x(24)-8)+'" y="'+(y(2041)+22)+'" font-size="11" text-anchor="end" fill="'+ink3+'" font-family="IBM Plex Mono,monospace">2,041 vs 2,035</text>';
+  svg.innerHTML=out;
+})();
+</script>
