@@ -1,0 +1,67 @@
+company,domain,sector_group,town,member_adjacency,dr,organic_visits_mo_gb,organic_keywords,top3_keywords,notes
+Tailor Made Technologies,tmtech.co.uk,MSP,Whiteley,Matt Brown (IT Squad),35,13,6,3,Inc. 2000; ISO 9001+27001; PRIORITY 1
+JPS Fire & Security,jpsfire.com,Fire & security,Chandler's Ford,Benfield sector via Donna,2.2,0,0,0,Est. 1994; BAFE/NSI; PRIORITY 2
+RJC Mechanical,rjcme.com,M&E,Fareham,Declan Rose / David Bone,4.7,0,0,0,50 vehicles; MoD clients; PRIORITY 3
+ACG Contractors,acgcontractors.co.uk,Construction,Southampton,Karol Paruk,0,0,0,0,National client roster; PRIORITY 4
+R.K. Marine,rkmarine.co.uk,Marine,Swanwick/Warsash,Marine cluster,10,53,3,1,"50+ yrs, two yards, dated site; PRIORITY 5"
+Itchen Marine Towage,itchenmarinetowage.co.uk,Marine,Southampton,Marine cluster,3.1,0,0,0,80 yrs; very dated Wix site; PRIORITY 6
+CCL Cleaning Group,cclcleaninggroup.co.uk,Facilities,Woolston,Facilities,3.1,22,4,2,Est. 1976; council/NHS contracts; PRIORITY 7
+Landau (UK),landauuk.com,Marine,Woolston/Swanwick,Marine cluster,10,15,4,2,Est. 1995; defence+leisure; PRIORITY 8
+Greenfield Insurance,greenfieldinsurance.co.uk,Brokers,Segensworth,Damien's trade (knowability only),12,17,21,9,Est. 1989 family broker; PRIORITY 9
+Aura Technology,auratechnology.com,MSP,Southampton,Matt Brown (IT Squad),29,40,13,5,Strategic MSP; PRIORITY 10
+Studio Four Architects,studiofourarchitects.com,Architects,Romsey,Ranjeet Shahi (RS Studio),16,23,4,2,20+ staff RIBA; PRIORITY 11
+Wilkinson Precision,wilkinsonprecision.co.uk,Manufacturing,Hedge End,Industrial estates,2.3,0,0,0,Site throws server error; PRIORITY 12
+Aztec Marine,aztecmarine.co.uk,Marine,Hamble Point,Marine cluster,9,0,0,0,OEM approvals; older site
+Lauren Marine,laurenmarine.co.uk,Marine,Woolston,Marine cluster,13,2,2,0,Family yard; dated site
+Hamble Yacht Services,hambleyachtservices.co.uk,Marine,Hamble,Marine cluster,25,249,17,2,Major yard; some presence
+Desty Marine,destymarine.com,Marine,Hamble Point,Marine cluster,2,24,8,3,Refit/restoration; approved yards
+Hudson Marine Electronics,hudsonmarine.co.uk,Marine,Hamble,Marine cluster,16,939,264,63,Already visible
+Maritime Yacht Services,maritimeyachtservices.co.uk,Marine,Hamble,Marine cluster,8,52,3,2,
+Benham Precision,benhamprecisionengineering.co.uk,Manufacturing,Totton,Industrial estates,4.5,1,2,2,~40 yrs; aerospace/defence CNC
+Penta Precision,pentaprecision.co.uk,Manufacturing,Portchester,Industrial estates,15,383,91,30,Already investing in search
+Instant Fabrications,instantfabrications.co.uk,Manufacturing,Eastleigh,Industrial estates,0,0,0,0,Est. 1985
+F&M Engineering,fandmengineering.co.uk,Manufacturing,Southampton,Industrial estates,0,0,0,0,Site failed to render
+Folland Aerotech,follandaerotech.com,Aviation,Park Gate,,0.6,0,0,0,ITAR-registered
+Bournemouth Avionics,bavionics.co.uk,Aviation,Solent Airport,,14,335,62,13,
+Southern Solutions,southernsolutions.co.uk,MSP,Whiteley,Matt Brown (IT Squad),23,191,7,2,
+Century IT Services,century-it.co.uk,MSP,Totton,Matt Brown (IT Squad),2,91,10,2,
+Inside Technology,inside.co.uk,MSP,Southampton,Matt Brown (IT Squad),7,1,1,0,Smaller team
+Yo Telecom,yotelecom.co.uk,Telecoms,Southampton,Matt Brown (IT Squad),32,522,82,21,Already visible
+WOW Telecom,wowtelecom.co.uk,Telecoms,Romsey,Matt Brown (IT Squad),0,0,0,0,
+HBTel,hbtel.co.uk,Telecoms,Ampfield,Matt Brown (IT Squad),2.5,3,2,0,Harwood Brittain Group
+Chatter Telecommunications,chattertelecom.co.uk,Telecoms,Winchester,Matt Brown (IT Squad),1,0,1,0,
+Complete Fire & Security,complete-security.co.uk,Fire & security,Holbury,Benfield sector via Donna,1.1,61,3,2,Founded 1989
+The Alarming Company,alarming.co.uk,Fire & security,Fareham,Benfield sector via Donna,3.9,21,6,0,Public-sector case studies
+Phoenix Office Cleaning,phoenixcleaning.co.uk,Facilities,Chandler's Ford,,0.1,0,0,0,
+Cleaning Operations UK,cleaningoperationsuk.com,Facilities,Park Gate,,19,0,0,0,
+Lion CCL,lionccl.co.uk,Facilities,Southampton,,1.7,0,1,1,
+Reside Construction,resideconstruction.co.uk,Construction,Romsey,Karol Paruk,2.2,38,8,1,
+Durabilis,durabilis.co.uk,Construction,Southampton,Karol Paruk,8,17,2,1,Est. 1996; FMB
+Amiri Construction,amirigroup.co.uk,Construction,Fareham,Karol Paruk,23,74,12,2,Upper end of size band
+CEI Electrical Services,cei.uk.net,M&E,Hedge End,Declan Rose / David Bone,89,15,2,1,DR inflated by uk.net artefact; effectively invisible
+SMH Plumbing & Heating,smhplumbingandheating.co.uk,M&E,Southampton,Declan Rose / David Bone,0.4,569,33,9,Performing despite DR 0.4
+Install Projects,installprojects.co.uk,M&E,Southampton,Declan Rose / David Bone,0.9,0,0,0,Site blocks crawlers
+MJG Mechanical & Electrical,mjgservices.co.uk,M&E,Totton,Declan Rose / David Bone,3.5,0,0,0,Smaller - reserve
+Hambrooks,hambrooks.co.uk,Grounds,Curdridge,Karol Paruk,18,122,35,11,50+ yrs; most-awarded claim
+Solent Garden Services,solentgardenservices.co.uk,Grounds,Hamble,Karol Paruk,14,412,41,14,
+Nightingale Ground Care,nightingalegroundcare.co.uk,Grounds,Lyndhurst,Karol Paruk,6,0,0,0,
+Highbridge Civil Engineering,highbridgecivils.co.uk,Civils,Eastleigh,Karol Paruk,0,0,0,0,
+Farwells,farwells.co.uk,Plant hire,New Forest,Karol Paruk,3.2,1312,92,35,Already visible
+HGP Architects,hgp-architects.co.uk,Architects,Fareham,Ranjeet Shahi (RS Studio),29,107,44,8,60+ staff; upper end of band
+AWA Engineers,awaengineers.com,Engineers,Romsey,Ranjeet Shahi (RS Studio),17,304,79,9,
+Trinity Rose Surveyors,trinity-rose.co.uk,Surveyors,Chandler's Ford,Ranjeet Shahi (RS Studio),25,1455,265,108,Already visible
+Days Chartered Surveyors,dayscharteredsurveyors-fareham.co.uk,Surveyors,Fareham,Ranjeet Shahi (RS Studio),0.4,0,0,0,
+HWB Chartered Accountants,hwb-accountants.com,Accountancy,Chandler's Ford,Paul Underwood (Morris Crocker),27,724,148,39,~72 staff; last sizeable independent; already visible-ish
+Arthur Daniels & Co,arthurdaniels.co.uk,Accountancy,Fareham,Paul Underwood (Morris Crocker),1.8,68,4,3,Est. 1928; size unverified
+Paris Smith,parissmith.co.uk,Law,Southampton,Neil Beazley,45,3213,369,86,Above size band; already visible
+Dutton Gregory,duttongregory.co.uk,Law,Southampton,Neil Beazley,44,2459,253,49,Already visible
+Eric Robinson,ericrobinson.co.uk,Law,Hedge End,Neil Beazley,36,12608,1528,496,Already visible - strongest in region
+Shentons Solicitors,shentons.co.uk,Law,Winchester,Neil Beazley,10,117,14,2,~10 solicitors
+Bells Solicitors,bells-romsey-solicitors.co.uk,Law,Romsey,Neil Beazley,11,86,4,4,Romsey Chamber member
+Lawdit Solicitors,lawdit.co.uk,Law,Southampton,Neil Beazley,38,784,138,29,Niche IP; already visible
+CMA Recruitment,cmarecruitment.co.uk,Recruitment,Southampton,Karon Keymist-Folkes (Key HR),11,1195,82,15,Already visible
+Butler Ross,butlerross.co.uk,Recruitment,Winchester,Karon Keymist-Folkes (Key HR),2,70,8,1,~£2m; niche procurement
+Latitude Recruitment,latituderecruitment.co.uk,Recruitment,Hedge End,Karon Keymist-Folkes (Key HR),4.1,0,0,0,
+Norris & Fisher,norrisandfisher.com,Brokers,Southampton,Damien Maidment (trade),39,224,11,4,Charity/community niche
+Pelican Insured,pelicaninsured.co.uk,Brokers,Swanwick,Damien Maidment (trade) + marine cluster,8,6,2,0,Marine broker; bridges clusters
+AMFA,assetmanagement.co.uk,IFA,West End,Lorna Illingsworth (PIL),4.9,253,16,6,36+ yrs; 11 advisers
