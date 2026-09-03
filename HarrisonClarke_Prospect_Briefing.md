@@ -1,6 +1,6 @@
 # Harrison Clarke — Prospect Briefing
 
-*Prepared 7 August 2026. Research is a desk exercise from public sources plus Ahrefs and live SERP checks; it is not a full visibility audit.*
+*Prepared 7 August 2026; updated 3 September 2026 with client GSC data (6 months), service pricing and priorities from Tim Clarke, and the full keyword universe research (see HarrisonClarke_Keyword_Universe.xlsx). Meeting: tomorrow, with Tim Clarke, Faye Williams and Holly (marketing assistant).*
 
 ## 1. Snapshot
 
@@ -50,7 +50,7 @@ Reputation is a real asset: 5.0 on Google (38 reviews, Southampton office), 109 
 - Lauren Harrison Clarke (co-founder, presumably family) resigned as director and ceased as PSC in August 2017 — old history, no current bearing.
 - Director cross-check: no other current appointments found for either director in a Companies House officer search. This is their sole business.
 - **Intermediary risk: low structurally** — an owner-managed firm where the 75% shareholder is the MD. The open question is purely access: no existing conversation with Tim is on record. If contact starts elsewhere (office manager, Faye), get Tim into the second conversation.
-- Delivery contact: a general marketing assistant (not an SEO specialist) runs marketing in-house, produces the blog content (They Ask, You Answer methodology) and operates the Hike SEO tool. Real content capacity exists — the constraint is targeting, not production. This person will be in the meeting; the engagement must be framed as giving them better inputs (targets, briefs) they execute and get credit for.
+- Delivery contact: **Holly**, marketing assistant — runs social media and SEO, produces the blog content (They Ask, You Answer methodology) and operates the Hike SEO tool. Active and engaged, not a native SEO specialist. Real content capacity exists — the constraint is targeting, not production. She is in tomorrow's meeting; the engagement must be framed as giving her better inputs (targets, briefs) she executes and gets credit for, plus the CRM attribution that proves her impact.
 
 ## 5. Financial picture
 
@@ -102,32 +102,50 @@ Reading:
 
 ## 7. What a new customer is worth to them
 
-Two very different customer types; keep them separate.
+*Now on the client's own figures (Tim Clarke, Sep 2026) — these replace the earlier sector estimates.*
 
-- **Residential survey client**: £500–£1,500 per instruction (the Checkatrade rich snippet for Southampton surveying shows £633–£1,383; RICS Level 3 surveys on larger houses run higher). One-off purchase, minimal repeat, but a steady referral engine. Assume ~£850 average.
-- **Commercial/professional instruction**: party wall awards £1,500–£4,000+; schedules of dilapidations, commercial building surveys and contract administration typically £3k–£15k per instruction, with property investors, landlords and managing agents instructing repeatedly. Assume £5k–£10k first-year value for a new commercial client relationship, held conservatively.
+| Service | Fee | Website enquiry close rate |
+|---|---|---|
+| Single defect report | £500–£1,250 | 1 in 3 |
+| Level 2 survey | £600–£900 | 1 in 5 (L2/L3 combined) |
+| Level 3 survey | £800–£2,000 | 1 in 5 (L2/L3 combined) |
+| Party wall | consultation £100; awards ~£1,350 average | **1 in 2** |
+| Dilapidations — tenant side | £2,500 | — |
+| Dilapidations — landlord side | £1,500–£4,000, plus £2,000–£4,000 if negotiations | — |
+| Commercial building survey | £2,000–£5,000 (AOV £2,500) | — |
+| Expert witness | preliminary £1,250; full CPR report £4,000 (up to £50,000 complex) | — |
+| Project services | 10–12% of project fee (% tapers as project grows) | — |
 
-**Conversion chain** (close rates for inbound, high-intent enquiries held conservative; surveying enquiries close warmer than most B2B because the buyer has often already decided to buy a survey):
+Three things jump out of these numbers:
 
-| Scenario | Extra enquiries/month | Mix and close | New customers/year | First-12-month revenue impact |
-|---|---|---|---|---|
-| Conservative | 4 residential + 1 commercial | 1 in 3 res, 1 in 4 comm | ~16 res + 3 comm | ~£14k + ~£20k ≈ **£34k** |
-| Realistic | 8 residential + 2 commercial | 1 in 3 each | ~32 res + 8 comm | ~£27k + ~£55k ≈ **£82k** |
-| Stretch | 12 residential + 4 commercial | 1 in 2 res, 1 in 3 comm | ~72 res + 16 comm | ~£61k + ~£120k ≈ **£181k** |
+1. **Party wall converts 1 in 2** — double any other service — almost certainly because their content library has pre-sold the visitor. This is the strongest possible evidence for the "point the content engine at the money" thesis: where the content is deep, conversion doubles. Every extra party wall enquiry is worth ~£675 (½ × £1,350).
+2. **Expert witness has a Tim-quantified gap**: he believes £300k/year is available in Southampton alone and they're at roughly half. The missing £150k is the single biggest named prize, and the EW SERP is beatable regional firms.
+3. **Project services is the biggest strategic priority but the smallest search market** (~17 queries in their GSC; modest volumes in Ahrefs, much of it jobs/course intent). SEO supports this line; it cannot lead it. Saying so in the meeting builds credibility.
 
-(Commercial values use £6.5k–£7.5k average first-year value; residential uses £850 per job. Commercial clients who stay — investors, agents, landlords — are worth multiples of first-year value over time.)
+**Conversion chain, restated on their close rates:**
 
-Against a £1,500–£2,500/month retainer (£18k–£30k/year), the conservative case sits at roughly 1–2x and the realistic case at roughly 3x. The 3x hurdle is met only if commercial enquiries are part of the story — which is exactly why the proposal should lead with London party wall and commercial/dilapidations visibility, not more residential Southampton work they already win.
+| Scenario | What changes | Revenue impact/year |
+|---|---|---|
+| Conservative | +6 residential/defect enquiries/mo (cost pages + local push) + 1 dilaps instruction/quarter | ~£16k residential + ~£12k dilaps ≈ **£28k** |
+| Realistic | +12 res/defect + 4 party wall enquiries/mo; 1 London dilaps instruction/mo; EW gap ¼ closed | ~£31k + £32k + £36k + £37k ≈ **£135k** |
+| Stretch | Above plus commercial surveys ranking (KD 2) and EW gap ½ closed | **£200k+** |
+
+(Residential at 1-in-5 close, ~£1,100 avg L2/L3 mix; party wall at 1-in-2 close, £1,350 avg; London dilaps at ~£3k avg per instruction; EW per Tim's own £150k gap. Every assumption is theirs, not ours.)
+
+Against a £1,500–£2,500/month retainer (£18k–£30k/year), the realistic case is 4–7x. The case no longer depends on estimates — it depends only on execution.
 
 ## 8. Size of the prize
 
-Three prizes, in order of value:
+*Re-ranked with the GSC evidence and Tim's revenue figures. Full keyword detail in HarrisonClarke_Keyword_Universe.xlsx.*
 
-1. **London party wall and dilapidations.** The London office currently earns nothing from search. "Party wall surveyor london" and its borough and near-neighbour variants are a market their credentials (MFPWS director, RICS regulation) entitle them to compete in. Even a modest foothold — 2–3 commercial instructions a month from London — is worth £100k+ a year at their ticket sizes. Competition is real but fragmented; several page-one firms are small practices, not giants.
-2. **Commercial service lines nationally.** They already rank 8 for "schedule of dilapidations" (250/mo) with a thin service page. Proper service pages plus their existing topical authority is a realistic route to page-one across dilapidations, schedules of condition and commercial survey terms.
-3. **Defend and convert the existing asset.** ~40% of their organic traffic has evaporated since April 2026. The blog that earns their authority needs to be pointed at commercial pages (internal links, service CTAs) and made resilient to AI Overviews (the informational click is dying; the brand mention and the local pack are not). Protecting the Southampton position they already own is cheap insurance.
+1. **The survey cost pages (fastest, cheapest).** Their own GSC shows ~15,000 impressions across "house survey cost / building survey cost / level 3 survey cost / party wall surveyor cost" queries in six months, at positions 22–60, earning ~zero clicks. They follow They Ask, You Answer and never built its number-one pillar: cost content. One cost hub plus per-service cost sections converts demand they already generate. Feeds the residential lines (1-in-5 close) and party wall (1-in-2 close).
+2. **London dilapidations (Tim's named priority).** "dilapidations surveyor london": 735 impressions at position 9.8 in their own GSC — held by a blog post, with zero clicks. The live SERP above them is entirely dedicated service pages from regional firms (SHW, TD-RE, Bradley Mason, Easton Bevins) — no nationals. One service page, fed by the ranking post, competes for £1.5k–£8k instructions. Even one instruction a month is £35k–£100k/year.
+3. **Expert witness (£150k of Tim's own arithmetic).** He puts Southampton potential at £300k and current at ~half. "construction expert witness services" carries a $25 CPC — the highest-value term in the universe — and the SERP is beatable regional practices. Their CPR-35 blog content already outranks their own service page (position 9 vs 27).
+4. **The four mis-aimed money pages.** /party-wall/ (48,371 impressions, 46 clicks, pos 19.8), /commercial-building-survey/ (pos 30 while their blog guide ranks 8 on a KD-2 term), /expert-witness/ (pos 27), /schedule-of-dilapidations/ (pos 16 while thin). Retargets and internal links from the ranking guides — no new content needed to start.
+5. **Southampton near-miss cluster.** ~8,000 impressions/month of local commercial queries sitting at positions 11–19 ("building surveyors southampton" 11.9; "surveyor southampton" 13.9). Local pack already won; organic is one push from page-one across the board.
+6. **Project services — supported honestly.** The biggest business priority has the smallest search market. CA/EA/CDM page rebuilds plus Building Safety Act content catch what demand exists; the line also needs sector marketing and referrals. Saying this plainly is a credibility play.
 
-Combined realistic framing: £80k–£150k of incremental annual revenue within 18 months, weighted to commercial instructions. State it as a range with the assumptions above; their own enquiry and conversion figures should replace these at discovery.
+Combined realistic framing on their own close rates and fees: **~£135k/year incremental within 12–18 months** (see §7), with the conservative case at ~£28k and stretch above £200k.
 
 ## 9. TenTerms fit and suggested entry point
 
@@ -135,25 +153,26 @@ Fit: good, with eyes open. This is a growing, well-reviewed professional service
 
 **Suggested entry point: a defined 90-day commercial sprint at standard retainer rates (£1,500–£2,500/month).** The £450 quick-wins report was offered and ignored — do not resurrect it; they rejected the premise ("we have SEO handled"), not the price. The sprint is scoped as: commercial keyword map and per-page targets, rewritten briefs for the top 5–8 commercial/London pages (executed by their marketing person in Hike), an internal-link plan pointing the blog's authority at the money pages, and a day-90 review. The fixed horizon answers the "waste of money" objection — a project with an off-ramp that runs at retainer economics, with renewal decided from evidence.
 
-### Meeting strategy (Tim, Faye + marketing person in the room)
+### Meeting strategy (tomorrow: Tim, Faye, Holly)
 
 1. **Open with the no-fault decline.** Organic traffic is down ~40% since April 2026 and it is genuinely nobody's fault: their traffic is informational blog content, which AI Overviews now answer without a click. This validates the assistant's work, proves the research is real, and establishes that the informational click is a melting asset — so the commercial pages must start earning.
 2. **Extend their methodology rather than critique it.** They Ask, You Answer's Big 5 (cost, problems, comparisons, reviews, best-of) has been executed well for the residential survey buyer — it has never been applied to the commercial buyer. Frame the commercial gap as the unfinished second half of a strategy they already believe in.
 3. **Blame Hike's inputs, never its operator.** "Hike is doing exactly what it's been told — nobody has ever set commercial targets for it, and that's a specialist judgement call, not something it's fair to expect of a generalist running all of marketing." Evidence: the dilapidations page ranks 8 nationally by accident; Southampton commercial rankings are incidental, from unoptimised pages.
 4. **Position the engagement as a promotion for the marketing person**: they become the production engine and marketing owner; TenTerms becomes the targeting layer feeding them briefs and page-by-page keyword assignments. Better inputs, visible wins they own.
-5. **Give away two or three specifics free instead of selling a report**: the Trustpilot profile still registered to the old harrisonclarke.co domain (two-minute fix); the live "party wall surveyor london" search on Tim's phone — ten firms, no Harrison Clarke, despite Faye's MFPWS credential (this is Faye's moment; the London gap is her prize and she is the likeliest champion); one concrete Hike mis-target example.
-6. **End on the London number**: 2–3 commercial instructions a month is £100k+/year at their ticket sizes — the figure that makes £2k/month look small. Keep the "what's wrong" exhibits to two or three; spend the meeting's energy on the prize.
+5. **Give away two or three specifics free instead of selling a report**: (a) the cost-page gap in their own GSC — ~15,000 impressions on cost queries, zero clicks, and it's TAYA's own first pillar; (b) "dilapidations surveyor london" at position 9.8 on 735 impressions, held by a blog post — Tim's named priority, one service page from page one; (c) the party wall conversion stat turned into praise: content-rich party wall converts 1 in 2, double everything else — proof their content engine sells when it's pointed at a service. The Trustpilot-on-old-domain fix remains a good free gift.
+6. **The CRM/attribution thread is Holly's second win.** They have a CRM they don't feel empowered by. Propose source-to-revenue attribution (form/phone tracking → pipeline stages → won value by service line) designed *before* the content work starts. It gives Holly proof of her impact, Tim pipeline visibility, and TenTerms a revenue scoreboard — the anti-"waste of money" mechanism, built in from day one.
+7. **End on the numbers that are theirs, not ours**: £150k of expert witness gap is Tim's own arithmetic; the realistic combined case (~£135k/year, §7) is built entirely on his fees and his close rates. Keep the "what's wrong" exhibits to two or three; spend the meeting's energy on the prize.
 
-## 10. Discovery questions
+## 10. Discovery questions (updated — several earlier ones now answered by Tim's notes)
 
-1. Where does new work actually come from today — what share is Google search versus referrals and repeat clients, and does that differ between the residential and commercial sides? *(tests the revenue-impact assumptions)*
-2. What is an average party wall or dilapidations instruction worth, and how many commercial clients instruct you more than once a year? *(replaces our £5k–£10k estimate with their number)*
-3. The London office — what did you open it to win, and how is it fed with work now? *(tests the size-of-the-prize thesis)*
-4. Your organic traffic looks to have fallen about 40% since April — have you noticed it in enquiry volume, and do you know why? *(cost of doing nothing, and tests whether they watch the numbers)*
-5. Who writes the blog, and how much time a month could that person give to reviewing and approving pages? *(tests client-side capacity)*
-6. FY2025 accounts show a dip in retained profit after two strong years — was that dividends/restructuring or trading? Comfortable supporting a monthly engagement of £1,500–£2,500? *(affordability, asked in softer words)*
-7. If this went ahead, is this your decision alone, or would Faye want to see the numbers too? *(decision authority; also flushes out whether Faye is the better champion for party wall content)*
-8. Have you ever asked ChatGPT or Google's AI who the best surveyor in Southampton is? *(opens the AI visibility conversation on their phone, live)*
+1. How many enquiries a month does the website produce today, by service line? *(the one number that turns §7's scenarios into a forecast — we have close rates and fees, not volumes)*
+2. Repeat instruction: how many commercial clients (landlords, agents, investors) instruct you more than once a year? *(lifetime value multiplier on dilaps/commercial)*
+3. The London office — what's feeding it now, and who covers London jobs day to day? *(capacity behind the London pages; also who the London casework/testimonials come from)*
+4. Your organic traffic is down roughly 40% since April — has enquiry volume followed? *(cost of doing nothing; also tests whether the blog was ever producing enquiries or just traffic)*
+5. Holly — how much of your week is social vs SEO vs everything else, and what does Hike's workflow look like when you action a page? *(scopes the execution capacity the plan assumes; asked to Holly directly, as the operator)*
+6. What does the CRM currently capture about where an enquiry came from? *(entry point for the attribution build)*
+7. Project services at 10–12% of project fees — what does a typical won project look like, and where did the last three come from? *(tests whether search plays any role in that buying journey before promising it)*
+8. Expert witness at ~£150k of a £300k Southampton potential — where do current EW instructions come from (solicitors? repeat?), and would doubling enquiries actually be deliverable? *(capacity check on the biggest named prize)*
 
 ## 11. Risks and open items
 
@@ -168,6 +187,9 @@ Fit: good, with eyes open. This is a growing, well-reviewed professional service
 
 ## 12. Sources
 
+- Client GSC export, 6 months to 3 Sep 2026 (Queries, Pages, Countries, Devices) — supplied by the client
+- Service fees, close rates and growth priorities — Tim Clarke's notes, Sep 2026
+- Full keyword research: HarrisonClarke_Keyword_Universe.xlsx (Ahrefs GB pulls across 7 service lines, GSC joins, SERP validation)
 - harrisonclarke.co.uk (homepage, team, services, residential surveys, contact pages; sitemap crawl)
 - Companies House: company 08674987 overview, officers, PSC register, filing history, and full FY2024/FY2025 accounts (iXBRL); company 10541771 checked and ruled out as unrelated
 - Ahrefs: site-explorer metrics, organic keywords (GB), traffic history for harrisonclarke.co.uk and harrisonclarke.co, SERP overviews for "building survey southampton" and "party wall surveyor london"
