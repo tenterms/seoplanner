@@ -79,7 +79,21 @@ Reading:
 
 **The commercial terms that matter**: building survey Southampton / Portsmouth / Hampshire; chartered surveyor Southampton; Level 2 / Level 3 survey [town]; commercial building survey; schedule of dilapidations; party wall surveyor London; party wall surveyor [borough]; dilapidations surveyor London; expert witness building surveyor.
 
-**Where they are strong.** Southampton is largely won: number one in the Google local pack for "best chartered building surveyor southampton" (5.0, 38 reviews), third organic behind two directories, and positions 3–6 for the "surveyor(s) southampton" cluster. The blog genuinely ranks: number one for "lad" (liquidated and ascertained damages, 2,900/mo), "difference between level 2 and level 3 survey", "damp meter readings", "thermal movement cracks", and a long tail of party wall guides. Roughly 175 ranking keywords, 60 in the top three.
+**Where they are strong — verified live, Southampton-localised (3 Sep).** The *firm* queries are won at home: /party-wall/ ranks **#1** for "party wall surveyor southampton", /expert-witness/ **#1** for "expert witness surveyor southampton", the homepage #2–4 for "building surveyor / chartered surveyors / building survey / commercial building survey southampton", the dilapidations page #6, plus #1 in the local pack (5.0, 38 reviews). GSC's 11–19 average positions for these terms are UK-blended — searchers outside the localisation radius drag the average down. The blog also genuinely ranks: #1 for "lad" (2,900/mo), level 2 vs 3, damp meter readings, and a long tail of party wall guides.
+
+**The corrected thesis — they rank as a firm and for information, not for the product or the price.** Six months of non-branded GSC, split by intent per service line:
+
+| Service | Informational clicks (avg pos) | Commercial clicks (avg pos) |
+|---|---|---|
+| Party wall | 251 (15.0) | 43 (16.2) |
+| Residential surveys | 171 (25.2) | **4** from 27,682 impressions (**42.8**) |
+| Defect & damp | 256 (18.9) | ~0 |
+| Dilapidations | 28 (37.3) | **4** (35.7) |
+| Commercial surveys | 2 | **0** (22.7) |
+| Expert witness | 4 | **1** (34.8) |
+| Project services | 56 (8.1) | 0 |
+
+Even from Southampton, the product and price queries return no Harrison Clarke in the top 10: "house survey southampton", "house survey cost", "level 3 survey", "damp survey southampton". Buyers searching for a *surveyor* find them; buyers searching for a *survey* or its *cost* don't — anywhere.
 
 **Where they are absent.** London: no visibility at all for "party wall surveyor london" (the SERP is owned by specialists — Peter Barry, Anstey Horne, London Party Wall Company — plus directories), despite having a London office and a party wall specialism led by an MFPWS director. Commercial terms: only position 8 for "schedule of dilapidations"; nothing meaningful for commercial building survey or technical due diligence phrasings. Aggregators (reallymoving, ricsfirms, Checkatrade, localbuildingsurveyor) hold the top organic slots and the ad inventory for the residential terms, and competitors (Trinity Rose especially) buy ads above them.
 
@@ -142,7 +156,7 @@ Against a £1,500–£2,500/month retainer (£18k–£30k/year), the realistic c
 2. **London dilapidations (Tim's named priority).** "dilapidations surveyor london": 735 impressions at position 9.8 in their own GSC — held by a blog post, with zero clicks. The live SERP above them is entirely dedicated service pages from regional firms (SHW, TD-RE, Bradley Mason, Easton Bevins) — no nationals. One service page, fed by the ranking post, competes for £1.5k–£8k instructions. Even one instruction a month is £35k–£100k/year.
 3. **Expert witness (£150k of Tim's own arithmetic).** He puts Southampton potential at £300k and current at ~half. "construction expert witness services" carries a $25 CPC — the highest-value term in the universe — and the SERP is beatable regional practices. Their CPR-35 blog content already outranks their own service page (position 9 vs 27).
 4. **The four mis-aimed money pages.** /party-wall/ (48,371 impressions, 46 clicks, pos 19.8), /commercial-building-survey/ (pos 30 while their blog guide ranks 8 on a KD-2 term), /expert-witness/ (pos 27), /schedule-of-dilapidations/ (pos 16 while thin). Retargets and internal links from the ranking guides — no new content needed to start.
-5. **Southampton near-miss cluster.** ~8,000 impressions/month of local commercial queries sitting at positions 11–19 ("building surveyors southampton" 11.9; "surveyor southampton" 13.9). Local pack already won; organic is one push from page-one across the board.
+5. **Southampton: defend the firm terms, win the product terms.** Live localised checks (3 Sep) correct the earlier "near-miss" reading: on a Southampton-localised SERP the *firm* queries are already won — /party-wall/ #1, /expert-witness/ #1, homepage #2–4 for the surveyor terms (the GSC 11–19 averages are UK-blended). But the *product and price* queries are absent even locally: "house survey southampton", "house survey cost", "level 3 survey", "damp survey southampton" — no Harrison Clarke in the top 10. The local work is product pages and cost pages, plus the rest of Hampshire where localisation doesn't rescue them.
 6. **Project services — supported honestly.** The biggest business priority has the smallest search market. CA/EA/CDM page rebuilds plus Building Safety Act content catch what demand exists; the line also needs sector marketing and referrals. Saying this plainly is a credibility play.
 
 Combined realistic framing on their own close rates and fees: **~£135k/year incremental within 12–18 months** (see §7), with the conservative case at ~£28k and stretch above £200k.
