@@ -92,7 +92,24 @@ Filing hygiene: Fayer's filings are on time. The FY24 accounts were amended (Jun
 
 **AI answers.** Google AI Overviews appeared on the BMS, padel lighting and Loxone queries, drawing on guides, manufacturer pages and review-rich local profiles. Fayer has none of the ingredients: no consistent name-address-phone data, no service or sector pages, no guides, few third-party mentions. Two live prompts on ChatGPT or Gemini ("best commercial electrician Bournemouth", "who installs BMS in Dorset") before the meeting will take two minutes and will almost certainly not name Fayer.
 
-## 7. What a new customer is worth to them
+## 7. How large contracts are bought
+
+The first keyword pass leaned towards small jobs, because service-plus-town phrasing is how small jobs are bought. A second pass looked at how estates managers, bursars, facilities companies, main contractors and M&E consultants search. It found 280 further keywords in six clusters (workbook tab "Buyer Layer GB") and one finding that changes the plan.
+
+**Big school works are procured, not Googled.** The live results for "school rewire contractors" contain two open tender notices (bidstats and Find a Tender), a contractor case study that names its procurement framework, and the school sector pages of Leigh Electrical and Bojen. "Electrical contractors for schools hampshire" returns Hampshire County Council's own approved contractor list. Searches around the Condition Improvement Fund return only bid-writing consultants. The website's job for large contracts is to pass the check a bursar, consultant or main contractor runs before shortlisting, and to catch direct-award work below tender thresholds. Tender alerts, council lists and consultant introductions are Declan's route-to-market tasks.
+
+| Cluster | What the buyer types (GB monthly) | Finding |
+|---|---|---|
+| M&E and main-contractor channel | m&e contractors 400, mechanical and electrical contractors 200, m&e contractor hampshire 30, niceic approved contractor 700 | Dorset results are WessexME, Rentec, CEI and the consultancy Worldwise. No Fayer page speaks to consultants or main contractors. Fayer is NAPIT and must explain equivalence to NICEIC |
+| Infrastructure and upgrade works | data cabling installation 350, electrical containment 250, new electrical supply 150, commercial rewiring 90, fire alarm replacement 200 | Capital-project vocabulary, none of it on the site |
+| Maintenance contracts and compliance | electrical maintenance contractors 100, planned preventative maintenance electrical 30, electrical compliance services 70 | Dorset results are generic; Evans Electrical has the only dedicated maintenance page |
+| Schools procurement and funding | school refurbishment contractors 350, condition improvement fund 200, cif bid 100, public sector decarbonisation scheme 200, fire alarm servicing for schools 200, solar panels for schools 300, ev charging for schools 150 | Bursars search funding, compliance and outcomes. Consultants own the funding terms and specify contractors |
+| Adjacent capital services | commercial solar installers 800, commercial battery storage 700, commercial heat pump 350, ev charging infrastructure 500 | Largest adjacent demand found. Only relevant if Fayer or Syntra installs the electrical side of these |
+| Automation outcomes (Syntra) | energy monitoring 500, energy monitoring system 400, remote temperature monitoring 250, temperature monitoring system 200, legionella temperature monitoring 150, multi site business energy management 100, room occupancy sensors 150 | Demand exists under outcome words; results are sensor vendors and energy brokers with no local integrator. Pub inventory and hospitality automation still return nothing |
+
+What this adds: three credibility pages on Fayer's site (M&E and main contractors; infrastructure upgrades; maintenance contracts with a compliance calendar), two school funding guides (CIF; Salix and PSDS lighting) each offering a free electrical condition survey, three outcome pages on Syntra's site (energy monitoring and sub-metering; temperature monitoring with legionella compliance; occupancy and lighting controls), and a route-to-market list for Declan.
+
+## 8. What a new customer is worth to them
 
 Blended from the enquiry mix Declan describes (weights are assumptions, in the workbook as yellow cells):
 
@@ -113,15 +130,15 @@ Blended value per won enquiry: about GBP 44,500. Close rate assumed 1 in 5 to 1 
 
 Against a GBP 2,000 a month retainer (GBP 24,000 a year) the conservative case is roughly 9x. Even if the school weighting is halved the case clears 3x. The number to protect in the meeting is the school project value; everything else is secondary.
 
-## 8. Size of the prize
+## 9. Size of the prize
 
 Keywords are not the prize here; the regional sector gaps are. Conservative: fix the entity, claim the local pack for Bournemouth and Christchurch commercial terms, and win one school or one multi-site hospitality operator a year from search, about GBP 150k to 250k of revenue. Realistic: own the only schools, BMS and sports-court pages on the South Coast and take a share of the 2,000 to 3,000 monthly local searches across the core terms, GBP 400k to 600k. Stretch: Syntra becomes the region's automation brand with Fayer as the installation arm, and the two sites feed each other, seven figures. All three assume Declan can supply project facts, photos and client quotes; without them the plan stalls at phase 1.
 
-## 9. TenTerms fit and suggested entry point
+## 10. TenTerms fit and suggested entry point
 
 Fit is good on value and opportunity, marginal on capacity and cash. Lead with a fixed-scope 90-day foundation project rather than a retainer pitch: entity fix (Google Business Profile, NAP, schema), the seven core pages rewritten, the schools sector page and school case study, the fire/emergency-lighting and EICR pages, and the Bournemouth and Christchurch area hubs. Price it so one small commercial win covers it. Convert to a GBP 1,500 to 2,500 a month retainer from month four once the sector pages are live and GSC shows impressions. Do not propose a site rebuild or any URL changes; the current site has nothing to lose but the structure is fine.
 
-## 10. Discovery questions
+## 11. Discovery questions
 
 1. What was the school project worth, how did it come to you, and how many of those a year would change the business? (Confirms lead value and the 25% weighting.)
 2. Where has every commercial job in the last 12 months come from: BNI, main contractors, repeat, web? Has the website ever produced a commercial enquiry? (Cost of doing nothing.)
@@ -131,8 +148,10 @@ Fit is good on value and opportunity, marginal on capacity and cash. Lead with a
 6. Who can give me two hours a fortnight for project facts, photos and sign-off: you, Jodie, or the office? (Tests capacity.)
 7. If this produced one extra school-sized enquiry a quarter, what would you spend to get it, and who else needs to see the numbers before you commit? (Tests authority and budget, even though he is the PSC.)
 8. Is fayer.co.uk yours? And is Gavin Fayer still trading under the Fayer name anywhere?
+9. Does Fayer or Syntra install the electrical side of commercial solar, battery storage and heat pump projects? (Largest adjacent demand found.)
+10. Are you on Constructionline, CHAS or SafeContractor, and on any council or academy trust contractor lists? Have you ever bid through Contracts Finder? (Route to market for tendered work.)
 
-## 11. Risks and open items
+## 12. Risks and open items
 
 - **Cash cushion.** Net assets under GBP 1,000 three years running. Structure payment monthly and tie phase 2 to phase 1 results.
 - **Owner bandwidth.** Three companies incorporated or run by a 28-year-old with one administrator. Build the content-approval loop into the proposal explicitly.
@@ -142,7 +161,7 @@ Fit is good on value and opportunity, marginal on capacity and cash. Lead with a
 - **Unverified:** turnover, the school project value, whether the Syntra "inventory management / temperature control" pub offer exists as a product (no search demand found for it), fayer.co.uk ownership, Tritex's purpose.
 - **Keyword difficulty:** Ahrefs' difficulty column errored on the keyword endpoints during this research; KD in the workbook comes only from competitor organic-keyword rows. Live SERP evidence was used instead and is the more reliable guide for local terms.
 
-## 12. Sources
+## 13. Sources
 
 - fayerltd.co.uk (all 29 sitemap URLs crawled 4 Sep 2026), syntra.systems (home, commercial, case studies)
 - Companies House: FAYER LTD 11436175 (overview, officers, PSCs, filing history, FY23 and FY25 accounts), SYNTRA SYSTEMS LIMITED 16656168, TRITEX LIMITED 16623130, officer records for Declan Rose, Jodie Hoey, Gavin Fayer

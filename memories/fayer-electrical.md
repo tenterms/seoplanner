@@ -23,6 +23,11 @@
 - **Do not chase:** ev charger installation (13k, energy cos), pat testing (16k, informational - guide only), emergency lighting bare, brand x town pages (Loxone.com partner finder owns them).
 - **Local:** electrician bournemouth 400 (KD 33, Carl Ashley #5 at DR 0.6) - no Bournemouth or Christchurch page exists while 22 Sandbanks/Lymington pages do. Commercial electrician southampton 300 (KD 22, Quayside #3 at DR 1.3) - only if coverage is real.
 
+## Buyer layer (second pass, same day)
+- 280 kw in 6 clusters (tab "Buyer Layer GB"): M&E channel (m&e contractors 400; Dorset SERP = WessexME, Rentec, CEI, Worldwise consultants), infrastructure upgrades (data cabling 350, containment 250, new supply 150, commercial rewiring 90), maintenance/PPM (100), schools procurement+funding (school refurbishment contractors 350, CIF 200, PSDS 200, fire alarm servicing for schools 200, solar for schools 300), adjacent capital (commercial solar installers 800, battery 700, heat pump 350), automation outcomes (energy monitoring 500/400, remote temp monitoring 250, legionella temp monitoring 150, multi-site energy mgmt 100, occupancy sensors 150).
+- **Verdict:** big school works are tendered (Find a Tender / bidstats notices rank for "school rewire contractors"; Hampshire Services for Schools contractor list ranks for Hants). CIF SERP = bid consultants (S2e, RPT, Jarman Ward, YMD Boon, Barker). Site's job = pass the shortlist check + catch sub-threshold direct awards. Route to market (tender alerts, council lists, consultant intros) is Declan's task.
+- Pub inventory / hospitality automation: still zero demand (17 seeds). Outcome words carry it.
+
 ## Ahrefs gotcha (this session)
 - keywords-explorer endpoints returned 500 whenever `select` included `difficulty` or `cpc` (or intents/parent_topic); `keyword,volume` with `where`/`order_by` works. KD came from site-explorer organic-keywords of competitor sites instead.
 - SerpAPI full `google` engine responses exceed the tool limit; use `google_light` or parse the saved file.
